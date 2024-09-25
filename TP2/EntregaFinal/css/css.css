@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap');
+
 :root {
     --shadow-primary: #622D6B;
     --shadow-secundary: #7B4386;
@@ -5,8 +7,81 @@
     --ligth-primary: #B371C1;
     --ligth-primary-2: #D199E1;
 
-    --shadow-secundary: #;
-    --shadow-secundary: #;
-    --shadow-secundary: #;
-    --shadow-secundary: #;
+    --black-background-: #070606;
+    --dark-gray: #333;
+    --dark-shddow: #4F4F4F;
+    --blackish: #767676;
+    --gray: #B0AAAA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Baloo;
+}
+
+.navbar {
+    width: 100%;
+    height: 4.5rem;
+    background-color: var(--black-background-);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .nabvar-hamburguesa {
+        background-color: #622D6B;
+        width: 5%;
+        height: 1.6rem;
+    }
+
+    .navbar-contenedor-logo {
+        width: 10%;
+        height: 40px;
+        display: flex;
+        margin-right: 5%;
+
+        .navbar-logo-img {
+            width: 100%;
+
+            .navbar-logo {
+                border: 2px solid wheat;
+                border-radius: 10px;
+            }
+        }
+
+        .navbar-title {
+            color: white;
+        }
+    }
+
+    .conteiner-lupa {
+        border: 2px solid whitesmoke;
+        color: white;
+        border-radius: 30px;
+        height: 40px;
+        width: 28%;
+        margin-right: 10%;
+        /* Buscar otra forma de espaciar */
+    }
+
+    .conteiner-user {
+        background-color: aliceblue;
+        height: 30px;
+        width: 5%;
+        margin-right: 2%;
+        margin-left: 10%;
+    }
+}
+
+main {
+    background-color: var(--primary-color);
+    height: 70vh;
+}
+
+footer {
+    background-color: var(--black-background-);
+    height: 30vh;
+    color: white;
 }
