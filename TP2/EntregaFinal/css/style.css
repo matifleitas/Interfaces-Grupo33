@@ -3,34 +3,22 @@
 :root {
     --shadow-primary: #622D6B;
     --shadow-secundary: #7B4386;
-    --primary-color: #9852a4;
+    --primary-color: #9852A4;
     --ligth-primary: #B371C1;
     --ligth-primary-2: #D199E1;
 
     --black-background-: #070606;
     --dark-gray: #333;
     --dark-shddow: #4F4F4F;
-    --txt-iputs: #525252;
     --blackish: #767676;
     --gray: #B0AAAA;
-    --inputs: #E8E8E8;
-    --white: #FFFFFF;
-
-    --font-principal: 'Baloo Bhai', cursive;
-
-    --h1: 18px;
-    --h2: 16px;
-    --h3: 14px;
-    --txt-body: 12px;
-    --txt-no-bold: 10px;
-    --txt-tittle-canva-game: 28px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Baloo Bhai', cursive;
+    font-family: Baloo;
 }
 
 .navbar {
@@ -133,67 +121,3 @@ footer {
     height: 30vh;
     color: white;
 }
-
-.login-container{
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 481px;
-    height: 494px;
-    border-radius: 15px;
-    background-color: var(--black-background-);
-}
-
-.login-box{
-    padding: 15%;
-    align-items: center;
-}
-
-.inputs{
-    width: 249px;
-    height: 33px;
-    background-color: var(--inputs);   
-    border-radius: 70px;
-    padding: 4%;
-    margin: 19px;
-    margin-left: 35px;
-}
-
-.inputs::placeholder{
-    color: var(--txt-iputs);
-}
-
-.btn-primary{
-    text-align: center;
-    width: 130px;
-    height: 40px;
-    margin-left: 100px;
-    background-color: var(--primary-color);
-    border-radius: 80px;
-    color: rgb(255, 255, 255);
-}
-
-.social-login {
-    margin: 20px;
-    color: white;
-    display: flex;
-    justify-content: center;
-}
-
-.img-social{
-    height: 44px;
-    width: 44px;
-}
-
-.social-login div {
-    margin: 0 10px;
-}
-
-.sesion-text{
-    font-size: var(--h1);
-    color: var(--white);
-    margin-left: 100px;
-}
-
