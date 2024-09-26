@@ -37,9 +37,35 @@
         </div>
 
         <div class="conteiner-user">
-            <button class="btn-sesion">
+            <button class="btn-sesion" popovertarget="id-popover">
                 <h3 class="sesion-text">Iniciar Sesión</h3>
             </button>
+        </div>
+
+        <!--aca va el pop de iniciar secion-->
+
+        <div class="login-container" id="id-popover" popover="manual">
+            <h2>Iniciar Sesión</h2>
+            <form action="#" method="POST">
+                <input type="email" name="email" placeholder="Ingrese su correo" required>
+                <input type="password" name="password" placeholder="Ingrese su contraseña" required>
+                <button class="btn-primary" type="submit">Iniciar Sesión</button>
+            </form>
+            
+            <div class="social-login">
+                <hr style="flex-grow: 1; background-color: white; border: none; height: 1px;">
+                <div>O iniciar sesión con</div>
+                <hr style="flex-grow: 1; background-color: white; border: none; height: 1px;">
+            </div>
+            <div class="social-login">
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google"></a>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
+            </div>
+            
+            <div class="register">
+                Si no tienes cuenta regístrate aquí
+            </div>
+            <button class="btn-register">Registrarse</button>
         </div>
 
     </header>
@@ -52,7 +78,7 @@
         </div>
     </main>
     <footer></footer>
-
+    <script src="js/js.js"></script>
 </body>
 
 </html>
