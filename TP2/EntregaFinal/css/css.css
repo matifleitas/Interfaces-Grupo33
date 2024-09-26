@@ -65,7 +65,7 @@
     }
 
     .conteiner-lupa {
-        border: 2px solid whitesmoke;
+        border: 2px solid var(--gray);
         color: white;
         border-radius: 30px;
         height: 40px;
@@ -112,12 +112,12 @@
 }
 
 main {
-    background-color: var(--primary-color);
+    background-color: var(--dark-gray);
     height: 70vh;
 }
 
 footer {
-    background-color: var(--black-background-);
+    background-color: var(--dark-shddow);
     height: 30vh;
     color: white;
 }
