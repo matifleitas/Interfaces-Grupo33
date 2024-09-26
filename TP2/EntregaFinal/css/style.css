@@ -31,9 +31,17 @@
 
 
     .nabvar-hamburguesa {
-        background-color: #622D6B;
         width: 5%;
-        height: 1.6rem;
+        height: 3rem;
+        padding: 5px 20px 0px 20px;
+
+        .nav-link-hamb {
+
+            .nav-img-hamburguesa {
+                width: 25px;
+                height: 40px;
+            }
+        }
     }
 
     .navbar-contenedor-logo {
@@ -57,31 +65,59 @@
     }
 
     .conteiner-lupa {
-        border: 2px solid whitesmoke;
+        border: 2px solid var(--gray);
         color: white;
         border-radius: 30px;
         height: 40px;
         width: 28%;
         margin-right: 10%;
         /* Buscar otra forma de espaciar */
+        display: flex;
+
+        .nav-div-input {
+            width: 90%;
+            padding-left: 5%;
+        }
+
+        .nav-inputText {
+            width: 100%;
+            height: 2rem;
+            background-color: var(--black-background-);
+            border: 2px solid black;
+        }
+
+        .nav-divLupa {
+            margin-left: 10px;
+        }
     }
 
     .conteiner-user {
-        background-color: aliceblue;
-        height: 30px;
-        width: 5%;
         margin-right: 2%;
         margin-left: 10%;
+        width: 110px;
+
+        .btn-sesion {
+            width: 100%;
+            height: 35px;
+            border-radius: 30px;
+            background-color: var(--primary-color);
+
+            .sesion-text {
+                font-size: 12px;
+                color: white;
+            }
+
+        }
     }
 }
 
 main {
-    background-color: var(--primary-color);
+    background-color: var(--dark-gray);
     height: 70vh;
 }
 
 footer {
-    background-color: var(--black-background-);
+    background-color: var(--dark-shddow);
     height: 30vh;
     color: white;
 }
