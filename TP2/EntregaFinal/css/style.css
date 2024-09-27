@@ -102,6 +102,7 @@
             height: 2.5rem;
             border-radius: 30px;
             background-color: var(--primary-color);
+            cursor: pointer;
 
             .sesion-text {
                 font-size: 14px;
@@ -193,6 +194,7 @@
 
 /* -----------------------------------------Sesion Login------------------------------------ */
 .login-container {
+
     position: fixed;
     top: 50%;
     left: 50%;
@@ -216,12 +218,6 @@
     text-align: center;
 }
 
-.sesion-text {
-    color: #ffffff;
-    /* Texto en blanco */
-    font-size: 24px;
-    margin-bottom: 20px;
-}
 
 .inputs {
     width: 100%;
