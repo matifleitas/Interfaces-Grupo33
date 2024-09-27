@@ -32,6 +32,7 @@
     font-family: var(--font-baloo);
 }
 
+/* -------------------------Header--------------------- */
 .navbar {
     width: 100%;
     height: 4.5rem;
@@ -81,7 +82,7 @@
         border-radius: 30px;
         height: 40px;
         width: 28%;
-        margin-right: 10%;
+        margin-right: 5%;
         /* Buscar otra forma de espaciar */
         display: flex;
 
@@ -105,16 +106,17 @@
     .conteiner-user {
         margin-right: 2%;
         margin-left: 10%;
-        width: 110px;
+        width: 130px;
 
         .btn-sesion {
             width: 100%;
-            height: 35px;
+            height: 2.5rem;
             border-radius: 30px;
             background-color: var(--primary-color);
+            cursor: pointer;
 
             .sesion-text {
-                font-size: 12px;
+                font-size: 14px;
                 color: white;
             }
 
@@ -122,15 +124,83 @@
     }
 }
 
-main {
+/* ---------------------------Main--------------------- */
+.galery-game {
     background-color: var(--dark-gray);
-    height: 70vh;
-}
+    height: 100vh;
 
-footer {
-    background-color: var(--dark-shddow);
-    height: 30vh;
-    color: white;
+    .conteiner-carruselPrimary {
+        padding-top: 15px;
+        width: 100%;
+        height: 40vh;
+        margin-left: 2%;
+        overflow: hidden;
+
+        .carrusel-titulo {
+
+            .h2-carrusel {
+                font-size: 1rem;
+                color: #fff;
+                font-weight: bolder;
+                margin-left: 1px;
+            }
+        }
+
+        .carrusel-primary {
+            margin-top: 10px;
+            display: flex;
+            position: relative;
+        }
+
+
+        .card-game {
+            max-width: 25rem;
+
+            .card-img-game {
+                width: 22rem;
+                height: 14rem;
+                margin-left: 0.5rem;
+                object-fit: cover;
+                /* border-image: fill 0 linear-gradient(#0001, #000);  Es para poner gradient abaajo y resalte el txt */
+            }
+        }
+
+        .btn-card-game-arrow {
+            background-color: #130f0f0a;
+            border: 0;
+
+            .card-game-arrowL {
+                transform: rotate(540deg);
+                margin-top: 16px;
+            }
+        }
+
+        .arrowLeft,
+        .arrowRigth {
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            cursor: pointer;
+        }
+
+        .arrowLeft {
+            left: 2%;
+        }
+
+        .arrowRigth {
+            right: 2%;
+        }
+
+        .arrowLeft:active,
+        .arrowRigth:active {
+            background-color: rgba(128, 128, 128, 0.295);
+        }
+
+        .arrowLeft:hover,
+        .arrowRigth:hover {
+            transform: scale(1.4);
+        }
+    }
 }
 
 /*MOBILE*/
@@ -304,3 +374,11 @@ footer {
     }
 }
 
+
+/* ------------------------Footer------------------------- */
+
+footer {
+    background-color: var(--dark-shddow);
+    height: 30vh;
+    color: white;
+}

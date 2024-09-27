@@ -1,8 +1,17 @@
+let card = document.querySelectorAll(".card-game");
+let btnNext = document.querySelector(".arrowRigth").addEventListener(
+    "click", (e) => {
+        for (let index = 0; index < card.length; index++) {
+            card[index].style.transform = "translateX(-40%)"
+            card[index].style.transition = "2s"
+        }
 
-const popover = document.querySelector('#id-popover');
-const singIn = document.querySelector('.login-container');
-
-singIn.addEventListener('submit', (event) =>{
-    event.preventDefault();
-    popover.showPopover();
-});
+    });
+let btnBefore = document.querySelector(".arrowLeft").addEventListener(
+    "click", (e) => {
+        for (let index = 0; index < card.length; index++) {
+            card[index].style.transform = "translateX(0)"
+            card[index].style.transition = "2s"
+        }
+    }
+)
