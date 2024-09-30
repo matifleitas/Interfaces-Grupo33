@@ -139,55 +139,100 @@
             margin-top: 10px;
             display: flex;
             position: relative;
-        }
 
+            .card-game {
+                /* max-width: 25rem; */
 
-        .card-game {
-            max-width: 25rem;
-
-            .card-img-game {
-                width: 22rem;
-                height: 14rem;
-                margin-left: 0.5rem;
-                object-fit: cover;
-                /* border-image: fill 0 linear-gradient(#0001, #000);  Es para poner gradient abaajo y resalte el txt */
+                .card-img-game {
+                    cursor: pointer;
+                    width: 352px;
+                    height: 12rem;
+                    margin-left: 0.5rem;
+                    object-fit: cover;
+                    /* border-image: fill 0 linear-gradient(#0001, #000);  Es para poner gradient abaajo y resalte el txt */
+                }
             }
-        }
 
-        .btn-card-game-arrow {
-            background-color: #130f0f0a;
-            border: 0;
 
-            .card-game-arrowL {
-                transform: rotate(540deg);
-                margin-top: 16px;
+            .cardGameSecundary {
+                width: auto;
+                display: flex;
+                display: grid;
+                gap: 4px;
+                grid-template-areas:
+                    "a b"
+                    "c d";
+
+                .a {
+                    grid-area: a;
+                }
+
+                .b {
+                    grid-area: b;
+                }
+
+                .c {
+                    grid-area: c;
+                }
+
+
+                .d {
+                    grid-area: d;
+                }
+
+                .cardSmall-game {
+
+
+                    .card-img-game-small {
+
+                        object-fit: cover;
+                        width: 11rem;
+                        height: 90px;
+                        cursor: pointer;
+
+                    }
+                }
+
+
             }
-        }
 
-        .arrowLeft,
-        .arrowRigth {
-            position: absolute;
-            bottom: 0;
-            top: 0;
-            cursor: pointer;
-        }
 
-        .arrowLeft {
-            left: 2%;
-        }
+            .btn-card-game-arrow {
+                background-color: #130f0f0a;
+                border: 0;
 
-        .arrowRigth {
-            right: 2%;
-        }
+                .card-game-arrowL {
+                    transform: rotate(540deg);
+                    margin-top: 16px;
+                }
+            }
 
-        .arrowLeft:active,
-        .arrowRigth:active {
-            background-color: rgba(128, 128, 128, 0.295);
-        }
+            .arrowLeft,
+            .arrowRigth {
+                position: absolute;
+                bottom: 0;
+                top: 0;
+                cursor: pointer;
+            }
 
-        .arrowLeft:hover,
-        .arrowRigth:hover {
-            transform: scale(1.4);
+            .arrowLeft {
+                left: 2%;
+            }
+
+            .arrowRigth {
+                right: 2%;
+            }
+
+            .arrowLeft:active,
+            .arrowRigth:active {
+                background-color: rgba(128, 128, 128, 0.295);
+            }
+
+            .arrowLeft:hover,
+            .arrowRigth:hover {
+                transform: scale(1.4);
+
+            }
         }
     }
 }
@@ -199,7 +244,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
