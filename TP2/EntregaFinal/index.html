@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cypher Gaming</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <title>Cipher Gaming</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Cypher Gaming</title>
 </head>
 
 <body>
@@ -42,20 +40,20 @@
         </div>
 
         <div class="conteiner-user">
-            <button class="btn-sesion" popovertarget="id-popover">
-                <h3 class="sesion-text">Iniciar Sesión</h3>
+            <button class="btn-sesion" id="btn-sesion" popovertarget="id-popover">
+                Iniciar Sesión
             </button>
         </div>
 
-        <!--aca va el pop de iniciar secion-->
+        <!--aca va el pop de iniciar sesion-->
 
-        <div class="login-container" id="id-popover" popover="manual">
+        <div class="login-container"  popover="manual" id="id-popover">
             <div class="login-box">
                 <h2 class="sesion-text">Iniciar Sesión</h2>
                 <form class="form-singin" action="#" method="POST">
                     <input class="inputs" type="email" name="email" placeholder="Ingrese su correo" required>
                     <input class="inputs" type="password" name="password" placeholder="Ingrese su contraseña" required>
-                    <button class="btn-primary" type="submit">Iniciar Sesión</button>
+                    <button class="btn-primary" type="submit" popovertarget="id-popover">Iniciar Sesión</button>
                 </form>
 
                 <div class="social-login">
@@ -63,7 +61,7 @@
 
                 </div>
                 <div class="social-login">
-                    <a href="#" class="icons-social"><img src="assets/BtnFacebook.png" alt="Facebook"
+                    <a href="#" class="icons-social"><img src="assets/" alt="Facebook"
                             class="img-social"></a>
                     <a href="#" class="icons-social"><img src="assets/google.png.jpg" alt="Twitter"
                             class="img-social"></a>
@@ -73,12 +71,11 @@
                     <div class="txt-login2">Si no tienes cuenta regístrate aquí</div>
                 </div>
                 <button class="btn-primary" popovertarget="id-popover-2">Registrarse</button>
-                <button class="btn-primary">Registrarse</button>
             </div>
 
             <!-- aca el register-->
 
-            <div class="login-container" id="id-popover-2" popover="manual">
+            <div class="login-container" id="id-popover-2" popover="manual" id="login-container">
                 <div class="login-box">
                     <h2 class="sesion-text">Registrarse</h2>
                     <form class="form-singup" action="#" method="POST">
@@ -88,11 +85,11 @@
                         <input class="inputs" type="password" name="password" placeholder="Ingrese su contraseña" required>
                         <input class="inputs" type="password" name="password" placeholder="Confirme su contraseña" required>
                         <input class="date-birthdate" type="date" name="birthdate" id="fecha_nacimiento" min="1900-01-01" max="2024-12-31" required>      
-                        <button class="btn-primary" type="submit">Iniciar Sesión</button>
+                        <button class="btn-primary" type="submit" id="id-popover">Iniciar Sesión</button>
                     </form>
     
                     <div class="social-login">
-                        <a href="#" class="icons-social"><img src="assets/BtnFacebook.png" alt="Facebook" class="img-social"></a>
+                        <a href="#" class="icons-social"><img src="assets/facebook.png.jpg" alt="Facebook" class="img-social"></a>
                         <a href="#" class="icons-social"><img src="assets/google.png.jpg" alt="Twitter" class="img-social"></a>
                     </div>
                     <hr class="line">
