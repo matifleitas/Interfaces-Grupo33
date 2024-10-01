@@ -15,3 +15,12 @@ let btnBefore = document.querySelector(".arrowLeft").addEventListener(
         }
     }
 )
+
+const btnSubmit = document.getElementById('submit');
+const formulario = document.getElementById('formulario');
+
+function ocultarFormulario() {
+    formulario.style.display = 'none';
+  }
+  
+btnSubmit.addEventListener('click', ocultarFormulario);

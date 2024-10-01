@@ -68,9 +68,34 @@
                 </div>
                 <hr class="line">
                 <div class="register">
-                    <div class="txt-login2">Si no tienes cuenta regístrate aquí</div>                </div>
-                <button class="btn-primary">Registrarse</button>
+                    <div class="txt-login2">Si no tienes cuenta regístrate aquí</div>
+                </div>
+                <button class="btn-primary" popovertarget="id-popover-2">Registrarse</button>
             </div>
+
+            <!-- aca el register-->
+
+            <div class="login-container" id="id-popover-2" popover="manual">
+                <div class="login-box">
+                    <h2 class="sesion-text">Registrarse</h2>
+                    <form class="form-singup" action="#" method="POST">
+                        <input class="inputs" type="text" name="name" placeholder="Ingrese su nombre completo" required>
+                        <input class="inputs" type="email" name="email" placeholder="Ingrese su correo" required>
+                        <input class="inputs" type="text" name="nameUser" placeholder="Ingrese su nombre de usuario" required>
+                        <input class="inputs" type="password" name="password" placeholder="Ingrese su contraseña" required>
+                        <input class="inputs" type="password" name="password" placeholder="Confirme su contraseña" required>
+                        <input class="date-birthdate" type="date" name="birthdate" id="fecha_nacimiento" min="1900-01-01" max="2024-12-31" required>      
+                        <button class="btn-primary" type="submit">Iniciar Sesión</button>
+                    </form>
+    
+                    <div class="social-login">
+                        <a href="#" class="icons-social"><img src="assets/BtnFacebook.png" alt="Facebook" class="img-social"></a>
+                        <a href="#" class="icons-social"><img src="assets/google.png.jpg" alt="Twitter" class="img-social"></a>
+                    </div>
+                    <hr class="line">
+                    
+                    <button class="btn-primary" popovertarget="id-popover-2">Registrarse</button>
+                </div>
         </div>
 
     </header>

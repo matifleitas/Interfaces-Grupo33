@@ -234,9 +234,9 @@
 
     .inputs {
         width: 100%;
-        padding: 12px;
+        padding: 8px;
         margin: 10px 0;
-        border-radius: 65px; 
+        border-radius: 75px; 
         border: none;
         font-size: 20px;
     }
@@ -296,10 +296,9 @@
 @media only screen and (min-width: 415px) {
     .login-container {
         position: fixed;
-        top:54%;
+        top:50%;
         margin-bottom: 30px;
         left: 50%;
-        height: 100%;
         transform: translate(-50%, -50%);
         justify-content: center;
         align-items: center;
@@ -308,7 +307,7 @@
     }
 
     .login-box {
-        height: 570px;
+        height: 100%;
         background-color: var(--black-background-);
         padding: 35px;
         border-radius: 12px;
@@ -326,9 +325,9 @@
 
     .inputs {
         width: 100%;
-        padding: 12px;
+        padding: 8px;
         margin: 10px 0;
-        border-radius: 8px; 
+        border-radius: 75px; 
         border: none;
         font-size: 16px;
     }
@@ -371,6 +370,10 @@
 
     .txt-login2{
         color: var(--white);
+    }
+
+    .date-birthdate{
+        border-radius: 8px;
     }
 }
 
