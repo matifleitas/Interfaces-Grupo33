@@ -114,6 +114,7 @@
             border-radius: 30px;
             background-color: var(--primary-color);
             cursor: pointer;
+            color: var(--white);
 
             .sesion-text {
                 font-size: 14px;
@@ -334,25 +335,15 @@
         color: var(--white);
         margin: 5px 0;
     }
-
-/* -----------------------------------------Sesion Login------------------------------------ */
-.login-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
+/* -----------------------------------------Sesion Login------------------------------------ */
+
 
 /*DESKTOP*/
 @media only screen and (min-width: 415px) {
     .login-container {
         position: fixed;
         top:50%;
-        top: 54%;
         margin-bottom: 30px;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -360,6 +351,7 @@
         align-items: center;
         background-color: #07060600;
         border: none;
+       
     }
 
     .login-box {
@@ -385,7 +377,6 @@
         padding: 8px;
         margin: 10px 0;
         border-radius: 75px; 
-        border-radius: 8px;
         border: none;
         font-size: 16px;
     }
@@ -414,7 +405,7 @@
         color: white;
         margin: 15px 0;
     }
-
+    
     .img-social {
         width: 40px;
         height: 40px;
@@ -515,5 +506,4 @@ footer {
 
 .social-icons a {
     margin-right: 10px;
-}
 }

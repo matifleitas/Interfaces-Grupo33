@@ -17,12 +17,17 @@ let btnBefore = document.querySelector(".arrowLeft").addEventListener(
     }
 )
 
-const btnSubmit = document.getElementById('submit');
-const formulario = document.getElementById('formulario');
 
-function ocultarFormulario() {
-    formulario.style.display = 'none';
-  }
+/*
+const popover = document.querySelector("#id-popover");
+const login = document.querySelector('login-container');
+login.addEventListener('submit', (event) => {
+    event.preventDefault();
+    popover.showPopver();
+})
+*/
+
+
   
 btnSubmit.addEventListener('click', ocultarFormulario);
 let btnBeforeSecundary = document.querySelector("#btnBefore-carruselSec").addEventListener(
