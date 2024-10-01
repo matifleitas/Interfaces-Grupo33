@@ -150,55 +150,100 @@
             margin-top: 10px;
             display: flex;
             position: relative;
-        }
 
+            .card-game {
+                /* max-width: 25rem; */
 
-        .card-game {
-            max-width: 25rem;
-
-            .card-img-game {
-                width: 22rem;
-                height: 14rem;
-                margin-left: 0.5rem;
-                object-fit: cover;
-                /* border-image: fill 0 linear-gradient(#0001, #000);  Es para poner gradient abaajo y resalte el txt */
+                .card-img-game {
+                    cursor: pointer;
+                    width: 352px;
+                    height: 12rem;
+                    margin-left: 0.5rem;
+                    object-fit: cover;
+                    /* border-image: fill 0 linear-gradient(#0001, #000);  Es para poner gradient abaajo y resalte el txt */
+                }
             }
-        }
 
-        .btn-card-game-arrow {
-            background-color: #130f0f0a;
-            border: 0;
 
-            .card-game-arrowL {
-                transform: rotate(540deg);
-                margin-top: 16px;
+            .cardGameSecundary {
+                width: auto;
+                display: flex;
+                display: grid;
+                gap: 4px;
+                grid-template-areas:
+                    "a b"
+                    "c d";
+
+                .a {
+                    grid-area: a;
+                }
+
+                .b {
+                    grid-area: b;
+                }
+
+                .c {
+                    grid-area: c;
+                }
+
+
+                .d {
+                    grid-area: d;
+                }
+
+                .cardSmall-game {
+
+
+                    .card-img-game-small {
+
+                        object-fit: cover;
+                        width: 11rem;
+                        height: 90px;
+                        cursor: pointer;
+
+                    }
+                }
+
+
             }
-        }
 
-        .arrowLeft,
-        .arrowRigth {
-            position: absolute;
-            bottom: 0;
-            top: 0;
-            cursor: pointer;
-        }
 
-        .arrowLeft {
-            left: 2%;
-        }
+            .btn-card-game-arrow {
+                background-color: #130f0f0a;
+                border: 0;
 
-        .arrowRigth {
-            right: 2%;
-        }
+                .card-game-arrowL {
+                    transform: rotate(540deg);
+                    margin-top: 16px;
+                }
+            }
 
-        .arrowLeft:active,
-        .arrowRigth:active {
-            background-color: rgba(128, 128, 128, 0.295);
-        }
+            .arrowLeft,
+            .arrowRigth {
+                position: absolute;
+                bottom: 0;
+                top: 0;
+                cursor: pointer;
+            }
 
-        .arrowLeft:hover,
-        .arrowRigth:hover {
-            transform: scale(1.4);
+            .arrowLeft {
+                left: 2%;
+            }
+
+            .arrowRigth {
+                right: 2%;
+            }
+
+            .arrowLeft:active,
+            .arrowRigth:active {
+                background-color: rgba(128, 128, 128, 0.295);
+            }
+
+            .arrowLeft:hover,
+            .arrowRigth:hover {
+                transform: scale(1.4);
+
+            }
         }
     }
 }
@@ -290,6 +335,16 @@
         margin: 5px 0;
     }
 
+/* -----------------------------------------Sesion Login------------------------------------ */
+.login-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*DESKTOP*/
@@ -297,6 +352,7 @@
     .login-container {
         position: fixed;
         top:50%;
+        top: 54%;
         margin-bottom: 30px;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -311,7 +367,8 @@
         background-color: var(--black-background-);
         padding: 35px;
         border-radius: 12px;
-        box-shadow: var(--black-background-);         width: 400px;
+        box-shadow: var(--black-background-);
+        width: 400px;
         max-width: 100%;
         text-align: center;
         border-radius: 50px;
@@ -328,12 +385,13 @@
         padding: 8px;
         margin: 10px 0;
         border-radius: 75px; 
+        border-radius: 8px;
         border: none;
         font-size: 16px;
     }
 
     .btn-primary {
-        background-color: var(--primary-color); 
+        background-color: var(--primary-color);
         color: var(--white);
         padding: 12px;
         width: 60%;
@@ -346,8 +404,8 @@
     }
 
     .btn-primary:hover {
-        background-color: var(--shadow-primary); 
-        transform: scale(1.04); 
+        background-color: var(--shadow-primary);
+        transform: scale(1.04);
     }
 
     .social-login {
@@ -368,7 +426,7 @@
         margin: 8px 0;
     }
 
-    .txt-login2{
+    .txt-login2 {
         color: var(--white);
     }
 
@@ -381,7 +439,81 @@
 /* ------------------------Footer------------------------- */
 
 footer {
+    padding: 20px 40px;
     background-color: var(--dark-shddow);
-    height: 30vh;
-    color: white;
+    color: #fff;
+}
+
+.footer-logo {
+    flex: 1;
+    padding: 10px;
+    border-bottom: 1px solid var(--white);
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.word-1,
+.word-2 {
+    display: block;
+    margin-left: 12px;
+}
+
+.logo-pag {
+    width: 4.5vw;
+    height: auto;
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 10px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-column {
+    padding: 10px;
+}
+
+.footer-column h4 {
+    margin-top: 29px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-column li {
+    margin-top: 12px;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
 }
