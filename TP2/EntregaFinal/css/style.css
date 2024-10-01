@@ -142,7 +142,6 @@
             .h2-carrusel {
                 font-size: 1rem;
                 color: #fff;
-                font-weight: bolder;
                 margin-left: 1px;
             }
         }
@@ -405,6 +404,7 @@
         color: white;
         margin: 15px 0;
     }
+
     
     .img-social {
         width: 40px;
