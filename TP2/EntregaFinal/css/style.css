@@ -40,19 +40,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 4;
 
+    .btn-hamburguesa:hover {
+        transform: scale(1.1);
+    }
 
-    .nabvar-hamburguesa {
+    .btn-hamburguesa:active {
+        transform: rotate(180deg);
+        transition: 0.2s;
+    }
+
+    .btn-hamburguesa {
         width: 5%;
         height: 3rem;
         padding: 5px 20px 0px 20px;
+        cursor: pointer;
 
-        .nav-link-hamb {
-
-            .nav-img-hamburguesa {
-                width: 25px;
-                height: 40px;
-            }
+        .nav-img-hamburguesa {
+            width: 25px;
+            height: 40px;
         }
     }
 
@@ -129,13 +138,59 @@
 .galery-game {
     background-color: var(--dark-gray);
     height: 100vh;
+    position: relative;
+    margin-top: 70px;
+
+    .vertical-nav-wrapper {
+        position: fixed;
+        width: 200px;
+        height: calc(100vh - 70px);
+        top: 70px;
+        left: 0;
+        z-index: 1;
+        overflow-x: hidden;
+        transform: translate(-100%);
+        transition: 0.5s;
+
+        .vertical-CategoriaNav {
+            background-color: var(--black-background-);
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 20px 0 22px 0;
+            font-weight: 100;
+
+            .hr-hambur {
+                margin: 20px auto;
+                width: 90%;
+            }
+
+            .link-hambur {
+                width: 200px;
+                height: 100%;
+                display: flex;
+                flex-shrink: 0;
+                flex-wrap: nowrap;
+                height: 34px;
+                color: var(--white);
+                font-size: 0.8rem;
+                align-items: center;
+                text-decoration: none;
+                outline: 0;
+
+                .icon-hambur {
+                    padding: 0 10px;
+                    text-align: center;
+                }
+            }
+        }
+    }
 
     .conteiner-carruselPrimary {
         padding-top: 15px;
-        width: 100%;
         height: 40vh;
         margin-left: 2%;
-        overflow: hidden;
+        /* overflow: hidden; */
 
         .carrusel-titulo {
 
@@ -250,7 +305,7 @@
 
 /*MOBILE*/
 @media only screen and (max-width: 414px) {
-    .login-container{
+    .login-container {
         position: fixed;
         top: 45%;
         left: 50%;
@@ -262,7 +317,7 @@
         border: none;
     }
 
-    .login-box{
+    .login-box {
         background-color: black;
         padding: 32px;
         border-radius: 50px;
@@ -281,13 +336,13 @@
         width: 100%;
         padding: 8px;
         margin: 10px 0;
-        border-radius: 75px; 
+        border-radius: 75px;
         border: none;
         font-size: 20px;
     }
 
     .btn-primary {
-        background-color: var(--primary-color); 
+        background-color: var(--primary-color);
         color: white;
         padding: 10px;
         width: 60%;
@@ -300,11 +355,11 @@
     }
 
     .btn-primary:hover {
-        background-color: var(--shadow-primary); 
-        transform: scale(1.03); 
+        background-color: var(--shadow-primary);
+        transform: scale(1.03);
     }
 
-    
+
     .social-login {
         align-items: center;
         justify-content: center;
@@ -312,14 +367,16 @@
         margin: 10px 0;
     }
 
-    .txt-login{
+    .txt-login {
         flex-grow: 1;
         background-color:
-        var(--white); border: 
-        none; height: 1px;
+            var(--white);
+        border:
+            none;
+        height: 1px;
     }
 
-    .txt-login2{
+    .txt-login2 {
         font-size: 17px;
         padding: 5px;
     }
@@ -335,6 +392,7 @@
         margin: 5px 0;
     }
 }
+
 /* -----------------------------------------Sesion Login------------------------------------ */
 
 
@@ -342,7 +400,7 @@
 @media only screen and (min-width: 415px) {
     .login-container {
         position: fixed;
-        top:50%;
+        top: 50%;
         margin-bottom: 30px;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -350,7 +408,7 @@
         align-items: center;
         background-color: #07060600;
         border: none;
-       
+
     }
 
     .login-box {
@@ -375,7 +433,7 @@
         width: 100%;
         padding: 8px;
         margin: 10px 0;
-        border-radius: 75px; 
+        border-radius: 75px;
         border: none;
         font-size: 16px;
     }
@@ -405,7 +463,7 @@
         margin: 15px 0;
     }
 
-    
+
     .img-social {
         width: 40px;
         height: 40px;
@@ -421,7 +479,7 @@
         color: var(--white);
     }
 
-    .date-birthdate{
+    .date-birthdate {
         border-radius: 8px;
     }
 }
