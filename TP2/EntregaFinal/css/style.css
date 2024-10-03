@@ -32,6 +32,10 @@
     font-family: var(--font-baloo);
 }
 
+body {
+    position: relative;
+}
+
 /* -------------------------Header--------------------- */
 .navbar {
     width: 100%;
@@ -49,8 +53,8 @@
     }
 
     .btn-hamburguesa:active {
-        transform: rotate(180deg);
-        transition: 0.2s;
+        transform: scale(0.5);
+        transition: 0.1s;
     }
 
     .btn-hamburguesa {
@@ -241,13 +245,11 @@
                     grid-area: c;
                 }
 
-
                 .d {
                     grid-area: d;
                 }
 
                 .cardSmall-game {
-
 
                     .card-img-game-small {
 
@@ -255,13 +257,9 @@
                         width: 11rem;
                         height: 90px;
                         cursor: pointer;
-
                     }
                 }
-
-
             }
-
 
             .btn-card-game-arrow {
                 background-color: #130f0f0a;
@@ -399,20 +397,19 @@
 /*DESKTOP*/
 @media only screen and (min-width: 415px) {
     .login-container {
+        width: 100%;
+        height: 100%;
+        background-color: var(--shadow-secundary);
         position: fixed;
-        top: 50%;
-        margin-bottom: 30px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        justify-content: center;
-        align-items: center;
-        background-color: #07060600;
-        border: none;
-
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
     }
 
     .login-box {
         height: 100%;
+        margin: 2% auto;
         background-color: var(--black-background-);
         padding: 35px;
         border-radius: 12px;
