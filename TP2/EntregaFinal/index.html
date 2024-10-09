@@ -6,40 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cypher Gaming</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <title>Cypher Gaming</title>
 </head>
 
 <body class="hidden">
     <div class="centrado" id="preloader">
         <div class="loader">
-        <div class="loading-text">
-            Loading<span class="dot">.</span><span class="dot">.</span
-            ><span class="dot">.</span>
-        </div>
-        <div class="loading-bar-background">
-            <div class="loading-bar">
-            <div class="white-bars-container">
-                <div class="white-bar"></div>
-                <div class="white-bar"></div>
-                <div class="white-bar"></div>
-                <div class="white-bar"></div>
-                <div class="white-bar"></div>
-                <div class="white-bar"></div>
-                <div class="white-bar"></div>
-                <div class="white-bar"></div>
-                <div class="white-bar"></div>
-                <div class="white-bar"></div>
+            <div class="loading-text">Loading<span class="dot">.</span><span class="dot">.</span><span
+                    class="dot">.</span>
             </div>
+            <div class="loading-bar-background">
+                <div class="loading-bar">
+                    <div class="white-bars-container">
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
 
     </div>
     <header class="navbar">
 
-        <div class="nabvar-hamburguesa">
-            <a href="" class="nav-link-hamb"> <img class="nav-img-hamburguesa" src="img/icono/Frame.svg" alt="btn"> </a>
+        <div class="nabvar-hamburguesa btn-hamburguesa">
+            <img class="nav-img-hamburguesa" src="img/icono/Frame.svg" alt="btn">
         </div>
 
         <div class="navbar-contenedor-logo">
@@ -71,7 +71,7 @@
 
         <!--aca va el pop de iniciar sesion-->
 
-        <div class="login-container"  popover="manual" id="id-popover">
+        <div class="login-container" popover="manual" id="id-popover">
             <div class="login-box">
                 <h2 class="sesion-text">Iniciar Sesión</h2>
                 <form class="form-singin" action="#" method="POST">
@@ -105,185 +105,282 @@
                     <form class="form-singup" action="#" method="POST">
                         <input class="inputs" type="text" name="name" placeholder="Ingrese su nombre completo" required>
                         <input class="inputs" type="email" name="email" placeholder="Ingrese su correo" required>
-                        <input class="inputs" type="text" name="nameUser" placeholder="Ingrese su nombre de usuario" required>
-                        <input class="inputs" type="password" name="password" placeholder="Ingrese su contraseña" required>
-                        <input class="inputs" type="password" name="password" placeholder="Confirme su contraseña" required>
-                        <input class="date-birthdate" type="date" name="birthdate" id="fecha_nacimiento" min="1900-01-01" max="2024-12-31" required>      
+                        <input class="inputs" type="text" name="nameUser" placeholder="Ingrese su nombre de usuario"
+                            required>
+                        <input class="inputs" type="password" name="password" placeholder="Ingrese su contraseña"
+                            required>
+                        <input class="inputs" type="password" name="password" placeholder="Confirme su contraseña"
+                            required>
+                        <input class="date-birthdate" type="date" name="birthdate" id="fecha_nacimiento"
+                            min="1900-01-01" max="2024-12-31" required>
                         <button class="btn-primary" type="submit" id="id-popover">Iniciar Sesión</button>
                     </form>
-    
+
                     <div class="social-login">
-                        <a href="#" class="icons-social"><img src="assets/facebook.png.jpg" alt="Facebook" class="img-social"></a>
-                        <a href="#" class="icons-social"><img src="assets/google.png.jpg" alt="Twitter" class="img-social"></a>
+                        <a href="#" class="icons-social"><img src="assets/facebook.png.jpg" alt="Facebook"
+                                class="img-social"></a>
+                        <a href="#" class="icons-social"><img src="assets/google.png.jpg" alt="Twitter"
+                                class="img-social"></a>
                     </div>
                     <hr class="line">
-                    
+
                     <button class="btn-primary" popovertarget="id-popover-2">Registrarse</button>
                 </div>
-        </div>
+            </div>
 
     </header>
     <main class="galery-game">
+        <!-- ---------------------------Toogle Menu--------------- -->
+        <nav class="vertical-nav-wrapper  ">
+            <div class="vertical-CategoriaNav">
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/home.svg" alt="Inicio">
+                    <span>Inicio</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/reciente.svg" alt="recientes">
+                    <span>Recientes</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/LoMasJugadores.svg" alt="lo mas buscados">
+                    <span>Lo mas buscados</span>
+                </a>
+                <hr class="hr-hambur">
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/multijugador.svg" alt="multijugador">
+                    <span>Multijugador</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/accion.svg" alt="accion">
+                    <span>Acción</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/deporte.svg" alt="deportes">
+                    <span>Deportes</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/billar.svg" alt="billar">
+                    <span>Billar</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/carta.svg" alt="cartas">
+                    <span>Cartas</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/auto.svg" alt="autos">
+                    <span>Autos</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/disparos.svg" alt="disparos">
+                    <span>Disparos</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/arcade.svg" alt="arcades">
+                    <span>Arcades</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/hallowen.svg" alt="hallowen">
+                    <span>Hallowen</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/home.svg" alt="juegosMesa">
+                    <span>Juegos de Mesa</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/terror.svg" alt="terror">
+                    <span>Terror</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/pokemom.svg" alt="pokemon">
+                    <span>Pokemon</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" width="40" src="assets/cocinar.svg" alt="cocinar">
+                    <span>Cocinar</span>
+                </a>
+                <a class="link-hambur " href="">
+                    <img class="icon-hambur" src="assets/payaso.svg" alt="">
+                    <span>Payaso</span>
+                </a>
+            </div>
+        </nav>
 
-        <div class="conteiner-carruselPrimary">
-            <div class="carrusel-titulo">
-                <h3 class="h2-carrusel">¡No te pierdas nuestros últimos lanzamientos!</h3>
+        <!-- --------------CARRUSEL--------------- -->
+        <main class="galery-game">
+
+            <div class="conteiner-carruselPrimary">
+                <div class="carrusel-titulo">
+                    <h3 class="h2-carrusel">¡No te pierdas nuestros últimos lanzamientos!</h3>
+                </div>
+
+                <div class="carrusel-primary">
+                    <div class="card-game cardGame"> <img class="card-img-game" src="img/card/CardBatman.png" alt="">
+                    </div>
+                    <div class="card-game cardGame"> <img class="card-img-game" src="img/card/CardTheLast.png" alt="">
+                    </div>
+                    <div class="card-game cardGame"> <img class="card-img-game" src="img/card/CardMinecraft.png" alt="">
+                    </div>
+                    <div class="card-game cardGame"> <img class="card-img-game" src="img/card/cardForza.png" alt="">
+                    </div>
+                    <button class="btn-card-game-arrow  arrowRigth">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="62" height="99" viewBox="0 0 62 99" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
+                                fill="#9852A4" />
+                        </svg></button>
+                    <button class="btn-card-game-arrow  arrowLeft">
+                        <svg class="card-game-arrowL" xmlns="http://www.w3.org/2000/svg" width="62" height="99"
+                            viewBox="0 0 62 99" fill="none">
+                            <path class="arrow" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
+                                fill="#9852A4" />
+                        </svg>
+                    </button>
+                </div>
             </div>
 
-            <div class="carrusel-primary">
-                <div class="card-game cardGame"> <img class="card-img-game" src="img/card/CardBatman.png" alt=""></div>
-                <div class="card-game cardGame"> <img class="card-img-game" src="img/card/CardTheLast.png" alt=""></div>
-                <div class="card-game cardGame"> <img class="card-img-game" src="img/card/CardMinecraft.png" alt="">
+            <div class="conteiner-carruselPrimary">
+                <div class="carrusel-titulo">
+                    <h3 class="h2-carrusel">¡No te pierdas nuestros últimos lanzamientos!</h3>
                 </div>
-                <div class="card-game cardGame"> <img class="card-img-game" src="img/card/cardForza.png" alt=""></div>
-                <button class="btn-card-game-arrow  arrowRigth">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="62" height="99" viewBox="0 0 62 99" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
-                            fill="#9852A4" />
-                    </svg></button>
-                <button class="btn-card-game-arrow  arrowLeft">
-                    <svg class="card-game-arrowL" xmlns="http://www.w3.org/2000/svg" width="62" height="99"
-                        viewBox="0 0 62 99" fill="none">
-                        <path class="arrow" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
-                            fill="#9852A4" />
-                    </svg>
-                </button>
-            </div>
-        </div>
 
-        <div class="conteiner-carruselPrimary">
-            <div class="carrusel-titulo">
-                <h3 class="h2-carrusel">¡No te pierdas nuestros últimos lanzamientos!</h3>
-            </div>
-
-            <div class="carrusel-primary">
-                <div class="card-game cardGameSecundary"> <img class="card-img-game" src="img/card/CardAOE.png" alt="">
-                </div>
-                <div class="card-game cardGameSecundary">
-                    <div class="cardSmall-game a"><img class="card-img-game-small" src="img/card/cardForza.png" alt="">
-                    </div>
-                    <div class="cardSmall-game b"><img class="card-img-game-small" src="img/card/cardMergues.png"
+                <div class="carrusel-primary">
+                    <div class="card-game cardGameSecundary"> <img class="card-img-game" src="img/card/CardAOE.png"
                             alt="">
                     </div>
-                    <div class="cardSmall-game c"><img class="card-img-game-small" src="img/card/cardNopain.png" alt="">
+                    <div class="card-game cardGameSecundary">
+                        <div class="cardSmall-game a"><img class="card-img-game-small" src="img/card/cardForza.png"
+                                alt="">
+                        </div>
+                        <div class="cardSmall-game b"><img class="card-img-game-small" src="img/card/cardMergues.png"
+                                alt="">
+                        </div>
+                        <div class="cardSmall-game c"><img class="card-img-game-small" src="img/card/cardNopain.png"
+                                alt="">
+                        </div>
+                        <div class="cardSmall-game d|"><img class="card-img-game-small" src="img/card/cardPixel.png "
+                                alt="">
+                        </div>
                     </div>
-                    <div class="cardSmall-game d|"><img class="card-img-game-small" src="img/card/cardPixel.png "
-                            alt="">
+                    <div class="card-game cardGameSecundary"> <img class="card-img-game" src="img/card/CardShooker.png"
+                            alt=""></div>
+                    <div class="card-game cardGameSecundary">
+                        <div class="cardSmall-game a"><img class="card-img-game-small" src="img/card/cardcs.png" alt="">
+                        </div>
+                        <div class="cardSmall-game b"><img class="card-img-game-small" src="img/card/cardMergues.png"
+                                alt="">
+                        </div>
+                        <div class="cardSmall-game c"><img class="card-img-game-small" src="img/card/CardTheLast.png"
+                                alt="">
+                        </div>
+                        <div class="cardSmall-game d|"><img class="card-img-game-small" src="img/card/cardForza.png"
+                                alt="">
+                        </div>
                     </div>
+                    <button id="btnNext-carruselSec" class="btn-card-game-arrow  arrowRigth">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="62" height="99" viewBox="0 0 62 99" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
+                                fill="#9852A4" />
+                        </svg></button>
+                    <button id="btnBefore-carruselSec" class="btn-card-game-arrow  arrowLeft">
+                        <svg class="card-game-arrowL" xmlns="http://www.w3.org/2000/svg" width="62" height="99"
+                            viewBox="0 0 62 99" fill="none">
+                            <path class="arrow" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
+                                fill="#9852A4" />
+                        </svg>
+                    </button>
                 </div>
-                <div class="card-game cardGameSecundary"> <img class="card-img-game" src="img/card/CardShooker.png"
-                        alt=""></div>
-                <div class="card-game cardGameSecundary">
-                    <div class="cardSmall-game a"><img class="card-img-game-small" src="img/card/cardcs.png" alt="">
-                    </div>
-                    <div class="cardSmall-game b"><img class="card-img-game-small" src="img/card/cardMergues.png"
-                            alt="">
-                    </div>
-                    <div class="cardSmall-game c"><img class="card-img-game-small" src="img/card/CardTheLast.png"
-                            alt="">
-                    </div>
-                    <div class="cardSmall-game d|"><img class="card-img-game-small" src="img/card/cardForza.png" alt="">
-                    </div>
+            </div>
+            <div class="conteiner-carruselPrimary">
+                <div class="carrusel-titulo">
+                    <h3 class="h2-carrusel">¡No te pierdas nuestros últimos lanzamientos!</h3>
                 </div>
-                <button id="btnNext-carruselSec" class="btn-card-game-arrow  arrowRigth">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="62" height="99" viewBox="0 0 62 99" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
-                            fill="#9852A4" />
-                    </svg></button>
-                <button id="btnBefore-carruselSec" class="btn-card-game-arrow  arrowLeft">
-                    <svg class="card-game-arrowL" xmlns="http://www.w3.org/2000/svg" width="62" height="99"
-                        viewBox="0 0 62 99" fill="none">
-                        <path class="arrow" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
-                            fill="#9852A4" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-         <main class="galery-game">
 
-        <div class="conteiner-carruselPrimary">
-            <div class="carrusel-titulo">
-                <h3 class="h2-carrusel">¡No te pierdas nuestros últimos lanzamientos!</h3>
-            </div>
-
-            <div class="carrusel-primary">
-                <div class="card-game cardGame"> <img class="card-img-game" src="img/card/CardBatman.png" alt=""></div>
-                <div class="card-game cardGame"> <img class="card-img-game" src="img/card/CardTheLast.png" alt=""></div>
-                <div class="card-game cardGame"> <img class="card-img-game" src="img/card/CardMinecraft.png" alt="">
+                <div class="carrusel-primary">
+                    <div class="card-game cardGame"> <img class="card-img-game" src="img/card/CardBatman.png" alt="">
+                    </div>
+                    <div class="card-game cardGame"> <img class="card-img-game" src="img/card/CardTheLast.png" alt="">
+                    </div>
+                    <div class="card-game cardGame"> <img class="card-img-game" src="img/card/CardMinecraft.png" alt="">
+                    </div>
+                    <div class="card-game cardGame"> <img class="card-img-game" src="img/card/cardForza.png" alt="">
+                    </div>
+                    <button class="btn-card-game-arrow  arrowRigth">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="62" height="99" viewBox="0 0 62 99" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
+                                fill="#9852A4" />
+                        </svg></button>
+                    <button class="btn-card-game-arrow  arrowLeft">
+                        <svg class="card-game-arrowL" xmlns="http://www.w3.org/2000/svg" width="62" height="99"
+                            viewBox="0 0 62 99" fill="none">
+                            <path class="arrow" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
+                                fill="#9852A4" />
+                        </svg>
+                    </button>
                 </div>
-                <div class="card-game cardGame"> <img class="card-img-game" src="img/card/cardForza.png" alt=""></div>
-                <button class="btn-card-game-arrow  arrowRigth">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="62" height="99" viewBox="0 0 62 99" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
-                            fill="#9852A4" />
-                    </svg></button>
-                <button class="btn-card-game-arrow  arrowLeft">
-                    <svg class="card-game-arrowL" xmlns="http://www.w3.org/2000/svg" width="62" height="99"
-                        viewBox="0 0 62 99" fill="none">
-                        <path class="arrow" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
-                            fill="#9852A4" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <div class="conteiner-carruselPrimary">
-            <div class="carrusel-titulo">
-                <h3 class="h2-carrusel">¡No te pierdas nuestros últimos lanzamientos!</h3>
             </div>
 
-            <div class="carrusel-primary">
-                <div class="card-game cardGameSecundary"> <img class="card-img-game" src="img/card/CardAOE.png" alt="">
+            <div class="conteiner-carruselPrimary">
+                <div class="carrusel-titulo">
+                    <h3 class="h2-carrusel">¡No te pierdas nuestros últimos lanzamientos!</h3>
                 </div>
-                <div class="card-game cardGameSecundary">
-                    <div class="cardSmall-game a"><img class="card-img-game-small" src="img/card/cardForza.png" alt="">
-                    </div>
-                    <div class="cardSmall-game b"><img class="card-img-game-small" src="img/card/cardMergues.png"
+
+                <div class="carrusel-primary">
+                    <div class="card-game cardGameSecundary"> <img class="card-img-game" src="img/card/CardAOE.png"
                             alt="">
                     </div>
-                    <div class="cardSmall-game c"><img class="card-img-game-small" src="img/card/cardNopain.png" alt="">
+                    <div class="card-game cardGameSecundary">
+                        <div class="cardSmall-game a"><img class="card-img-game-small" src="img/card/cardForza.png"
+                                alt="">
+                        </div>
+                        <div class="cardSmall-game b"><img class="card-img-game-small" src="img/card/cardMergues.png"
+                                alt="">
+                        </div>
+                        <div class="cardSmall-game c"><img class="card-img-game-small" src="img/card/cardNopain.png"
+                                alt="">
+                        </div>
+                        <div class="cardSmall-game d|"><img class="card-img-game-small" src="img/card/cardPixel.png "
+                                alt="">
+                        </div>
                     </div>
-                    <div class="cardSmall-game d|"><img class="card-img-game-small" src="img/card/cardPixel.png "
-                            alt="">
+                    <div class="card-game cardGameSecundary"> <img class="card-img-game" src="img/card/CardShooker.png"
+                            alt=""></div>
+                    <div class="card-game cardGameSecundary">
+                        <div class="cardSmall-game a"><img class="card-img-game-small" src="img/card/cardcs.png" alt="">
+                        </div>
+                        <div class="cardSmall-game b"><img class="card-img-game-small" src="img/card/cardMergues.png"
+                                alt="">
+                        </div>
+                        <div class="cardSmall-game c"><img class="card-img-game-small" src="img/card/CardTheLast.png"
+                                alt="">
+                        </div>
+                        <div class="cardSmall-game d|"><img class="card-img-game-small" src="img/card/cardForza.png"
+                                alt="">
+                        </div>
                     </div>
+                    <button id="btnNext-carruselSec" class="btn-card-game-arrow  arrowRigth">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="62" height="99" viewBox="0 0 62 99" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
+                                fill="#9852A4" />
+                        </svg></button>
+                    <button id="btnBefore-carruselSec" class="btn-card-game-arrow  arrowLeft">
+                        <svg class="card-game-arrowL" xmlns="http://www.w3.org/2000/svg" width="62" height="99"
+                            viewBox="0 0 62 99" fill="none">
+                            <path class="arrow" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
+                                fill="#9852A4" />
+                        </svg>
+                    </button>
                 </div>
-                <div class="card-game cardGameSecundary"> <img class="card-img-game" src="img/card/CardShooker.png"
-                        alt=""></div>
-                <div class="card-game cardGameSecundary">
-                    <div class="cardSmall-game a"><img class="card-img-game-small" src="img/card/cardcs.png" alt="">
-                    </div>
-                    <div class="cardSmall-game b"><img class="card-img-game-small" src="img/card/cardMergues.png"
-                            alt="">
-                    </div>
-                    <div class="cardSmall-game c"><img class="card-img-game-small" src="img/card/CardTheLast.png"
-                            alt="">
-                    </div>
-                    <div class="cardSmall-game d|"><img class="card-img-game-small" src="img/card/cardForza.png" alt="">
-                    </div>
-                </div>
-                <button id="btnNext-carruselSec" class="btn-card-game-arrow  arrowRigth">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="62" height="99" viewBox="0 0 62 99" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
-                            fill="#9852A4" />
-                    </svg></button>
-                <button id="btnBefore-carruselSec" class="btn-card-game-arrow  arrowLeft">
-                    <svg class="card-game-arrowL" xmlns="http://www.w3.org/2000/svg" width="62" height="99"
-                        viewBox="0 0 62 99" fill="none">
-                        <path class="arrow" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
-                            fill="#9852A4" />
-                    </svg>
-                </button>
             </div>
-        </div>
+        </main>
     </main>
+
     <footer>
         <div class="footer-container">
             <section class="footer-logo">
@@ -291,7 +388,7 @@
                 <p>
                     <span class="word-1">CYPHER</span>
                     <span class="word-2">GAMING</span>
-                  </p>
+                </p>
             </section>
             <section class="footer-links">
                 <div class="footer-column">
@@ -347,4 +444,5 @@
     <script src="preloader.js"></script>
     <script src="js/js.js"></script>
 </body>
+
 </html>
