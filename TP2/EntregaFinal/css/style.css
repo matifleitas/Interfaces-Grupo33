@@ -762,3 +762,14 @@ footer {
     transform: translateY(-1px);
 
   }
+
+  .how-to-play{
+    background-color: var(--dark-shddow);
+    color: var(--white);
+    padding: 2rem;
+    width: 80%; 
+}
+
+.how-to-play ul{
+ font-size: 14px;
+} 
