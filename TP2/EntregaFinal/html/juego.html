@@ -18,16 +18,15 @@
 <body>
     <main>
         <header class="navbar">
-            <div class="nabvar-hamburguesa">
-                <a href="" class="nav-link-hamb">
-                    <img class="nav-img-hamburguesa" src="../img/icono/Frame.svg" alt="btn" />
-                </a>
+
+            <div class="nabvar-hamburguesa btn-hamburguesa">
+                <img class="nav-img-hamburguesa" src="../img/icono/Frame.svg" alt="btn">
             </div>
 
             <div class="navbar-contenedor-logo">
                 <div class="navbar-logo-img">
-                    <a href="">
-                        <img class="navbar-logo" src="../img/logo/logo.png" height="40rem" width="40rem" alt=" logo" />
+                    <a href="../index.html"> <img class="navbar-logo" src="../img/logo/logo.png" height="40rem" width="40rem"
+                            alt=" logo">
                     </a>
                 </div>
                 <div class="navbar-title">CYPHER GAMING</div>
@@ -35,7 +34,7 @@
 
             <div class="conteiner-lupa">
                 <div class="nav-div-input">
-                    <input class="nav-inputText" type="text" placeholder="Buscar juegos..." />
+                    <input class="nav-inputText" type="text" placeholder="Buscar juegos...">
                 </div>
                 <div class="nav-divLupa">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="35" viewBox="0 0 20 20" fill="none">
@@ -51,6 +50,68 @@
                     Iniciar Sesión
                 </button>
             </div>
+
+            <!--aca va el pop de iniciar sesion-->
+
+            <div class="login-container" popover="manual" id="id-popover">
+                <div class="login-box">
+                    <h2 class="sesion-text">Iniciar Sesión</h2>
+                    <form class="form-singin" action="#" method="POST">
+                        <input class="inputs" type="email" name="email" placeholder="Ingrese su correo" required>
+                        <input class="inputs" type="password" name="password" placeholder="Ingrese su contraseña"
+                            required>
+                        <button class="btn-primary" type="submit" popovertarget="id-popover">Iniciar Sesión</button>
+                    </form>
+
+                    <div class="social-login">
+                        <div class="txt-login2">O iniciar sesión con</div>
+
+                    </div>
+                    <div class="social-login">
+                        <a href="#" class="icons-social"><img src="../assets/facebook.svg" alt="Facebook"
+                                class="img-social"></a>
+                        <a href="#" class="icons-social"><img src="../assets/google.png.jpg" alt="Twitter"
+                                class="img-social"></a>
+                    </div>
+                    <hr class="line">
+                    <div class="register">
+                        <div class="txt-login2">Si no tienes cuenta regístrate aquí</div>
+                    </div>
+                    <button class="btn-primary" popovertarget="id-popover-2">Registrarse</button>
+                </div>
+
+                <!-- aca el register-->
+
+                <div class="login-container" id="id-popover-2" popover="manual" id="login-container">
+                    <div class="login-box">
+                        <h2 class="sesion-text">Registrarse</h2>
+                        <form class="form-singup" action="#" method="POST">
+                            <input class="inputs" type="text" name="name" placeholder="Ingrese su nombre completo"
+                                required>
+                            <input class="inputs" type="email" name="email" placeholder="Ingrese su correo" required>
+                            <input class="inputs" type="text" name="nameUser" placeholder="Ingrese su nombre de usuario"
+                                required>
+                            <input class="inputs" type="password" name="password" placeholder="Ingrese su contraseña"
+                                required>
+                            <input class="inputs" type="password" name="password" placeholder="Confirme su contraseña"
+                                required>
+                            <input class="date-birthdate" type="date" name="birthdate" id="fecha_nacimiento"
+                                min="1900-01-01" max="2024-12-31" required>
+                            <button class="btn-primary" type="submit" id="id-popover">Iniciar Sesión</button>
+                        </form>
+
+                        <div class="social-login">
+                            <a href="#" class="icons-social"><img src="../assets/facebook.png.jpg" alt="Facebook"
+                                    class="img-social"></a>
+                            <a href="#" class="icons-social"><img src="../assets/google.png.jpg" alt="Twitter"
+                                    class="img-social"></a>
+                        </div>
+                        <hr class="line">
+
+                        <button class="btn-primary" popovertarget="id-popover-2">Registrarse</button>
+                    </div>
+                </div>
+
         </header>
 
         <!-- SCREEN JUEGO -->
@@ -88,7 +149,7 @@
                         Me gusta
                     </button>
                     <button class="btn-feedback">
-                        <span class="material-symbols-outlined icons-fdb"> thumb_down </span>
+                        <span class="material-symbols-outlined icons-fdñb"> thumb_down </span>
                         No Me Gusta
                     </button>
                 </div>
@@ -114,9 +175,9 @@
             <div class="game-images">
                 <h3>Imágenes del juego:</h3>
                 <div class="image-grid">
-                    <img src="assets/imagen1.jpg" alt="Imagen 1 del juego">
-                    <img src="assets/imagen2.jpg" alt="Imagen 2 del juego">
-                    <img src="assets/imagen3.jpg" alt="Imagen 3 del juego">
+                    <img src="" alt="Imagen 1 del juego">
+                    <img src="" alt="Imagen 2 del juego">
+                    <img src="" alt="Imagen 3 del juego">
                 </div>
             </div>
         </div>
@@ -126,19 +187,19 @@
             <h2>Otros juegos para ti</h2>
             <div class="game-card-container">
                 <div class="game-card">
-                    <img src="assets/juego1.jpg" alt="Juego Fellow Traveller">
+                    <img src="" alt="Juego Fellow Traveller">
                     <div class="game-info">
                         <button class="play-button">Jugar gratis</button>
                     </div>
                 </div>
                 <div class="game-card">
-                    <img src="assets/juego2.jpg" alt="Juego Satisfactory 1.0">
+                    <img src="" alt="Juego Satisfactory 1.0">
                     <div class="game-info">
                         <button class="play-button">Jugar gratis</button>
                     </div>
                 </div>
                 <div class="game-card">
-                    <img src="assets/juego3.jpg" alt="Juego Amber Isle">
+                    <img src="" alt="Juego Amber Isle">
                     <div class="game-info">
                         <button class="play-button">Jugar gratis</button>
                     </div>
@@ -147,67 +208,69 @@
         </div>
 
     </main>
-</body>
 
-<footer>
-    <div class="footer-container">
-        <section class="footer-logo">
-            <img src="../assets/logo.jfif" alt="CypherGaming Logo" class="logo-pag" />
-            <p>
-                <span class="word-1">CYPHER</span>
-                <span class="word-2">GAMING</span>
-            </p>
-        </section>
-        <section class="footer-links">
-            <div class="footer-column">
-                <h4>Categorías</h4>
-                <ul>
-                    <li><a href="#">Lanzamientos</a></li>
-                    <li><a href="#">Ofertas</a></li>
-                    <li><a href="#">Próximos</a></li>
-                    <li><a href="#">Top 100 juegos</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Mi cuenta</h4>
-                <ul>
-                    <li><a href="#">Logros</a></li>
-                    <li><a href="#">Informe</a></li>
-                    <li><a href="#">Historial de compra</a></li>
-                    <li><a href="#">Registro de transacciones</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Acerca de nosotros</h4>
-                <ul>
-                    <li><a href="#">Nuestra historia</a></li>
-                    <li><a href="#">Equipo de trabajo</a></li>
-                    <li><a href="#">Misión y visión</a></li>
-                    <li><a href="#">Contáctanos</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Ayuda</h4>
-                <ul>
-                    <li><a href="#">Soporte</a></li>
-                    <li><a href="#">Problema de comunicación</a></li>
-                    <li><a href="#">Preguntas Frecuentes (FAQ)</a></li>
-                    <li><a href="#">Términos y condiciones</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Comunidad</h4>
-                <ul>
-                    <li><a href="#">Foros</a></li>
-                    <li><a href="#">Noticias de la comunidad</a></li>
-                </ul>
-                <div class="social-icons">
-                    <a href="#"><img src="../assets/facebook.svg" alt="Facebook" /></a>
-                    <a href="#"><img src="../assets/twitter.svg" alt="Twitter Icon" /></a>
+
+    <footer>
+        <div class="footer-container">
+            <section class="footer-logo">
+                <img src="../assets/logo.jfif" alt="CypherGaming Logo" class="logo-pag" />
+                <p>
+                    <span class="word-1">CYPHER</span>
+                    <span class="word-2">GAMING</span>
+                </p>
+            </section>
+            <section class="footer-links">
+                <div class="footer-column">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="#">Lanzamientos</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Próximos</a></li>
+                        <li><a href="#">Top 100 juegos</a></li>
+                    </ul>
                 </div>
-            </div>
-        </section>
-    </div>
-</footer>
+                <div class="footer-column">
+                    <h4>Mi cuenta</h4>
+                    <ul>
+                        <li><a href="#">Logros</a></li>
+                        <li><a href="#">Informe</a></li>
+                        <li><a href="#">Historial de compra</a></li>
+                        <li><a href="#">Registro de transacciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Acerca de nosotros</h4>
+                    <ul>
+                        <li><a href="#">Nuestra historia</a></li>
+                        <li><a href="#">Equipo de trabajo</a></li>
+                        <li><a href="#">Misión y visión</a></li>
+                        <li><a href="#">Contáctanos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="#">Soporte</a></li>
+                        <li><a href="#">Problema de comunicación</a></li>
+                        <li><a href="#">Preguntas Frecuentes (FAQ)</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Comunidad</h4>
+                    <ul>
+                        <li><a href="#">Foros</a></li>
+                        <li><a href="#">Noticias de la comunidad</a></li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#"><img src="../assets/facebook.svg" alt="Facebook" /></a>
+                        <a href="#"><img src="../assets/twitter.svg" alt="Twitter Icon" /></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+    <script src="../js/js.js"></script>
+</body>
 
 </html>
