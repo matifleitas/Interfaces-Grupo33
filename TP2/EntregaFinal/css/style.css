@@ -317,10 +317,10 @@ body{
     }
 
     .conteiner-carruselPrimary {
-        padding-top: 40px;
-        width: 100%;
+        padding-top: 25px;
         height: 52%;
-        margin-left: 1%;
+        margin-left: 1.55%;
+        margin-right: 1.8%;
         overflow: hidden;
 
         .carrusel-titulo {
@@ -329,6 +329,7 @@ body{
                 font-size: 1rem;
                 color: #fff;
                 margin-left: 9px;
+                font-weight: 120;
             }
         }
 
@@ -340,11 +341,13 @@ body{
             .card-game::before {
 
                 width: 142px;
+                height: 33px;
                 position: absolute;
                 content: "Jugar gratis";
                 text-align: center;
                 color: var(--white);
-                border-radius: 8px;
+                border-top-left-radius: 8px;
+                border-bottom-right-radius: 8px;
                 bottom: 8px;
                 padding-top: 5px;
                 right: 0px;
@@ -367,7 +370,7 @@ body{
             .cardGameSecundary {
                 width: auto;
                 display: grid;
-                gap: 10px;
+                margin-right: 10px;
                 grid-template-areas:
                     "a b"
                     "c d";
@@ -770,7 +773,7 @@ body{
 /* ------------------------Footer------------------------- */
 
 footer {
-    padding: 20px 40px;
+    padding: 5px 15px;
     background-color: var(--dark-shddow);
     color: #fff;
     margin-top: 2.5rem;
@@ -831,7 +834,7 @@ footer {
 }
 
 .footer-column li {
-    margin-top: 12px;
+    margin-top: 8px;
 }
 
 .footer-column ul li a:hover {
