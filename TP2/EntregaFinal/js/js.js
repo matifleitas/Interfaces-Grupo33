@@ -16,18 +16,6 @@ let btnBefore = document.querySelector(".arrowLeft").addEventListener(
         translateCarrouselLeft(cards);
     }
 )
-
-
-/*
-const popover = document.querySelector("#id-popover");
-const login = document.querySelector('login-container');
-login.addEventListener('submit', (event) => {
-    event.preventDefault();
-    popover.showPopver();
-})
-*/
-
-
   
 btnSubmit.addEventListener('click', ocultarFormulario);
 let btnBeforeSecundary = document.querySelector("#btnBefore-carruselSec").addEventListener(
@@ -50,3 +38,4 @@ function translateCarrouselLeft(cardSize) {
         cardSize[index].style.transition = "2s"
     }
 }
+

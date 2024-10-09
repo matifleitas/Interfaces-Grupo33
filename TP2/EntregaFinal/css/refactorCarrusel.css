@@ -15,7 +15,7 @@
 
     --white: #FFFFFF;
 
-    --font-baloo: 'Baloo Bhai', regular;
+    --font-baloo: 'Baloo Bhai', cursive;
 
     --h1: 18px;
     --h2: 16px;
@@ -109,11 +109,13 @@
         width: 130px;
           
         .btn-sesion {
-           padding: 5px 5px;
-           text-transform: uppercase;
+            padding: 5px 5px;
+            text-transform: uppercase;
             border-radius: 80px;
             font-size: var(--h3);
+            /*font-weight: var(--h3);*/
             color: var(--white);
+            text-shadow: none;
             background: var(--primary-color);
             cursor: pointer;
             box-shadow: transparent;
@@ -635,130 +637,3 @@ footer {
     margin-right: 10px;
 }
 
-
-/* ------------------------Screen Juego------------------------- */
-
-.game{
-    background-color: var(--dark-gray);
-    display: flex;
-    flex-direction: column;
-}
-.game-content{
-    position: relative;
-    width: 100%;
-    height: auto;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-
-    .photo-game img{
-        width: 85%;
-        height: auto;
-        filter: blur(3px);
-        border-radius: 8px;
-    }
-
-    .photo-game{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .elements-canva-game{
-        position: absolute;
-        top: 40%;
-        left: 40%;
-        text-align: center;
-        z-index: 10;
-        color: var(--white);
-    }
-
-    .btn-play{
-            width: 50%;
-            height: 2.5rem;
-            border-radius: 80px;
-            background-color: var(--primary-color);
-            cursor: pointer;
-            color: var(--white);
-            margin-top: 1rem;
-    }
-
-}
-
-.info-game{
-    background-color: var(--dark-shddow);
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    align-items: center;
-    border-radius: 8px;
-    margin-top: 0;
-    color: var(--white);  
-    margin-left: 8.5rem;  
-
-    .logo-pag{
-        margin-top: 0.5rem;
-        margin-left: 1rem;
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-
-    .title-game{
-        text-align: center;
-        margin-left: 1rem;
-    }
-
-    .feedback{
-        margin-right:1rem;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .btn-feedback{
-        color: var(--white);
-        background-color: var(--dark-shddow);
-        border: none;
-        padding: 0.3rem;
-        transition: transform 0.2s ease-in-out, background-color 0.3s ease;
-        display: flex;
-        align-items: center;
-    }
-
-    .btn-feedback span{
-        padding:0.3rem;
-    }
-
-    .btn-feedback:hover{
-        background-color:var(--blackish);
-        border-radius: 8px;
-        transform: translateY(-2px);
-    }
-
-    
-
-}
-
-
-.breadcrumb {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:start;
-    padding: 10px 0;
-    font-size: 14px;
-    color: var(--white);
-    margin-left: 8.6rem;
-  }
-
-  .breadcrumb a {
-    text-decoration: none;
-    color: #fff; /* Color de los enlaces */
-    margin-right: 5px;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .breadcrumb a:hover {
-    text-decoration: underline;
-    transform: translateY(-1px);
-
-  }
