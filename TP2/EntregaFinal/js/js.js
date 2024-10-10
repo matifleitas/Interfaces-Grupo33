@@ -48,3 +48,4 @@ document.querySelector('.btn-hamburguesa').addEventListener(
             verticalNav.style.transform = "translate(0%)";
         }
     })
+
