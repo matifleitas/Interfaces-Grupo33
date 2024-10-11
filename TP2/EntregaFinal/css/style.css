@@ -38,6 +38,7 @@ body{
     min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
     margin: 0; 
     background-color: var(--dark-gray);
+    overflow:visible;
 }
 h1,h2,h3,h4{
     font-weight: 100;
