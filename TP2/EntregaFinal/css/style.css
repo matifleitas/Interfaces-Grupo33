@@ -133,6 +133,7 @@ h1,h2,h3,h4{
 
     .btn {
         position: relative;
+        border-style: none;
         display: inline-block;
         margin: 12px;
         padding: 5px 15px;
@@ -154,6 +155,7 @@ h1,h2,h3,h4{
         background-color: transparent;
         border-color: var(--primary-color) 1px;
         box-shadow: inset 0 -100px 0 0 transparent;
+        border: 1px solid var(--primary-color);
         
       }
       
@@ -407,6 +409,7 @@ h1,h2,h3,h4{
     
     .btn-sesion {
         width: 110px; 
+        border-style: none;
         height: 35px; 
         font-size: calc(var(--h3) - 2px); 
         padding: 4px 4px;
