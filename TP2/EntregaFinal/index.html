@@ -67,12 +67,11 @@
             </button>
         </div>
         <!--aca va el pop de iniciar sesion-->
-
         <div class="login-container" popover="manual" id="id-popover">
             <div class="login-box">
                 <div class="close-tittle">
                     <h2 class="sesion-text">Iniciar Sesión</h2>
-                        <button class="button-close">
+                        <button class="button-close" popovertarget="id-popover">
                             <span class="X"></span>
                             <span class="Y"></span>
                             <div class="close">Close</div>
@@ -105,7 +104,14 @@
 
             <div class="login-container" id="id-popover-2" popover="manual" id="login-container">
                 <div class="login-box2">
-                    <h2 class="sesion-text">Registrarse</h2>
+                    <div class="close-tittle">
+                        <h2 class="sesion-text">Registrarse</h2>
+                            <button class="button-close" popovertarget="id-popover-2">
+                                <span class="X"></span>
+                                <span class="Y"></span>
+                                <div class="close">Close</div>
+                            </button>  
+                    </div>      
                     <form class="form-singup" action="#" method="POST">
                         <input class="inputs" type="text" name="name" placeholder="Ingrese su nombre completo" required>
                         <input class="inputs" type="email" name="email" placeholder="Ingrese su correo" required>
