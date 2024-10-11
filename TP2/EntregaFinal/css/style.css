@@ -69,14 +69,13 @@ h1,h2,h3,h4{
 
     }
     .btn-hamburguesa:active {
-        transform: scale(2);
+        transform: scale(1.5);
         transition: 0.2s;
     }
     
     .nabvar-hamburguesa {
         width: 5%;
-        height: 3rem;
-        padding-top: 22px; /* Espacio arriba */
+        height: 1.5rem;
         padding-left: 28px; /* Espacio a la izquierda */
         cursor: pointer;
     }
