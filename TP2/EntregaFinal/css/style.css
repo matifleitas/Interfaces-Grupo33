@@ -913,7 +913,7 @@ footer {
     background-color: var(--dark-shddow);
     display: flex;
     justify-content: space-between;
-    width: 85%;
+    width: 83%;
     align-items: center;
     border-radius: 8px;
     margin-top: 0;
@@ -999,7 +999,7 @@ footer {
     background-color: var(--dark-shddow);
     border-radius:8px;
     margin-top: 25px;
-    width: 85%;
+    width: 83%;
     padding: 1rem;
     color: var(--white);
     
@@ -1047,14 +1047,14 @@ footer {
     margin-top: 1rem;
     background-color: var(--dark-shddow);
     border-radius: 8px;
-    width: 85%;
+    width: 83%;
     overflow: hidden;
     padding: 0.8rem;
 }
   .games-recommended-images{
     display: flex;
     flex-direction: row;
-    max-width: 85%;
+    max-width: 83%;
   }
 
   .game-card{
