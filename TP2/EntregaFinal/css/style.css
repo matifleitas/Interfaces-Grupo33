@@ -687,6 +687,11 @@ h1,h2,h3,h4{
         margin-left: 10px;
     }
 
+    .cont{
+        font-size: var(--h1);
+        color: var(--white);
+    }
+
     .dot {
         margin-left: 3px;
         animation: blink 1.5s infinite;
