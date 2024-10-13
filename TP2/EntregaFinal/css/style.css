@@ -71,10 +71,13 @@ h4 {
     z-index: 4;
     padding: 0px;
 
+    .divLupa-mobileFirs {
+        display: none;
+    }
+
     .btn-hamburguesa:hover {
         transform: scale(1.1);
         transition: 0.5s;
-
     }
 
     .btn-hamburguesa:active {
@@ -84,7 +87,7 @@ h4 {
 
     .nabvar-hamburguesa {
         width: 5%;
-        height: 3rem;
+        height: 4rem;
         padding-top: 22px;
         /* Espacio arriba */
         padding-left: 28px;
@@ -112,6 +115,10 @@ h4 {
             color: white;
             line-height: 90%;
             margin-left: 7px;
+
+            .span-title-logo {
+                font-size: var(--h3);
+            }
         }
     }
 
@@ -125,6 +132,7 @@ h4 {
         margin-left: 15%;
         justify-content: center;
         display: flex;
+        align-items: flex-end;
 
         .nav-div-input {
             width: 90%;
@@ -285,12 +293,12 @@ h4 {
 
             .card-game {
                 position: relative;
+                margin-left: 4px;
 
                 .card-img-game {
                     cursor: pointer;
-                    width: 409px;
+                    width: 400px;
                     height: 230px;
-                    margin-left: 0.5rem;
                     object-fit: cover;
                     border-radius: 8px;
                 }
@@ -298,9 +306,10 @@ h4 {
 
 
             .cardGameSecundary {
-                width: auto;
+                width: 400px;
                 display: grid;
-                margin-right: 10px;
+                height: 230px;
+                text-align: center;
                 grid-template-areas:
                     "a b"
                     "c d";
@@ -323,27 +332,29 @@ h4 {
 
                 :is(.a, .b, .c, .d)::before {
                     content: "Jugar gratis";
-                    width: 70%;
+                    width: 75%;
                     text-align: center;
                     color: white;
                     position: absolute;
                     background-color: var(--black-background-);
-                    right: 8px;
+                    right: 0;
                     height: 36px;
-                    bottom: 10px;
+                    bottom: 0;
                     border-top-left-radius: 8px;
                     border-bottom-right-radius: 8px;
                 }
 
                 .cardSmall-game {
                     position: relative;
+                    width: 200px;
+                    height: 112px;
 
                     .card-img-game-small {
                         object-fit: cover;
-                        width: 200px;
-                        height: 108px;
+                        width: 196px;
+                        height: 112px;
                         cursor: pointer;
-                        margin-right: 10px;
+                        margin-right: 2px;
                         border-radius: 8px;
                     }
                 }
@@ -392,50 +403,58 @@ h4 {
 
 /*-----------------MOBILE----------*/
 @media only screen and (max-width: 414px) {
-    .btn_ini_sesion .btn {
-        padding: 2px;
 
+    /* @media only screen and (max-width: 650px) { */
+    .navbar {
+        .divLupa-mobileFirs {
+            display: block;
+            width: 30%;
+        }
+
+        .nabvar-hamburguesa {
+            width: auto;
+            margin-left: -4%;
+            height: 4rem;
+        }
+
+        .navbar-contenedor-logo {
+            margin-left: -6%;
+            width: 24%;
+        }
+
+        .login-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+        }
+
+        .btn_ini_sesion {
+            .btn {
+                padding: 2px;
+
+                .icon-user {
+                    display: block;
+                    border-radius: 20px;
+                    background-color: var(--primary-color);
+                }
+            }
+        }
     }
 
-    body {
-        position: relative;
-    }
-
-    .navbar .login-container {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 50%;
-        left: 36%;
-    }
-
-    .btn_ini_sesion .btn .icon-user {
-        display: block;
-        border-radius: 20px;
-        background-color: var(--shadow-primary);
-    }
 
     .btn span {
         display: none;
     }
 
-    .conteiner-lupa {
-        border: 2px solid var(--gray);
-        color: white;
-        border-radius: 30px;
-        height: 40px;
-        width: 28%;
-        margin-right: 20%;
-        margin-left: 15%;
-        justify-content: center;
+    .navbar .conteiner-lupa {
         display: none;
     }
 
 
     .login-container {
         position: fixed;
-        /* top: 45%;
-        left: 50%; */
         top: 28%;
         left: 36%;
         transform: translate(-50%, -50%);
@@ -544,6 +563,105 @@ h4 {
         color: var(--white);
         margin: 5px 0;
     }
+
+    /* -------------Main Mobile--------- */
+    .galery-game {
+        .conteiner-carruselPrimary {
+            width: 400px;
+            margin: 0;
+            margin-left: 5px;
+            /* background-color: #070606; */
+            /* overflow: visible; */
+
+            .carrusel-primary {
+                /* width: (100/4); */
+                width: 400%;
+                /* border: 2px solid red; */
+
+                .card-game {
+                    /* width: calc(400px/4); */
+                    /* margin: 0 2px; no hace falta */
+
+                    .card-img-game {
+                        width: 392px;
+                        margin: 0;
+                    }
+                }
+
+                .arrowRigth {
+                    right: 75%;
+                }
+            }
+        }
+
+        .vertical-nav-wrapper {
+            .vertical-CategoriaNav {
+                height: 100vh;
+            }
+        }
+    }
+
+    /* ----------Footer Mobile------------ */
+
+    .footer-container {
+        width: 100%;
+        margin-top: 2.5rem;
+        height: 124vh;
+
+        .footer-logo {
+            /* flex: 1; */
+            font-size: 14px;
+
+            .logo-pag {
+                width: 40px;
+                height: 40px;
+                border-radius: 10px;
+            }
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+
+            .footer-column {
+                padding: 5px;
+
+                h4 {
+                    margin-top: 10px;
+                    font-size: 18px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+
+    .footer-links .footer-column ul li {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .footer-links .footer-column li {
+        margin-top: 0px;
+    }
+
+    .social-icons {
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .social-icons a {
+        margin-right: 10px;
+    }
+
+    .social-icons a img {
+        height: 35px;
+        width: 35px;
+    }
+
 }
 
 /* -----------------------------------------Sesion Login------------------------------------ */
