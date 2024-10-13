@@ -567,20 +567,20 @@ h4 {
     /* -------------Main Mobile--------- */
     .galery-game {
         .conteiner-carruselPrimary {
-            width: 400px;
+            width: 95%;
             margin: 0;
             margin-left: 5px;
-            /* background-color: #070606; */
-            /* overflow: visible; */
 
             .carrusel-primary {
-                /* width: (100/4); */
                 width: 400%;
-                /* border: 2px solid red; */
+
+                .card-game::before {
+                    bottom: 3.5%;
+                    width: 40%;
+                    right: 6%;
+                }
 
                 .card-game {
-                    /* width: calc(400px/4); */
-                    /* margin: 0 2px; no hace falta */
 
                     .card-img-game {
                         width: 392px;
