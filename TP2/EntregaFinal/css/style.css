@@ -460,6 +460,19 @@ h4 {
         display: none;
     }
 
+    .button-close {
+        width: 2.5rem; /* Unidades relativas para mejor escalabilidad */
+        height: 1.5rem;
+        border: none;
+        background: rgba(241, 7, 65, 0.747);
+        border-radius: 5px;
+        transition: background 0.5s;
+    }   
+    
+    .close-tittle{
+        display: flex;
+        justify-content: space-around;
+    }
 
     .login-container {
         position: fixed;
@@ -492,6 +505,8 @@ h4 {
         color: var(--white);
         font-size: 22px;
         margin-bottom: 10px;
+        margin-left: 77px;
+        margin-right: 33px;
     }
 
     .inputs {
