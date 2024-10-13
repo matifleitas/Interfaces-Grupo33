@@ -147,7 +147,7 @@ h4 {
             color: var(--white);
         }
 
-        .nav-inputText:focus{
+        .nav-inputText:focus {
             outline: none;
         }
 
@@ -878,7 +878,7 @@ h4 {
         margin-left: 10px;
     }
 
-    .cont{
+    .cont {
         font-size: var(--h1);
         color: var(--white);
     }

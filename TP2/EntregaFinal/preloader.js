@@ -13,6 +13,7 @@ window.addEventListener("load", function() {
         if (valorActual >= incremento) {
             clearInterval(intervaloID);
             preloader.style.display = "none"; 
-        document.body.classList.remove("hidden");
-    }, 4000); //  preguntar = 5 segundos
+            document.body.classList.remove("hidden"); 
+        }
+    }, intervalo);
 });
