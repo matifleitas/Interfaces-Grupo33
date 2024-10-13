@@ -81,7 +81,7 @@ h4 {
     }
 
     .btn-hamburguesa:active {
-        transform: scale(2);
+        transform: scale(1.5);
         transition: 0.2s;
     }
 
@@ -143,11 +143,16 @@ h4 {
             width: 100%;
             height: 1.8rem;
             background-color: var(--black-background-);
-            border: 2px solid black;
+            border: none;
+            color: var(--white);
+        }
+
+        .nav-inputText:focus{
+            outline: none;
         }
 
         .nav-divLupa {
-            margin-left: 10px;
+            margin-top: 0.3rem;
         }
     }
 
@@ -871,6 +876,11 @@ h4 {
         font-size: 14pt;
         font-weight: 600;
         margin-left: 10px;
+    }
+
+    .cont{
+        font-size: var(--h1);
+        color: var(--white);
     }
 
     .dot {
