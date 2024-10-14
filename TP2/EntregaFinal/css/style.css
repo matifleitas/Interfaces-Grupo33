@@ -301,6 +301,7 @@ h4 {
                 content: "Jugar gratis";
                 text-align: center;
                 color: var(--white);
+                font-size: 18px;
                 border-top-left-radius: 8px;
                 border-bottom-right-radius: 8px;
                 bottom: 9px;
