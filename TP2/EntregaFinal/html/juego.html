@@ -1,13 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="../css/style.css">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cypher Gaming</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
+
 <body>
-    
+    <main>
+        <header class="navbar">
+
+            <div class="nabvar-hamburguesa btn-hamburguesa">
+                <img class="nav-img-hamburguesa" src="../img/icono/Frame.svg" alt="btn">
+            </div>
+
+            <div class="navbar-contenedor-logo">
+                <div class="navbar-logo-img">
+                    <a href="../index.html"> <img class="navbar-logo" src="../img/logo/logo.png" height="40rem"
+                            width="40rem" alt=" logo">
+                    </a>
+                </div>
+                <div class="navbar-title">CYPHER GAMING</div>
+            </div>
+
+            <div class="conteiner-lupa">
+                <div class="nav-div-input">
+                    <input class="nav-inputText" type="text" placeholder="Buscar juegos...">
+                </div>
+                <div class="nav-divLupa">
+                    <span class="material-symbols-outlined lupa">
+                        search
+                        </span>
+                </div>
+            </div>
+
+            <div class="conteiner-user">
+                <button class="btn" id="btn-sesion" popovertarget="id-popover">
+                    Iniciar Sesión
+                </button>
+            </div>
+
+            <!--aca va el pop de iniciar sesion-->
+
+            <div class="login-container" popover="manual" id="id-popover">
+                <div class="login-box">
+                    <h2 class="sesion-text">Iniciar Sesión</h2>
+                    <form class="form-singin" action="#" method="POST">
+                        <input class="inputs" type="email" name="email" placeholder="Ingrese su correo" required>
+                        <input class="inputs" type="password" name="password" placeholder="Ingrese su contraseña"
+                            required>
+                        <button class="btn-primary" type="submit" popovertarget="id-popover">Iniciar Sesión</button>
+                    </form>
+
+                    <div class="social-login">
+                        <div class="txt-login2">O iniciar sesión con</div>
+
+                    </div>
+                    <div class="social-login">
+                        <a href="#" class="icons-social"><img src="../assets/facebook.svg" alt="Facebook"
+                                class="img-social"></a>
+                        <a href="#" class="icons-social"><img src="../assets/google.png.jpg" alt="Twitter"
+                                class="img-social"></a>
+                    </div>
+                    <hr class="line">
+                    <div class="register">
+                        <div class="txt-login2">Si no tienes cuenta regístrate aquí</div>
+                    </div>
+                    <button class="btn-primary" popovertarget="id-popover-2">Registrarse</button>
+                </div>
+
+                <!-- aca el register-->
+
+                <div class="login-container" id="id-popover-2" popover="manual" id="login-container">
+                    <div class="login-box">
+                        <h2 class="sesion-text">Registrarse</h2>
+                        <form class="form-singup" action="#" method="POST">
+                            <input class="inputs" type="text" name="name" placeholder="Ingrese su nombre completo"
+                                required>
+                            <input class="inputs" type="email" name="email" placeholder="Ingrese su correo" required>
+                            <input class="inputs" type="text" name="nameUser" placeholder="Ingrese su nombre de usuario"
+                                required>
+                            <input class="inputs" type="password" name="password" placeholder="Ingrese su contraseña"
+                                required>
+                            <input class="inputs" type="password" name="password" placeholder="Confirme su contraseña"
+                                required>
+                            <input class="date-birthdate" type="date" name="birthdate" id="fecha_nacimiento"
+                                min="1900-01-01" max="2024-12-31" required>
+                            <button class="btn-primary" type="submit" id="id-popover">Iniciar Sesión</button>
+                        </form>
+
+                        <div class="social-login">
+                            <a href="#" class="icons-social"><img src="../assets/facebook.png.jpg" alt="Facebook"
+                                    class="img-social"></a>
+                            <a href="#" class="icons-social"><img src="../assets/google.png.jpg" alt="Twitter"
+                                    class="img-social"></a>
+                        </div>
+                        <hr class="line">
+
+                        <button class="btn-primary" popovertarget="id-popover-2">Registrarse</button>
+                    </div>
+                </div>
+
+        </header>
+
+        <!-- SCREEN JUEGO -->
+        <div class="screen-game-complete">
+
+            <div class="game">
+                <div class="breadcrumb-container">
+                    <div class="breadcrumb">
+                        <a href="#">Inicio ></a>
+                        <a href="#">Juegos ></a>
+                        <a href="#">Estrategia ></a>
+                        <a href="#">4 en línea: Batman vs Joker</a>
+                    </div>
+                </div>
+
+                <div class="game-canva">
+                    <div class="game-content">
+                        <div class="photo-game">
+                            <img class="game-photo" src="../assets/imgGame.png" alt="fotoJuego" />
+                        </div>
+                        <div class="elements-canva-game">
+                            <div class="text-box">
+                                <h1>Batman vs Joker</h1>
+                                <button class="button-with-icon">
+                                    <span class="material-symbols-outlined icon">
+                                        sports_esports
+                                        </span>
+                                    <span class="text">JUGAR</span>
+                                  </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="info-game">
+                    <div class="left">
+                        <img class="logo-pag" src="../img/logo/logo.png" alt="CypherGaming Logo" />
+                    </div>
+                    <div class="title-game">
+                        <h3>4 en linea: Batman vs Joker</h3>
+                    </div>
+                    <div class="feedback">
+                        <button class="btn-feedback">
+                            <span class="material-symbols-outlined icons-fdb"> thumb_up </span>
+                            Me gusta
+                        </button>
+                        <button class="btn-feedback">
+                            <span class="material-symbols-outlined icons-fdñb"> thumb_down </span>
+                            No Me Gusta
+                        </button>
+                    </div>
+
+                </section>
+                <!--instrucciones del juego-->
+                <div class="game-info-container">
+                    <div class="how-to-play">
+                        <h3>¿Cómo jugar?</h3>
+                        <ul>
+                            <li>Coloca tus fichas en las columnas del tablero.</li>
+                            <li>Gana conectando 4 fichas de tu color en línea, ya sea horizontal, vertical o
+                                diagonalmente.
+                            </li>
+                            <li>Usa las teclas de flecha o el mouse para mover y soltar las fichas.</li>
+                            <li>Si necesitas más ayuda puedes ver el siguiente video:
+                                <a
+                                    href="https://www.youtube.com/watch?v=JBSbilizg9U">https://www.youtube.com/watch?v=JBSbilizg9U</a>
+                            </li>
+                        </ul>
+                        <h3 class="game-controls-title">Controles:</h3>
+                        <div class="game-controls">
+                            <img class="img-controls" src="../assets/controls-game.png" alt="controls">
+                            <span>Colocar Ficha</span>
+                            <img class="img-controls-move" src="../assets/controls-game2.png" alt="controls">
+                            <span>Mover</span>
+                        </div>
+                    </div>
+
+                    <div class="game-images">
+                        <h3>Imágenes del juego:</h3>
+                        <div class="game-images-playing">
+                            <img src="../assets/photoInGame2.png" alt="Imagen 1 del juego">
+                            <img src="../assets/photoInGame2.png" alt="Imagen 2 del juego">
+                            <img src="../assets/photoInGame3.png" alt="Imagen 3 del juego">
+                        </div>
+                    </div>
+                </div>
+
+                <!--recomendados-->
+                <div class="games-recommended">
+                    <div class="games-recommended-elements">
+                        <h3>Otros juegos para ti</h3>
+                        <div class="games-recommended-images">
+                            <div class="game-card">
+                                <img src="../assets/CardFree.png" alt="Juego Fellow Traveller">
+                                <div class="game-info">
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img src="../assets/CardFree2.png" alt="Juego Satisfactory 1.0">
+                                <div class="game-info">
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img class="img-recommended" src="../assets/CardFullImage3.png" alt="Juego Amber Isle">
+                                <div class="game-info">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comments">
+                    <div class="comments-container">
+                        <div class="header-comments">
+                            <h3><span class="material-symbols-outlined">
+                                    forum
+                                </span>
+                                Comentarios
+                            </h3>
+                        </div>
+                        <div class="comments-body-container">
+                            <div class="addComment-elements">
+                                <div class="userIcon">
+                                    <img src="../assets/Avatar.png" alt="avatar" srcset="">
+                                    <span class="nameUser">Usuario</span>
+                                </div>
+                                <div class="addComment-container">
+                                    <textarea placeholder="Ingresa un comentario..." name="input-commment"
+                                        id="input-addComment" class="input-addComment"></textarea>
+                                    <div class="btn-sendComment">
+                                        <button>Enviar comentario</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="users-comments">
+                        <div class="user-comments-header">
+                            <span class="selected">ULTIMOS COMENTARIOS</span>
+                            <span class="not-selected">COMENTARIOS DESTACADOS</span>
+                        </div>
+                        <div class="usersComments-show">
+                            <div class="userComment-container">
+                                <div class="userComment-post">
+                                    <div class="userComment-header">
+                                        <div class="userComment-info">
+                                            <img src="../assets/Avatar.png" alt="User Avatar" class="avatar">
+                                            <span class="username">Riquelme</span>
+                                            <span class="time-ago">hace 7 horas</span>
+                                        </div>
+                                        <div class="comment-actions">
+                                            <div class="likes">
+                                                <button class="btn-feedback">
+                                                    <span class="material-symbols-outlined">
+                                                        thumb_up
+                                                    </span>
+                                                    <span>411</span>
+                                                </button>
+                                            </div>
+                                            <button class="btn-feedback">Responder</button>
+                                        </div>
+                                    </div>
+                                    <div class="comment-content">
+                                        <p class="comment-text">Muy buen juego, me pone feliz.</p>
+                                    </div>
+                                </div>
+                                <div class="comment-replys">
+                                    <span class="material-symbols-outlined">
+                                        arrow_drop_up
+                                    </span>
+                                    <span>1 respuesta</span>
+                                </div>
+                            </div>
+                            <div class="userComment-container">
+                                <div class="user-reply">
+                                    <div class="userComment-header">
+                                        <div class="userComment-info">
+                                            <img src="../assets/Avatar.png" alt="User Avatar" class="avatar">
+                                            <span class="username">masche21</span>
+                                            <span class="time-ago">hace 8 horas</span>
+                                        </div>
+                                        <div class="comment-actions">
+                                            <div class="likes">
+                                                <button class="btn-feedback">
+                                                    <span class="material-symbols-outlined">
+                                                        thumb_up
+                                                    </span>
+                                                    <span>7</span>
+                                                </button>
+                                            </div>
+                                            <button class="btn-feedback">Responder</button>
+                                        </div>
+                                    </div>
+                                    <div class="comment-content">
+                                        <p class="comment-text">es verdad riquelme yo tambien me divertí, estoy feliz.
+                                        </p>
+                                    </div>
+                                </div><!-- replys -->
+                            </div>
+                            <div class="userComment-container">
+                                <div class="userComment-post">
+
+                                    <div class="userComment-header">
+                                        <div class="userComment-info">
+                                            <img src="../assets/Avatar.png" alt="User Avatar" class="avatar">
+                                            <span class="username">pablo321</span>
+                                            <span class="time-ago">hace 10 horas</span>
+                                        </div>
+                                        <div class="comment-actions">
+                                            <div class="likes">
+                                                <button class="btn-feedback">
+                                                    <span class="material-symbols-outlined">
+                                                        thumb_up
+                                                    </span>
+                                                    <span>220</span>
+                                                </button>
+                                            </div>
+                                            <button class="btn-feedback">Responder</button>
+                                        </div>
+                                    </div>
+                                    <div class="comment-content">
+                                        <p class="comment-text">el juego está divertido</p>
+                                    </div>
+                                </div>
+                                <div class="comment-replys">
+                                    <span class="material-symbols-outlined">
+                                        arrow_drop_up
+                                    </span>
+                                    <span>2 respuestas</span>
+                                </div>
+                            </div>
+                            <div class="userComment-container">
+                                <div class="user-reply">
+                                    <div class="userComment-header">
+                                        <div class="userComment-info">
+                                            <img src="../assets/Avatar.png" alt="User Avatar" class="avatar">
+                                            <span class="username">cavani321</span>
+                                            <span class="time-ago">hace 8 horas</span>
+                                        </div>
+                                        <div class="comment-actions">
+                                            <div class="likes">
+                                                <button class="btn-feedback">
+                                                    <span class="material-symbols-outlined">
+                                                        thumb_up
+                                                    </span>
+                                                    <span>7</span>
+                                                </button>
+                                            </div>
+                                            <button class="btn-feedback">Responder</button>
+                                        </div>
+                                    </div>
+                                    <div class="comment-content">
+                                        <p class="comment-text">queres jugar?</p>
+                                    </div>
+                                </div><!-- replys -->
+                            </div>
+                            <div class="userComment-container">
+                                <div class="user-reply">
+                                    <div class="userComment-header">
+                                        <div class="userComment-info">
+                                            <img src="../assets/Avatar.png" alt="User Avatar" class="avatar">
+                                            <span class="username">pablo321</span>
+                                            <span class="time-ago">hace 2 horas</span>
+                                        </div>
+                                        <div class="comment-actions">
+                                            <div class="likes">
+                                                <button class="btn-feedback">
+                                                    <span class="material-symbols-outlined">
+                                                        thumb_up
+                                                    </span>
+                                                    <span>7</span>
+                                                </button>
+                                            </div>
+                                            <button class="btn-feedback">Responder</button>
+                                        </div>
+                                    </div>
+                                    <div class="comment-content">
+                                        <p class="comment-text">si mandame solicitud</p>
+                                    </div>
+                                </div><!-- replys -->
+                                <div class="userscomments-show">
+                                    <div class="userComment-container">
+                                        <div class="userComment-post">
+
+                                            <div class="userComment-header">
+                                                <div class="userComment-info">
+                                                    <img src="../assets/Avatar.png" alt="User Avatar" class="avatar">
+                                                    <span class="username">Scaloni</span>
+                                                    <span class="time-ago">hace 3 horas</span>
+                                                </div>
+                                                <div class="comment-actions">
+                                                    <div class="likes">
+                                                        <button class="btn-feedback">
+                                                            <span class="material-symbols-outlined">
+                                                                thumb_up
+                                                            </span>
+                                                            <span>3</span>
+                                                        </button>
+                                                    </div>
+                                                    <button class="btn-feedback">Responder</button>
+                                                </div>
+                                            </div>
+                                            <div class="comment-content">
+                                                <p class="comment-text">deberian agregar otro modo, no me gusta este</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-replys">
+                                        <span class="material-symbols-outlined">
+                                            arrow_drop_down
+                                        </span>
+                                        <span>5 respuestas</span>
+                                    </div>
+                                </div> <!-- container comentarios -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+    </main>
+
+
+    <footer>
+        <div class="footer-container">
+            <section class="footer-logo">
+                <img src="../assets/logo.jfif" alt="CypherGaming Logo" class="logo-pag" />
+                <p>
+                    <span class="word-1">CYPHER</span>
+                    <span class="word-2">GAMING</span>
+                </p>
+            </section>
+            <section class="footer-links">
+                <div class="footer-column">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="#">Lanzamientos</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Próximos</a></li>
+                        <li><a href="#">Top 100 juegos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Mi cuenta</h4>
+                    <ul>
+                        <li><a href="#">Logros</a></li>
+                        <li><a href="#">Informe</a></li>
+                        <li><a href="#">Historial de compra</a></li>
+                        <li><a href="#">Registro de transacciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Acerca de nosotros</h4>
+                    <ul>
+                        <li><a href="#">Nuestra historia</a></li>
+                        <li><a href="#">Equipo de trabajo</a></li>
+                        <li><a href="#">Misión y visión</a></li>
+                        <li><a href="#">Contáctanos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="#">Soporte</a></li>
+                        <li><a href="#">Problema de comunicación</a></li>
+                        <li><a href="#">Preguntas Frecuentes (FAQ)</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Comunidad</h4>
+                    <ul>
+                        <li><a href="#">Foros</a></li>
+                        <li><a href="#">Noticias de la comunidad</a></li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#"><img src="../assets/facebook.svg" alt="Facebook" /></a>
+                        <a href="#"><img src="../assets/twitter.svg" alt="Twitter Icon" /></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+    <script src="../js/js.js"></script>
 </body>
+
 </html>

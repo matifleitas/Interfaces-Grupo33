@@ -1,3 +1,4 @@
 {
-    "workbench.tree.renderIndentGuides": "none"
+    "workbench.tree.renderIndentGuides": "none",
+    "liveServer.settings.port": 5502
 }
