@@ -10,8 +10,12 @@
     --black-background-: #070606;
     --dark-gray: #333;
     --dark-shddow: #4F4F4F;
+    --bg-color-divs-game:rgba(79, 79, 79, 0.15);
+    --bg-comments:rgba(51,51,51,0.30);
     --blackish: #767676;
     --gray: #B0AAAA;
+
+    --secondary-color:#4B8EA5;
 
     --white: #FFFFFF;
 
@@ -40,7 +44,7 @@ body {
     /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
     margin: 0;
     background-color: var(--dark-gray);
-    overflow: visible;
+    overflow:visible;
 }
 
 h1,
@@ -1277,34 +1281,37 @@ footer {
         margin-right: 1rem;
         display: flex;
         flex-direction: row;
+        gap:1rem;
     }
 
-    .btn-feedback {
-        color: var(--white);
-        background-color: var(--dark-shddow);
-        border: none;
-        padding: 0.3rem;
-        transition: transform 0.2s ease-in-out, background-color 0.3s ease;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-    }
 
-    .btn-feedback span {
-        padding: 0.3rem;
-    }
+}
 
-    .btn-feedback:hover {
-        background-color: var(--blackish);
-        border-radius: 8px;
-        transform: translateY(-2px);
-    }
+.btn-feedback {
+    color: var(--white);
+    background-color:transparent;
+    border: none;
+    padding: 0.3rem;
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+}
 
+.btn-feedback span {
+    padding: 0.3rem;
+}
+
+.btn-feedback:hover {
+    background-color: var(--blackish);
+    border-radius: 8px;
+    transform: translateY(-2px);
 }
 
 .breadcrumb-container {
     align-self: flex-start;
-    margin-left: 8%;
+    margin-left: 9%;
     position: relative;
 }
 
@@ -1337,16 +1344,24 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
 .game-info-container {
-    background-color: var(--dark-shddow);
     border-radius: 8px;
     margin-top: 25px;
     width: 83%;
     padding: 1rem;
     color: var(--white);
+    background-color: rgba(79, 79, 79, 0.15)
 
+}
+
+.how-to-play{
+    background-color: var(--dark-shddow);
+    border-radius: 8px;
+    padding: 0.5rem;
+    
 }
 
 
@@ -1360,10 +1375,15 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     margin-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .game-images {
+    padding: 0.5rem;
     margin-top: 1rem;
+    background-color: var(--dark-shddow);
+    border-radius: 8px;
+
 }
 
 .img-controls {
@@ -1376,6 +1396,8 @@ footer {
 }
 
 .game-controls {
+    background-color:var(--dark-shddow);
+    border-radius: 8px;
     display: flex;
     align-items: center;
     margin-top: 0.5rem;
@@ -1389,23 +1411,257 @@ footer {
 .games-recommended {
     color: var(--white);
     margin-top: 1rem;
-    background-color: var(--dark-shddow);
+    background-color: var(--bg-color-divs-game);
     border-radius: 8px;
     width: 83%;
     overflow: hidden;
     padding: 0.8rem;
 }
 
+.games-recommended-elements{
+    background-color: var(--dark-shddow);
+    overflow: hidden;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
 .games-recommended-images {
     display: flex;
     flex-direction: row;
     max-width: 83%;
+    margin-top: 1rem;
 }
 
 .game-card {
     margin-right: 0.5rem;
     margin-left: 0.5rem
 }
+/* ------------------------Screen Juego:comments------------------------- */
+.comments{
+    color: var(--white);
+    background-color: var(--bg-color-divs-game);
+    border-radius: 8px;
+    margin-top: 1rem;
+    width: 83%;
+    padding: 1rem;
+}
+
+.header-comments{
+    border-bottom: 0.5px solid var(--white);
+    width: 100%;
+    align-items: center;
+    align-self: flex-start;
+    
+}
+
+.addComment-elements{
+    background-color: var(--dark-gray);
+    margin-top:1rem;
+    border-radius: 8px;
+}
+
+.comments-container{
+    padding: 0.5rem;
+    border-radius: 8px;
+    background-color: var(--dark-shddow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comments-body-container{
+    width: 95%;
+}
+
+.userIcon{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--white);
+    padding: 0.3rem;
+}
+
+.userIcon span{
+    margin-left: 0.5rem;
+}
+
+.input-addComment{
+    background-color: transparent;
+    border-style: none;
+    height: 100%;
+    padding: 0.5rem;
+}
+
+textarea{
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    resize: none; 
+    overflow: hidden; 
+    color: white; 
+}
+
+.input-addComment:focus{
+    outline: none;
+}
+
+.addComment-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.btn-sendComment{
+    align-self: flex-end;
+    button{
+        background-color: var(--secondary-color);
+        color: white;
+        width: 130px;
+        height: 40px;
+        border-radius: 8px;
+        border-style: none;
+        cursor: pointer;
+    }
+}
+
+.users-comments{
+    background-color: var(--dark-shddow);
+    margin-top: 1rem;
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-comments-header{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--white);  
+}
+
+.not-selected{
+    margin-left: 2rem;
+    color: rgba(255, 255, 255, 0.30);
+}
+
+.userComment-post{
+    margin-top: 1rem;
+    background-color: var(--dark-gray);
+    width: 95%;
+    border-radius: 8px;
+    align-self: center;
+}
+
+.userComment-header{
+    border-bottom: 1px solid var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0.2rem;
+}
+
+.username{
+    font-size: 16px;
+    margin-left: 0.5rem;
+}
+
+.comment-actions{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0.2rem;
+}
+
+.userComment-info{
+    display: flex;
+    align-items: center;
+}
+
+.time-ago{
+    color: rgba(255, 255, 255, 0.30);
+    margin-left: 1rem;
+    font-size: 12px;
+}
+
+.comment-content{
+    padding: 2rem;
+}
+
+.user-reply{
+    width: 65%;
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+    margin-left: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.comment-replys{
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+}
+
+.usersComments-show{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .userComment-container{
+        width: 95%;
+    }
+}
+
+/*<---------------------- BOTON JUGAR ANIMACION ------------------>*/
+
+.button-with-icon {
+    border-style: none;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+    padding: 0 12px;
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius:8px;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+    transform: translateY(0px);
+    position: relative;
+    background-color: var(--primary-color);
+    color: white;
+    transition: 150ms all ease-in-out;
+  }
+
+  .button-with-icon .icon {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .button-with-icon:active {
+    transform: translateY(3px);
+  }
+
+  .button-with-icon:hover .text {
+    transform: translateX(80px);
+  }
+  .button-with-icon:hover .icon {
+    transform: translate(23px);
+  }
+  
+  .text {
+    transition: all 0.5s ease-in-out;
+  }
+
 
 /* From Uiverse.io by xopc333 */ 
 .button {
