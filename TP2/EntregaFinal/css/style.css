@@ -339,7 +339,7 @@ h4 {
                     cursor: pointer;
                     width: 400px;
                     height: 240px;
-                    object-fit: cover;
+                    object-fit: fill;
                     border-radius: 8px;
                 }
             }
@@ -394,7 +394,7 @@ h4 {
                     height: 112px;
 
                     .card-img-game-small {
-                        object-fit: cover;
+                        object-fit: fill;
                         width: 196px;
                         height: 112px;
                         cursor: pointer;
