@@ -264,6 +264,11 @@ h4 {
         margin-right: 1.8%;
         overflow: hidden;
 
+        .card-game.inclinar {
+            transform: skewY(-6deg); /* Inclinación hacia la izquierda */
+            transition: transform 0.3s ease; /* Efecto de transición */
+        }
+
         .carrusel-titulo {
 
             .h2-carrusel {
@@ -300,6 +305,8 @@ h4 {
                 position: relative;
                 margin-left: 4px;
                 margin: 5px;
+                transition: transform 0.1s ease; /* Asegúrate de que haya una transición */
+
 
                 .card-img-game {
                     cursor: pointer;
