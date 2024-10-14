@@ -136,7 +136,11 @@ h4 {
         margin-left: 15%;
         justify-content: center;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
+
+        .lupa{
+            color: rgba(255, 255, 255, 0.65);
+        }
 
         .nav-div-input {
             width: 90%;
