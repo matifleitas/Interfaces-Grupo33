@@ -48,25 +48,6 @@ btnBefore.forEach(btn => {
     });
 });
 
-// -------------- botones para el Destkop------------------
-// btnNext.forEach(btn => {
-//     btn.addEventListener("click", function (e) {
-//         // Encuentra el contenedor más cercano del carrusel en el que está el botón
-//         let cardContainer = e.target.closest(".conteiner-carruselPrimary");
-//         cards = cardContainer.querySelectorAll(".card-game");
-//         translateCarrousel(cards);
-//     });
-// });
-
-// btnBefore.forEach(btn => {
-//     btn.addEventListener("click", function (e) {
-//         let cardContainer = e.target.closest(".conteiner-carruselPrimary");
-//         cards = cardContainer.querySelectorAll(".card-game");
-//         translateCarrouselLeft(cards); // Mueve solo las tarjetas de ese carrusel
-
-//     });
-// });
-
 // -----------funciones-------------
 function translateCarrousel(cardSize, operacion) {
     for (let index = 0; index < cardSize.length; index++) {
@@ -82,23 +63,6 @@ function translateCarrouselLeft(cardSize, operacion) {
         cardSize[index].style.transition = " ease-in-out .6s";
     }
 }
-
-
-// -----------------funciones para desktop----------
-// function translateCarrousel(cardSize) {
-//     for (let index = 0; index < cardSize.length; index++) {
-//         console.log(cardSize.length)
-//         cardSize[index].style.transform = "translateX(-25%)";
-//         cardSize[index].style.transition = "0.5s";
-//     }
-// }
-
-// function translateCarrouselLeft(cardSize) {
-//     for (let index = 0; index < cardSize.length; index++) {
-//         cardSize[index].style.transform = "translateX(0)";
-//         cardSize[index].style.transition = "0.5s";
-//     }
-// }
 
 let verticalNav = document.querySelector(".vertical-nav-wrapper")
 document.querySelector('.btn-hamburguesa').addEventListener(
