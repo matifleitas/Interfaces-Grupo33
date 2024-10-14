@@ -3,6 +3,7 @@
 let cards = document.querySelectorAll(".card-game")
 let btnNext = document.querySelectorAll(".arrowRigth");
 let btnBefore = document.querySelectorAll(".arrowLeft");
+let cartCantItems= document.querySelector(".cart-cantItems");
 let operacion = 0;
 let counter = 0
 let pixelWidth = 1;
