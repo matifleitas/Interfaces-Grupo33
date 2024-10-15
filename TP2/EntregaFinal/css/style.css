@@ -1801,3 +1801,13 @@ textarea{
 .logOutIcon a{
     margin-top: 8px;
 }
+
+.cart-cantItems{
+    margin-left: 0.5rem;
+    color: var(--white);
+}
+
+
+.hidden-items{
+    display: none;
+}

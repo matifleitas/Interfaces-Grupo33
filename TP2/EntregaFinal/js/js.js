@@ -3,6 +3,7 @@
 let cards = document.querySelectorAll(".card-game")
 let btnNext = document.querySelectorAll(".arrowRigth");
 let btnBefore = document.querySelectorAll(".arrowLeft");
+let cardPremium= document.querySelector(".cardPremium-game");
 let cartCantItems= document.querySelector(".cart-cantItems");
 let operacion = 0;
 let counter = 0
@@ -75,3 +76,7 @@ document.querySelector('.btn-hamburguesa').addEventListener(
             verticalNav.style.transform = "translate(0%)";
         }
     })
+
+cardPremium.addEventListener("click",()=>{
+    cartCantItems.classList.remove("hidden-items");
+})
