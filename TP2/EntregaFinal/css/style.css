@@ -1800,3 +1800,13 @@ textarea{
 .logOutIcon a{
     margin-top: 8px;
 }
+
+.cart-cantItems{
+    color:var(--white);
+    margin-left: 1rem;
+    text-align: center;
+}
+
+.hidden{
+    display: none;
+}
