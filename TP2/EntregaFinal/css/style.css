@@ -502,7 +502,6 @@ h4 {
         width: 2.5rem; /* Unidades relativas para mejor escalabilidad */
         height: 1.5rem;
         border: none;
-        background: rgba(241, 7, 65, 0.747);
         border-radius: 5px;
         transition: background 0.5s;
     }   
@@ -762,7 +761,7 @@ h4 {
         width: 2.5em;
         height: 2.5em;
         border: none;
-        background: rgba(180, 83, 107, 0.11);
+        background: var(--black-background-);
         border-radius: 5px;
         transition: background 0.5s;
         margin-bottom: auto;
