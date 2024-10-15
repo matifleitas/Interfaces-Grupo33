@@ -22,51 +22,62 @@
             <div class="nabvar-hamburguesa btn-hamburguesa">
                 <img class="nav-img-hamburguesa" src="../img/icono/Frame.svg" alt="btn">
             </div>
-
+    
             <div class="navbar-contenedor-logo">
                 <div class="navbar-logo-img">
-                    <a href="../index.html"> <img class="navbar-logo" src="../img/logo/logo.png" height="40rem"
-                            width="40rem" alt=" logo">
+                    <a href="../index.html"> <img class="navbar-logo" src="../img/logo/logo.png" height="40rem" width="40rem" alt=" logo">
                     </a>
                 </div>
-                <div class="navbar-title">CYPHER GAMING</div>
+                <div class="navbar-title"> <span class="span-title-logo">CYPHER GAMING</span></div>
             </div>
-
+    
+            <div class="divLupa-mobileFirs">
+                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="35" viewBox="0 0 20 20" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9 3.50002C7.54131 3.50002 6.14236 4.07948 5.11091 5.11093C4.07946 6.14238 3.5 7.54133 3.5 9.00002C3.5 10.4587 4.07946 11.8577 5.11091 12.8891C6.14236 13.9206 7.54131 14.5 9 14.5C10.4587 14.5 11.8576 13.9206 12.8891 12.8891C13.9205 11.8577 14.5 10.4587 14.5 9.00002C14.5 7.54133 13.9205 6.14238 12.8891 5.11093C11.8576 4.07948 10.4587 3.50002 9 3.50002ZM2 9.00002C2.00009 7.88069 2.26861 6.7777 2.78303 5.78358C3.29745 4.78946 4.04276 3.9332 4.95645 3.28662C5.87015 2.64004 6.92557 2.22199 8.0342 2.06756C9.14282 1.91312 10.2723 2.0268 11.3279 2.39904C12.3836 2.77129 13.3345 3.39126 14.101 4.20694C14.8676 5.02262 15.4273 6.01022 15.7333 7.08691C16.0393 8.1636 16.0827 9.29798 15.8597 10.3949C15.6368 11.4918 15.154 12.5192 14.452 13.391L17.78 16.72C17.8537 16.7887 17.9128 16.8715 17.9538 16.9635C17.9948 17.0555 18.0168 17.1548 18.0186 17.2555C18.0204 17.3562 18.0018 17.4562 17.9641 17.5496C17.9264 17.643 17.8703 17.7278 17.799 17.7991C17.7278 17.8703 17.643 17.9264 17.5496 17.9641C17.4562 18.0019 17.3562 18.0204 17.2555 18.0186C17.1548 18.0168 17.0555 17.9948 16.9635 17.9538C16.8715 17.9128 16.7887 17.8537 16.72 17.78L13.391 14.452C12.3625 15.2804 11.1207 15.801 9.80901 15.9536C8.49727 16.1062 7.16912 15.8847 5.97795 15.3145C4.78677 14.7444 3.78117 13.849 3.07727 12.7316C2.37338 11.6143 1.99991 10.3206 2 9.00002Z"
+                        fill="#D9D9D9" />
+                </svg>
+            </div>
+    
             <div class="conteiner-lupa">
                 <div class="nav-div-input">
                     <input class="nav-inputText" type="text" placeholder="Buscar juegos...">
                 </div>
                 <div class="nav-divLupa">
-                    <span class="material-symbols-outlined lupa">
+                    <span class="material-symbols-outlined">
                         search
-                        </span>
+                    </span>
                 </div>
             </div>
-
-            <div class="conteiner-user">
-                <button class="btn" id="btn-sesion" popovertarget="id-popover">
-                    Iniciar Sesión
+            <div class="btn_ini_sesion">
+                <button class="btn" id="btn-sesion" popovertarget="id-popover"> <img class="icon-user" width="35px"
+                        height="35px" src="../assets/usuario.svg" alt=""> <span>
+                        Iniciar Sesion</span>
                 </button>
             </div>
-
             <!--aca va el pop de iniciar sesion-->
-
             <div class="login-container" popover="manual" id="id-popover">
                 <div class="login-box">
-                    <h2 class="sesion-text">Iniciar Sesión</h2>
+                    <div class="close-tittle">
+                        <h2 class="sesion-text">Iniciar Sesión</h2>
+                        <button class="button-close" popovertarget="id-popover">
+                            <span class="X"></span>
+                            <span class="Y"></span>
+                            <div class="close">Close</div>
+                        </button>
+                    </div>
                     <form class="form-singin" action="#" method="POST">
                         <input class="inputs" type="email" name="email" placeholder="Ingrese su correo" required>
-                        <input class="inputs" type="password" name="password" placeholder="Ingrese su contraseña"
-                            required>
-                        <button class="btn-primary" type="submit" popovertarget="id-popover">Iniciar Sesión</button>
+                        <input class="inputs" type="password" name="password" placeholder="Ingrese su contraseña" required>
+                        <button class="btn" type="submit" popovertarget="id-popover"><a href="indexLoged.html">Iniciar Sesión</a></button>
                     </form>
-
+    
                     <div class="social-login">
                         <div class="txt-login2">O iniciar sesión con</div>
-
+    
                     </div>
                     <div class="social-login">
-                        <a href="#" class="icons-social"><img src="../assets/facebook.svg" alt="Facebook"
+                        <a href="#" class="icons-social"><img src="../assets/facebook.png.jpg" alt="Facebook"
                                 class="img-social"></a>
                         <a href="#" class="icons-social"><img src="../assets/google.png.jpg" alt="Twitter"
                                 class="img-social"></a>
@@ -75,17 +86,23 @@
                     <div class="register">
                         <div class="txt-login2">Si no tienes cuenta regístrate aquí</div>
                     </div>
-                    <button class="btn-primary" popovertarget="id-popover-2">Registrarse</button>
+                    <button class="btn" popovertarget="id-popover-2">Registrarse</button>
                 </div>
-
+    
                 <!-- aca el register-->
-
+    
                 <div class="login-container" id="id-popover-2" popover="manual" id="login-container">
-                    <div class="login-box">
-                        <h2 class="sesion-text">Registrarse</h2>
+                    <div class="login-box2">
+                        <div class="close-tittle">
+                            <h2 class="sesion-text">Registrarse</h2>
+                            <button class="button-close" popovertarget="id-popover-2">
+                                <span class="X"></span>
+                                <span class="Y"></span>
+                                <div class="close">Close</div>
+                            </button>
+                        </div>
                         <form class="form-singup" action="#" method="POST">
-                            <input class="inputs" type="text" name="name" placeholder="Ingrese su nombre completo"
-                                required>
+                            <input class="inputs" type="text" name="name" placeholder="Ingrese su nombre completo" required>
                             <input class="inputs" type="email" name="email" placeholder="Ingrese su correo" required>
                             <input class="inputs" type="text" name="nameUser" placeholder="Ingrese su nombre de usuario"
                                 required>
@@ -93,11 +110,10 @@
                                 required>
                             <input class="inputs" type="password" name="password" placeholder="Confirme su contraseña"
                                 required>
-                            <input class="date-birthdate" type="date" name="birthdate" id="fecha_nacimiento"
-                                min="1900-01-01" max="2024-12-31" required>
-                            <button class="btn-primary" type="submit" id="id-popover">Iniciar Sesión</button>
+                            <input class="inputs" required="" placeholder="Enter birth date" type="date">
+                            <button class="btn" type="submit" id="id-popover">Iniciar Sesión</button>
                         </form>
-
+    
                         <div class="social-login">
                             <a href="#" class="icons-social"><img src="../assets/facebook.png.jpg" alt="Facebook"
                                     class="img-social"></a>
@@ -105,11 +121,11 @@
                                     class="img-social"></a>
                         </div>
                         <hr class="line">
-
-                        <button class="btn-primary" popovertarget="id-popover-2">Registrarse</button>
+    
+                        <button class="btn" popovertarget="id-popover-2">Registrarse</button>
                     </div>
                 </div>
-
+    
         </header>
 
         <!-- SCREEN JUEGO -->
