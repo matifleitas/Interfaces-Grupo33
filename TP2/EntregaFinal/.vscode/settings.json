@@ -1,4 +1,5 @@
 {
-    "workbench.tree.renderIndentGuides": "none",
-    "liveServer.settings.port": 5502
+  "workbench.tree.renderIndentGuides": "none",
+  "liveServer.settings.port": 5502,
+  "CodeGPT.apiKey": "CodeGPT Plus Beta"
 }
