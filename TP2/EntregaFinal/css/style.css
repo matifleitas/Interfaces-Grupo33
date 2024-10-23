@@ -302,37 +302,45 @@ h4 {
                 width: 80px;
                 display: flex;
                 align-items: center;
-
-                .conteiner-btnDirection {
-                    height: 30px;
-                    width: 30px;
-                    border-radius: 100%;
-                    background-color: var(--blackish);
-
-                    .btn-carrusel {
-                        height: 20px;
-                        width: 20px;
-                        position: relative;
-                    }
-
-                    .btn-carrusel img {
-                        height: 20px;
-                        width: 20px;
-                        position: absolute;
-                        top: 20%;
-                        left: 20%;
-                    }
-                }
-
-                .left {
-                    cursor: pointer;
-                }
-
-                .right {
-                    margin-left: 20px;
-                    cursor: pointer;
-                }
             }
+            
+            .conteiner-btnDirection {
+                height: 30px;
+                width: 30px;
+                border-radius: 100%;
+                background-color: var(--blackish);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.2s ease;
+            }
+            
+            .conteiner-btnDirection:hover {
+                transform: scale(1.2); 
+                background-color: var(--primary-color);
+            }
+            
+            .btn-carrusel {
+                height: 20px;
+                width: 20px;
+                position: relative;
+            }
+            
+            .btn-carrusel img {
+                height: 20px;
+                width: 20px;
+                position: absolute;
+            }
+            
+            .left {
+                cursor: pointer;
+            }
+            
+            .right {
+                margin-left: 20px;
+                cursor: pointer;
+            }
+            
         }
 
         .carrusel-primary {
