@@ -1,10 +1,10 @@
 'use strict'
 
 let cards = document.querySelectorAll(".card-game")
-let btnNext = document.querySelectorAll(".arrowRigth");
-let btnBefore = document.querySelectorAll(".arrowLeft");
-let cardPremium= document.querySelector(".cardPremium-game");
-let cartCantItems= document.querySelector(".cart-cantItems");
+let btnNext = document.querySelectorAll(".right");
+let btnBefore = document.querySelectorAll(".left");
+let cardPremium = document.querySelector(".cardPremium-game");
+let cartCantItems = document.querySelector(".cart-cantItems");
 let operacion = 0;
 let counter = 0
 let pixelWidth = 1;
@@ -54,7 +54,7 @@ btnBefore.forEach(btn => {
 function translateCarrousel(cardSize, operacion) {
     for (let index = 0; index < cardSize.length; index++) {
         cardSize[index].style.transform = `translate(-${operacion}%)`;
-        cardSize[index].style.transition = " ease-in-out .6s";
+        cardSize[index].style.transition = " ease-in-out .9s";
 
     }
 }
@@ -62,7 +62,7 @@ function translateCarrousel(cardSize, operacion) {
 function translateCarrouselLeft(cardSize, operacion) {
     for (let index = 0; index < cardSize.length; index++) {
         cardSize[index].style.transform = `translate(-${operacion}%)`;
-        cardSize[index].style.transition = " ease-in-out .6s";
+        cardSize[index].style.transition = " ease-in-out .9s";
     }
 }
 
@@ -77,6 +77,6 @@ document.querySelector('.btn-hamburguesa').addEventListener(
         }
     })
 
-cardPremium.addEventListener("click",()=>{
+cardPremium.addEventListener("click", () => {
     cartCantItems.classList.remove("hidden-items");
 })
