@@ -360,7 +360,6 @@ h4 {
             .card-game {
                 position: relative;
                 margin-left: 4px;
-
                 .card-img-game {
                     cursor: pointer;
                     width: 400px;
@@ -1145,10 +1144,10 @@ h4 {
         width: 0%;
         height: var(--height);
         overflow: hidden;
-        background: rgb(222, 74, 15);
+        background:var(--shadow-primary);
         background: linear-gradient(0deg,
-                rgba(222, 74, 15, 1) 0%,
-                rgba(249, 199, 79, 1) 100%);
+                var(--shadow-primary) 0%,
+                var(--ligth-primary-2) 100%);
         border-radius: calc(var(--height) / 2);
         animation: loading 4s ease-out infinite;
     }

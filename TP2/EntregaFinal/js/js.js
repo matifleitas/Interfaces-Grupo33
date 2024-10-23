@@ -52,19 +52,30 @@ btnBefore.forEach(btn => {
 
 // -----------funciones-------------
 function translateCarrousel(cardSize, operacion) {
-    for (let index = 0; index < cardSize.length; index++) {
-        cardSize[index].style.transform = `translate(-${operacion}%)`;
-        cardSize[index].style.transition = " ease-in-out .9s";
+    cardSize.forEach((card) => {
+        card.style.transform = `translate(-${operacion}%) rotateX(3deg) rotateY(3deg) scale(1.04)`; //le doy el movimiento de zoom
+        card.style.transition = "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)";
 
-    }
+        // Regresa a la pos normal
+        setTimeout(() => {
+            card.style.transform = `translate(-${operacion}%) rotateX(0deg) rotateY(0deg) scale(1)`;
+        }, 400); 
+    });
 }
 
 function translateCarrouselLeft(cardSize, operacion) {
-    for (let index = 0; index < cardSize.length; index++) {
-        cardSize[index].style.transform = `translate(-${operacion}%)`;
-        cardSize[index].style.transition = " ease-in-out .9s";
-    }
+    cardSize.forEach((card) => {
+        card.style.transform = `translate(-${operacion}%) rotateX(-3deg) rotateY(-3deg) scale(1.03)`;
+        card.style.transition = "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)"; 
+
+        setTimeout(() => {
+            card.style.transform = `translate(-${operacion}%) rotateX(0deg) rotateY(0deg) scale(1)`;
+        }, 400); // A mitad de la transición
+    });
 }
+
+
+
 
 let verticalNav = document.querySelector(".vertical-nav-wrapper")
 document.querySelector('.btn-hamburguesa').addEventListener(
