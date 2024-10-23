@@ -316,7 +316,6 @@ h4 {
             }
             
             .conteiner-btnDirection:hover {
-                transform: scale(1.2); 
                 background-color: var(--primary-color);
             }
             
@@ -1882,3 +1881,66 @@ textarea {
 .hidden-items {
     display: none;
 }
+
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    background-color: transparent;
+    margin-bottom: 10px;
+  }
+  
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: white;
+  }
+ 
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    color: var(--white);
+    font-size: var(--h1);
+    font-family: var(--font-baloo);
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+
+  .Btn:hover {
+    width: 125px;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 5px;
+  }
+
+  .Btn:hover .text {
+    width: 95%;
+    transition-duration: .3s;
+    padding-right: 0px;
+  }
+  .Btn:active {
+    transform: translate(2px ,2px);
+  }
