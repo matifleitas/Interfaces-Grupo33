@@ -47,7 +47,8 @@
 
         <div class="navbar-contenedor-logo">
             <div class="navbar-logo-img">
-                <a href=""> <img class="navbar-logo" src="../img/logo/logo.png" height="40rem" width="40rem" alt=" logo">
+                <a href=""> <img class="navbar-logo" src="../img/logo/logo.png" height="40rem" width="40rem"
+                        alt=" logo">
                 </a>
             </div>
             <div class="navbar-title"> <span class="span-title-logo">CYPHER GAMING</span> </div>
@@ -61,7 +62,7 @@
             </svg>
         </div>
 
-        <div class="conteiner-lupa">
+        <div class="conteiner-lupa-loged">
             <div class="nav-div-input">
                 <input class="nav-inputText" type="text" placeholder="Buscar juegos...">
             </div>
@@ -84,14 +85,18 @@
             <div class="logOutIcon">
                 <a href="../index.html">
                     <button class="Btn">
-                      
-                      <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
-                      
-                      <div class="text">Salir</div>
+
+                        <div class="sign"><svg viewBox="0 0 512 512">
+                                <path
+                                    d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                                </path>
+                            </svg></div>
+
+                        <div class="text">Salir</div>
                     </button>
-                    
-                    
-                    
+
+
+
                 </a>
             </div>
 
@@ -180,17 +185,28 @@
             <div class="conteiner-carruselPrimary">
                 <div class="carrusel-titulo">
                     <h3 class="h2-carrusel">¡No te pierdas nuestros últimos lanzamientos!</h3>
+
+                    <div class="conteiner-btns">
+                        <div class="conteiner-btnDirection  left">
+                            <div class="btn-carrusel"> <img src="../assets/angle-left.svg" alt=""> </div>
+                        </div>
+                        <div class="conteiner-btnDirection  right">
+                            <div class="btn-carrusel"> <img src="../assets/angle-right.svg" alt=""></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="carrusel-primary">
-                    <div class="card-game cardGame"><a href="/html/juego.html"> <img class="card-img-game"
+                    <div class="card-game cardGame"><a href="html/juego.html"> <img class="card-img-game"
                                 src="../img/card/CardBatman.png" alt=""></a>
                     </div>
-                    <div class="card-game cardPremium-game cardGame"> <img class="card-img-game cardPremium" src="../img/card/darksouls.jpg" alt="">
+                    <div class="card-game cardPremium-game cardGame"> <img class="card-img-game"
+                            src="../img/card/darksouls.jpg" alt="">
                     </div>
                     <div class="card-game cardGame"> <img class="card-img-game" src="../img/card/CardMinecraft.png" alt="">
                     </div>
-                    <div class="card-game cardPremium-game cardGame"> <img class="card-img-game" src="../img/card/manorlords.jpg" alt="">
+                    <div class="card-game cardPremium-game cardGame"> <img class="card-img-game"
+                            src="../img/card/manorlords.jpg" alt="">
                     </div>
                     <div class="card-game cardGame"> <img class="card-img-game" src="../img/card/napo.jpg" alt="">
                     </div>
@@ -200,20 +216,7 @@
                     </div>
                     <div class="card-game cardGame"> <img class="card-img-game" src="../img/card/washer.jpg" alt="">
                     </div>
-                    <button class="btn-card-game-arrow  arrowRigth">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="62" height="45" viewBox="0 0 62 99" fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
-                                fill="#9852A4" />
-                        </svg></button>
-                    <button class="btn-card-game-arrow  arrowLeft">
-                        <svg class="card-game-arrowL" xmlns="http://www.w3.org/2000/svg" width="62" height="45"
-                            viewBox="0 0 62 99" fill="none">
-                            <path class="arrow" fill-rule="evenodd" clip-rule="evenodd"
-                                d="M53.4778 56.4328L24.25 79.7679L16.9443 73.9352L42.5193 53.5164L16.9443 33.0976L24.25 27.2649L53.4778 50.6C54.4464 51.3736 54.9906 52.4226 54.9906 53.5164C54.9906 54.6102 54.4464 55.6592 53.4778 56.4328Z"
-                                fill="#9852A4" />
-                        </svg>
-                    </button>
+
 
                 </div>
             </div>
@@ -240,10 +243,11 @@
                                 alt="">
                         </div>
                     </div>
-                    <div class="card-game cardPremium-game cardGameSecundary"> <img class="card-img-game" src="../img/card/CardShooker.png"
-                            alt=""></div>
+                    <div class="card-game cardPremium-game cardGameSecundary"> <img class="card-img-game"
+                            src="../img/card/CardShooker.png" alt=""></div>
                     <div class="card-game cardGameSecundary">
-                        <div class="cardSmall-game a"><img class="card-img-game-small" src="../img/card/cardcs.png" alt="">
+                        <div class="cardSmall-game a"><img class="card-img-game-small" src="../img/card/cardcs.png"
+                                alt="">
                         </div>
                         <div class="cardSmall-game b"><img class="card-img-game-small" src="../img/card/cardMergues.png"
                                 alt="">
@@ -278,7 +282,8 @@
                 </div>
 
                 <div class="carrusel-primary">
-                    <div class="card-game cardPremium-game cardGame"> <img class="card-img-game" src="../img/card/cr.jpg" alt="">
+                    <div class="card-game cardPremium-game cardGame"> <img class="card-img-game"
+                            src="../img/card/cr.jpg" alt="">
                     </div>
                     <div class="card-game cardGame"> <img class="card-img-game" src="../img/card/sub.png" alt="">
                     </div>
@@ -313,23 +318,26 @@
                 </div>
 
                 <div class="carrusel-primary">
-                    <div class="card-game cardGameSecundary"> <img class="card-img-game" src="../img/card/poke.jpg" alt="">
+                    <div class="card-game cardGameSecundary"> <img class="card-img-game" src="../img/card/poke.jpg"
+                            alt="">
                     </div>
                     <div class="card-game cardGameSecundary">
-                        <div class="cardSmall-game a"><img class="card-img-game-small" src="../img/card/test2.jpg" alt="">
+                        <div class="cardSmall-game a"><img class="card-img-game-small" src="../img/card/test2.jpg"
+                                alt="">
                         </div>
                         <div class="cardSmall-game b"><img class="card-img-game-small" src="../img/card/ml2.png" alt="">
                         </div>
                         <div class="cardSmall-game c"><img class="card-img-game-small" src="../img/card/cc.jpg" alt="">
                         </div>
-                        <div class="cardSmall-game d"><img class="card-img-game-small" src="../img/card/preguntados.png "
-                                alt="">
+                        <div class="cardSmall-game d"><img class="card-img-game-small"
+                                src="../img/card/preguntados.png " alt="">
                         </div>
                     </div>
-                    <div class="card-game cardGameSecundary"> <img class="card-img-game" src="../img/card/candyCrush.png"
-                            alt=""></div>
+                    <div class="card-game cardGameSecundary"> <img class="card-img-game"
+                            src="../img/card/candyCrush.png" alt=""></div>
                     <div class="card-game cardGameSecundary">
-                        <div class="cardSmall-game a"><img class="card-img-game-small" src="../img/card/street.png" alt="">
+                        <div class="cardSmall-game a"><img class="card-img-game-small" src="../img/card/street.png"
+                                alt="">
                         </div>
                         <div class="cardSmall-game b"><img class="card-img-game-small" src="../img/card/diablov.jpg"
                                 alt="">
@@ -337,8 +345,7 @@
                         <div class="cardSmall-game c"><img class="card-img-game-small" src="../img/card/washer.jpg"
                                 alt="">
                         </div>
-                        <div class="cardSmall-game d"><img class="card-img-game-small" src="../img/card/nfl.jpg"
-                                alt="">
+                        <div class="cardSmall-game d"><img class="card-img-game-small" src="../img/card/nfl.jpg" alt="">
                         </div>
                     </div>
                     <button class="btn-card-game-arrow  arrowRigth">
