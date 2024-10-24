@@ -1,9 +1,13 @@
 'use strict';
 import Juego from './Juego.js';  // Importación por defecto
 
-const juego = new Juego(4); // 4 en linea 
+const juego = new Juego(4); // 4 en línea 
 
-juego.tablero.colocarFicha(juego.getEquipoJ1(), 2, 4);
-juego.tablero.colocarFicha(juego.getEquipoJ1(), 2, 3);
-juego.tablero.colocarFicha(juego.getEquipoJ1(), 2, 2);
-juego.tablero.colocarFicha(juego.getEquipoJ1(), 2, 1);
+// Colocando fichas en posiciones válidas
+
+
+juego.tablero.colocarFicha(juego.j2, 3);
+juego.tablero.colocarFicha(juego.j2, 3);
+juego.tablero.colocarFicha(juego.j2, 3);
+juego.tablero.colocarFicha(juego.j1, 3);
+juego.tablero.colocarFicha(juego.j2, 4);

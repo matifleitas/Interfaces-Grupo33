@@ -1,28 +1,27 @@
+'use strict';
 export default class Ficha {
-    constructor(equipo){
+    constructor(equipo) {
         this.equipo = equipo;
         this.selected = false;
     }
 
-    setSelecter(){
+    setSelecter() {
         this.selected = !this.selected;
     }
 
-    getEquipo(){    
+    getEquipo() {
         return this.equipo;
     }
 
-    draw(){
+    draw() {
         //se dibuja
     }
 
-    clear(){
+    clear() {
         //se borra
     }
 
-    esIgualA(ficha){
-        return this.equipo == ficha.getEquipo();
+    esIgualA(ficha) {
+        return this.equipo === ficha.getEquipo();
     }
 }
-
-//export default Ficha;
