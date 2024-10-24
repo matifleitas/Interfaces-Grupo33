@@ -187,39 +187,23 @@ export default class Tablero {
     }
 
     // //------COLOCAR FICHA------
-    /*
-    colocarFicha(ficha, posX, posY){
-      if (posX < 0 || posX >= this.rows || posY < 0 || posY >= this.columns) {
-        throw new Error('Posición fuera de los límites del tablero');
-    }
-    if (this.casilleros[posX][posY].estaVacio()) {
-        this.casilleros[posX][posY].colocarFicha(ficha); 
-        this.imprimirTablero();
-
-        if(this.verifyWinner(posX, posY)){
-          console.log("hay ganador");
-        }
-      } else {
-          return false; 
-      }
-    }*/
 
     colocarFicha(ficha, posY){
       if (posY < 0 || posY >= this.columns) {
         throw new Error('Posición fuera de los límites del tablero');
       }
       if (this.casilleros[0][posY].estaVacio()) { //checkeo que la columna no rebalse
-        let ultimaFila = this.rows - 1;  
+        let ultimaFilaDisponible = this.rows - 1;  
 
-        while (ultimaFila > 0 && !this.casilleros[ultimaFila][posY].estaVacio()) {
-          ultimaFila--;  // subo una fila hacia arriba
+        while (ultimaFilaDisponible > 0 && !this.casilleros[ultimaFilaDisponible][posY].estaVacio()) {
+          ultimaFilaDisponible--;  // subo una fila hacia arriba
         }
 
-        if(this.casilleros[ultimaFila][posY].estaVacio()){
-          this.casilleros[ultimaFila][posY].colocarFicha(ficha); 
+        if(this.casilleros[ultimaFilaDisponible][posY].estaVacio()){
+          this.casilleros[ultimaFilaDisponible][posY].colocarFicha(ficha); 
           this.imprimirTablero();
 
-          if(this.verifyWinner(ultimaFila, posY)){
+          if(this.verifyWinner(ultimaFilaDisponible, posY)){
             console.log("hay ganador");
           }
         } else {
