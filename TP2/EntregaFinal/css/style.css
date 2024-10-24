@@ -1377,8 +1377,9 @@ footer {
     justify-content: center;
 
     .photo-game img {
-        width: 85%;
-        height: auto;
+        width: 80%;
+        max-width: 85%;
+        height:fit-content;
         filter: blur(3px);
         border-radius: 8px;
     }
@@ -1414,7 +1415,7 @@ footer {
     background-color: var(--dark-shddow);
     display: flex;
     justify-content: space-between;
-    width: 83%;
+    width: 77%;
     align-items: center;
     border-radius: 8px;
     margin-top: 0;
@@ -1505,7 +1506,7 @@ footer {
 .game-info-container {
     border-radius: 8px;
     margin-top: 25px;
-    width: 83%;
+    width: 77%;
     padding: 1rem;
     color: var(--white);
     background-color: rgba(79, 79, 79, 0.15)
@@ -1567,7 +1568,7 @@ footer {
     margin-top: 1rem;
     background-color: var(--bg-color-divs-game);
     border-radius: 8px;
-    width: 83%;
+    width: 77%;
     overflow: hidden;
     padding: 0.8rem;
 }
@@ -1582,7 +1583,7 @@ footer {
 .games-recommended-images {
     display: flex;
     flex-direction: row;
-    max-width: 83%;
+    max-width: 80%;
     margin-top: 1rem;
 }
 
@@ -1591,13 +1592,14 @@ footer {
     margin-left: 0.5rem
 }
 
+
 /* ------------------------Screen Juego:comments------------------------- */
 .comments {
     color: var(--white);
     background-color: var(--bg-color-divs-game);
     border-radius: 8px;
     margin-top: 1rem;
-    width: 83%;
+    width: 77%;
     padding: 1rem;
 }
 
@@ -2004,3 +2006,32 @@ textarea {
   .Btn:active {
     transform: translate(2px ,2px);
   }
+
+  /*------------------------4 en linea------------------------*/
+
+  .cuatroEnLineaCanva{
+    top:115px;
+    position: absolute;
+    background-color: white;
+    width: 75.2%;
+    height: 88%;
+    border-radius: 8px;
+    z-index: 3;
+    background-image: url(../assets/fondoJuego.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  
+  .taparJuego{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.mostrarJuego{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;   
+}
