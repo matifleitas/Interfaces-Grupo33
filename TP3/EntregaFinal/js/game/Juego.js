@@ -9,8 +9,6 @@ export default class Juego {
         this.j1 = new Ficha("X");
         this.j2 = new Ficha("O");
         this.turn = this.j1;
-        let containerJuego=document.getElementById('canvaJuego');
-        let tablero=new Tablero();
         this.fichas=[];
         this.canvaJuego=document.getElementById('canvaJuego');
         this.ctx=this.canvaJuego.getContext('2d');
@@ -19,12 +17,11 @@ export default class Juego {
     }
 
     inicializar(){
-        const botonJugar = document.getElementById('btnJugar'); // Asegúrate de que el id del botón sea correcto
+        const botonJugar = document.getElementById('btnJugar');
         if (botonJugar) {
             botonJugar.addEventListener('click', () => this.initGame());
         }else{
             console.log('error en boton jugar');
-            
         }
     }
 
@@ -38,7 +35,7 @@ export default class Juego {
         this.cambiarPantallas();
         this.dibujarFichas()
         this.tablero.imprimirTablero();
-        //this.tablero.dibujarTablero();
+        this.tablero.dibujarTablero();
     }
 
     cambiarPantallas(){

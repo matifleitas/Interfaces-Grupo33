@@ -4,7 +4,7 @@ import Ficha from './Ficha.js';
 
 export default class Tablero {
     casilleros = [];
-    canvaJuego;
+    canvasJuego;
     tableroImg;
     rows;
     columns;
@@ -20,9 +20,7 @@ export default class Tablero {
         this.columns = line + 3;
         this.tableroImg= new Image();
         this.tableroImg.src='../assets/tablero.png';
-        this.canvaJuego=document.getElementById('canvaJuego');
-        canvasTablero=document.getElementById('canvasJuego');
-        ctx=canvasTablero.getContext('2d');
+        this.canvasJuego=document.getElementById('canvaJuego');
         const imgTablero=new Image();
         imgTablero.src='../assets/tablero.png';
         this.initTablero();
@@ -65,11 +63,11 @@ export default class Tablero {
     //Dibujar tablero
 
     dibujarTablero(){
-      if(this.canvaJuego){
-        let ctx=this.canvaJuego.getContext('2d');
+      if(this.canvasJuego){
+        let ctx=this.canvasJuego.getContext('2d');
         if(ctx){
           console.log("dibujando tablero...");
-          ctx.drawImage(this.tableroImg,0,0,this.canvaJuego.width,this.canvaJuego.height);
+          ctx.drawImage(this.tableroImg,0,0,this.canvasJuego.width,this.canvasJuego.height);
         }
       }
     }
