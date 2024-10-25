@@ -9,9 +9,10 @@ let operacion = 0;
 let counter = 0
 let pixelWidth = 1;
 let widthImg = (1600 / cards.length) + pixelWidth;
-let btnPlay=document.getElementById('btnJugar');
+// let btnPlay=document.getElementById('btnJugar');
 let canva=document.getElementById('canvaJuego');
-let portadaJuego=document.getElementById('gamePortada');
+// let fondoJuego=document.getElementById('fondoJuego');
+// let portadaJuego=document.getElementById('gamePortada');
 
 btnNext.forEach(btn => {
     btn.addEventListener("click", function (e) {
@@ -94,10 +95,10 @@ document.querySelector('.btn-hamburguesa').addEventListener(
 //     cartCantItems.classList.remove("hidden-items");
 // })
 
-btnPlay.addEventListener("click",()=>{
-    portadaJuego.classList.remove('mostrarJuego');
-    portadaJuego.classList.add('taparJuego');
+// btnPlay.addEventListener("click",()=>{
+//     portadaJuego.classList.remove('mostrarJuego');
+//     portadaJuego.classList.add('taparJuego');
 
-    canvaJuego.classList.remove('taparJuego');
-    canvaJuego.classList.add('mostrarJuego');;
-})
+//     fondoJuego.classList.remove('taparJuego');
+//     fondoJuego.classList.add('mostrarJuego');;
+// })
