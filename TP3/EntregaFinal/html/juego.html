@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="/img/logo/rounded_favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai:wght@400;500;600;700;800&display=swap"
         rel="stylesheet" />
@@ -22,7 +23,7 @@
             <div class="nabvar-hamburguesa btn-hamburguesa">
                 <img class="nav-img-hamburguesa" src="../img/icono/Frame.svg" alt="btn">
             </div>
-
+    
             <div class="navbar-contenedor-logo">
                 <div class="navbar-logo-img">
                     <a href="../index.html"> <img class="navbar-logo" src="../img/logo/logo.png" height="40rem" width="40rem" alt=" logo">
@@ -38,7 +39,6 @@
                         fill="#D9D9D9" />
                 </svg>
             </div>
-
     
             <div class="conteiner-lupa">
                 <div class="nav-div-input">
@@ -160,10 +160,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="cuatroEnLineaCanva taparJuego" id="canvaJuego">
-                    <span>batman vs joker</span>
+                <div class="taparJuego" id="fondoJuego">
                     <div class="tablero">
-
+                        <canvas id="canvaJuego" width="500" height="400"></canvas>
                     </div>
                 </div>
                 <section class="info-game">
@@ -518,6 +517,12 @@
         </div>
     </footer>
     <script src="../js/js.js"></script>
+    <script type="module" src="../js/game/Casillero.js"></script>
+    <script type="module" src="../js/game/Ficha.js"></script>
+    <script type="module" src="../js/game/Juego.js"></script>
+    <script type="module" src="../js/game/Main.js"></script>
+    <script type="module" src="../js/game/Tablero.js"></script>
+
 </body>
 
 </html>
