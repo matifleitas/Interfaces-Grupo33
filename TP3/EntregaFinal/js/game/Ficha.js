@@ -1,8 +1,23 @@
 'use strict';
 export default class Ficha {
-    constructor(equipo) {
+    constructor(equipo,radio,posX,posY) {
         this.equipo = equipo;
         this.selected = false;
+        this.radio=radio;
+        this.posX=posX;
+        this.posY=posY;
+    }
+
+
+    dibujarFicha(ctx){
+        console.log('dibujando ficha...');
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radio, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.closePath();
+        console.log('dibujada');
+        
     }
 
     setSelecter() {
@@ -11,10 +26,6 @@ export default class Ficha {
 
     getEquipo() {
         return this.equipo;
-    }
-
-    draw() {
-        //se dibuja
     }
 
     clear() {

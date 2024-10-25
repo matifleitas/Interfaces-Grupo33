@@ -2009,22 +2009,30 @@ textarea {
 
   /*------------------------4 en linea------------------------*/
 
-  .cuatroEnLineaCanva{
+  #fondoJuego{
     top:125px;
     position: absolute;
     background-color: white;
-    width: 79.5%;
-    height: 79%;
+    width: 75%;
+    height: 86%;
     border-radius: 8px;
-    z-index: 3;
-    background-image: url(../img/game/batman.jpeg);
+    /*background-image: url(../img/game/batman.jpeg);*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(2px);
+    backdrop-filter: blur(1px);
   }
+.tablero{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-  
+#canvaJuego{
+    margin-top: 3rem;
+}
   .taparJuego{
     opacity: 0;
     visibility: hidden;

@@ -4,6 +4,13 @@ import Ficha from './Ficha.js';
 
 export default class Tablero {
     casilleros = [];
+    canvaJuego;
+    tableroImg;
+    rows;
+    columns;
+
+    //---------------------Constructor---------------------------
+
     constructor(line){
       if (typeof line !== 'number' || line <= 0) {
         throw new Error('line debe ser un número entero positivo');
@@ -11,8 +18,17 @@ export default class Tablero {
         this.line = line;
         this.rows = line + 2;
         this.columns = line + 3;
+        this.tableroImg= new Image();
+        this.tableroImg.src='../assets/tablero.png';
+        this.canvaJuego=document.getElementById('canvaJuego');
         this.initTablero();
-    }
+
+        // this.tableroImg.onload=()=>{
+        //   this.dibujarTablero();
+        // }
+      }
+
+
 
     //----- CREAR TABLERO---------------
     initTablero(){ //es lo mismo que dibujarse
@@ -41,6 +57,22 @@ export default class Tablero {
 
     console.log(output); 
     }
+
+
+    //Dibujar tablero
+
+    dibujarTablero(){
+      if(this.canvaJuego){
+        let ctx=this.canvaJuego.getContext('2d');
+        if(ctx){
+          console.log("dibujando tablero...");
+          ctx.drawImage(this.tableroImg,0,0,this.canvaJuego.width,this.canvaJuego.height);
+        }
+      }
+    }
+
+
+
 
     reiniciarTablero() {
       this.casilleros = [];
