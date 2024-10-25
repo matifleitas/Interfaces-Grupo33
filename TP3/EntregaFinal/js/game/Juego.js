@@ -9,6 +9,8 @@ export default class Juego {
         this.j1 = new Ficha("X");
         this.j2 = new Ficha("O");
         this.turn = this.j1;
+        let containerJuego=document.getElementById('canvaJuego');
+        let tablero=new Tablero();
         this.initGame();
         /**
          * isMouseDown=false
@@ -19,6 +21,7 @@ export default class Juego {
 
     initGame(){
         this.tablero.imprimirTablero();
+        this.tablero.imprimirTableroEnCanva();
     }
 
     changeTurn(){

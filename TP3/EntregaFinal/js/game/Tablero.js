@@ -11,6 +11,10 @@ export default class Tablero {
         this.line = line;
         this.rows = line + 2;
         this.columns = line + 3;
+        canvasTablero=document.getElementById('canvasJuego');
+        ctx=canvasTablero.getContext('2d');
+        const imgTablero=new Image();
+        imgTablero.src='../assets/tablero.png';
         this.initTablero();
     }
 
@@ -38,8 +42,15 @@ export default class Tablero {
           }
           output += '\n'; 
       }
-
     console.log(output); 
+    }
+
+    //imprimir tablero en canva
+    imprimirTableroEnCanva(){
+      canvasTablero.width=imgTablero.width;
+      canvasTablero.height=imgTablero.height;
+
+      ctx.drawImage(imgTablero,0,0,canvasTablero.width,canvasTablero.height);
     }
 
     reiniciarTablero() {

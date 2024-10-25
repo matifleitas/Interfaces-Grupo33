@@ -41,6 +41,7 @@ a {
     color: var(--white);
 }
 
+
 body {
     display: flex;
     flex-direction: column;
@@ -67,6 +68,7 @@ h4 {
     justify-content: space-between;
     align-items: center;
 }
+
 
 .navbar {
     width: 100%;
@@ -2013,15 +2015,15 @@ textarea {
     top:125px;
     position: absolute;
     background-color: white;
-    width: 79.5%;
-    height: 79%;
+    width: 75%;
+    height: 85%;
     border-radius: 8px;
     z-index: 3;
     background-image: url(../img/game/batman.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(2px);
+    filter: blur(1px);
   }
 
   
