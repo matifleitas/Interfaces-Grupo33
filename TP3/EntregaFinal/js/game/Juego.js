@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let canvas = document.querySelector("#canvas");
     /** @type {CanvasRenderingContext2D} */
-    let ctx = canvas.getContext("2d");
-    let canvasWidth = canvas.offsetWidth;
-    let canvasHeight = canvas.offsetHeight;
+    // let ctx = canvas.getContext("2d");
+    // let canvasWidth = canvas.offsetWidth;
+    // let canvasHeight = canvas.offsetHeight;
 
     let jugadorUno;
     let jugadorDos;
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 export default class Juego {
     constructor(line){
         console.log(`Juego creado con ${line + 2} filas y ${line + 3} columnas`);
-        this.tablero = new Tablero(line);   
+        this.tablero = new Tablero(4);   
         this.j1 = new Ficha("X");
         this.j2 = new Ficha("O");
         this.turn = this.j1;
@@ -78,7 +78,7 @@ export default class Juego {
         this.cambiarPantallas();
         this.dibujarFichas()
         this.tablero.imprimirTablero();
-        this.tablero.dibujarTablero();
+        this.tablero.dibujarTablero(this.ctx);
     }
 
     cambiarPantallas(){

@@ -32,4 +32,14 @@ export default class Casillero {
         return this;
     }
 
+    dibujar(ctx,rows,colums){
+        ctx.beginPath();
+        ctx.arc(colums*100+50,rows*100+50,40,0,2*Math.PI);
+        ctx.stroke();
+
+        if(this.ficha){
+            this.ficha.dibujar(ctx,rows,colums);
+        }
+    }
+
 }

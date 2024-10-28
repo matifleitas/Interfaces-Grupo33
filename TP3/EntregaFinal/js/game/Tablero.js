@@ -62,14 +62,15 @@ export default class Tablero {
 
     //Dibujar tablero
 
-    dibujarTablero(){
-      if(this.canvasJuego){
-        let ctx=this.canvasJuego.getContext('2d');
-        if(ctx){
-          console.log("dibujando tablero...");
-          ctx.drawImage(this.tableroImg,0,0,this.canvasJuego.width,this.canvasJuego.height);
+    dibujarTablero(ctx){
+      ctx.clearRect(0,0,this.canvasJuego.width,this.canvasJuego.height);  
+      for(let i=0;i<this.rows;i++){
+        for(let j=0;j<this.columns;j++){
+          this.casilleros[i][j].dibujar(ctx,i,j); 
         }
       }
+      
+    
     }
 
     reiniciarTablero() {
