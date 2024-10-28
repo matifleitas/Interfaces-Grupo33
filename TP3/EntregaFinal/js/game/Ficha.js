@@ -1,48 +1,31 @@
 'use strict';
 export default class Ficha {
     constructor(equipo) {
+        this.posX = 500;
+        this.posY = 200; 
+        this.radio = 30;
         this.equipo = equipo;
         this.selected = false;
-        this.image= new Image();
-        this.image.src=('../img/fichas/batman.png');
+        this.image = new Image();
+        this.image.src = '../img/fichas/batman.png';
     }
 
-    dibujarFicha(ctx,x,y,radio){
-        console.log('dibujando ficha...');
+    dibujarFicha(ctx) {
+        ctx.save();
         ctx.beginPath();
-        ctx.arc(x,y,radio, 0, Math.PI * 2);
+        ctx.arc(this.posX, this.posY, this.radio, 0, Math.PI * 2);
         ctx.closePath();
         ctx.clip();
-        ctx.drawImage(this.image, x - radio, y - radio, radio * 2, radio * 2);
+        ctx.drawImage(this.image, this.posX - this.radio, this.posY - this.radio, this.radio * 2, this.radio * 2);
         ctx.restore();
-        console.log('dibujada');
-        
     }
 
-
-    getFicha(){
-        return this;
+    esClickeada(x, y) {
+        const dist = Math.sqrt((x - this.posX) ** 2 + (y - this.posY) ** 2);
+        return dist <= this.radio;
     }
 
-    setSelecter() {
-        this.selected = !this.selected;
-    }
-
-    getEquipo() {
+    getEquipo(){
         return this.equipo;
     }
-
-    clear() {
-        //se borra
-    }
-
-    esIgualA(ficha) {
-        return this.equipo === ficha.getEquipo();
-    }
-
-    cursorDentro(x, y){{
-        let posX = this.x - x;
-        let posY = this.y - y;
-        return Math.sqrt(posX * posX + posY * posY) < this.radio;
-    }}
 }

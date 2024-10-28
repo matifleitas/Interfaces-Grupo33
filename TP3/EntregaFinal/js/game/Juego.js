@@ -28,99 +28,124 @@ document.addEventListener('DOMContentLoaded', () => {
     let spanTiempo = document.querySelector("#juego_temporizador");
 
     let cantFichas;
-    let radio=25;
 
-    let originalX;
-    let originalY;
+
     let imgFichaJugadorUno=new Image();
     let imgFichaJugadorDos=new Image();
     imgFichaJugadorUno.src = '../img'; //imagen de joker y otra de batman
 
     let mouseDown=false;
-    let fichaOnClick=null;
-    let coor
-
-
 });
 
 export default class Juego {
-    constructor(line){
+    constructor(line) {
         console.log(`Juego creado con ${line + 2} filas y ${line + 3} columnas`);
-        this.tablero = new Tablero(4);   
+        this.tablero = new Tablero(4);
         this.j1 = new Ficha("X");
         this.j2 = new Ficha("O");
         this.turn = this.j1;
+        this.fichaSeleccionada=null;
+        this.offsetX = 0;
+        this.offsetY = 0;
 
-        this.fichas=[];
-        this.canvaJuego=document.getElementById('canvaJuego');
-        this.ctx=this.canvaJuego.getContext('2d');
-        this.inicializar();     
+
+        this.fichas = [];
+        this.canvaJuego = document.getElementById('canvaJuego');
+        this.ctx = this.canvaJuego.getContext('2d');
+        this.inicializar();
+
+        this.canvaJuego.addEventListener("click", (event) => this.detectarClick(event));
+        this.canvaJuego.addEventListener("mousedown", (event) => this.iniciarDrag(event));
+        this.canvaJuego.addEventListener("mousemove", (event) => this.arrastrarFicha(event));
+        this.canvaJuego.addEventListener("mouseup", () => this.soltarFicha());
     }
 
-
-
-
-    inicializar(){
+    inicializar() {
         const botonJugar = document.getElementById('btnJugar');
         if (botonJugar) {
             botonJugar.addEventListener('click', () => this.initGame());
-        }else{
+        } else {
             console.log('error en boton jugar');
         }
     }
 
-
-    initGame(){
+    initGame() {
         console.log('iniciando juego...');
-        this.tablero=new Tablero(4);
-        const fichaJ1=new Ficha('red');   
+        this.tablero = new Tablero(4);
+        const fichaJ1 = new Ficha('red');
         this.fichas.push(fichaJ1);
         this.cambiarPantallas();
-        //this.tablero.imprimirTablero();
         this.tablero.dibujarTablero(this.ctx);
         this.dibujarFichas();
     }
 
-    cambiarPantallas(){
-        const fondoJuego=document.getElementById('fondoJuego');
-        const portadaJuego=document.getElementById('gamePortada');
+    cambiarPantallas() {
+        const fondoJuego = document.getElementById('fondoJuego');
+        const portadaJuego = document.getElementById('gamePortada');
 
         portadaJuego.classList.remove('mostrarJuego');
         portadaJuego.classList.add('taparJuego');
-        
+
         fondoJuego.classList.remove('taparJuego');
-        fondoJuego.classList.add('mostrarJuego');;
+        fondoJuego.classList.add('mostrarJuego');
     }
 
-    dibujarFichas(){
-        const radio=30;
-        let posX=500;
-        let posY=200;
+    dibujarFichas() {
+        this.fichas.forEach(ficha => ficha.dibujarFicha(this.ctx));
+    }
 
-        for (let i = 0; i < this.fichas.length; i++) {
-            this.fichas[i].dibujarFicha(this.ctx, posX, posY + i * 2 * radio, radio);
+    detectarClick(event) {
+        const rect = this.canvaJuego.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        console.log(`Coordenadas del clic: x=${x}, y=${y}`);
+        console.log(`Centro de la ficha: x=${this.posX}, y=${this.posY}`);
+
+
+        this.fichas.forEach(ficha => {
+            if (ficha.esClickeada(x, y)) {
+                console.log("ficha clickeada");
+            } else {
+                console.log('no está en la ficha');
+            }
+        });
+    }
+
+    iniciarDrag(event) {
+        const rect = this.canvaJuego.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+    
+        this.fichas.forEach(ficha => {
+            if (ficha.esClickeada(x, y)) {
+                this.fichaSeleccionada = ficha;
+                this.offsetX = x - ficha.posX;  
+                this.offsetY = y - ficha.posY;
+                console.log("Ficha seleccionada para arrastrar");
+            }
+        });
+    }
+
+    arrastrarFicha(event) {
+        if (this.fichaSeleccionada) {
+            const rect = this.canvaJuego.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            this.fichaSeleccionada.posX = x - this.offsetX;
+            this.fichaSeleccionada.posY = y - this.offsetY;
+
+            this.ctx.clearRect(0, 0, this.canvaJuego.width, this.canvaJuego.height);
+            this.tablero.dibujarTablero(this.ctx);
+            this.dibujarFichas();
         }
-
-        // for(let i=0;i<this.fichas.length;i++){
-        //     this.fichas[i].dibujarFicha(this.ctx);
-        // }
     }
 
-    changeTurn(){
-        if(this.turn == this.j1) {
-            this.turn = this.j2;
-        } else if(this.turn == this.j2){
-            this.turn = this.j1;
-        } else
-            console.log("No hay turno asignado");
-    }
-
-    getEquipoJ1(){        
-        return this.j1.getEquipo();
-    }
-
-    getEquipoJ2(){
-        return this.j2.getEquipo();
+    soltarFicha() {
+        if (this.fichaSeleccionada) {
+            console.log("Ficha soltada");
+            this.fichaSeleccionada = null;
+        }
     }
 }
 //export default Juego;
