@@ -23,12 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let terminado = false;
     let error = false;
 
+
     let divTiempo = document.querySelector(".contenedor_temp");
     let spanTiempo = document.querySelector("#juego_temporizador");
 
     let cantFichas;
     let radio=25;
-    let fichasArray=[];
+
     let originalX;
     let originalY;
     let imgFichaJugadorUno=new Image();
@@ -49,11 +50,11 @@ export default class Juego {
         this.j1 = new Ficha("X");
         this.j2 = new Ficha("O");
         this.turn = this.j1;
+
         this.fichas=[];
         this.canvaJuego=document.getElementById('canvaJuego');
         this.ctx=this.canvaJuego.getContext('2d');
-        this.inicializar();
-           
+        this.inicializar();     
     }
 
 
@@ -72,13 +73,12 @@ export default class Juego {
     initGame(){
         console.log('iniciando juego...');
         this.tablero=new Tablero(4);
-        const fichaJ1=new Ficha('j1',30,'red',50,this.canvaJuego.height/2);
-        const fichaJ2 = new Ficha('jugador2', 30, 'yellow', this.canvaJuego.width - 50, this.canvaJuego.height / 2);
-        this.fichas.push(fichaJ1,fichaJ2);
+        const fichaJ1=new Ficha('red');   
+        this.fichas.push(fichaJ1);
         this.cambiarPantallas();
-        this.dibujarFichas()
-        this.tablero.imprimirTablero();
+        //this.tablero.imprimirTablero();
         this.tablero.dibujarTablero(this.ctx);
+        this.dibujarFichas();
     }
 
     cambiarPantallas(){
@@ -93,7 +93,17 @@ export default class Juego {
     }
 
     dibujarFichas(){
-        this.fichas.forEach(Ficha=>Ficha.dibujarFicha(this.ctx));
+        const radio=30;
+        let posX=500;
+        let posY=200;
+
+        for (let i = 0; i < this.fichas.length; i++) {
+            this.fichas[i].dibujarFicha(this.ctx, posX, posY + i * 2 * radio, radio);
+        }
+
+        // for(let i=0;i<this.fichas.length;i++){
+        //     this.fichas[i].dibujarFicha(this.ctx);
+        // }
     }
 
     changeTurn(){

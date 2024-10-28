@@ -7,6 +7,9 @@ export default class Casillero {
         if (typeof numColumn !== 'number' || numColumn < 0) {
             throw new Error('numColumn debe ser un número positivo');
         }
+        // const cellWidth=canvasWidth/this.numColumn;
+        // const cellHeight=canvasHeight/this.numRow;
+        // const radius=Math.min(cellWidth,cellHeight)*0.4;
         this.numRow = numRow;
         this.numColumn = numColumn;
         this.ficha = null; 
@@ -34,12 +37,14 @@ export default class Casillero {
 
     dibujar(ctx,rows,colums){
         ctx.beginPath();
-        ctx.arc(colums*100+50,rows*100+50,40,0,2*Math.PI);
+        ctx.arc(colums*60+50,rows*60+50,25,0,2*Math.PI);
+        ctx.fillStyle='black';
+        ctx.fill();
         ctx.stroke();
 
-        if(this.ficha){
-            this.ficha.dibujar(ctx,rows,colums);
-        }
+        // if(this.ficha){
+        //     this.ficha.dibujar(ctx,rows,colums);
+        // }
     }
 
 }

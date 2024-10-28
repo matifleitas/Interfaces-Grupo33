@@ -1,22 +1,27 @@
 'use strict';
 export default class Ficha {
-    constructor(equipo,radio,posX,posY) {
+    constructor(equipo) {
         this.equipo = equipo;
         this.selected = false;
-        this.radio=radio;
-        this.posX=posX;
-        this.posY=posY;
+        this.image= new Image();
+        this.image.src=('../img/fichas/batman.png');
     }
 
-    dibujarFicha(ctx){
+    dibujarFicha(ctx,x,y,radio){
         console.log('dibujando ficha...');
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radio, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
+        ctx.arc(x,y,radio, 0, Math.PI * 2);
         ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(this.image, x - radio, y - radio, radio * 2, radio * 2);
+        ctx.restore();
         console.log('dibujada');
         
+    }
+
+
+    getFicha(){
+        return this;
     }
 
     setSelecter() {

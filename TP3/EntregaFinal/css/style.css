@@ -2018,21 +2018,22 @@ textarea {
     width: 75%;
     height: 86%;
     border-radius: 8px;
-    background-image: url(../img/game/batman.jpeg);
+    background-image: url(../img/game/image.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
   }
 .tablero{
-    width: 100%;
-    height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 #canvaJuego{
-    margin-top: 3rem;
+    background-color: var(--blackish);
+    margin-left: 10rem;
+    padding-top: 2rem;
 }
   .taparJuego{
     opacity: 0;
