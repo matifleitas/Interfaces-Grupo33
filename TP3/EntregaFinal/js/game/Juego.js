@@ -2,6 +2,46 @@
 import Tablero from './Tablero.js';
 import Ficha from './Ficha.js';
 
+document.addEventListener('DOMContentLoaded', () => {
+
+    let canvas = document.querySelector("#canvas");
+    /** @type {CanvasRenderingContext2D} */
+    let ctx = canvas.getContext("2d");
+    let canvasWidth = canvas.offsetWidth;
+    let canvasHeight = canvas.offsetHeight;
+
+    let jugadorUno;
+    let jugadorDos;
+    let jugadorActual;
+
+    let nombreJugadorUno;
+    let nombreJugadorDos;
+    let imagenJugadorUno;
+    let imagenJugadorDos;
+    let tipoJuego;
+    let jugando = false;
+    let terminado = false;
+    let error = false;
+
+    let divTiempo = document.querySelector(".contenedor_temp");
+    let spanTiempo = document.querySelector("#juego_temporizador");
+
+    let cantFichas;
+    let radio=25;
+    let fichasArray=[];
+    let originalX;
+    let originalY;
+    let imgFichaJugadorUno=new Image();
+    let imgFichaJugadorDos=new Image();
+    imgFichaJugadorUno.src = '../img'; //imagen de joker y otra de batman
+
+    let mouseDown=false;
+    let fichaOnClick=null;
+    let coor
+
+
+});
+
 export default class Juego {
     constructor(line){
         console.log(`Juego creado con ${line + 2} filas y ${line + 3} columnas`);
@@ -15,6 +55,9 @@ export default class Juego {
         this.inicializar();
            
     }
+
+
+
 
     inicializar(){
         const botonJugar = document.getElementById('btnJugar');

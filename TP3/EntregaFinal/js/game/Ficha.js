@@ -8,7 +8,6 @@ export default class Ficha {
         this.posY=posY;
     }
 
-
     dibujarFicha(ctx){
         console.log('dibujando ficha...');
         ctx.beginPath();
@@ -35,4 +34,10 @@ export default class Ficha {
     esIgualA(ficha) {
         return this.equipo === ficha.getEquipo();
     }
+
+    cursorDentro(x, y){{
+        let posX = this.x - x;
+        let posY = this.y - y;
+        return Math.sqrt(posX * posX + posY * posY) < this.radio;
+    }}
 }
