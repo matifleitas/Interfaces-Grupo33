@@ -26,8 +26,6 @@ export default class Tablero {
         this.initTablero();
       }
 
-
-
     //----- CREAR TABLERO---------------
     initTablero(){ //es lo mismo que dibujarse
         for(let i=0; i<this.rows; i++){ //expando cantidad de casilleros X cantFilas
@@ -65,8 +63,6 @@ export default class Tablero {
           this.casilleros[i][j].dibujar(ctx,i,j); 
         }
       }
-      
-    
     }
 
     reiniciarTablero() {
@@ -74,13 +70,6 @@ export default class Tablero {
       this.initTablero();
     }
 
-    /**
-     * isFichaDropZone(ficha){}
-     */
-
-    /**
-     * metodos de dibujos de tablero -->
-     */
 //-----------VERIFICAR GANADOR-----------
     verifyWinner(posX, posY) {
       return (

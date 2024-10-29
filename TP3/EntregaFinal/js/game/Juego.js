@@ -2,6 +2,11 @@
 import Tablero from './Tablero.js';
 import Ficha from './Ficha.js';
 
+let divTemporizador = document.querySelector(".contenedor-temporizador");
+let spanTemporizador = document.querySelector("#juego-temporizador");
+let firstTime = true;
+let reset = false;
+
 document.addEventListener('DOMContentLoaded', () => {
 
     let canvas = document.querySelector("#canvas");
@@ -9,26 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // let ctx = canvas.getContext("2d");
     // let canvasWidth = canvas.offsetWidth;
     // let canvasHeight = canvas.offsetHeight;
-
-    let jugadorUno;
-    let jugadorDos;
-    let jugadorActual;
-
-    let nombreJugadorUno;
-    let nombreJugadorDos;
-    let imagenJugadorUno;
-    let imagenJugadorDos;
-    let tipoJuego;
-    let jugando = false;
-    let terminado = false;
-    let error = false;
-
-
-    let divTiempo = document.querySelector(".contenedor_temp");
-    let spanTiempo = document.querySelector("#juego_temporizador");
-
     let cantFichas;
-
 
     let imgFichaJugadorUno=new Image();
     let imgFichaJugadorDos=new Image();
@@ -62,6 +48,7 @@ export default class Juego {
 
     inicializar() {
         const botonJugar = document.getElementById('btnJugar');
+        //const botonJugarForm = document.getElementById('btnJugar2');
         if (botonJugar) {
             botonJugar.addEventListener('click', () => this.initGame());
         } else {
@@ -71,17 +58,21 @@ export default class Juego {
 
     initGame() {
         console.log('iniciando juego...');
+        //this.mostrarForm();
         this.tablero = new Tablero(4);
         const fichaJ1 = new Ficha('red');
         this.fichas.push(fichaJ1);
         this.cambiarPantallas();
         this.tablero.dibujarTablero(this.ctx);
         this.dibujarFichas();
+        this.iniciarTemporizador(302);
     }
 
     cambiarPantallas() {
         const fondoJuego = document.getElementById('fondoJuego');
         const portadaJuego = document.getElementById('gamePortada');
+        const timer = document.getElementById('timer');
+        
 
         portadaJuego.classList.remove('mostrarJuego');
         portadaJuego.classList.add('taparJuego');
@@ -89,6 +80,13 @@ export default class Juego {
         fondoJuego.classList.remove('taparJuego');
         fondoJuego.classList.add('mostrarJuego');
     }
+
+    
+   /* mostrarForm(){
+      const form = document.getElementById('cartelForm');
+      form.classList.remove("cartel");
+      form.classList.add("cartel2");
+    }*/
 
     dibujarFichas() {
         this.fichas.forEach(ficha => ficha.dibujarFicha(this.ctx));
@@ -145,6 +143,21 @@ export default class Juego {
         if (this.fichaSeleccionada) {
             console.log("Ficha soltada");
             this.fichaSeleccionada = null;
+        }
+    }
+
+    iniciarTemporizador(segundos) {
+        if (reset) {
+            divTemporizador.classList.add("display-none");
+            spanTemporizador.innerHTML = "";
+        } else if (segundos >= 0) {
+            setTimeout(() => {
+                this.iniciarTemporizador(segundos - 1);
+                spanTemporizador.innerHTML = `${segundos} segs.`;
+                console.log(spanTemporizador.innerHTML);
+            }, 1000);
+        } else {
+            finalizarJuegoPorTiempo();
         }
     }
 }
