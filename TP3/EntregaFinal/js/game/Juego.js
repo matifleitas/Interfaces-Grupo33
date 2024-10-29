@@ -148,10 +148,3 @@ export default class Juego {
         }
     }
 }
-//export default Juego;
-
-/**
-         * isMouseDown=false
-         * isMouseUp=false
-         * onMouseMove
-         */

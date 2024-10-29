@@ -24,10 +24,6 @@ export default class Tablero {
         const imgTablero=new Image();
         imgTablero.src='../assets/tablero.png';
         this.initTablero();
-
-        // this.tableroImg.onload=()=>{
-        //   this.dibujarTablero();
-        // }
       }
 
 

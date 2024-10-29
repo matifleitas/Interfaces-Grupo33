@@ -21,11 +21,12 @@ export default class Ficha {
     }
 
     esClickeada(x, y) {
-        const dist = Math.sqrt((x - this.posX) ** 2 + (y - this.posY) ** 2);
+        const dist = Math.sqrt((x - this.posX) ** 2 + (y - this.posY) ** 1.65);
         return dist <= this.radio;
     }
 
     getEquipo(){
         return this.equipo;
     }
+    
 }
