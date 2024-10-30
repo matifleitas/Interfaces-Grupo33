@@ -36,15 +36,26 @@ export default class Casillero {
     }
 
     dibujar(ctx,rows,colums){
+        if(rows===0){
+            ctx.beginPath();
+            ctx.arc(colums*60+50,rows*60+50,25,0,2*Math.PI);
+            ctx.fillStyle='transparent';
+            ctx.fill();
+            ctx.stroke();
+        } else {
         ctx.beginPath();
-        ctx.arc(colums*60+50,rows*60+50,25,0,2*Math.PI);
-        ctx.fillStyle='black';
-        ctx.fill();
-        ctx.stroke();
-
+            ctx.arc(colums*60+50,rows*60+50,25,0,2*Math.PI);
+            ctx.fillStyle='green';
+            ctx.fill();
+            ctx.stroke();
+        }
         // if(this.ficha){
         //     this.ficha.dibujar(ctx,rows,colums);
         // }
+    }
+
+    soyCasilleroDrop(){
+        return this.numRow===0;
     }
 
 }

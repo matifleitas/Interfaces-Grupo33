@@ -2024,15 +2024,9 @@ textarea {
     background-repeat: no-repeat;
 
   }
-.tablero{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 #canvaJuego{
     background-color: var(--blackish);
-    padding-top: 2rem;
 }
   .taparJuego{
     opacity: 0;

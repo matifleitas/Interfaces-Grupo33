@@ -33,6 +33,7 @@ export default class Juego {
         this.fichaSeleccionada=null;
         this.offsetX = 0;
         this.offsetY = 0;
+        this.isMouseDown=false;
 
 
         this.fichas = [];
@@ -40,10 +41,10 @@ export default class Juego {
         this.ctx = this.canvaJuego.getContext('2d');
         this.inicializar();
 
-        this.canvaJuego.addEventListener("click", (event) => this.detectarClick(event));
-        this.canvaJuego.addEventListener("mousedown", (event) => this.iniciarDrag(event));
+        this.canvaJuego.addEventListener("mousedown", (event) => this.onMouseDown(event));
+        // this.canvaJuego.addEventListener("mousedown", (event) => this.iniciarDrag(event));
         this.canvaJuego.addEventListener("mousemove", (event) => this.arrastrarFicha(event));
-        this.canvaJuego.addEventListener("mouseup", () => this.soltarFicha());
+        this.canvaJuego.addEventListener("mouseup", (event) => this.onMouseUp(event));
     }
 
     inicializar() {
@@ -80,8 +81,6 @@ export default class Juego {
         fondoJuego.classList.remove('taparJuego');
         fondoJuego.classList.add('mostrarJuego');
     }
-
-    
    /* mostrarForm(){
       const form = document.getElementById('cartelForm');
       form.classList.remove("cartel");
@@ -92,24 +91,25 @@ export default class Juego {
         this.fichas.forEach(ficha => ficha.dibujarFicha(this.ctx));
     }
 
-    detectarClick(event) {
-        const rect = this.canvaJuego.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-        console.log(`Coordenadas del clic: x=${x}, y=${y}`);
-        console.log(`Centro de la ficha: x=${this.posX}, y=${this.posY}`);
+    // detectarClick(event) {
+    //     const rect = this.canvaJuego.getBoundingClientRect();
+    //     const x = event.clientX - rect.left;
+    //     const y = event.clientY - rect.top;
+    //     console.log(`Coordenadas del clic: x=${x}, y=${y}`);
+    //     console.log(`Centro de la ficha: x=${this.posX}, y=${this.posY}`);
 
 
-        this.fichas.forEach(ficha => {
-            if (ficha.esClickeada(x, y)) {
-                console.log("ficha clickeada");
-            } else {
-                console.log('no está en la ficha');
-            }
-        });
-    }
+    //     this.fichas.forEach(ficha => {
+    //         if (ficha.esClickeada(x, y)) {
+    //             console.log("ficha clickeada");
+    //         } else {
+    //             console.log('no está en la ficha');
+    //         }
+    //     });
+    // }
 
-    iniciarDrag(event) {
+    onMouseDown(event){
+        this.isMouseDown=true;
         const rect = this.canvaJuego.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
@@ -125,7 +125,7 @@ export default class Juego {
     }
 
     arrastrarFicha(event) {
-        if (this.fichaSeleccionada) {
+        if (this.isMouseDown && this.fichaSeleccionada) {
             const rect = this.canvaJuego.getBoundingClientRect();
             const x = event.clientX - rect.left;
             const y = event.clientY - rect.top;
@@ -138,6 +138,28 @@ export default class Juego {
             this.dibujarFichas();
         }
     }
+
+
+    onMouseUp(e){
+        this.isMouseDown=false;
+        if(this.fichaSeleccionada){
+            if(this.tablero.isInZoneDrop(this.fichaSeleccionada)){//se fija si esta en la zona dropeable
+                if(this.tablero.dropFicha(this.fichaSeleccionada)){//suelta en caso de q la columna tenga lugar
+                    if(this.tablero.verifyWinner(this.fichaSeleccionada)){
+                        //ejecuto metodo endGame;
+                    }else{
+                        //verificar q no se llenó el tablero, si se llenó ejecuto endGame; 
+                        //sino cambiamos turno
+                    }
+                }else{
+                    //vuelve la ficha a su posicion inicial
+                }   
+            }else{
+                //vuelve la ficha a su posicion inicial juntar ifs
+            }
+        }
+    }
+
 
     soltarFicha() {
         if (this.fichaSeleccionada) {
@@ -154,7 +176,7 @@ export default class Juego {
             setTimeout(() => {
                 this.iniciarTemporizador(segundos - 1);
                 spanTemporizador.innerHTML = `${segundos} segs.`;
-                console.log(spanTemporizador.innerHTML);
+                //console.log(spanTemporizador.innerHTML);
             }, 1000);
         } else {
             finalizarJuegoPorTiempo();

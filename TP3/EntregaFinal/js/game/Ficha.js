@@ -28,5 +28,13 @@ export default class Ficha {
     getEquipo(){
         return this.equipo;
     }
+
+    getPosY(){
+        return this.posY;
+    }
+
+    getPosX(){
+        return this.posX;
+    }
     
 }

@@ -16,7 +16,7 @@ export default class Tablero {
         throw new Error('line debe ser un número entero positivo');
       }
         this.line = line;
-        this.rows = line + 2;
+        this.rows = line + 3;
         this.columns = line + 3;
         this.tableroImg= new Image();
         this.tableroImg.src='../assets/tablero.png';
@@ -70,8 +70,29 @@ export default class Tablero {
       this.initTablero();
     }
 
+    //metodos de manejo de fichas
+    isInZoneDrop(ficha){
+      
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------VERIFICAR GANADOR-----------
-    verifyWinner(posX, posY) {
+    verifyWinner(ficha) {
+      let posX=ficha.getPosX();
+      let posY=ficha.getPosY();
       return (
         this.verifyHorizontal(posX, posY) ||
           this.verifyVertical(posX, posY) || 
