@@ -25,16 +25,30 @@ export default class Ficha {
         return dist <= this.radio;
     }
 
+    setPosicion(posX, posY) {
+        this.posX = posX;
+        this.posY = posY;
+    }
+
     getEquipo(){
         return this.equipo;
     }
 
-    getPosY(){
+    getPosX() {
+        return this.posX;
+    }
+
+    getPosY() {
         return this.posY;
     }
 
-    getPosX(){
-        return this.posX;
+    setPosY(posY) {
+        this.posY = posY;
     }
-    
+
+    setPosX(posX) {
+
+        this.posX = posX;
+    }
+
 }

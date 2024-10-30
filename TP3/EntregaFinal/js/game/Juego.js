@@ -44,7 +44,7 @@ export default class Juego {
         this.canvaJuego.addEventListener("mousedown", (event) => this.onMouseDown(event));
         // this.canvaJuego.addEventListener("mousedown", (event) => this.iniciarDrag(event));
         this.canvaJuego.addEventListener("mousemove", (event) => this.arrastrarFicha(event));
-        this.canvaJuego.addEventListener("mouseup", (event) => this.onMouseUp(event));
+        window.addEventListener("mouseup", (event) => this.onMouseUp(event));  // Cambiar de canvas a window
     }
 
     inicializar() {
@@ -91,22 +91,11 @@ export default class Juego {
         this.fichas.forEach(ficha => ficha.dibujarFicha(this.ctx));
     }
 
-    // detectarClick(event) {
-    //     const rect = this.canvaJuego.getBoundingClientRect();
-    //     const x = event.clientX - rect.left;
-    //     const y = event.clientY - rect.top;
-    //     console.log(`Coordenadas del clic: x=${x}, y=${y}`);
-    //     console.log(`Centro de la ficha: x=${this.posX}, y=${this.posY}`);
 
-
-    //     this.fichas.forEach(ficha => {
-    //         if (ficha.esClickeada(x, y)) {
-    //             console.log("ficha clickeada");
-    //         } else {
-    //             console.log('no está en la ficha');
-    //         }
-    //     });
-    // }
+    cambiarTurno() {
+        this.turn = this.turn === this.j1 ? this.j2 : this.j1;
+        console.log(`Turno del jugador: ${this.turn.getEquipo()}`);
+    }
 
     onMouseDown(event){
         this.isMouseDown=true;
@@ -140,26 +129,45 @@ export default class Juego {
     }
 
 
-    onMouseUp(e){
-        this.isMouseDown=false;
-        if(this.fichaSeleccionada){
-            if(this.tablero.isInZoneDrop(this.fichaSeleccionada)){//se fija si esta en la zona dropeable
-                if(this.tablero.dropFicha(this.fichaSeleccionada)){//suelta en caso de q la columna tenga lugar
-                    if(this.tablero.verifyWinner(this.fichaSeleccionada)){
-                        //ejecuto metodo endGame;
-                    }else{
-                        //verificar q no se llenó el tablero, si se llenó ejecuto endGame; 
-                        //sino cambiamos turno
+    onMouseUp(event) {
+        this.isMouseDown = false; 
+    
+        if (this.fichaSeleccionada) {
+            const rect = this.canvaJuego.getBoundingClientRect(); 
+            const x = event.clientX - rect.left; //  X relativa al canvas
+            const y = event.clientY - rect.top;  // Y relativa al canvas
+    
+            console.log(`Ficha soltada en: x=${x}, y=${y}`);
+            console.log(this.fichaSeleccionada);
+    
+            if (this.tablero.isInZoneDrop(x, y)) {
+                // coloca la ficha en la columna correspondiente
+                if (this.tablero.dropFicha(this.fichaSeleccionada, x, this.ctx)) {
+                    
+                    console.log("entraste y no dibujaste");
+                    
+                    if (this.tablero.verifyWinner(this.fichaSeleccionada)) {
+                        console.log("ganaste");
+                        this.endGame(); 
+                    } else if (this.tablero.isFull()) {
+                        this.endGame(); // empate
+                    } else {
+                        this.cambiarTurno();
                     }
-                }else{
-                    //vuelve la ficha a su posicion inicial
-                }   
-            }else{
-                //vuelve la ficha a su posicion inicial juntar ifs
+                } 
+            } else {
+                console.log("Ficha fuera de zona válida, regresando...");
+                this.fichaSeleccionada.resetPosicion();
             }
+    
+            this.fichaSeleccionada = null; 
         }
     }
+    
 
+    endGame(){
+        console.log("termino...");
+    }
 
     soltarFicha() {
         if (this.fichaSeleccionada) {

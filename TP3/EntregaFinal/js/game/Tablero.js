@@ -18,6 +18,7 @@ export default class Tablero {
         this.line = line;
         this.rows = line + 3;
         this.columns = line + 3;
+        this.anchoColumna = 59;
         this.tableroImg= new Image();
         this.tableroImg.src='../assets/tablero.png';
         this.canvasJuego=document.getElementById('canvaJuego');
@@ -75,24 +76,13 @@ export default class Tablero {
       
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //-----------VERIFICAR GANADOR-----------
-    verifyWinner(ficha) {
-      let posX=ficha.getPosX();
-      let posY=ficha.getPosY();
+    verifyWinner(fichaGanadora) {
+      const posX = fichaGanadora.getPosX();
+      const posY = fichaGanadora.getPosY();
+      console.log(`fichaGanadora: ${JSON.stringify(fichaGanadora)}`);
+      console.log(`getPosX(): ${fichaGanadora.getPosX()}`);
+      console.log(`getPosY(): ${fichaGanadora.getPosY()}`);
       return (
         this.verifyHorizontal(posX, posY) ||
           this.verifyVertical(posX, posY) || 
@@ -110,6 +100,7 @@ export default class Tablero {
     }
 
     verifyVertical(posX, posY) {
+
       if (this.casilleros[posX][posY].getFicha() !== null) {
         return this.checkVertical(posX, posY, 1) || this.checkVertical(posX, posY, -1);
       }
@@ -245,28 +236,19 @@ export default class Tablero {
 
     // //------COLOCAR FICHA------
 
-    colocarFicha(ficha, posY){
-      if (posY < 0 || posY >= this.columns) {
+    colocarFicha(ficha, columna) {
+      if (columna < 0 || columna >= this.columns) {
         throw new Error('Posición fuera de los límites del tablero');
       }
-      if (this.casilleros[0][posY].estaVacio()) { //checkeo que la columna no rebalse
-        let ultimaFilaDisponible = this.rows - 1;  
-
-        while (ultimaFilaDisponible > 0 && !this.casilleros[ultimaFilaDisponible][posY].estaVacio()) {
-          ultimaFilaDisponible--;  // subo una fila hacia arriba
+      
+      const fila = this.ultimaFilaDisponible(columna);
+      if (fila !== -1) {
+        this.casilleros[fila][columna].colocarFicha(ficha);
+        this.imprimirTablero();
+        if (this.verifyWinner(ficha)) {
+          console.log("Hay ganador");
         }
-
-        if(this.casilleros[ultimaFilaDisponible][posY].estaVacio()){
-          this.casilleros[ultimaFilaDisponible][posY].colocarFicha(ficha); 
-          this.imprimirTablero();
-
-          if(this.verifyWinner(ultimaFilaDisponible, posY)){
-            console.log("hay ganador");
-          }
-        } else {
-            return false; 
-        }
-      } else{
+      } else {
         throw new Error('Columna llena');
       }
     }
@@ -274,6 +256,67 @@ export default class Tablero {
     obtenerCasillero(posX, posY){
       return this.casilleros[posX][posY];
     }
+
+    isFull() {
+      for (let i = 0; i < this.rows; i++) {
+        for (let j = 0; j < this.columns; j++) {
+          const casillero = this.casilleros[i][j];
+          if (casillero.estaVacio()) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    isInZoneDrop(x, y) {
+        const columnaAncho = this.canvasJuego.width / this.columns; 
+        const columna = Math.floor(x / columnaAncho); 
+    
+        const tableroFinY = this.canvasJuego.height;
+        if (y >= 0 && y <= tableroFinY) {
+            //console.log(`Ficha en la columna ${columna}`);  // Confirmación por consola
+            return true;
+        } else {
+            return false;
+        }
+    }
+  
+
+    dropFicha(ficha, x, ctx) {
+      const columna = Math.floor(x / this.anchoColumna); // dividir entre el ancho de la columna
+      const fila = this.ultimaFilaDisponible(columna); // oobtener la fila disponible
+      console.log(fila);
+      if (fila !== -1) {
+        ficha.setPosicion(columna * this.anchoColumna, fila * this.altoFila);
+        this.casilleros[fila][columna].colocarFicha(ficha); // ctualizar casillero
+        console.log(this.casilleros[fila][columna]);
+        ficha.dibujarFicha(ctx);
+        return true;
+      }
+
+      return false;
+    }
+  
+    ultimaFilaDisponible(columna) {
+      console.log(`Columna: ${columna}`);
+
+      if (columna < 0 || columna >= this.columns) {
+        console.log('Posición fuera de los límites del tablero');
+      }
+      
+      for (let i = this.rows - 1; i >= 0; i--) {
+
+        if (this.casilleros[i] && this.casilleros[i][columna] && this.casilleros[i][columna].estaVacio()) {
+
+          return i;
+        }
+      }
+      
+      console.log(`Columna llena`);
+      return -1; // columna llena
+    }
+  
   }
   
 //export default Tablero;

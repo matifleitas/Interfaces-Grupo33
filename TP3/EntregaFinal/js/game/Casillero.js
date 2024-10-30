@@ -7,9 +7,7 @@ export default class Casillero {
         if (typeof numColumn !== 'number' || numColumn < 0) {
             throw new Error('numColumn debe ser un número positivo');
         }
-        // const cellWidth=canvasWidth/this.numColumn;
-        // const cellHeight=canvasHeight/this.numRow;
-        // const radius=Math.min(cellWidth,cellHeight)*0.4;
+
         this.numRow = numRow;
         this.numColumn = numColumn;
         this.ficha = null; 
@@ -24,7 +22,11 @@ export default class Casillero {
       }
 
     getFicha() {
-        return this.ficha; 
+        if(this.ficha) {
+            return this.ficha;
+        }else {
+            return null;
+        }
     }
 
     estaVacio() {
