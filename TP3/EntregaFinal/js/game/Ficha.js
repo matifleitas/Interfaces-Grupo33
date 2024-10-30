@@ -1,13 +1,17 @@
 'use strict';
 export default class Ficha {
-    constructor(posX,posY,equipo) {
-        this.posX = posX;
-        this.posY = posY; 
+    posXInicial;
+    posYInicial;
+    constructor(x,y,equipo) {
+        this.posX = x;
+        this.posY = y; 
         this.radio = 35;
         this.equipo = equipo;
         this.selected = false;
         this.image = new Image();
         this.image.src = '../img/fichas/batman.png';
+        this.posXInicial=x;
+        this.posYInicial=y;
     }
 
     dibujarFicha(ctx) {
@@ -57,4 +61,8 @@ export default class Ficha {
         this.posX = posX;
     }
 
+    resetPosicion(){
+        this.posX=posXInicial;
+        this.posY=posYInicial;
+    }
 }
