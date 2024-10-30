@@ -13,8 +13,8 @@ export default class Tablero {
     //---------------------Constructor---------------------------
 
     constructor(line){
-      if (typeof line !== 'number' || line <= 0) {
-        throw new Error('line debe ser un número entero positivo');
+      if (line <= 0) {
+        throw new Error('line debe ser un número entero positivo el numero es: ');
       }
         this.line = line;
         this.rows = line + 2;
@@ -85,7 +85,8 @@ export default class Tablero {
     verifyWinner(fichaGanadora) {
       const posX = fichaGanadora.getPosX();
       const posY = fichaGanadora.getPosY();
-      //console.log(`fichaGanadora: ${JSON.stringify(fichaGanadora)}`);
+      console.log(`entreee a verificar ganador`);
+      //console.log(this.casilleros[fichaGanadora.getPosX()][fichaGanadora.getPosY()]);
       console.log(`getPosX(): ${fichaGanadora.getPosX()}`);
       console.log(`getPosY(): ${fichaGanadora.getPosY()}`);
       return (
@@ -249,6 +250,7 @@ export default class Tablero {
       }
       
       const fila = this.ultimaFilaDisponible(columna);
+      console.log("ultima fila disponible: "+ fila);
       if (fila !== -1) {
         this.casilleros[fila][columna].colocarFicha(ficha);
         this.imprimirTablero();
@@ -276,31 +278,13 @@ export default class Tablero {
       return true;
     }
 
-
-    // isInZoneDrop(x, y) {
-    //   const columnaAncho = this.canvasJuego.width / this.columns; 
-    //   const columna = Math.floor(x / columnaAncho); 
-      
-    //   const tableroFinX = this.canvasJuego.width;
-    //   const tableroFinY = this.canvasJuego.height;
-      
-    //   if (x >= 0 && x <= tableroFinX && y >= 0 && y <= tableroFinY) {
-        
-    //     //console.log(`Ficha en la columna ${columna}`);  // Confirmación por consola
-    //     return true;
-    //   } else {
-    //     return false;
-    //   }
-    // }
-
-
-
     dropFicha(ficha, x,y, ctx) {
       console.log('en drop ficha');
       
       const columna = Math.floor(x / this.anchoColumna); // dividir entre el ancho de la columna
       const fila = this.ultimaFilaDisponible(columna); // oobtener la fila disponible
-      console.log(ficha);
+
+      console.log("ultima fila disponible: "+ fila);
       
       //console.log(fila);
       //console.log('get posX: '+ ficha.getPosX());
@@ -316,10 +300,10 @@ export default class Tablero {
       return false;
     }
   
-    isInZoneDrop(fichaSeleccionada) {
+    isInZoneDrop(fichaSeleccionada,ctx) {
       const zonaX = 0; // coordenada x de la zona dropeable
       const zonaY = 0; // coordenada y de la zona dropeable
-      const zonaAncho = this.canvasJuego.width; // ancho de la zona dropeable
+      const zonaAncho = this.canvasJuego.width/2; // ancho de la zona dropeable
       const zonaAlto = 50; // alto de la zona dropeable
           
       if (fichaSeleccionada.getPosX() >= zonaX && fichaSeleccionada.getPosX() <= zonaX + zonaAncho &&
@@ -328,7 +312,8 @@ export default class Tablero {
         return true;
       } else {
         fichaSeleccionada.resetPosicion();
-        //fichaSeleccionada.volverPila();
+        this.dibujarTablero(ctx)
+        fichaSeleccionada.dibujarFicha(ctx);
         return false;
       }
     }

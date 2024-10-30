@@ -161,8 +161,8 @@
                     </div>
                 </div>
                
-                <div class="cartel" id="cartelForm">
-                    <h2>Tipo de juego</h2>
+                <div class="cartel taparJuego" id="formLineas">
+                    <h2>Elija cantidad de lineas: </h2>
                     <form class="form_game">
                         <label>
                             <input type="radio" name="tipo" value="4"> 4 en línea
@@ -173,7 +173,7 @@
                         <label>
                             <input type="radio" name="tipo" value="6"> 6 en línea
                         </label><br><br>
-                        <button class="button-with-icon" id="btnJugar2">
+                        <button type="submit" class="button-with-icon" id="btnJugar2">
                             <span class="material-symbols-outlined icon">
                                 sports_esports
                                 </span>
@@ -187,11 +187,11 @@
                 <div class="contenedor-temporizador display-none">
                     <span id="juego-temporizador"></span>
                 </div>
-                <div class="contenedor-ganador display-none">
+                <!-- <div class="contenedor-ganador display-none">
                     <div class="cartel">
                         <h3 id="h3-ganador"></h3>
                     </div>
-                </div>
+                </div> -->
                 <div class="taparJuego" id="fondoJuego">
                     <canvas id="canvaJuego" width="1011" height="500" class="canvasClass"></canvas>
                 </div>

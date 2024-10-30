@@ -62,7 +62,8 @@ export default class Ficha {
     }
 
     resetPosicion(){
-        this.posX=posXInicial;
-        this.posY=posYInicial;
+        console.log('reseto pos');
+        this.posX=this.posXInicial;
+        this.posY=this.posYInicial;
     }
 }

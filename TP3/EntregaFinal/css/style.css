@@ -2052,6 +2052,9 @@ textarea {
 }
 
 .cartel {
+    top:145px;
+    margin-top: 2.3rem;
+    position: absolute;
     background-color: var(--shadow-primary);
     border-radius: 10px;
     padding: 20px;
@@ -2059,7 +2062,6 @@ textarea {
     text-align: center;
     width: 250px;
     color: white;
-    display: none;
 }
 
 .cartel2 {
@@ -2111,3 +2113,7 @@ button {
     background-repeat: no-repeat; 
 
   }
+
+  /*FORMULARIO ELEGIR LINEAS*/
+
+  

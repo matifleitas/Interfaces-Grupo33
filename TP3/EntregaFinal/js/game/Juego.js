@@ -6,6 +6,7 @@ let divTemporizador = document.querySelector(".contenedor-temporizador");
 let spanTemporizador = document.querySelector("#juego-temporizador");
 let firstTime = true;
 let reset = false;
+let lineasAJugar;
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -16,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let imgFichaJugadorUno=new Image();
     let imgFichaJugadorDos=new Image();
     imgFichaJugadorUno.src = '../img'; //imagen de joker y otra de batman
-
     let mouseDown=false;
 });
 
@@ -31,6 +31,7 @@ export default class Juego {
         this.offsetX = 0;
         this.offsetY = 0;
         this.isMouseDown=false;
+        this.lineasAJugar;
 
 
         this.fichas = [];
@@ -66,6 +67,7 @@ export default class Juego {
     }
 
     cambiarPantallas() {
+        const formLines=document.getElementById('formLineas');
         const fondoJuego = document.getElementById('fondoJuego');
         const portadaJuego = document.getElementById('gamePortada');
         const timer = document.getElementById('timer');
@@ -73,10 +75,28 @@ export default class Juego {
 
         portadaJuego.classList.remove('mostrarJuego');
         portadaJuego.classList.add('taparJuego');
+        formLines.classList.remove('taparJuego');
 
-        fondoJuego.classList.remove('taparJuego');
-        fondoJuego.classList.add('mostrarJuego');
+        formLines.addEventListener('submit',(event)=>{
+            event.preventDefault();
+            let opcionSelect=document.querySelector('input[name="tipo"]:checked')
+            console.log(opcionSelect.value);
+            let valor= opcionSelect.value;
+
+            if(opcionSelect){
+                this.lineasAJugar=valor;
+                console.log('lineas a jugar: ' + this.lineasAJugar);
+                formLines.classList.add('taparJuego');
+                fondoJuego.classList.remove('taparJuego');
+            }
+        })
+
+        formLines.classList.remove('taparJuego');
+        //fondoJuego.classList.remove('taparJuego');
+        //fondoJuego.classList.add('mostrarJuego');
     }
+
+
    /* mostrarForm(){
       const form = document.getElementById('cartelForm');
       form.classList.remove("cartel");
@@ -149,12 +169,10 @@ export default class Juego {
             console.log(`Ficha soltada en: x=${x}, y=${y}`);
             console.log(this.fichaSeleccionada);
     
-            if (this.tablero.isInZoneDrop(this.fichaSeleccionada)) {
+            if (this.tablero.isInZoneDrop(this.fichaSeleccionada,this.ctx)) {
                 // coloca la ficha en la columna correspondiente
                 if (this.tablero.dropFicha(this.fichaSeleccionada, x,y,this.ctx)) {
-                    
                     console.log("entraste y no dibujaste");
-
                     if (this.tablero.verifyWinner(this.fichaSeleccionada)) {
                         console.log("ganaste");
                         this.endGame(); 
@@ -167,7 +185,6 @@ export default class Juego {
             } else {
                 console.log("Ficha fuera de zona válida, regresando...");
             }
-    
             this.fichaSeleccionada = null; 
         }
     }

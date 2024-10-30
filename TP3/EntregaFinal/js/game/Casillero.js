@@ -50,7 +50,7 @@ export default class Casillero {
   dibujar(ctx, rows, colums) {
     ctx.beginPath();
     ctx.arc(colums * 60 + 50, rows * 60 + 50, 25, 0, 2 * Math.PI);
-    ctx.fillStyle = rows === 0 ? 'transparent' : 'green';
+    ctx.fillStyle = 'grey';
     ctx.fill();
     ctx.stroke();
 
