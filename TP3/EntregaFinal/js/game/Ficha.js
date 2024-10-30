@@ -1,9 +1,9 @@
 'use strict';
 export default class Ficha {
-    constructor(equipo) {
-        this.posX = 500;
-        this.posY = 200; 
-        this.radio = 30;
+    constructor(posX,posY,equipo) {
+        this.posX = posX;
+        this.posY = posY; 
+        this.radio = 35;
         this.equipo = equipo;
         this.selected = false;
         this.image = new Image();
@@ -18,6 +18,8 @@ export default class Ficha {
         ctx.clip();
         ctx.drawImage(this.image, this.posX - this.radio, this.posY - this.radio, this.radio * 2, this.radio * 2);
         ctx.restore();
+        //console.log('ficha dibujada en:' + this.posX,this.posY);
+        
     }
 
     esClickeada(x, y) {

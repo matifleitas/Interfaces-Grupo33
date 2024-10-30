@@ -61,10 +61,9 @@ export default class Juego {
         console.log('iniciando juego...');
         //this.mostrarForm();
         this.tablero = new Tablero(4);
-        const fichaJ1 = new Ficha('red');
-        this.fichas.push(fichaJ1);
         this.cambiarPantallas();
         this.tablero.dibujarTablero(this.ctx);
+        this.crearFichas();
         this.dibujarFichas();
         this.iniciarTemporizador(302);
     }
@@ -86,6 +85,19 @@ export default class Juego {
       form.classList.remove("cartel");
       form.classList.add("cartel2");
     }*/
+
+      crearFichas() {
+        const posXBase = 500;
+        const posYBase = 200;
+        const separacion = 5; // Espacio entre fichas para el efecto de apilamiento
+
+        for (let i = 0; i < 5; i++) { // Crea 5 fichas como ejemplo
+            let posX = posXBase + Math.random() * separacion; // Varía un poco `posX` aleatoriamente
+            let posY = posYBase + i * separacion*-2 // Incrementa `posY` para apilar
+            const ficha = new Ficha(posX, posY, 'equipo1');
+            this.fichas.push(ficha);
+        }
+    }
 
     dibujarFichas() {
         this.fichas.forEach(ficha => ficha.dibujarFicha(this.ctx));
