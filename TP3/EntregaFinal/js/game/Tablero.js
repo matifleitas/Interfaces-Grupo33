@@ -17,7 +17,7 @@ export default class Tablero {
         throw new Error('line debe ser un número entero positivo');
       }
         this.line = line;
-        this.rows = line + 3;
+        this.rows = line + 2;
         this.columns = line + 3;
         this.anchoColumna = 59;
         const casilleroImagen = new Image();
