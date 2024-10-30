@@ -8,6 +8,7 @@ export default class Tablero {
     tableroImg;
     rows;
     columns;
+    casilleroImagen;
 
     //---------------------Constructor---------------------------
 
@@ -19,6 +20,8 @@ export default class Tablero {
         this.rows = line + 3;
         this.columns = line + 3;
         this.anchoColumna = 59;
+        const casilleroImagen = new Image();
+        casilleroImagen.src = '../img/icono/marco.jpg';
         this.tableroImg= new Image();
         this.tableroImg.src='../assets/tablero.png';
         this.canvasJuego=document.getElementById('canvaJuego');
@@ -33,6 +36,8 @@ export default class Tablero {
           this.casilleros[i] = [];
             for(let j=0; j<this.columns; j++){
               this.casilleros[i][j] = new Casillero(i, j); //creo un casillero con numero de fila y columna
+              //this.casilleros[i][j].setImagen(this.casilleroImagen);
+              //console.log(this.casilleros[i][j]);
             }
         }
     }
