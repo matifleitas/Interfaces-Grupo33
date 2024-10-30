@@ -2105,7 +2105,7 @@ button {
   }
 
   .canvasClass{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/game/batmanVJoker.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(../img/game/batmanVJoker.jpeg);
     background-size: 1011px 880px; 
     background-position: center; 
     background-repeat: no-repeat; 

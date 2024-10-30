@@ -23,7 +23,7 @@ export default class Ficha {
     }
 
     esClickeada(x, y) {
-        const dist = Math.sqrt((x - this.posX) ** 2 + (y - this.posY) ** 1.65);
+        const dist = Math.sqrt((x - this.posX) ** 2 + (y - this.posY) ** 2);
         return dist <= this.radio;
     }
 

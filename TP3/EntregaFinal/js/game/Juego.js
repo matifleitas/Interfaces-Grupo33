@@ -87,12 +87,12 @@ export default class Juego {
     }*/
 
       crearFichas() {
-        const posXBase = 500;
-        const posYBase = 200;
-        const separacion = 5; // Espacio entre fichas para el efecto de apilamiento
+        const posXBase = 910;
+        const posYBase = 400;
+        const separacion = 9; // Espacio entre fichas para el efecto de apilamiento
 
-        for (let i = 0; i < 5; i++) { // Crea 5 fichas como ejemplo
-            let posX = posXBase + Math.random() * separacion; // Varía un poco `posX` aleatoriamente
+        for (let i = 0; i < 20; i++) { 
+            let posX = posXBase + 1 * separacion; // Varía un poco `posX` aleatoriamente
             let posY = posYBase + i * separacion*-2 // Incrementa `posY` para apilar
             const ficha = new Ficha(posX, posY, 'equipo1');
             this.fichas.push(ficha);
@@ -157,7 +157,7 @@ export default class Juego {
                 if (this.tablero.dropFicha(this.fichaSeleccionada, x, this.ctx)) {
                     
                     console.log("entraste y no dibujaste");
-                    
+
                     if (this.tablero.verifyWinner(this.fichaSeleccionada)) {
                         console.log("ganaste");
                         this.endGame(); 
