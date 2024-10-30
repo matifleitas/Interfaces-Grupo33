@@ -32,6 +32,10 @@ export default class Ficha {
         this.posY = posY;
     }
 
+    getPosicion(){
+        return this.getPosX, this.posY;
+    }
+
     getEquipo(){
         return this.equipo;
     }

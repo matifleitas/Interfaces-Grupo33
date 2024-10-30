@@ -85,7 +85,7 @@ export default class Tablero {
     verifyWinner(fichaGanadora) {
       const posX = fichaGanadora.getPosX();
       const posY = fichaGanadora.getPosY();
-      console.log(`fichaGanadora: ${JSON.stringify(fichaGanadora)}`);
+      //console.log(`fichaGanadora: ${JSON.stringify(fichaGanadora)}`);
       console.log(`getPosX(): ${fichaGanadora.getPosX()}`);
       console.log(`getPosY(): ${fichaGanadora.getPosY()}`);
       return (
@@ -98,6 +98,8 @@ export default class Tablero {
 
 //HORIZONTAL
     verifyHorizontal(posX, posY) {
+      console.log(posX,posY);
+      
       if (this.casilleros[posX][posY].getFicha() !== null) {
         return this.checkHorizontal(posX, posY, 1) || this.checkHorizontal(posX, posY, -1);
       }
@@ -288,18 +290,16 @@ export default class Tablero {
     }
   
 
-    dropFicha(ficha, x, ctx) {
+    dropFicha(ficha, x,y, ctx) {
       const columna = Math.floor(x / this.anchoColumna); // dividir entre el ancho de la columna
       const fila = this.ultimaFilaDisponible(columna); // oobtener la fila disponible
       console.log(fila);
       if (fila !== -1) {
-        ficha.setPosicion(columna * this.anchoColumna, fila * this.altoFila);
-        this.casilleros[fila][columna].colocarFicha(ficha); // ctualizar casillero
-        console.log(this.casilleros[fila][columna]);
-        ficha.dibujarFicha(ctx);
+        ficha.setPosicion(columna * this.anchoColumna,y);
+        this.casilleros[5][5].colocarFicha(ficha); // ctualizar casillero
+        this.casilleros[5][5].dibujar(ctx,this.rows,this.columns);
         return true;
       }
-
       return false;
     }
   

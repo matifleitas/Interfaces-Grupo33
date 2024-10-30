@@ -154,7 +154,7 @@ export default class Juego {
     
             if (this.tablero.isInZoneDrop(x, y)) {
                 // coloca la ficha en la columna correspondiente
-                if (this.tablero.dropFicha(this.fichaSeleccionada, x, this.ctx)) {
+                if (this.tablero.dropFicha(this.fichaSeleccionada, x,y,this.ctx)) {
                     
                     console.log("entraste y no dibujaste");
                     

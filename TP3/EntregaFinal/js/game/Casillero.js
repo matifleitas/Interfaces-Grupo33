@@ -58,6 +58,11 @@ export default class Casillero {
     if (this.imagen) {
       ctx.drawImage(this.imagen, colums * 60 + 50 - 30, rows * 60 + 50 - 30, 61, 63);
     }
+
+    if(this.ficha){
+      console.log('dibujo ficha en casillero');
+      this.ficha.dibujarFicha(ctx);
+    }
   }
 
   soyCasilleroDrop() {
