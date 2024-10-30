@@ -276,22 +276,6 @@ export default class Tablero {
       return true;
     }
 
-    isInZoneDrop(fichaSeleccionada) {
-      const zonaX = 0; // coordenada x de la zona dropeable
-      const zonaY = 0; // coordenada y de la zona dropeable
-      const zonaAncho = this.canvasJuego.width; // ancho de la zona dropeable
-      const zonaAlto = 50; // alto de la zona dropeable
-      
-      if (fichaSeleccionada.getPosX() >= zonaX && fichaSeleccionada.getPosX() <= zonaX + zonaAncho &&
-       fichaSeleccionada.getPosY() >= zonaY && fichaSeleccionada.getPosY() <= zonaY + zonaAlto) {
-        console.log('en zona dropeable');
-        return true;
-      } else {
-        fichaSeleccionada.resetearPosicion();
-        //fichaSeleccionada.volverPila();
-        return false;
-      }
-    }
 
     // isInZoneDrop(x, y) {
     //   const columnaAncho = this.canvasJuego.width / this.columns; 
@@ -309,21 +293,48 @@ export default class Tablero {
     //   }
     // }
 
+
+
     dropFicha(ficha, x,y, ctx) {
+      console.log('en drop ficha');
+      
       const columna = Math.floor(x / this.anchoColumna); // dividir entre el ancho de la columna
       const fila = this.ultimaFilaDisponible(columna); // oobtener la fila disponible
-      console.log(fila);
-      if(this.isInZoneDrop(x,y)){
+      console.log(ficha);
+      
+      //console.log(fila);
+      //console.log('get posX: '+ ficha.getPosX());
+      
+      if(this.isInZoneDrop(ficha)){
         if (fila !== -1) {
           ficha.setPosicion(columna * this.anchoColumna,y);
-          this.casilleros[5][5].colocarFicha(ficha); // ctualizar casillero
-          this.casilleros[5][5].dibujar(ctx,this.rows,this.columns);
+          //this.casilleros[5][5].colocarFicha(ficha); // ctualizar casillero
+          //this.casilleros[5][5].dibujar(ctx,this.rows,this.columns);
           return true;
         }
       }
       return false;
     }
   
+    isInZoneDrop(fichaSeleccionada) {
+      const zonaX = 0; // coordenada x de la zona dropeable
+      const zonaY = 0; // coordenada y de la zona dropeable
+      const zonaAncho = this.canvasJuego.width; // ancho de la zona dropeable
+      const zonaAlto = 50; // alto de la zona dropeable
+          
+      if (fichaSeleccionada.getPosX() >= zonaX && fichaSeleccionada.getPosX() <= zonaX + zonaAncho &&
+       fichaSeleccionada.getPosY() >= zonaY && fichaSeleccionada.getPosY() <= zonaY + zonaAlto) {
+        console.log('en zona dropeable');
+        return true;
+      } else {
+        fichaSeleccionada.resetPosicion();
+        //fichaSeleccionada.volverPila();
+        return false;
+      }
+    }
+
+    
+
     ultimaFilaDisponible(columna) {
       console.log(`Columna: ${columna}`);
 

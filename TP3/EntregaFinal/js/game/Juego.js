@@ -152,7 +152,7 @@ export default class Juego {
             console.log(`Ficha soltada en: x=${x}, y=${y}`);
             console.log(this.fichaSeleccionada);
     
-            if (this.tablero.isInZoneDrop(x, y)) {
+            if (this.tablero.isInZoneDrop(this.fichaSeleccionada)) {
                 // coloca la ficha en la columna correspondiente
                 if (this.tablero.dropFicha(this.fichaSeleccionada, x,y,this.ctx)) {
                     
@@ -169,7 +169,6 @@ export default class Juego {
                 } 
             } else {
                 console.log("Ficha fuera de zona válida, regresando...");
-                this.fichaSeleccionada.resetPosicion();
             }
     
             this.fichaSeleccionada = null; 
