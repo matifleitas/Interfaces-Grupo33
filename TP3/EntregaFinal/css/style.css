@@ -2014,11 +2014,10 @@ textarea {
   #fondoJuego{
     top:125px;
     position: absolute;
-    background-color: white;
+    background-color: transparent;
     width: 75%;
     height: 86%;
     border-radius: 8px;
-    background-image: url(../img/game/image.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2103,4 +2102,12 @@ button {
     width: auto;
     margin: 0;
     box-sizing: border-box;
+  }
+
+  .canvasClass{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/game/batmanVJoker.jpeg);
+    background-size: 1011px 880px; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+
   }
