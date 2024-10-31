@@ -56,7 +56,7 @@ export default class Casillero {
     ctx.beginPath();
     // Dibujar imagen fuera del círculo
     if (this.imagen) {
-      ctx.drawImage(this.imagen,posX,posY, 61, 63);
+      ctx.drawImage(this.imagen,posX,posY, 60, 61);
       if(this.ficha!=null){
         this.ficha.dibujarFicha(ctx);
       }
