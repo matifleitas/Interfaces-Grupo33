@@ -75,7 +75,6 @@ export default class Tablero {
         this.casilleros[i][j].dibujar(ctx,offsetX + j * this.anchoColumna, offsetY + i * this.anchoColumna);
       }
     }
-
   }
 
   reiniciarTablero() {

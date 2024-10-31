@@ -65,7 +65,6 @@ export default class Juego {
         requestAnimationFrame(()=>this.drawFrame());
     }
 
-
     initGame() {
         console.log('iniciando juego...');
         this.cambiarPantallas();

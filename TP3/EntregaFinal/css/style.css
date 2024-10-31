@@ -827,6 +827,8 @@ h4 {
     }
 
 
+    
+
     .footer-links .footer-column ul li {
         font-size: 14px;
         margin: 0;
@@ -1478,7 +1480,7 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: start;
-    padding: 10px 0;
+    padding-top: 10px;
     font-size: 14px;
     color: var(--white);
     align-self: flex-start;
@@ -2012,7 +2014,7 @@ textarea {
   /*------------------------4 en linea------------------------*/
 
   #fondoJuego{
-    top:125px;
+    top:110px;
     position: absolute;
     background-color: transparent;
     width: 75%;
@@ -2026,6 +2028,7 @@ textarea {
 
 #canvaJuego{
     background-color: var(--blackish);
+    border-radius: 8px;
 }
   .taparJuego{
     opacity: 0;
@@ -2113,6 +2116,11 @@ button {
     background-repeat: no-repeat; 
 
   }
+
+  .game-canva{
+    width: 1011px;
+    height: 510px;
+}
 
   /*FORMULARIO ELEGIR LINEAS*/
 
