@@ -13,12 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let canvas = document.querySelector("#canvas");
     /** @type {CanvasRenderingContext2D} */
     let cantFichas;
-/*
-    let imgFichaJugadorUno=new Image();
-    let imgFichaJugadorDos=new Image();
-    this.imgFichaJugadorUno.src = '../img/fichas/batman.png';
-    this.imgFichaJugadorDos.src = '../img/fichas/joker.png';
-    */
     let mouseDown=false;
 });
 
