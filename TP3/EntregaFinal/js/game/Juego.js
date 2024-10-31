@@ -55,14 +55,22 @@ export default class Juego {
         }
     }
 
+    drawFrame(){
+        this.ctx.clearRect(0, 0, this.canvaJuego.width, this.canvaJuego.height);
+        this.tablero.dibujarTablero(this.ctx);
+        this.dibujarFichas();
+        if(this.fichaSeleccionada){
+            this.fichaSeleccionada.dibujarFicha();
+        }
+        requestAnimationFrame(()=>this.drawFrame());
+    }
+
+
     initGame() {
         console.log('iniciando juego...');
-        //this.mostrarForm();
-        //this.tablero = new Tablero(4);
         this.cambiarPantallas();
-        this.tablero.dibujarTablero(this.ctx);
+        requestAnimationFrame(()=>this.drawFrame());
         this.crearFichas();
-        this.dibujarFichas();
         this.iniciarTemporizador(302);
     }
 
@@ -151,9 +159,7 @@ export default class Juego {
             this.fichaSeleccionada.posX = x - this.offsetX;
             this.fichaSeleccionada.posY = y - this.offsetY;
 
-            this.ctx.clearRect(0, 0, this.canvaJuego.width, this.canvaJuego.height);
-            this.tablero.dibujarTablero(this.ctx);
-            this.dibujarFichas();
+            this.drawFrame();
         }
     }
 
@@ -171,7 +177,7 @@ export default class Juego {
     
             if (this.tablero.isInZoneDrop(this.fichaSeleccionada,this.ctx)) {
                 // coloca la ficha en la columna correspondiente
-                if (this.tablero.dropFicha(this.fichaSeleccionada, x,y,this.ctx)) {
+                if (this.tablero.dropFicha(this.fichaSeleccionada)) {
                     console.log("entraste y no dibujaste");
                     if (this.tablero.verifyWinner(this.fichaSeleccionada)) {
                         console.log("ganaste");
@@ -187,6 +193,7 @@ export default class Juego {
             }
             this.fichaSeleccionada = null; 
         }
+        this.drawFrame();
     }
     
 

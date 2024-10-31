@@ -2,7 +2,7 @@
 
 export default class Casillero {
     imagen;
-  constructor(numRow, numColumn) {
+  constructor(numRow, numColumn,ancho) {
     if (typeof numRow !== 'number' || numRow < 0) {
       throw new Error('numRow debe ser un número positivo');
     }
@@ -10,11 +10,15 @@ export default class Casillero {
       throw new Error('numColumn debe ser un número positivo');
     }
 
+    this.ancho=ancho;
+
+    this.posX=numColumn*ancho;
+    this.posY=numRow*ancho;
     this.numRow = numRow;
     this.numColumn = numColumn;
     this.ficha = null;
     this.imagen = new Image();  
-    this.imagen.src = '../img/icono/casillero.svg';
+    this.imagen.src = '../img/icono/marcoCasillero.png';
 }
 
   eliminarFicha() {
@@ -23,6 +27,7 @@ export default class Casillero {
 
   colocarFicha(ficha) {
     this.ficha = ficha;
+    this.ficha.setPosicion(this.posX+this.ancho/2,this.posY+this.ancho/2);
   }
 
   getFicha() {
@@ -49,19 +54,13 @@ export default class Casillero {
 
   dibujar(ctx, rows, colums) {
     ctx.beginPath();
-    ctx.arc(colums * 60 + 50, rows * 60 + 50, 25, 0, 2 * Math.PI);
-    ctx.fillStyle = 'grey';
-    ctx.fill();
-    ctx.stroke();
-
     // Dibujar imagen fuera del círculo
     if (this.imagen) {
-      ctx.drawImage(this.imagen, colums * 60 + 50 - 30, rows * 60 + 50 - 30, 61, 63);
-      if(this.ficha){
+      ctx.drawImage(this.imagen,this.posX,this.posY, 61, 63);
+      if(this.ficha!=null){
         this.ficha.dibujarFicha(ctx);
       }
     }
-
   }
 
   soyCasilleroDrop() {
