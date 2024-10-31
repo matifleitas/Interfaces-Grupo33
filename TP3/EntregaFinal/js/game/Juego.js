@@ -13,10 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let canvas = document.querySelector("#canvas");
     /** @type {CanvasRenderingContext2D} */
     let cantFichas;
-
+/*
     let imgFichaJugadorUno=new Image();
     let imgFichaJugadorDos=new Image();
-    imgFichaJugadorUno.src = '../img'; //imagen de joker y otra de batman
+    this.imgFichaJugadorUno.src = '../img/fichas/batman.png';
+    this.imgFichaJugadorDos.src = '../img/fichas/joker.png';
+    */
     let mouseDown=false;
 });
 
@@ -24,8 +26,8 @@ export default class Juego {
     constructor(line) {
         console.log(`Juego creado con ${line + 2} filas y ${line + 3} columnas`);
         this.tablero = new Tablero(line);
-        this.j1 = new Ficha("X");
-        this.j2 = new Ficha("O");
+        this.j1 = new Ficha("X", this.imgFichaJugadorUno);
+        this.j2 = new Ficha("O", this.imgFichaJugadorDos);
         this.turn = this.j1;
         this.fichaSeleccionada=null;
         this.offsetX = 0;
@@ -110,15 +112,26 @@ export default class Juego {
       form.classList.add("cartel2");
     }*/
 
-      crearFichas() {
-        const posXBase = 910;
+    crearFichas() {
+        const posXBase = 100;
         const posYBase = 400;
-        const separacion = 9; // Espacio entre fichas para el efecto de apilamiento
+        const separacion = 9; // espacio entre fichas para el efecto de apilamiento
 
         for (let i = 0; i < 20; i++) { 
-            let posX = posXBase + 1 * separacion; // Varía un poco `posX` aleatoriamente
-            let posY = posYBase + i * separacion*-2 // Incrementa `posY` para apilar
+            let posX = posXBase + 1 * separacion;
+            let posY = posYBase + i * separacion*-2 
             const ficha = new Ficha(posX, posY, 'equipo1');
+            this.fichas.push(ficha);
+        }
+
+        const posXBase2 = 910;
+        const posYBase2 = 400;
+        //const separacion = 9; // Espacio entre fichas para el efecto de apilamiento
+
+        for (let i = 0; i < 20; i++) { 
+            let posX = posXBase2 + 1 * separacion; 
+            let posY = posYBase2 + i * separacion*-2;
+            const ficha = new Ficha(posX, posY, 'equipo2');
             this.fichas.push(ficha);
         }
     }

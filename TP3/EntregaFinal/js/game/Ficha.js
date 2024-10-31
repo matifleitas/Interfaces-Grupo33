@@ -2,14 +2,14 @@
 export default class Ficha {
     posXInicial;
     posYInicial;
-    constructor(x,y,equipo) {
+    constructor(x,y,equipo, img) {
         this.posX = x;
         this.posY = y; 
         this.radio = 35;
         this.equipo = equipo;
         this.selected = false;
         this.image = new Image();
-        this.image.src = '../img/fichas/batman.png';
+        this.image.src = this.definirEquipo(equipo);
         this.posXInicial=x;
         this.posYInicial=y;
     }
@@ -65,5 +65,16 @@ export default class Ficha {
         console.log('reseto pos');
         this.posX=this.posXInicial;
         this.posY=this.posYInicial;
+    }
+
+    definirEquipo(equipo){
+        switch (equipo) {
+            case "equipo1":
+                return '../img/fichas/batman.png';
+            case "equipo2":
+                return '../img/fichas/joker.png';
+            default:
+                return null; 
+        }
     }
 }

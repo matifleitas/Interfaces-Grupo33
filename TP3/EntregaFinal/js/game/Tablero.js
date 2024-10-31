@@ -258,24 +258,6 @@ export default class Tablero {
 
   // //------COLOCAR FICHA------
 
-  // colocarFicha(ficha, columna) {
-  //   if (columna < 0 || columna >= this.columns) {
-  //     throw new Error("Posición fuera de los límites del tablero");
-  //   }
-
-  //   const fila = this.ultimaFilaDisponible(columna);
-  //   console.log("ultima fila disponible: " + fila);
-  //   if (fila !== -1) {
-  //     this.casilleros[fila][columna].colocarFicha(ficha);
-  //     this.imprimirTablero();
-  //     if (this.verifyWinner(ficha)) {
-  //       console.log("Hay ganador");
-  //     }
-  //   } else {
-  //     throw new Error("Columna llena");
-  //   }
-  // }
-
   obtenerCasillero(posX, posY) {
     return this.casilleros[posX][posY];
   }
