@@ -82,9 +82,6 @@ export default class Tablero {
     this.initTablero();
   }
 
-  //metodos de manejo de fichas
-  isInZoneDrop(ficha) {}
-
   //-----------VERIFICAR GANADOR-----------
   verifyWinner(fichaGanadora) {
     const posX = fichaGanadora.getPosX();
@@ -321,9 +318,9 @@ export default class Tablero {
   }
 
   isInZoneDrop(fichaSeleccionada, ctx) {
-    const zonaX = 0; // coordenada x de la zona dropeable
-    const zonaY = 0; // coordenada y de la zona dropeable
-    const zonaAncho = this.canvasJuego.width / 2; // ancho de la zona dropeable
+    const zonaX = ((this.canvasJuego.width - this.columns * this.anchoColumna) / 2) - 25;
+    const zonaY = ((this.canvasJuego.height - this.rows * this.anchoColumna) / 2) - 65;
+    const zonaAncho = (this.canvasJuego.width / 2)-63; // ancho de la zona dropeable
     const zonaAlto = 50; // alto de la zona dropeable
 
     if (
