@@ -52,11 +52,11 @@ export default class Casillero {
     this.imagen = imagen;
   }
 
-  dibujar(ctx, rows, colums) {
+  dibujar(ctx, posX, posY) {
     ctx.beginPath();
     // Dibujar imagen fuera del círculo
     if (this.imagen) {
-      ctx.drawImage(this.imagen,this.posX,this.posY, 61, 63);
+      ctx.drawImage(this.imagen,posX,posY, 61, 63);
       if(this.ficha!=null){
         this.ficha.dibujarFicha(ctx);
       }
