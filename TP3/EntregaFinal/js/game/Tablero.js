@@ -300,7 +300,7 @@ export default class Tablero {
   }
 
   isInZoneDrop(fichaSeleccionada, ctx) {
-    const zonaX = ((this.canvasJuego.width - this.columns * this.anchoColumna) / 2) - 25;
+    const zonaX = ((this.canvasJuego.width - this.columns * this.anchoColumna) / 2) + 15;
     const zonaY = ((this.canvasJuego.height - this.rows * this.anchoColumna) / 2) - 65;
     const zonaAncho = (this.canvasJuego.width / 2)-63; // ancho de la zona dropeable
     const zonaAlto = 50; // alto de la zona dropeable
