@@ -25,9 +25,20 @@ export default class Casillero {
     this.ficha = null;
   }
 
+  setPosY(y){
+    this.posY = y;
+  }
+
+  
+  setPosX(x){
+    this.posX = x;
+  }
+
   colocarFicha(ficha) {
     this.ficha = ficha;
-    this.ficha.setPosicion(this.posX+this.ancho/2,this.posY+this.ancho/2);
+    this.ficha.setPosicion(this.posX+this.ancho/2,this.posY+this.ancho/2) + this.posX;
+    //console.log(this.getPosX() + " y po Y: " + this.getPosY());
+    
   }
 
   getFicha() {
@@ -37,9 +48,6 @@ export default class Casillero {
       return null;
     }
   }
-
-  
-
   estaVacio() {
     return this.ficha === null;
   }
@@ -52,9 +60,17 @@ export default class Casillero {
     this.imagen = imagen;
   }
 
+  getPosY(){
+    return this.posY;
+  }
+
+  
+  getPosX(){
+    return this.posX;
+  }
+
   dibujar(ctx, posX, posY) {
     ctx.beginPath();
-    // Dibujar imagen fuera del círculo
     if (this.imagen) {
       ctx.drawImage(this.imagen,posX,posY, 60, 61);
       if(this.ficha!=null){

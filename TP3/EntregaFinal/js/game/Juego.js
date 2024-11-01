@@ -174,8 +174,10 @@ export default class Juego {
             this.cambiarTurno();
           }
         }
+
       } else {
         console.log("Ficha fuera de zona válida, regresando...");
+        this.fichaSeleccionada.resetPosicion();
       }
       this.fichaSeleccionada = null;
     }
