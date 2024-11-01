@@ -28,6 +28,7 @@ export default class Juego {
     this.offsetY = 0;
     this.isMouseDown = false;
     this.lineasAJugar;
+    this.turnoActivo = 'ningun team';
 
     this.fichas = [];
     this.canvaJuego = document.getElementById("canvaJuego");
@@ -69,6 +70,7 @@ export default class Juego {
     requestAnimationFrame(() => this.drawFrame());
     this.crearFichas();
     this.iniciarTemporizador(302);
+    //this.arracarTurno();
   }
 
   cambiarPantallas() {
@@ -95,8 +97,10 @@ export default class Juego {
 
         for (let i = 0; i < 20; i++) { 
             let posX = posXBase + 1 * separacion;
-            let posY = posYBase + i * separacion*-2 
-            const ficha = new Ficha(posX, posY, 'equipo1');
+            let posY = posYBase + i * separacion*-2;
+            let e1 = "equipo1";
+            this.turnoActivo = e1;
+            const ficha = new Ficha(posX, posY, e1);
             this.fichas.push(ficha);
         }
 
@@ -107,7 +111,8 @@ export default class Juego {
         for (let i = 0; i < 20; i++) { 
             let posX = posXBase2 + 1 * separacion; 
             let posY = posYBase2 + i * separacion*-2;
-            const ficha = new Ficha(posX, posY, 'equipo2');
+            let e2 = 'equipo2';
+            const ficha = new Ficha(posX, posY, e2);
             this.fichas.push(ficha);
         }
     }
@@ -117,8 +122,13 @@ export default class Juego {
   }
 
   cambiarTurno() {
-    this.turn = this.turn === this.j1 ? this.j2 : this.j1;
-    console.log(`Turno del jugador: ${this.turn.getEquipo()}`);
+    if(this.turnoActivo==='equipo1'){
+      this.turnoActivo = 'equipo2';
+    } else if(this.turnoActivo==='equipo2'){
+      this.turnoActivo = 'equipo1';
+    } else {
+      return;
+    }
   }
 
   onMouseDown(event) {
@@ -128,17 +138,21 @@ export default class Juego {
     const y = event.clientY - rect.top;
 
     this.fichas.forEach((ficha) => {
+      
       if (ficha.esClickeada(x, y)) {
         this.fichaSeleccionada = ficha;
+        console.log(this.fichaSeleccionada.getEquipo());
+        console.log(this.turnoActivo);
         this.offsetX = x - ficha.posX;
         this.offsetY = y - ficha.posY;
+        
         console.log("Ficha seleccionada para arrastrar");
       }
     });
   }
 
   arrastrarFicha(event) {
-    if (this.isMouseDown && this.fichaSeleccionada) {
+    if (this.isMouseDown && this.fichaSeleccionada && this.fichaSeleccionada.getEquipo() === this.turnoActivo) {
       const rect = this.canvaJuego.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
@@ -162,7 +176,7 @@ export default class Juego {
       console.log(this.fichaSeleccionada);
 
       if (this.tablero.isInZoneDrop(this.fichaSeleccionada, this.ctx)) {
-        // coloca la ficha en la columna correspondiente
+        this.cambiarTurno();
         if (this.tablero.dropFicha(this.fichaSeleccionada)) {
           console.log("entraste y no dibujaste");
           if (this.tablero.verifyWinner(this.fichaSeleccionada)) {
