@@ -58,7 +58,7 @@ export default class Juego {
     this.tablero.dibujarTablero(this.ctx);
     this.dibujarFichas();
     if (this.fichaSeleccionada) {
-      this.fichaSeleccionada.dibujarFicha();
+      this.fichaSeleccionada.dibujarFicha(this.ctx);
     }
     requestAnimationFrame(() => this.drawFrame());
   }
