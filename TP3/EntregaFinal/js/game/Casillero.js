@@ -1,44 +1,45 @@
-'use strict';
+"use strict";
 
 export default class Casillero {
-    imagen;
-  constructor(numRow, numColumn,ancho) {
-    if (typeof numRow !== 'number' || numRow < 0) {
-      throw new Error('numRow debe ser un número positivo');
+  imagen;
+  constructor(numRow, numColumn, ancho) {
+    if (typeof numRow !== "number" || numRow < 0) {
+      throw new Error("numRow debe ser un número positivo");
     }
-    if (typeof numColumn !== 'number' || numColumn < 0) {
-      throw new Error('numColumn debe ser un número positivo');
+    if (typeof numColumn !== "number" || numColumn < 0) {
+      throw new Error("numColumn debe ser un número positivo");
     }
 
-    this.ancho=ancho;
+    this.ancho = ancho;
 
-    this.posX=numColumn*ancho;
-    this.posY=numRow*ancho;
+    this.posX = numColumn * ancho;
+    this.posY = numRow * ancho;
     this.numRow = numRow;
     this.numColumn = numColumn;
     this.ficha = null;
-    this.imagen = new Image();  
-    this.imagen.src = '../img/icono/marcoCasillero.png';
-}
+    this.imagen = new Image();
+    this.imagen.src = "../img/icono/marcoCasillero.png";
+  }
 
   eliminarFicha() {
     this.ficha = null;
   }
 
-  setPosY(y){
+  setPosY(y) {
     this.posY = y;
   }
 
-  
-  setPosX(x){
+  setPosX(x) {
     this.posX = x;
   }
 
   colocarFicha(ficha) {
-    this.ficha = ficha;
-    this.ficha.setPosicion(this.posX+this.ancho/2,this.posY+this.ancho/2) + this.posX;
-    //console.log(this.getPosX() + " y po Y: " + this.getPosY());
-    
+    this.ficha = ficha; // Asigna la ficha al casillero
+    // Asigna la posición inicial de la ficha basada en el centro del casillero
+    ficha.setPosicion(
+      this.getPosX() + this.ancho / 2,
+      this.getPosY() + this.ancho / 2
+    );
   }
 
   getFicha() {
@@ -56,24 +57,24 @@ export default class Casillero {
     return this;
   }
 
-  setImagen(imagen) { // Método para establecer la imagen
+  setImagen(imagen) {
+    // Método para establecer la imagen
     this.imagen = imagen;
   }
 
-  getPosY(){
+  getPosY() {
     return this.posY;
   }
 
-  
-  getPosX(){
+  getPosX() {
     return this.posX;
   }
 
   dibujar(ctx, posX, posY) {
     ctx.beginPath();
     if (this.imagen) {
-      ctx.drawImage(this.imagen,posX,posY, 60, 61);
-      if(this.ficha!=null){
+      ctx.drawImage(this.imagen, posX, posY, 60, 61);
+      if (this.ficha != null) {
         this.ficha.dibujarFicha(ctx);
       }
     }

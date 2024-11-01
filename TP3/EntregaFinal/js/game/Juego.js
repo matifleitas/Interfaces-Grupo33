@@ -176,9 +176,8 @@ export default class Juego {
       console.log(this.fichaSeleccionada);
 
       if (this.tablero.isInZoneDrop(this.fichaSeleccionada, this.ctx)) {
-        this.cambiarTurno();
-        if (this.tablero.dropFicha(this.fichaSeleccionada)) {
-          console.log("entraste y no dibujaste");
+          console.log("ficha dropeada");
+          this.cambiarTurno();
           if (this.tablero.verifyWinner(this.fichaSeleccionada)) {
             console.log("ganaste");
             this.endGame();
@@ -187,7 +186,7 @@ export default class Juego {
           } else {
             this.cambiarTurno();
           }
-        }
+        
 
       } else {
         console.log("Ficha fuera de zona válida, regresando...");

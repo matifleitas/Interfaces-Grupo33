@@ -32,11 +32,10 @@ export default class Tablero {
 
   //----- CREAR TABLERO---------------
   initTablero() {
-    
     for (let i = 0; i < this.rows; i++) {
       this.casilleros[i] = [];
       for (let j = 0; j < this.columns; j++) {
-        this.casilleros[i][j] = new Casillero(i, j,this.anchoColumna);
+        this.casilleros[i][j] = new Casillero(i, j, this.anchoColumna);
       }
     }
   }
@@ -62,18 +61,23 @@ export default class Tablero {
 
   dibujarTablero(ctx) {
     ctx.clearRect(0, 0, this.canvasJuego.width, this.canvasJuego.height);
-    
+
     //calculo el desplazamiento para centrar el tablero
-    const offsetX = (this.canvasJuego.width - this.columns * this.anchoColumna) / 2;
-    const offsetY = (this.canvasJuego.height - this.rows * this.anchoColumna) / 2;
-    
+    const offsetX =
+      (this.canvasJuego.width - this.columns * this.anchoColumna) / 2;
+    const offsetY =
+      (this.canvasJuego.height - this.rows * this.anchoColumna) / 2;
+
     for (let i = 0; i < this.rows; i++) {
       for (let j = 0; j < this.columns; j++) {
-        this.casilleros[i][j].dibujar(ctx,offsetX + j * this.anchoColumna, offsetY + i * this.anchoColumna);
+        this.casilleros[i][j].dibujar(
+          ctx,
+          offsetX + j * this.anchoColumna,
+          offsetY + i * this.anchoColumna
+        );
         //this.casilleros[i][j].setPosX(offsetX);
       }
     }
-    
   }
 
   reiniciarTablero() {
@@ -81,6 +85,142 @@ export default class Tablero {
     this.initTablero();
   }
 
+  getCasillero(row, column) {
+    return this.casilleros[row][column];
+  }
+
+  // //------COLOCAR FICHA------
+
+  obtenerCasillero(posX, posY) {
+    return this.casilleros[posX][posY];
+  }
+
+  isFull() {
+    for (let i = 0; i < this.rows; i++) {
+      for (let j = 0; j < this.columns; j++) {
+        const casillero = this.casilleros[i][j];
+        if (casillero.estaVacio()) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  //   dropFicha(ficha) {
+
+  //   const columna = Math.floor(ficha.getPosX() / this.anchoColumna); // dividir entre el ancho de la columna
+  //   const fila = this.ultimaFilaDisponible(columna); // oobtener la fila disponible
+
+  //   if (this.isInZoneDrop(ficha)) {
+  //     if(fila){
+  //       console.log('intentado colocar ficha en la fila' + fila + "columna" + columna);
+
+  //       this.casilleros[columna][fila].colocarFicha(ficha);
+  //     }
+  //     return true;
+  //   }
+  //   return false;
+  // }
+
+  isInZoneDrop(fichaSeleccionada, ctx) {
+    // Ancho del casillero basado en el ancho real del tablero
+    const anchoCasillero = this.anchoColumna;
+
+    // Ajuste para el borde izquierdo de la zona dropeable
+    const zonaX = (this.canvasJuego.width - this.columns * anchoCasillero) / 2;
+
+    // Ajuste vertical para alinear la zona dropeable justo del tablero
+    const zonaY =
+      (this.canvasJuego.height - this.rows * anchoCasillero) / 2 -
+      anchoCasillero;
+
+    const zonaAncho = this.columns * anchoCasillero;
+    const zonaAlto = 50;
+
+    // Depuración: verifica los valores de la zona y la posición de la ficha
+    //console.log("Zona dropeable: ", zonaX, zonaY, zonaAncho, zonaAlto);
+
+    if (
+      fichaSeleccionada.getPosX() >= zonaX &&
+      fichaSeleccionada.getPosX() <= zonaX + zonaAncho &&
+      fichaSeleccionada.getPosY() >= zonaY &&
+      fichaSeleccionada.getPosY() <= zonaY + zonaAlto
+    ) {
+      console.log("En zona dropeable");
+
+      const columna = Math.floor(
+        (fichaSeleccionada.getPosX() - zonaX) / anchoCasillero
+      );
+      console.log("Columna detectada: ", columna);
+
+      if (this.columnaDisponible(columna)) {
+        this.colocarFichaEnColumna(columna, fichaSeleccionada);
+        return true;
+      } else {
+        console.log("Columna llena");
+        // fichaSeleccionada.resetPosicion();
+        // this.dibujarTablero(ctx);
+        // fichaSeleccionada.dibujarFicha(ctx);
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+  colocarFichaEnColumna(columna, ficha) {
+    const fila = this.ultimaFilaDisponible(columna);
+    if (fila !== -1) {
+      // Colocamos la ficha en el casillero adecuado
+      this.casilleros[fila][columna].colocarFicha(ficha);
+
+      // Actualiza la posición de la ficha para que se dibuje en el lugar correcto
+      const casillero = this.casilleros[fila][columna];
+      ficha.setPosicion(
+        casillero.getPosX() + casillero.ancho/2 ,
+        casillero.getPosY() + casillero.ancho/2  ,
+      );
+
+      console.log("dibujo ficha en columna " + columna + " y fila: " + fila);
+      console.log(
+        `Posición casillero: x=${casillero.getPosX()}, y=${casillero.getPosY()}`
+      );
+      console.log(
+        `Posición ficha después de colocar: x=${ficha.getPosX()}, y=${ficha.getPosY()}`
+      );
+
+      return true;
+    } else {
+      console.log("La columna está llena");
+      return false;
+    }
+  }
+
+  columnaDisponible(columna) {
+    return this.ultimaFilaDisponible(columna) !== -1;
+  }
+
+  ultimaFilaDisponible(columna) {
+    if (columna < 0 || columna >= this.columns) {
+      console.log("Posición fuera de los límites del tablero");
+      return -1;
+    }
+
+    for (let i = this.rows - 1; i >= 0; i--) {
+      if (
+        this.casilleros[i] &&
+        this.casilleros[i][columna] &&
+        this.casilleros[i][columna].estaVacio()
+      ) {
+        return i;
+      }
+    }
+
+    console.log(`Columna llena`);
+    return -1;
+  }
+
+  //CHECKEOS
   //-----------VERIFICAR GANADOR-----------
   verifyWinner(fichaGanadora) {
     const posX = fichaGanadora.getPosX();
@@ -249,121 +389,6 @@ export default class Tablero {
         this.obtenerCasillero(row - 3, column + 3).obtenerFicha().color
     );
   }
-
-  getCasillero(row, column) {
-    return this.casilleros[row][column];
-  }
-
-  // //------COLOCAR FICHA------
-
-  obtenerCasillero(posX, posY) {
-    return this.casilleros[posX][posY];
-  }
-
-  isFull() {
-    for (let i = 0; i < this.rows; i++) {
-      for (let j = 0; j < this.columns; j++) {
-        const casillero = this.casilleros[i][j];
-        if (casillero.estaVacio()) {
-          return false;
-        }
-      }
-    }
-    return true;
-  }
-
-  dropFicha(ficha) {
-
-    const columna = Math.floor(ficha.getPosX() / this.anchoColumna); // dividir entre el ancho de la columna
-    const fila = this.ultimaFilaDisponible(columna); // oobtener la fila disponible
-
-    if (this.isInZoneDrop(ficha)) {
-      let fila=this.isColumnFull(columna);
-      if(fila){
-        this.casilleros[columna][fila].colocarFicha(ficha);         
-      }
-      return true;
-    }
-    return false;
-  }
-
-  isInZoneDrop(fichaSeleccionada, ctx) {
-    // Ancho del casillero basado en el ancho real del tablero
-    const anchoCasillero = this.anchoColumna;
-
-    // Ajuste para el borde izquierdo de la zona dropeable
-    const zonaX = (this.canvasJuego.width - (this.columns * anchoCasillero)) / 2;
-
-    // Ajuste vertical para alinear la zona dropeable justo encima del tablero
-    const zonaY = (this.canvasJuego.height - (this.rows * anchoCasillero)) / 2 - anchoCasillero;
-
-    const zonaAncho = this.columns * anchoCasillero;
-    const zonaAlto = 50;
-
-    // Depuración: verifica los valores de la zona y la posición de la ficha
-    //console.log("Zona dropeable: ", zonaX, zonaY, zonaAncho, zonaAlto);
-
-    if (
-        fichaSeleccionada.getPosX() >= zonaX &&
-        fichaSeleccionada.getPosX() <= zonaX + zonaAncho &&
-        fichaSeleccionada.getPosY() >= zonaY &&
-        fichaSeleccionada.getPosY() <= zonaY + zonaAlto
-    ) {
-        console.log("En zona dropeable");
-
-        const columna = Math.floor((fichaSeleccionada.getPosX() - zonaX) / anchoCasillero);
-        console.log("Columna detectada: ", columna);
-
-        if (this.columnaDisponible(columna)) {
-            this.colocarFichaEnColumna(columna, fichaSeleccionada);
-            return true;
-        } else {
-            console.log("Columna llena");
-            fichaSeleccionada.resetPosicion();
-            this.dibujarTablero(ctx);
-            fichaSeleccionada.dibujarFicha(ctx);
-            return false;
-        }
-    } else {
-        return false;
-    }
-}
-colocarFichaEnColumna(columna, ficha) {
-    const fila = this.ultimaFilaDisponible(columna);
-
-    //console.log("ultima fila disp" + fila);
-    
-    
-    if (fila !== -1) {
-      this.casilleros[fila][columna].colocarFicha(ficha); // Colocamos la ficha en el casillero adecuado
-        return true;
-    } else {
-        console.log("La columna está llena");
-        return false;
-    }
-}
-
-columnaDisponible(columna) {
-  return this.ultimaFilaDisponible(columna) !== -1;
-}
-
-ultimaFilaDisponible(columna) {
-  if (columna < 0 || columna >= this.columns) {
-      console.log("Posición fuera de los límites del tablero");
-      return -1; 
-  }
-
-  for (let i = this.rows - 1; i >= 0; i--) {
-      
-      if (this.casilleros[i] && this.casilleros[i][columna] && this.casilleros[i][columna].estaVacio()) {
-          return i; 
-      }
-  }
-
-  console.log(`Columna llena`);
-  return -1;
-}
-
 }
 
 //export default Tablero;
