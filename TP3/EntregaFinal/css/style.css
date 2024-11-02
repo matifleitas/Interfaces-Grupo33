@@ -2136,6 +2136,19 @@ button {
     text-align: center;
 }
 
+.ficha-caida {
+    animation: caer 0.5s ease-out forwards;
+  }
+  
+  @keyframes caer {
+    0% {
+      transform: translateY(-200px); /* Empieza fuera de la posición inicial */
+    }
+    100% {
+      transform: translateY(0); /* Llega a la posición final */
+    }
+  }
+
   /*FORMULARIO ELEGIR LINEAS*/
 
   

@@ -9,6 +9,7 @@ export default class Tablero {
   rows;
   columns;
   casilleroImagen;
+  animacionId;
 
   //---------------------Constructor---------------------------
 
@@ -165,17 +166,36 @@ export default class Tablero {
       return false;
     }
   }
+  
   colocarFichaEnColumna(columna, ficha) {
     const fila = this.ultimaFilaDisponible(columna);
     if (fila !== -1) {
       this.casilleros[fila][columna].colocarFicha(ficha);
 
       const casillero = this.casilleros[fila][columna];
-      ficha.setPosicion(
-        casillero.getPosX() + casillero.ancho/2 ,
-        casillero.getPosY() + casillero.ancho/2  ,
-      );
+      const posYInicial = 0; 
+      const posYFinal = casillero.getPosY() + casillero.ancho / 2; 
 
+      let posYActual = posYInicial;
+
+      // Cancelar la animación anterior si existe
+      if (this.animacionId) {
+        cancelAnimationFrame(this.animacionId);
+      }
+
+      const animacion = () => {
+        posYActual += (posYFinal - posYActual) * 0.2;
+        ficha.setPosicion(casillero.getPosX() + casillero.ancho / 2, posYActual);
+        
+        if (Math.abs(posYFinal - posYActual) < 1) {
+          ficha.setPosicion(casillero.getPosX() + casillero.ancho / 2, posYFinal); // Asegúrate de que llegue a la posición final
+          return;
+        }
+
+        this.animacionId = requestAnimationFrame(animacion);
+      };
+
+      this.animacionId = requestAnimationFrame(animacion); 
       return true;
     } else {
       console.log("La columna está llena");
