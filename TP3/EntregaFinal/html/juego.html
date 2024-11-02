@@ -184,10 +184,16 @@
                 <div class="contenedor-turno display-none">
                     <span id="nombre-jugar-turno"></span>
                 </div>
-                <div class="contenedor-temporizador display-none">
+                <div class="contenedor-temporizador">
                     <span id="juego-temporizador"></span>
                 </div>
-
+                <div id="modal" class="modal taparJuego">
+                    <div class="modal-content ">
+                        <span id="close-btn" class="close">holaa</span>
+                        <h3 id="winner-message"></h3>
+                        <button  id="play-again-btn">Jugar de nuevo</button>
+                    </div>
+                </div>
                 <div class="taparJuego" id="fondoJuego">
                     <canvas id="canvaJuego" width="1011" height="500" class="canvasClass"></canvas>
                 </div>

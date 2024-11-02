@@ -190,8 +190,39 @@ export default class Juego {
   }
 
   endGame() {
-    console.log("termino...");
-  }
+    const modal = document.getElementById('modal');
+    const msjGanador = document.getElementById('winner-message');
+    const formLines = document.getElementById("formLineas");
+
+    // Mostrar mensaje de ganador en el modal
+    modal.classList.remove('taparJuego');
+    msjGanador.innerHTML = `¡Felicidades, ${this.fichaSeleccionada.getEquipo()}! Ha ganado.`;
+    console.log("terminó el juego...");
+
+    // Acción al hacer clic en "Jugar de nuevo"
+    document.getElementById('play-again-btn').onclick = () => {
+        modal.classList.add('taparJuego'); // Oculta el modal
+        this.resetGame(); // Reinicia el juego y prepara el formulario
+    };
+}
+
+resetGame() {
+  const formLines = document.getElementById("formLineas");
+  const fondoJuego = document.getElementById("fondoJuego");
+
+  // Oculta el fondo del juego y muestra el formulario
+  fondoJuego.classList.add('taparJuego');
+  formLines.classList.remove('taparJuego');
+
+  // Reinicia el estado del juego
+  this.fichas = [];
+  this.turnoActivo = 'equipo1';
+  this.tablero.reiniciarTablero(); // Llama a un método para limpiar el tablero (debes implementarlo si no existe)
+  
+  // Inicializa el juego nuevamente
+  this.inicializar();
+}
+
 
   soltarFicha() {
     if (this.fichaSeleccionada) {
