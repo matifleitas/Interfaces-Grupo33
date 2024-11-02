@@ -2122,6 +2122,20 @@ button {
     height: 510px;
 }
 
+.cartelNoTime {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(138, 43, 226, 0.8); /* Color violeta */
+    color: #f0a500; /* Color del texto */
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    text-align: center;
+}
+
   /*FORMULARIO ELEGIR LINEAS*/
 
   

@@ -21,8 +21,21 @@ export default class Casillero {
     this.imagen.src = "../img/icono/marcoCasillero.png";
   }
 
+  getRow(){
+    return this.numRow;
+  }
+
+  getColumn(){
+    return this.numColumn;
+  }
+
   eliminarFicha() {
     this.ficha = null;
+  }
+
+  setPosicion(x, y){
+    this.posX = x;
+    this.posY = y;
   }
 
   setPosY(y) {
@@ -83,4 +96,6 @@ export default class Casillero {
   soyCasilleroDrop() {
     return this.numRow === 0;
   }
+
+  
 }

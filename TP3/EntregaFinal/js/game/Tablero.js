@@ -32,10 +32,17 @@ export default class Tablero {
 
   //----- CREAR TABLERO---------------
   initTablero() {
+    const offsetX =
+      (this.canvasJuego.width - this.columns * this.anchoColumna) / 2;
+    const offsetY =
+      (this.canvasJuego.height - this.rows * this.anchoColumna) / 2;
+
     for (let i = 0; i < this.rows; i++) {
       this.casilleros[i] = [];
       for (let j = 0; j < this.columns; j++) {
         this.casilleros[i][j] = new Casillero(i, j, this.anchoColumna);
+        this.casilleros[i][j].setPosicion(offsetX + j * this.anchoColumna,
+          offsetY + i * this.anchoColumna);
       }
     }
   }
@@ -62,7 +69,6 @@ export default class Tablero {
   dibujarTablero(ctx) {
     ctx.clearRect(0, 0, this.canvasJuego.width, this.canvasJuego.height);
 
-    //calculo el desplazamiento para centrar el tablero
     const offsetX =
       (this.canvasJuego.width - this.columns * this.anchoColumna) / 2;
     const offsetY =
@@ -75,7 +81,6 @@ export default class Tablero {
           offsetX + j * this.anchoColumna,
           offsetY + i * this.anchoColumna
         );
-        //this.casilleros[i][j].setPosX(offsetX);
       }
     }
   }
@@ -124,13 +129,11 @@ export default class Tablero {
   // }
 
   isInZoneDrop(fichaSeleccionada, ctx) {
-    // Ancho del casillero basado en el ancho real del tablero
+   
     const anchoCasillero = this.anchoColumna;
 
-    // Ajuste para el borde izquierdo de la zona dropeable
     const zonaX = (this.canvasJuego.width - this.columns * anchoCasillero) / 2;
 
-    // Ajuste vertical para alinear la zona dropeable justo del tablero
     const zonaY =
       (this.canvasJuego.height - this.rows * anchoCasillero) / 2 -
       anchoCasillero;
@@ -138,16 +141,13 @@ export default class Tablero {
     const zonaAncho = this.columns * anchoCasillero;
     const zonaAlto = 50;
 
-    // Depuración: verifica los valores de la zona y la posición de la ficha
-    //console.log("Zona dropeable: ", zonaX, zonaY, zonaAncho, zonaAlto);
-
+ 
     if (
       fichaSeleccionada.getPosX() >= zonaX &&
       fichaSeleccionada.getPosX() <= zonaX + zonaAncho &&
       fichaSeleccionada.getPosY() >= zonaY &&
       fichaSeleccionada.getPosY() <= zonaY + zonaAlto
     ) {
-      console.log("En zona dropeable");
 
       const columna = Math.floor(
         (fichaSeleccionada.getPosX() - zonaX) / anchoCasillero
@@ -159,9 +159,6 @@ export default class Tablero {
         return true;
       } else {
         console.log("Columna llena");
-        // fichaSeleccionada.resetPosicion();
-        // this.dibujarTablero(ctx);
-        // fichaSeleccionada.dibujarFicha(ctx);
         return false;
       }
     } else {
@@ -171,22 +168,12 @@ export default class Tablero {
   colocarFichaEnColumna(columna, ficha) {
     const fila = this.ultimaFilaDisponible(columna);
     if (fila !== -1) {
-      // Colocamos la ficha en el casillero adecuado
       this.casilleros[fila][columna].colocarFicha(ficha);
 
-      // Actualiza la posición de la ficha para que se dibuje en el lugar correcto
       const casillero = this.casilleros[fila][columna];
       ficha.setPosicion(
         casillero.getPosX() + casillero.ancho/2 ,
         casillero.getPosY() + casillero.ancho/2  ,
-      );
-
-      console.log("dibujo ficha en columna " + columna + " y fila: " + fila);
-      console.log(
-        `Posición casillero: x=${casillero.getPosX()}, y=${casillero.getPosY()}`
-      );
-      console.log(
-        `Posición ficha después de colocar: x=${ficha.getPosX()}, y=${ficha.getPosY()}`
       );
 
       return true;
@@ -223,70 +210,69 @@ export default class Tablero {
   //CHECKEOS
   //-----------VERIFICAR GANADOR-----------
   verifyWinner(fichaGanadora) {
-    const posX = fichaGanadora.getPosX();
-    const posY = fichaGanadora.getPosY();
-    console.log(`entreee a verificar ganador`);
-    console.log(`getPosX(): ${fichaGanadora.getPosX()}`);
-    console.log(`getPosY(): ${fichaGanadora.getPosY()}`);
+    const anchoCasillero = this.anchoColumna;
+    const zonaX = (this.canvasJuego.width - this.columns * anchoCasillero) / 2;
+    const columna = Math.floor(
+      (fichaGanadora.getPosX() - zonaX) / anchoCasillero
+    );
+    console.log("la columna eeees: " + columna);
+    const fila = this.ultimaFilaDisponible(columna) + 1;
+    console.log("la filaa eeeeess:" + fila);
+
+    let casilleroActual = this.casilleros[fila][columna];
+        
     return (
-      this.verifyHorizontal(posX, posY) ||
-      this.verifyVertical(posX, posY) ||
-      this.verifyDiagonalDescendente(posX, posY) //||
-      //this.verifyDiagonalAscendente(posX, posY)
+      this.verifyHorizontal(casilleroActual) ||
+      this.verifyVertical(casilleroActual) ||
+      this.verifyDiagonalDescendente(casilleroActual) ||
+      this.verifyDiagonalAscendente(casilleroActual)
     );
   }
 
   //HORIZONTAL
-  verifyHorizontal(posX, posY) {
-    console.log(posX, posY);
+  verifyHorizontal(casilleroActual) {
 
-    if (this.casilleros[posX][posY].getFicha() !== null) {
+    if (!casilleroActual.estaVacio()) {
       return (
-        this.checkHorizontal(posX, posY, 1) ||
-        this.checkHorizontal(posX, posY, -1)
+        this.checkHorizontal(casilleroActual, 1) ||
+        this.checkHorizontal(casilleroActual, -1)
       );
     }
     return false;
   }
 
-  verifyVertical(posX, posY) {
-    if (this.casilleros[posX][posY].getFicha() !== null) {
+  verifyVertical(casilleroActual) {
+    if (!casilleroActual.estaVacio()) {
       return (
-        this.checkVertical(posX, posY, 1) || this.checkVertical(posX, posY, -1)
+        this.checkVertical(casilleroActual, 1) || this.checkVertical(casilleroActual, -1)
       );
     }
     return false;
   }
 
-  verifyDiagonalDescendente(posX, posY) {
-    if (this.casilleros[posX][posY].getFicha() !== null) {
+  verifyDiagonalDescendente(casilleroActual) {
+    if (!casilleroActual.estaVacio()) {
       return (
-        this.checkDiagonalDescendente(posX, posY, 1) ||
-        this.checkDiagonalDescendente(posX, posY, -1)
+        this.checkDiagonalDescendente(casilleroActual, 1) ||
+        this.checkDiagonalDescendente(casilleroActual, -1)
       );
     }
     return false;
   }
 
-  verifyDiagonalAscendente(posX, posY) {
-    for (let i = 3; i < this.rows; i++) {
-      // Recorre filas, empezando desde la cuarta
-      for (let j = 0; j < this.columns - 3; j++) {
-        // Recorre columnas
-        const ficha = this.obtenerCasillero(i, j).obtenerFicha();
-        if (ficha && this.checkDiagonalAscendente(i, j)) {
-          console.log(`Ganador: ${ficha.color}`);
-          return true;
-        }
-      }
+  verifyDiagonalAscendente(casilleroActual) {
+    if(!casilleroActual.estaVacio()){
+      return (
+        this.checkDiagonalAcsendente(casilleroActual, 1) ||
+        this.checkDiagonalAcsendente(casilleroActual, -1)
+      );
     }
     return false;
   }
 
-  checkHorizontal(posX, posY) {
+  checkHorizontal(casilleroActual) {
     //console.log("entro");
     let cont = 1;
-    let casilleroActual = this.casilleros[posX][posY];
 
     if (casilleroActual.getFicha() === null) {
       return false;
@@ -294,8 +280,8 @@ export default class Tablero {
 
     const equipo = casilleroActual.getFicha().getEquipo();
 
-    for (let i = posY + 1; i < this.columns; i++) {
-      const fichaDerecha = this.casilleros[posX][i].getFicha();
+    for (let i = casilleroActual.getColumn() + 1; i < this.columns; i++) {
+      const fichaDerecha = this.casilleros[casilleroActual.getRow()][i].getFicha();
 
       if (fichaDerecha && fichaDerecha.getEquipo() === equipo) {
         cont++;
@@ -304,8 +290,8 @@ export default class Tablero {
       }
     }
 
-    for (let j = posY - 1; j >= 0; j--) {
-      const fichaIzquierda = this.casilleros[posX][j].getFicha();
+    for (let j = casilleroActual.getColumn() - 1; j >= 0; j--) {
+      const fichaIzquierda = this.casilleros[casilleroActual.getRow()][j].getFicha();
       if (fichaIzquierda && fichaIzquierda.getEquipo() === equipo) {
         cont++;
       } else {
@@ -315,17 +301,16 @@ export default class Tablero {
     return cont === this.line;
   }
 
-  checkVertical(posX, posY) {
+  checkVertical(casilleroActual) {
     let cont = 1;
-    let casilleroActual = this.casilleros[posX][posY];
 
     if (casilleroActual.getFicha() === null) {
       return false;
     }
     const equipo = casilleroActual.getFicha().getEquipo();
 
-    for (let i = posX + 1; i < this.rows; i++) {
-      const fichaAbajo = this.casilleros[i][posY].getFicha();
+    for (let i = casilleroActual.getRow() + 1; i < this.rows; i++) {
+      const fichaAbajo = this.casilleros[i][casilleroActual.getColumn()].getFicha();
 
       if (fichaAbajo && fichaAbajo.getEquipo() === equipo) {
         cont++;
@@ -334,8 +319,8 @@ export default class Tablero {
       }
     }
 
-    for (let j = posX - 1; j >= 0; j--) {
-      const fichaArriba = this.casilleros[j][posY].getFicha();
+    for (let j = casilleroActual.getRow() - 1; j >= 0; j--) {
+      const fichaArriba = this.casilleros[j][casilleroActual.getColumn()].getFicha();
       if (fichaArriba && fichaArriba.getEquipo() === equipo) {
         cont++;
       } else {
@@ -345,9 +330,8 @@ export default class Tablero {
     return cont === this.line;
   }
 
-  checkDiagonalDescendente(posX, posY) {
+  checkDiagonalDescendente(casilleroActual) {
     let cont = 1;
-    let casilleroActual = this.casilleros[posX][posY];
 
     if (casilleroActual.getFicha() === null) {
       return false;
@@ -355,7 +339,7 @@ export default class Tablero {
     const equipo = casilleroActual.getFicha().getEquipo();
 
     for (
-      let i = posX + 1, j = posY + 1;
+      let i = casilleroActual.getRow() + 1, j = casilleroActual.getColumn() + 1;
       i < this.rows && j < this.columns;
       i++, j++
     ) {
@@ -368,7 +352,7 @@ export default class Tablero {
       }
     }
 
-    for (let i = posX + 1, j = posY - 1; i < this.rows && j >= 0; i++, j--) {
+    for (let i = casilleroActual.getRow() + 1, j = casilleroActual.getColumn() - 1; i < this.rows && j >= 0; i++, j--) {
       const fichaAbajoIzquierda = this.casilleros[i][j].getFicha();
       if (fichaAbajoIzquierda && fichaAbajoIzquierda.getEquipo() === equipo) {
         cont++;
@@ -379,15 +363,44 @@ export default class Tablero {
     return cont === this.line;
   }
 
-  checkDiagonalAscendente(row, column) {
-    return (
-      this.obtenerCasillero(row, column).obtenerFicha().color ===
-        this.obtenerCasillero(row - 1, column + 1).obtenerFicha().color &&
-      this.obtenerCasillero(row, column).obtenerFicha().color ===
-        this.obtenerCasillero(row - 2, column + 2).obtenerFicha().color &&
-      this.obtenerCasillero(row, column).obtenerFicha().color ===
-        this.obtenerCasillero(row - 3, column + 3).obtenerFicha().color
-    );
+  checkDiagonalAcsendente(casilleroActual) {
+    let cont = 1;
+  
+    if (casilleroActual.getFicha() === null) {
+      return false;
+    }
+  
+    const equipo = casilleroActual.getFicha().getEquipo();
+  
+    for (
+      let i = casilleroActual.getRow() - 1, j = casilleroActual.getColumn() + 1;
+      i >= 0 && j < this.columns;
+      i--, j++
+    ) {
+      const fichaArribaDerecha = this.casilleros[i][j].getFicha();
+  
+      if (fichaArribaDerecha && fichaArribaDerecha.getEquipo() === equipo) {
+        cont++;
+      } else {
+        break;
+      }
+    }
+  
+    for (
+      let i = casilleroActual.getRow() - 1, j = casilleroActual.getColumn() - 1;
+      i >= 0 && j >= 0;
+      i--, j--
+    ) {
+      const fichaArribaIzquierda = this.casilleros[i][j].getFicha();
+  
+      if (fichaArribaIzquierda && fichaArribaIzquierda.getEquipo() === equipo) {
+        cont++;
+      } else {
+        break;
+      }
+    }
+  
+    return cont === this.line;
   }
 }
 

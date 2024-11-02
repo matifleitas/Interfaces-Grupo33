@@ -172,17 +172,15 @@ export default class Juego {
       const x = event.clientX - rect.left; //  X relativa al canvas
       const y = event.clientY - rect.top; // Y relativa al canvas
 
-      console.log(`Ficha soltada en: x=${x}, y=${y}`);
-      console.log(this.fichaSeleccionada);
+      //console.log(`Ficha soltada en: x=${x}, y=${y}`);
+      //console.log(this.fichaSeleccionada);
 
       if (this.tablero.isInZoneDrop(this.fichaSeleccionada, this.ctx)) {
-          console.log("ficha dropeada");
-          this.cambiarTurno();
           if (this.tablero.verifyWinner(this.fichaSeleccionada)) {
             console.log("ganaste");
             this.endGame();
           } else if (this.tablero.isFull()) {
-            this.endGame(); // empate
+            this.endGame();
           } else {
             this.cambiarTurno();
           }
@@ -219,7 +217,34 @@ export default class Juego {
         //console.log(spanTemporizador.innerHTML);
       }, 1000);
     } else {
-      finalizarJuegoPorTiempo();
+    //  this.dibujarFondo();
+    //  this.mostrarCartel('Tiempo finalizado');
     }
   }
+/*
+
+  dibujarFondo() {
+    this.ctx.fillStyle = '#e6e6fa'; // Color de fondo suave
+    this.ctx.fillRect(0, 0, this.canvaJuego.width, this.canvaJuego.height);
+}
+
+// Dibujar el cartel en el canvas
+mostrarCartel(mensaje) {
+  
+  const x = this.canvaJuego.width / 2;
+  const y = this.canvaJuego.height / 2;
+    const ancho = 300;
+    const alto = 100;
+    
+    this.ctx.fillStyle = 'rgba(138, 43, 226, 0.8)';
+    this.ctx.fillRect(x - ancho / 2, y - alto / 2, ancho, alto);
+    
+    this.ctx.font = '24px Arial';
+    this.ctx.fillStyle = '#f0a500';
+    this.ctx.textAlign = 'center';
+    this.ctx.textBaseline = 'middle';
+    this.ctx.fillText(mensaje, x, y);
+    console.log("no figuro");
+  }*/
+  
 }
