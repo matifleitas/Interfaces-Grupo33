@@ -68,7 +68,7 @@ export default class Tablero {
   //Dibujar tablero
 
   dibujarTablero(ctx) {
-    ctx.clearRect(0, 0, this.canvasJuego.width, this.canvasJuego.height);
+    // ctx.clearRect(0, 0, this.canvasJuego.width, this.canvasJuego.height);
 
     const offsetX =
       (this.canvasJuego.width - this.columns * this.anchoColumna) / 2;
@@ -167,7 +167,7 @@ export default class Tablero {
     }
   }
   
-  colocarFichaEnColumna(columna, ficha) {
+  colocarFichaEnColumna(columna, ficha) { 
     const fila = this.ultimaFilaDisponible(columna);
     if (fila !== -1) {
       this.casilleros[fila][columna].colocarFicha(ficha);
@@ -178,23 +178,21 @@ export default class Tablero {
 
       let posYActual = posYInicial;
 
-      // Cancelar la animación anterior si existe
       if (this.animacionId) {
         cancelAnimationFrame(this.animacionId);
       }
 
       const animacion = () => {
-        posYActual += (posYFinal - posYActual) * 0.2;
+        posYActual += (posYFinal - posYActual) * 0.15;
         ficha.setPosicion(casillero.getPosX() + casillero.ancho / 2, posYActual);
         
         if (Math.abs(posYFinal - posYActual) < 1) {
-          ficha.setPosicion(casillero.getPosX() + casillero.ancho / 2, posYFinal); // Asegúrate de que llegue a la posición final
+          ficha.setPosicion(casillero.getPosX() + casillero.ancho / 2, posYFinal); 
           return;
         }
-
+        
         this.animacionId = requestAnimationFrame(animacion);
       };
-
       this.animacionId = requestAnimationFrame(animacion); 
       return true;
     } else {

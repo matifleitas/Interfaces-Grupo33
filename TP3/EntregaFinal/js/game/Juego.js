@@ -160,7 +160,7 @@ export default class Juego {
       this.fichaSeleccionada.posX = x - this.offsetX;
       this.fichaSeleccionada.posY = y - this.offsetY;
 
-      this.drawFrame();
+      //this.drawFrame();
     }
   }
 
@@ -169,13 +169,9 @@ export default class Juego {
 
     if (this.fichaSeleccionada) {
       const rect = this.canvaJuego.getBoundingClientRect();
-      const x = event.clientX - rect.left; //  X relativa al canvas
-      const y = event.clientY - rect.top; // Y relativa al canvas
-
-      //console.log(`Ficha soltada en: x=${x}, y=${y}`);
-      //console.log(this.fichaSeleccionada);
 
       if (this.tablero.isInZoneDrop(this.fichaSeleccionada, this.ctx)) {
+          
           if (this.tablero.verifyWinner(this.fichaSeleccionada)) {
             console.log("ganaste");
             this.endGame();
@@ -184,8 +180,6 @@ export default class Juego {
           } else {
             this.cambiarTurno();
           }
-        
-
       } else {
         console.log("Ficha fuera de zona válida, regresando...");
         this.fichaSeleccionada.resetPosicion();
