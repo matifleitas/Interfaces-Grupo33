@@ -29,6 +29,7 @@ export default class Juego {
     this.isMouseDown = false;
     this.lineasAJugar;
     this.turnoActivo = 'ningun team';
+    this.temporizadorID = null;
 
     this.fichas = [];
     this.canvaJuego = document.getElementById("canvaJuego");
@@ -171,7 +172,6 @@ export default class Juego {
       const rect = this.canvaJuego.getBoundingClientRect();
 
       if (this.tablero.isInZoneDrop(this.fichaSeleccionada, this.ctx)) {
-          
           if (this.tablero.verifyWinner(this.fichaSeleccionada)) {
             console.log("ganaste");
             this.endGame();
@@ -209,19 +209,53 @@ export default class Juego {
 resetGame() {
   const formLines = document.getElementById("formLineas");
   const fondoJuego = document.getElementById("fondoJuego");
-
-  // Oculta el fondo del juego y muestra el formulario
   fondoJuego.classList.add('taparJuego');
   formLines.classList.remove('taparJuego');
 
-  // Reinicia el estado del juego
+  // Cancelar cualquier temporizador activo
+  if (this.temporizadorID) {
+    clearTimeout(this.temporizadorID);
+    this.temporizadorID = null;
+  }
+
+  // Detener el bucle de animación (requestAnimationFrame)
+  cancelAnimationFrame(this.animationFrameId);
+
+  // Reiniciar todas las variables del juego
   this.fichas = [];
   this.turnoActivo = 'equipo1';
-  this.tablero.reiniciarTablero(); // Llama a un método para limpiar el tablero (debes implementarlo si no existe)
-  
-  // Inicializa el juego nuevamente
+  this.fichaSeleccionada = null;
+  this.isMouseDown = false;
+
+  if (this.tablero && typeof this.tablero.reiniciarTablero === 'function') {
+    this.tablero.reiniciarTablero();
+  }
+
+  this.canvaJuego.removeEventListener("mousedown", this.onMouseDown);
+  this.canvaJuego.removeEventListener("mousemove", this.arrastrarFicha);
+  window.removeEventListener("mouseup", this.onMouseUp);
+
+  this.ctx.clearRect(0, 0, this.canvaJuego.width, this.canvaJuego.height);
+
   this.inicializar();
 }
+
+// resetGame() {
+//   const formLines = document.getElementById("formLineas");
+//   const fondoJuego = document.getElementById("fondoJuego");
+
+//   // Oculta el fondo del juego y muestra el formulario
+//   fondoJuego.classList.add('taparJuego');
+//   formLines.classList.remove('taparJuego');
+
+//   // Reinicia el estado del juego
+//   this.fichas = [];
+//   this.turnoActivo = 'equipo1';
+//   this.tablero.reiniciarTablero(); // Llama a un método para limpiar el tablero (debes implementarlo si no existe)
+  
+//   // Inicializa el juego nuevamente
+//   this.inicializar();
+// }
 
 
   soltarFicha() {
@@ -232,20 +266,24 @@ resetGame() {
   }
 
   iniciarTemporizador(segundos) {
-    if (reset) {
-      divTemporizador.classList.add("display-none");
-      spanTemporizador.innerHTML = "";
-    } else if (segundos >= 0) {
-      setTimeout(() => {
+    // Cancelar cualquier temporizador activo
+    if (this.temporizadorID) {
+      clearTimeout(this.temporizadorID);
+      this.temporizadorID = null;
+    }
+  
+    // Mostrar temporizador
+    if (!reset && segundos >= 0) {
+      this.temporizadorID = setTimeout(() => {
         this.iniciarTemporizador(segundos - 1);
         spanTemporizador.innerHTML = `${segundos} segs.`;
-        //console.log(spanTemporizador.innerHTML);
       }, 1000);
     } else {
-    //  this.dibujarFondo();
-    //  this.mostrarCartel('Tiempo finalizado');
+      divTemporizador.classList.add("display-none");
+      spanTemporizador.innerHTML = "";
     }
   }
+  
 /*
 
   dibujarFondo() {

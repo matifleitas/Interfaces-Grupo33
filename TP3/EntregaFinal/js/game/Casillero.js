@@ -97,5 +97,8 @@ export default class Casillero {
     return this.numRow === 0;
   }
 
-  
+  vaciar() {
+    this.ficha = null;
+  }
 }
+

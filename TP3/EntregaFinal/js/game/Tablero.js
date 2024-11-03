@@ -42,8 +42,10 @@ export default class Tablero {
       this.casilleros[i] = [];
       for (let j = 0; j < this.columns; j++) {
         this.casilleros[i][j] = new Casillero(i, j, this.anchoColumna);
-        this.casilleros[i][j].setPosicion(offsetX + j * this.anchoColumna,
-          offsetY + i * this.anchoColumna);
+        this.casilleros[i][j].setPosicion(
+          offsetX + j * this.anchoColumna,
+          offsetY + i * this.anchoColumna
+        );
       }
     }
   }
@@ -87,8 +89,16 @@ export default class Tablero {
   }
 
   reiniciarTablero() {
-    this.casilleros = [];
-    this.initTablero();
+    for (let i = 0; i < this.rows; i++) {
+      for (let j = 0; j < this.columns; j++) {
+        this.casilleros[i][j].vaciar();  // Asegúrate de tener un método vaciar() en Casillero para resetear las fichas
+      }
+    }
+    console.log('vacio casilleros');
+    
+    // Redibujar el tablero limpio
+    const ctx = this.canvasJuego.getContext("2d");
+    //this.dibujarTablero(ctx);
   }
 
   getCasillero(row, column) {
@@ -130,7 +140,6 @@ export default class Tablero {
   // }
 
   isInZoneDrop(fichaSeleccionada, ctx) {
-   
     const anchoCasillero = this.anchoColumna;
 
     const zonaX = (this.canvasJuego.width - this.columns * anchoCasillero) / 2;
@@ -142,14 +151,12 @@ export default class Tablero {
     const zonaAncho = this.columns * anchoCasillero;
     const zonaAlto = 50;
 
- 
     if (
       fichaSeleccionada.getPosX() >= zonaX &&
       fichaSeleccionada.getPosX() <= zonaX + zonaAncho &&
       fichaSeleccionada.getPosY() >= zonaY &&
       fichaSeleccionada.getPosY() <= zonaY + zonaAlto
     ) {
-
       const columna = Math.floor(
         (fichaSeleccionada.getPosX() - zonaX) / anchoCasillero
       );
@@ -166,15 +173,15 @@ export default class Tablero {
       return false;
     }
   }
-  
-  colocarFichaEnColumna(columna, ficha) { 
+
+  colocarFichaEnColumna(columna, ficha) {
     const fila = this.ultimaFilaDisponible(columna);
     if (fila !== -1) {
       this.casilleros[fila][columna].colocarFicha(ficha);
 
       const casillero = this.casilleros[fila][columna];
-      const posYInicial = 0; 
-      const posYFinal = casillero.getPosY() + casillero.ancho / 2; 
+      const posYInicial = 0;
+      const posYFinal = casillero.getPosY() + casillero.ancho / 2;
 
       let posYActual = posYInicial;
 
@@ -184,16 +191,22 @@ export default class Tablero {
 
       const animacion = () => {
         posYActual += (posYFinal - posYActual) * 0.15;
-        ficha.setPosicion(casillero.getPosX() + casillero.ancho / 2, posYActual);
-        
+        ficha.setPosicion(
+          casillero.getPosX() + casillero.ancho / 2,
+          posYActual
+        );
+
         if (Math.abs(posYFinal - posYActual) < 1) {
-          ficha.setPosicion(casillero.getPosX() + casillero.ancho / 2, posYFinal); 
+          ficha.setPosicion(
+            casillero.getPosX() + casillero.ancho / 2,
+            posYFinal
+          );
           return;
         }
-        
+
         this.animacionId = requestAnimationFrame(animacion);
       };
-      this.animacionId = requestAnimationFrame(animacion); 
+      this.animacionId = requestAnimationFrame(animacion);
       return true;
     } else {
       console.log("La columna está llena");
@@ -238,7 +251,7 @@ export default class Tablero {
     console.log("la filaa eeeeess:" + fila);
 
     let casilleroActual = this.casilleros[fila][columna];
-        
+
     return (
       this.verifyHorizontal(casilleroActual) ||
       this.verifyVertical(casilleroActual) ||
@@ -249,7 +262,6 @@ export default class Tablero {
 
   //HORIZONTAL
   verifyHorizontal(casilleroActual) {
-
     if (!casilleroActual.estaVacio()) {
       return (
         this.checkHorizontal(casilleroActual, 1) ||
@@ -262,7 +274,8 @@ export default class Tablero {
   verifyVertical(casilleroActual) {
     if (!casilleroActual.estaVacio()) {
       return (
-        this.checkVertical(casilleroActual, 1) || this.checkVertical(casilleroActual, -1)
+        this.checkVertical(casilleroActual, 1) ||
+        this.checkVertical(casilleroActual, -1)
       );
     }
     return false;
@@ -279,7 +292,7 @@ export default class Tablero {
   }
 
   verifyDiagonalAscendente(casilleroActual) {
-    if(!casilleroActual.estaVacio()){
+    if (!casilleroActual.estaVacio()) {
       return (
         this.checkDiagonalAcsendente(casilleroActual, 1) ||
         this.checkDiagonalAcsendente(casilleroActual, -1)
@@ -299,7 +312,8 @@ export default class Tablero {
     const equipo = casilleroActual.getFicha().getEquipo();
 
     for (let i = casilleroActual.getColumn() + 1; i < this.columns; i++) {
-      const fichaDerecha = this.casilleros[casilleroActual.getRow()][i].getFicha();
+      const fichaDerecha =
+        this.casilleros[casilleroActual.getRow()][i].getFicha();
 
       if (fichaDerecha && fichaDerecha.getEquipo() === equipo) {
         cont++;
@@ -309,7 +323,8 @@ export default class Tablero {
     }
 
     for (let j = casilleroActual.getColumn() - 1; j >= 0; j--) {
-      const fichaIzquierda = this.casilleros[casilleroActual.getRow()][j].getFicha();
+      const fichaIzquierda =
+        this.casilleros[casilleroActual.getRow()][j].getFicha();
       if (fichaIzquierda && fichaIzquierda.getEquipo() === equipo) {
         cont++;
       } else {
@@ -328,7 +343,8 @@ export default class Tablero {
     const equipo = casilleroActual.getFicha().getEquipo();
 
     for (let i = casilleroActual.getRow() + 1; i < this.rows; i++) {
-      const fichaAbajo = this.casilleros[i][casilleroActual.getColumn()].getFicha();
+      const fichaAbajo =
+        this.casilleros[i][casilleroActual.getColumn()].getFicha();
 
       if (fichaAbajo && fichaAbajo.getEquipo() === equipo) {
         cont++;
@@ -338,7 +354,8 @@ export default class Tablero {
     }
 
     for (let j = casilleroActual.getRow() - 1; j >= 0; j--) {
-      const fichaArriba = this.casilleros[j][casilleroActual.getColumn()].getFicha();
+      const fichaArriba =
+        this.casilleros[j][casilleroActual.getColumn()].getFicha();
       if (fichaArriba && fichaArriba.getEquipo() === equipo) {
         cont++;
       } else {
@@ -370,7 +387,11 @@ export default class Tablero {
       }
     }
 
-    for (let i = casilleroActual.getRow() + 1, j = casilleroActual.getColumn() - 1; i < this.rows && j >= 0; i++, j--) {
+    for (
+      let i = casilleroActual.getRow() + 1, j = casilleroActual.getColumn() - 1;
+      i < this.rows && j >= 0;
+      i++, j--
+    ) {
       const fichaAbajoIzquierda = this.casilleros[i][j].getFicha();
       if (fichaAbajoIzquierda && fichaAbajoIzquierda.getEquipo() === equipo) {
         cont++;
@@ -383,41 +404,41 @@ export default class Tablero {
 
   checkDiagonalAcsendente(casilleroActual) {
     let cont = 1;
-  
+
     if (casilleroActual.getFicha() === null) {
       return false;
     }
-  
+
     const equipo = casilleroActual.getFicha().getEquipo();
-  
+
     for (
       let i = casilleroActual.getRow() - 1, j = casilleroActual.getColumn() + 1;
       i >= 0 && j < this.columns;
       i--, j++
     ) {
       const fichaArribaDerecha = this.casilleros[i][j].getFicha();
-  
+
       if (fichaArribaDerecha && fichaArribaDerecha.getEquipo() === equipo) {
         cont++;
       } else {
         break;
       }
     }
-  
+
     for (
       let i = casilleroActual.getRow() - 1, j = casilleroActual.getColumn() - 1;
       i >= 0 && j >= 0;
       i--, j--
     ) {
       const fichaArribaIzquierda = this.casilleros[i][j].getFicha();
-  
+
       if (fichaArribaIzquierda && fichaArribaIzquierda.getEquipo() === equipo) {
         cont++;
       } else {
         break;
       }
     }
-  
+
     return cont === this.line;
   }
 }
