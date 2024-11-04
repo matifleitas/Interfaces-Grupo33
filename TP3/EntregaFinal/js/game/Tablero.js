@@ -128,22 +128,6 @@ export default class Tablero {
     return true;
   }
 
-  //   dropFicha(ficha) {
-
-  //   const columna = Math.floor(ficha.getPosX() / this.anchoColumna); // dividir entre el ancho de la columna
-  //   const fila = this.ultimaFilaDisponible(columna); // oobtener la fila disponible
-
-  //   if (this.isInZoneDrop(ficha)) {
-  //     if(fila){
-  //       console.log('intentado colocar ficha en la fila' + fila + "columna" + columna);
-
-  //       this.casilleros[columna][fila].colocarFicha(ficha);
-  //     }
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
   isInZoneDrop(fichaSeleccionada, ctx) {
     const anchoCasillero = this.anchoColumna;
 
@@ -178,27 +162,31 @@ export default class Tablero {
       return false;
     }
   }
+
   dibujarFlechas(ctx) {
     const anchoCasillero = this.anchoColumna;
-    const altoFlecha = 20;
-    const anchoFlecha = 30;
+    const altoFlecha = 21;
+    const anchoFlecha = 28;
 
     const zonaX = (this.canvasJuego.width - this.columns * anchoCasillero) / 2;
-    const posY =
-      (this.canvasJuego.height - this.rows * anchoCasillero) / 2 - altoFlecha;
+    const basePosY = ((this.canvasJuego.height - this.rows * anchoCasillero) / 2 - altoFlecha) - 7;
+
+    const time = Date.now() * 0.003; 
+    const offset = Math.sin(time) * 4; 
 
     for (let columna = 0; columna < this.columns; columna++) {
-      const posX = zonaX + columna * anchoCasillero + anchoCasillero / 2;
-      ctx.fillStyle = "grey";
-      ctx.beginPath();
-      ctx.moveTo(posX - anchoFlecha / 2, posY);
-      ctx.lineTo(posX + anchoFlecha / 2, posY);
-      ctx.lineTo(posX, posY + altoFlecha);
-      ctx.closePath();
-      ctx.fill();
+        const posX = zonaX + columna * anchoCasillero + anchoCasillero / 2;
+        const posY = basePosY + offset; 
+
+        ctx.fillStyle = "rgba(128, 128, 128, 0.9)"; //gris con un poco de transparencia
+        ctx.beginPath();
+        ctx.moveTo(posX - anchoFlecha / 2, posY);
+        ctx.lineTo(posX + anchoFlecha / 2, posY);
+        ctx.lineTo(posX, posY + altoFlecha);
+        ctx.closePath();
+        ctx.fill();
     }
   }
-
   
   colocarFichaEnColumna(columna, ficha) {
     const fila = this.ultimaFilaDisponible(columna);
@@ -216,7 +204,7 @@ export default class Tablero {
       }
 
       const animacion = () => {
-        posYActual += (posYFinal - posYActual) * 0.15;
+        posYActual += (posYFinal - posYActual) * 0.13;
         ficha.setPosicion(
           casillero.getPosX() + casillero.ancho / 2,
           posYActual

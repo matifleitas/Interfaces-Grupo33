@@ -193,6 +193,14 @@ export default class Juego {
     this.drawFrame();
   }
 
+  /* 
+  dibujarElementos(){
+    drawElementInCanvas('turn-indicator', this.canvaJuego, 10, 10);
+    drawElementInCanvas('juego-temporizador', this.canvaJuego, 150, 10);
+    drawElementInCanvas('modal', this.canvaJuego, 100, 100); 
+    drawElementInCanvas('btnResetGame', this.canvaJuego, 200, 10);
+  } */
+ 
   endGame() {
     const modal = document.getElementById("modal");
     const msjGanador = document.getElementById("winner-message");
