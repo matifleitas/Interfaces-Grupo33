@@ -90,10 +90,11 @@ export default class Juego {
 
   crearFichas() {
     const posXBase = 100;
-    const posYBase = 400;
-    const separacion = 9; // espacio entre fichas para el efecto de apilamiento
+    const posYBase = 450;
+    const separacion = 5; // espacio entre fichas para el efecto de apilamiento
+    const cantFichas = (this.tablero.rows * this.tablero.columns) / 2;  
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < cantFichas; i++) {
       let posX = posXBase + 1 * separacion;
       let posY = posYBase + i * separacion * -2;
       let e1 = "equipo1";
@@ -103,10 +104,10 @@ export default class Juego {
     }
 
     const posXBase2 = 910;
-    const posYBase2 = 400;
+    const posYBase2 = 450;
     //const separacion = 9; // Espacio entre fichas para el efecto de apilamiento
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < cantFichas; i++) {
       let posX = posXBase2 + 1 * separacion;
       let posY = posYBase2 + i * separacion * -2;
       let e2 = "equipo2";
