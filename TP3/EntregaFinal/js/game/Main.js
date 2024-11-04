@@ -3,6 +3,11 @@ import Juego from './Juego.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const formLineas = document.getElementById('formLineas');
+    document.getElementById('changeScreen').addEventListener('click',()=> {
+        document.getElementById('elementsPortada').classList.add('taparJuego');
+        document.getElementById('formLineas').classList.remove('taparJuego');
+        
+    })
 
     formLineas.addEventListener('submit', (event) => {
         event.preventDefault(); // Evita el comportamiento por defecto del formulario

@@ -28,6 +28,10 @@ export default class Tablero {
     this.canvasJuego = document.getElementById("canvaJuego");
     const imgTablero = new Image();
     imgTablero.src = "../assets/tablero.png";
+    let offsetY = 0; 
+    let direccion = 1; // 1 para subir, -1 para bajar
+    const velocidad = 0.5; // Controla la velocidad de movimiento
+    const maxDesplazamiento = 5; //
     this.initTablero();
   }
 
@@ -86,16 +90,17 @@ export default class Tablero {
         );
       }
     }
+    this.dibujarFlechas(ctx);
   }
 
   reiniciarTablero() {
     for (let i = 0; i < this.rows; i++) {
       for (let j = 0; j < this.columns; j++) {
-        this.casilleros[i][j].vaciar();  // Asegúrate de tener un método vaciar() en Casillero para resetear las fichas
+        this.casilleros[i][j].vaciar(); // Asegúrate de tener un método vaciar() en Casillero para resetear las fichas
       }
     }
-    console.log('vacio casilleros');
-    
+    console.log("vacio casilleros");
+
     // Redibujar el tablero limpio
     const ctx = this.canvasJuego.getContext("2d");
     //this.dibujarTablero(ctx);
@@ -173,7 +178,28 @@ export default class Tablero {
       return false;
     }
   }
+  dibujarFlechas(ctx) {
+    const anchoCasillero = this.anchoColumna;
+    const altoFlecha = 20;
+    const anchoFlecha = 30;
 
+    const zonaX = (this.canvasJuego.width - this.columns * anchoCasillero) / 2;
+    const posY =
+      (this.canvasJuego.height - this.rows * anchoCasillero) / 2 - altoFlecha;
+
+    for (let columna = 0; columna < this.columns; columna++) {
+      const posX = zonaX + columna * anchoCasillero + anchoCasillero / 2;
+      ctx.fillStyle = "grey";
+      ctx.beginPath();
+      ctx.moveTo(posX - anchoFlecha / 2, posY);
+      ctx.lineTo(posX + anchoFlecha / 2, posY);
+      ctx.lineTo(posX, posY + altoFlecha);
+      ctx.closePath();
+      ctx.fill();
+    }
+  }
+
+  
   colocarFichaEnColumna(columna, ficha) {
     const fila = this.ultimaFilaDisponible(columna);
     if (fila !== -1) {
