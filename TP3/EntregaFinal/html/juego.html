@@ -147,10 +147,10 @@
                         <div class="photo-game">
                             <img class="game-photo" src="../assets/imgGame.png" alt="fotoJuego" />
                         </div>
-                        <div class="elements-canva-game">
+                        <div class="elements-canva-game" id="elementsPortada">
                             <div class="text-box">
                                 <h1>Batman vs Joker</h1>
-                                <button class="button-with-icon" id="btnJugar">
+                                <button class="button-with-icon" id="changeScreen">
                                     <span class="material-symbols-outlined icon">
                                         sports_esports
                                         </span>
@@ -160,10 +160,47 @@
                         </div>
                     </div>
                 </div>
-                <div class="taparJuego" id="fondoJuego">
-                    <div class="tablero">
-                        <canvas id="canvaJuego" width="500" height="400"></canvas>
+               
+                <div class="cartel taparJuego" id="formLineas">
+                    <h2>Elija cantidad de lineas: </h2>
+                    <form class="form_game">
+                        <label>
+                            <input type="radio" name="tipo" value="4"> 4 en línea
+                        </label><br>
+                        <label>
+                            <input type="radio" name="tipo" value="5"> 5 en línea
+                        </label><br>
+                        <label>
+                            <input type="radio" name="tipo" value="6"> 6 en línea
+                        </label><br><br>
+                        <button type="submit" class="button-with-icon" id="btnJugar">
+                            <span class="material-symbols-outlined icon">
+                                sports_esports
+                                </span>
+                            <span class="text-jugar">JUGAR</span>
+                          </button>
+                    </form>
+                </div>
+                <div id="turn-indicator" class="turn-indicator taparJuego">Turno de: Equipo 1</div>
+                <div class="contenedor-temporizador taparJuego">
+                    <span id="juego-temporizador"></span>
+                </div>
+                <div id="modal" class="modal taparJuego">
+                    <div class="modal-content ">
+                        <h3 id="winner-message"></h3>
+                        <button  id="play-again-btn">Jugar de nuevo</button>
                     </div>
+                </div>
+                <div class="cointainerBtnBack " id="btnResetGame">
+                    <button class="taparJuego" id="resetGame">
+                        <span class="material-symbols-outlined">
+                            replay
+                            </span>
+                            Reiniciar Juego
+                    </button>
+                </div>
+                <div class="taparJuego" id="fondoJuego">
+                    <canvas id="canvaJuego" width="1011" height="500" class="canvasClass"></canvas>
                 </div>
                 <section class="info-game">
                     <div class="left">

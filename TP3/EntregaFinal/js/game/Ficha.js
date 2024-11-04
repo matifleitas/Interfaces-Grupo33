@@ -1,38 +1,80 @@
 'use strict';
 export default class Ficha {
-    constructor(equipo,radio,posX,posY) {
+    posXInicial;
+    posYInicial;
+    constructor(x,y,equipo, img) {
+        this.posX = x;
+        this.posY = y; 
+        this.radio = 35;
         this.equipo = equipo;
         this.selected = false;
-        this.radio=radio;
-        this.posX=posX;
-        this.posY=posY;
+        this.image = new Image();
+        this.image.src = this.definirEquipo(equipo);
+        this.posXInicial=x;
+        this.posYInicial=y;
     }
 
-
-    dibujarFicha(ctx){
-        console.log('dibujando ficha...');
+    dibujarFicha(ctx) {
+        ctx.save();
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radio, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
+        ctx.arc(this.posX, this.posY, this.radio, 0, Math.PI * 2);
         ctx.closePath();
-        console.log('dibujada');
+        ctx.clip();
+        ctx.drawImage(this.image, this.posX - this.radio, this.posY - this.radio, this.radio * 2, this.radio * 2);
+        ctx.restore();
+        //console.log('ficha dibujada en:' + this.posX,this.posY);
         
     }
 
-    setSelecter() {
-        this.selected = !this.selected;
+    esClickeada(x, y) {
+        const dist = Math.sqrt((x - this.posX) ** 2 + (y - this.posY) ** 2);
+        return dist <= this.radio;
     }
 
-    getEquipo() {
+    setPosicion(posX, posY) {
+        this.posX = posX;
+        this.posY = posY;
+    }
+
+    getPosicion(){
+        return this.getPosX, this.posY;
+    }
+
+    getEquipo(){
         return this.equipo;
     }
 
-    clear() {
-        //se borra
+    getPosX() {
+        return this.posX;
     }
 
-    esIgualA(ficha) {
-        return this.equipo === ficha.getEquipo();
+    getPosY() {
+        return this.posY;
+    }
+
+    setPosY(posY) {
+        this.posY = posY;
+    }
+
+    setPosX(posX) {
+
+        this.posX = posX;
+    }
+
+    resetPosicion(){
+        console.log('reseto pos');
+        this.posX=this.posXInicial;
+        this.posY=this.posYInicial;
+    }
+
+    definirEquipo(equipo){
+        switch (equipo) {
+            case "equipo1":
+                return '../img/fichas/batman.png';
+            case "equipo2":
+                return '../img/fichas/joker.png';
+            default:
+                return null; 
+        }
     }
 }
