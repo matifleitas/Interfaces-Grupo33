@@ -2180,7 +2180,7 @@ button {
 
 .cointainerBtnBack {
     position: absolute;
-    bottom: 1%; /* Ajuste del margen inferior */
+    bottom: 74%; /* Ajuste del margen inferior */
     left: 13%;
     padding: 5px; /* Reduce el padding general */
     cursor: pointer;
