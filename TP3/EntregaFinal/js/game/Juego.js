@@ -128,13 +128,13 @@ export default class Juego {
   cambiarTurno() {
     const turnIndicator = document.getElementById("turn-indicator");
 
-    // Cambiar el turno basado en el equipo activo actual
+ 
     if (this.turnoActivo === this.equipo1) {      
       this.turnoActivo = this.equipo2;
-      turnIndicator.innerHTML = "Turno de: " + this.equipo2; // Actualizar el indicador
+      turnIndicator.innerHTML = "Turno de: " + this.equipo2; 
     } else {
       this.turnoActivo = this.equipo1;
-      turnIndicator.innerHTML = "Turno de: " + this.equipo1; // Actualizar el indicador
+      turnIndicator.innerHTML = "Turno de: " + this.equipo1; 
     }
 
     console.log("Cambio de turno a: " + this.turnoActivo);
@@ -200,58 +200,46 @@ export default class Juego {
     this.drawFrame();
   }
 
-  /* 
-  dibujarElementos(){
-    drawElementInCanvas('turn-indicator', this.canvaJuego, 10, 10);
-    drawElementInCanvas('juego-temporizador', this.canvaJuego, 150, 10);
-    drawElementInCanvas('modal', this.canvaJuego, 100, 100); 
-    drawElementInCanvas('btnResetGame', this.canvaJuego, 200, 10);
-  } */
- 
   endGame() {
     const modal = document.getElementById("modal");
     const msjGanador = document.getElementById("winner-message");
     const formLines = document.getElementById("formLineas");
 
-    // Mostrar mensaje de ganador en el modal
+   
     modal.classList.remove("taparJuego");
     document.getElementById("resetGame").classList.add("taparJuego");
     msjGanador.innerHTML = `¡Felicidades, ${this.fichaSeleccionada.getEquipo()}! Ha ganado.`;
     console.log("terminó el juego...");
 
-    // Acción al hacer clic en "Jugar de nuevo"
+   
     document.getElementById("play-again-btn").onclick = () => {
-      modal.classList.add("taparJuego"); // Oculta el modal
-      this.resetGame(); // Reinicia el juego y prepara el formulario
+      modal.classList.add("taparJuego"); 
+      this.resetGame(); 
     };
   }
 
   resetGame() {
     console.log("en reset game");
 
-    // Mostrar el formulario de líneas
     const formLines = document.getElementById("formLineas");
     formLines.classList.remove("taparJuego");
 
-    // Ocultar elementos del juego
     const fondoJuego = document.getElementById("fondoJuego");
     fondoJuego.classList.add("taparJuego");
     document.getElementById("gamePortada").classList.remove("taparJuego");
     document.getElementById("resetGame").classList.add("taparJuego");
     divTemporizador.classList.add("taparJuego");
 
-    // Reiniciar el indicador de turno
     const turnIndicator = document.getElementById("turn-indicator");
     turnIndicator.classList.add("taparJuego");
     turnIndicator.innerHTML = "Turno de: Equipo 1";
 
-    // Cancelar cualquier temporizador activo
     if (this.temporizadorID) {
       clearTimeout(this.temporizadorID);
       this.temporizadorID = null;
     }
 
-    // Detener el bucle de animación (requestAnimationFrame)
+
     cancelAnimationFrame(this.animationFrameId);
 
     this.fichas = [];
@@ -281,14 +269,12 @@ export default class Juego {
     const modal = document.getElementById("modal");
     const msjGanador = document.getElementById("winner-message");
 
-    // Mostrar mensaje de empate en el modal
     modal.classList.remove("taparJuego");
     msjGanador.innerHTML = "¡El tiempo se acabó! Es un empate.";
 
-    // Acción al hacer clic en "Jugar de nuevo"
     document.getElementById("play-again-btn").onclick = () => {
-      modal.classList.add("taparJuego"); // Oculta el modal
-      this.resetGame(); // Reinicia el juego y prepara el formulario
+      modal.classList.add("taparJuego"); 
+      this.resetGame(); // reinicia el juego y prepara el formulario
     };
   }
 
@@ -306,7 +292,7 @@ export default class Juego {
     } else {
         divTemporizador.classList.add("taparJuego");
         spanTemporizador.innerHTML = "";
-        this.showTimeOutModal(); // Mostrar el modal de tiempo agotado
+        this.showTimeOutModal(); // muestor el tiempo agotado
     }
 }
 

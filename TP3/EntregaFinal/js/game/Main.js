@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const e1 = document.getElementById('equipo1').value;
         const e2 = document.getElementById('equipo2').value;
-
-        if(e1 !== e2){
+        
+        if(e1 !== e2 && (e1 !== "" && e2 !== "")){
             const tipoSeleccionado = document.querySelector('input[name="tipo"]:checked').value;
             const cantidadEnLinea = parseInt(tipoSeleccionado);
 
