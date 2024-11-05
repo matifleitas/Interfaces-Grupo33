@@ -35,9 +35,11 @@ export default class Juego {
     const equipo1 = document.getElementById('equipo1').value;
     const equipo2 = document.getElementById('equipo2').value;
     
-    this.equipo1 = equipo1; // Guardar el equipo1
-    this.equipo2 = equipo2; // Guardar el equipo2
-    this.turnoActivo = this.equipo1; // Establecer el turno activo al equipo 1
+    this.equipo1 = equipo1; 
+    this.equipo2 = equipo2;
+    this.turnoActivo = this.equipo1; 
+    document.getElementById("turn-indicator").innerHTML = "Turno de: " + this.equipo1;
+
 
     this.canvaJuego.addEventListener("mousedown", (event) =>
       this.onMouseDown(event)
@@ -46,11 +48,11 @@ export default class Juego {
     this.canvaJuego.addEventListener("mousemove", (event) =>
       this.arrastrarFicha(event)
     );
-    window.addEventListener("mouseup", (event) => this.onMouseUp(event)); // Cambiar de canvas a window
+    window.addEventListener("mouseup", (event) => this.onMouseUp(event)); 
 
     document.getElementById("resetGame").onclick = () => {
       // modal.classList.add("taparJuego"); // Oculta el modal
-      this.resetGame(); // Reinicia el juego y prepara el formulario
+      this.resetGame(); 
     };
   }
 
@@ -86,12 +88,6 @@ export default class Juego {
     document.getElementById("turn-indicator").classList.remove("taparJuego");
     document.getElementById("resetGame").classList.remove("taparJuego");
   }
-
-  /* mostrarForm(){
-      const form = document.getElementById('cartelForm');
-      form.classList.remove("cartel");
-      form.classList.add("cartel2");
-    }*/
 
   crearFichas() {
     const posXBase = 100;
