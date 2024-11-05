@@ -27,12 +27,17 @@ export default class Juego {
     this.offsetY = 0;
     this.isMouseDown = false;
     this.lineasAJugar;
-    this.turnoActivo = "ningun team";
     this.temporizadorID = null;
-
+    
     this.fichas = [];
     this.canvaJuego = document.getElementById("canvaJuego");
     this.ctx = this.canvaJuego.getContext("2d");
+    const equipo1 = document.getElementById('equipo1').value;
+    const equipo2 = document.getElementById('equipo2').value;
+    
+    this.equipo1 = equipo1; // Guardar el equipo1
+    this.equipo2 = equipo2; // Guardar el equipo2
+    this.turnoActivo = this.equipo1; // Establecer el turno activo al equipo 1
 
     this.canvaJuego.addEventListener("mousedown", (event) =>
       this.onMouseDown(event)
@@ -127,17 +132,18 @@ export default class Juego {
   cambiarTurno() {
     const turnIndicator = document.getElementById("turn-indicator");
 
-    if (this.turnoActivo === "equipo1") {
-      this.turnoActivo = "equipo2";
-      turnIndicator.innerHTML = "Turno de: Equipo 2";
-    } else if (this.turnoActivo === "equipo2") {
-      this.turnoActivo = "equipo1";
-      turnIndicator.innerHTML = "Turno de: Equipo 1";
+    // Cambiar el turno basado en el equipo activo actual
+    if (this.turnoActivo === this.equipo1) {      
+      this.turnoActivo = this.equipo2;
+      turnIndicator.innerHTML = "Turno de: " + this.equipo2; // Actualizar el indicador
     } else {
-      return;
+      this.turnoActivo = this.equipo1;
+      turnIndicator.innerHTML = "Turno de: " + this.equipo1; // Actualizar el indicador
     }
+
     console.log("Cambio de turno a: " + this.turnoActivo);
   }
+
 
   onMouseDown(event) {
     this.isMouseDown = true;

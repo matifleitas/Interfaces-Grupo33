@@ -2046,6 +2046,7 @@ button {
   position: absolute;
   bottom: 75%;
   right: 25%;
+  pointer-events: none;
   background-color: rgba(0,0,0,0.7);
   border-radius: 12px;
   padding: 2px 10px;
