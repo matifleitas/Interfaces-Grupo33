@@ -93,13 +93,17 @@ export default class Juego {
     const posYBase = 450;
     const separacion = 5; // espacio entre fichas para el efecto de apilamiento
     const cantFichas = (this.tablero.rows * this.tablero.columns) / 2;  
+    
+    const equipo1Select = document.getElementById('equipo1').value;
+    const equipo2Select = document.getElementById('equipo2').value;
+
 
     for (let i = 0; i < cantFichas; i++) {
       let posX = posXBase + 1 * separacion;
-      let posY = posYBase + i * separacion * -2;
-      let e1 = "equipo1";
-      this.turnoActivo = e1;
-      const ficha = new Ficha(posX, posY, e1);
+      let posY = posYBase + i * separacion * - 2;
+      
+      this.turnoActivo = equipo1Select;
+      const ficha = new Ficha(posX, posY, equipo1Select);
       this.fichas.push(ficha);
     }
 
@@ -110,8 +114,8 @@ export default class Juego {
     for (let i = 0; i < cantFichas; i++) {
       let posX = posXBase2 + 1 * separacion;
       let posY = posYBase2 + i * separacion * -2;
-      let e2 = "equipo2";
-      const ficha = new Ficha(posX, posY, e2);
+      
+      const ficha = new Ficha(posX, posY, equipo2Select);
       this.fichas.push(ficha);
     }
   }

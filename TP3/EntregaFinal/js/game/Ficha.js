@@ -67,12 +67,16 @@ export default class Ficha {
         this.posY=this.posYInicial;
     }
 
-    definirEquipo(equipo){
+    definirEquipo(equipo) {
         switch (equipo) {
-            case "equipo1":
+            case "batman":
                 return '../img/fichas/batman.png';
-            case "equipo2":
+            case "joker":
                 return '../img/fichas/joker.png';
+            case "spiderman":
+                return '../img/fichas/spiderman.png';
+            case "hulk":
+                return '../img/fichas/hulk.png';
             default:
                 return null; 
         }

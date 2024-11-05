@@ -10,17 +10,22 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     formLineas.addEventListener('submit', (event) => {
-        event.preventDefault(); // Evita el comportamiento por defecto del formulario
+        event.preventDefault(); 
 
-        // Obtén el valor del radio seleccionado
-        const tipoSeleccionado = document.querySelector('input[name="tipo"]:checked').value;
-        const cantidadEnLinea = parseInt(tipoSeleccionado);
+        const e1 = document.getElementById('equipo1').value;
+        const e2 = document.getElementById('equipo2').value;
 
-        // Inicia el juego con la cantidad de fichas en línea elegidas por el usuario
-        const juego = new Juego(cantidadEnLinea);
+        if(e1 !== e2){
+            const tipoSeleccionado = document.querySelector('input[name="tipo"]:checked').value;
+            const cantidadEnLinea = parseInt(tipoSeleccionado);
 
-        juego.cambiarPantallas();
-        juego.initGame();
+            const juego = new Juego(cantidadEnLinea);
 
+            document.getElementById("msjError").classList.add("taparJuego");
+            juego.cambiarPantallas();
+            juego.initGame();
+        } else{
+            document.getElementById("msjError").classList.remove("taparJuego");
+        }
     });
 });

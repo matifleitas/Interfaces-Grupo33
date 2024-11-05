@@ -172,13 +172,34 @@
                         </label><br>
                         <label>
                             <input type="radio" name="tipo" value="6"> 6 en línea
-                        </label><br><br>
-                        <button type="submit" class="button-with-icon" id="btnJugar">
+                        </label><br>
+
+                        <label for="equipo1">Equipo 1:</label>
+                        <select id="equipo1" name="equipo1" class="select-pequeno">
+                        <option disabled selected>Elige</option>
+                        <option value="batman">Batman</option>
+                        <option value="joker">Joker</option>
+                        <option value="spiderman">Spiderman</option>
+                        <option value="hulk">Hulk</option>
+                        </select>
+
+                        <label for="equipo2">Equipo 2:</label>
+                        <select id="equipo2" name="equipo2" class="select-pequeno">
+                        <option disabled selected>Elige</option>
+                        <option value="batman">Batman</option>
+                        <option value="joker">Joker</option>
+                        <option value="spiderman">Spiderman</option>
+                        <option value="hulk">Hulk</option>
+                        </select>
+
+                        <button type="submit" class="button-with-icon" id="btnJugar" style="margin-top: 10px;">
                             <span class="material-symbols-outlined icon">
                                 sports_esports
-                                </span>
+                            </span>
                             <span class="text-jugar">JUGAR</span>
                           </button>
+                        <br>
+                          <span class="taparJuego" id="msjError" style="font-size: small;">No se puede jugar con fichas iguales</span>
                     </form>
                 </div>
                 <div id="turn-indicator" class="turn-indicator taparJuego">Turno de: Equipo 1</div>

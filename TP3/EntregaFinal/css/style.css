@@ -2205,3 +2205,8 @@ button {
     font-size: 18px; /* Tamaño del icono */
 }
 
+.select-pequeno {
+  width: 80px;
+  padding: 5px;
+  font-size: 12px;
+}
