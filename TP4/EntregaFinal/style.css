@@ -1,39 +1,58 @@
-body{
- width: 1080px;
+body {
+    width: 1280px;
 }
 
-.layer{
+.layer {
     min-height: 500px;
     height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     background-size: cover;
-    background-repeat: repeat-y;
 }
 
-.header{
+.header {
     background-image: url(assets/backgroundHeader.png);
     top: 0px;
     width: 100%;
-    height: 103px;
+    height: 0px;
     display: flex;
     justify-content: space-evenly;
 }
 
-.nav_hamburger{
-       
+.backgroundScrolling {
+    background-image: url(assets/backgroundBody.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px; 
+    align-items: center; 
+    width: 100%;
+    min-height: 500px;
 }
 
-.logo{
-
+/* .layer_background1 {
+    background-image: url("assets/arbol2.png");
+    animation: scroll 20s backwards;
 }
 
+.layer_background2 {
+    background-image: url("assets/22.png");
+    animation: scroll 15s infinite linear;
+}
 
-    .backgroundScrolling {
-        background-image: url(assets/backgroundBody.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 100%;
-        min-height: 500px;
+.layer_background3 {
+    background-image: url("assets/33.png");
+    animation: scroll 15s infinite linear;
+} */
+
+@keyframes scroll {
+    from {
+        background-position-y: 0;
     }
+    to {
+        background-position-y: 100%;
+    }
+}
