@@ -1,6 +1,5 @@
 :root{
     --colorBtnBuy:#83C252;
-    background-color: black;
 }
 
 html{
@@ -30,7 +29,7 @@ body {
     overflow: hidden;
     background-size:cover;
     position: relative;
-    height: 960px;
+    height: 1100px;
 }
 
 .page1{
@@ -75,6 +74,7 @@ body {
     }
 
 /* ELEMENTOS PRIMER PAG */
+
 
 .arbol1{
     background-image: url(assets/arbol1.png);
@@ -130,7 +130,7 @@ body {
     height: 672.52px;
     position: absolute;
     left: 70%;
-    top: 18%;
+    top: 20%;
     z-index: 2;
 }
 
@@ -150,7 +150,7 @@ body {
     height: 78.09px;
     position:absolute;
     left: 10%;
-    top: 93%;
+    top: 81%;
     z-index: 1;
 }
 
@@ -160,7 +160,7 @@ body {
     height: 114.44px;
     position: absolute;
     left: 13%;
-    top: 85%;
+    top: 74%;
     z-index: 0;
 }
 .arbusto2{
@@ -169,7 +169,7 @@ body {
     height: 102.33px;
     position: absolute;
     left: 15%;
-    top: 95.3%;
+    top: 84%;
     z-index: 2;
 }
 
@@ -179,7 +179,7 @@ body {
     height: 75.05px;
     position: absolute;
     right: 5%;
-    bottom: 10%;
+    bottom: 18%;
     z-index: 3;
 }
 .roca3{
@@ -188,7 +188,7 @@ body {
     height: 55.56px;
     position: absolute;
     right: 12%;
-    bottom: 12%;
+    bottom: 20%;
     z-index: 2;
 }
 
@@ -198,7 +198,7 @@ body {
     height: 35.01px;
     position: absolute;
     right: 12%;
-    bottom: 10%;
+    bottom:18%;
     z-index: 3;
 }
 .arbusto3 {
@@ -207,7 +207,7 @@ body {
     height: 107.71px;
     position: absolute;
     left:85%; 
-    bottom: 13%; 
+    bottom: 20%; 
     z-index: 1; 
 }
 
@@ -217,20 +217,57 @@ body {
     height: 63.28px;
     position: absolute;
     left:81%; 
-    bottom: 20%; 
+    bottom: 27%; 
     z-index: 0; 
 }
+
+
+.nav_hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_hamburger button {
+    border: none;
+    padding: 10px;
+    border-radius: 12px; 
+    position: relative;
+    cursor: pointer;
+    background: none;
+}
+
+
+.nav_hamburger button span {
+    display: block;
+    width: 38px;
+    height: 5px;
+    background-color: #F59A44;
+    border: 5px solid white;
+    border-radius: 111px; 
+    box-shadow: 5px 5px 0px 0px #001C94; /* Sombra azul oscuro */
+
+}
+
+.nav_hamburger button:hover span {
+    background-color: #F0803C;
+}
+
+
+
 /*Elementos segunda pagina*/
+
 .page2{
-    background: linear-gradient(180deg, #88DE7F 0%, #A8EBEC 50%);
+    background-image: url(assets/Rectangle\ 8.png);
     /* clip-path: ellipse(75% 60% at 50% 20%); */
     height: 894;
+    overflow:visible;
 }
 
 .elem5{
     position: absolute;
     background-image: url(assets/5.png);
-    width: 572px;
+    width: 500px;
     height: 1259px;
     left: 61.5%;
     top: -87px;
@@ -267,9 +304,6 @@ body {
     width: 701px;
 }
 
-.section2{
-    margin-top: 0.5%;
-}
 
 .tv{
     background-image: url(assets/tv.png);
@@ -290,3 +324,90 @@ body {
     bottom: -180px;
     z-index: 2;
 }
+
+/* Page 3 */
+.muestra1{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+.txtMuestra{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.containerTxt{
+    width: 333px;
+    height: 218px;
+}
+
+.muestra2{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+}
+
+.muestra3{
+    position: absolute;
+    top: 30%;
+    left: 70%;
+}
+
+/* Pagina 4 */
+
+.page4{
+    background-image: url(assets/fondoVioleta.png);
+    background-size: cover;
+    height: 1157px;
+}
+.section4{
+    text-align: center;
+    
+}
+
+.sectionTitle{
+    position: absolute;
+    top: 17%;
+    font-family: 'Lato', sans-serif;
+    font-size: 61.14px;
+    color: white;
+}
+
+.resaltado{
+    font-weight: 550;
+    font-style:italic;
+}
+
+.sectionBtn{
+    position: absolute;
+    top: 35%;
+    left: 29%;
+}
+
+.btnDownload{
+    width: 540px;
+    height: 85px;
+    border: 8px solid white;
+    background-color: var(--colorBtnBuy);
+    border-radius: 111px;
+    font-family: 'Lato',sans-serif;
+    font-size: 31.14px;
+    color: white;
+    font-weight: 700;
+    padding: 15px 40px 22px 40px;
+    text-align: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.sectionImgPjs{
+    position: absolute;
+    width: 1280px;
+    height: 767px;
+    background-image: url(assets/variosPjs.png);
+    top: 34%;
+}
+
