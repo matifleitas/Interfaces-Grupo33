@@ -1,3 +1,13 @@
+:root{
+    --colorBtnBuy:#83C252;
+}
+
+html{
+    display: flex;
+    justify-content: center;
+    
+}
+
 body {
     width: 1280px;
 }
@@ -11,26 +21,16 @@ body {
     background-size: cover;
 }
 
-.header {
-    background-image: url(assets/backgroundHeader.png);
-    top: 0px;
-    width: 100%;
-    height: 0px;
-    display: flex;
-    justify-content: space-evenly;
-}
 
 .backgroundScrolling {
     background-image: url(assets/backgroundBody.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 20px; 
-    align-items: center; 
+    background-repeat: repeat-y;
     width: 100%;
-    min-height: 500px;
+    min-height: 100vh;
+    overflow: hidden;
+    background-size:cover;
+    position: relative;
+    height: 960px;
 }
 
 /* .layer_background1 {
@@ -56,3 +56,177 @@ body {
         background-position-y: 100%;
     }
 }
+
+.btnBuy {
+    width: 200px;
+    height: 50px;
+    background-color: var(--colorBtnBuy);
+    border-radius: 111px;
+    border: 8px solid white;
+    color: white;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+    font-weight:1000;
+    letter-spacing: 1px;
+    box-shadow: 5px 5px 0px #0e3a8c;
+    text-align: center;
+    padding: 24px 51px 23px 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:20px 100px;
+    align-items: center;
+    }
+
+/* ELEMENTOS PRIMER PAG */
+
+.arbol1{
+    background-image: url(assets/arbol1.png);
+    width: 560px;
+    height: 867px;
+    position: relative;
+    right: 12%;
+    z-index: 1;
+}
+
+.elem1{
+    position: absolute;
+    background-image: url(assets/11.png);
+    width: 240.4px;
+    height: 314.48px;
+    left: 30%;
+    top: 58%;
+    z-index: 2;
+}
+
+.elem2{
+    position: absolute;
+    background-image: url(assets/22.png);
+    width: 210px;
+    height: 275px;
+    left: 40%;
+    top: 47%;
+    z-index: 1;
+}
+
+.elem3{
+    position: absolute;
+    background-image: url(assets/33.png);
+    width: 200px;
+    height: 384px;
+    left: 52%;
+    top: 40%;
+}
+
+.numberBlockPoster{
+    background-image: url(assets/numberBlocksGrande.png);
+    width: 560px;
+    height: 320px;
+    position: absolute;
+    left: 32%;
+    top:8%;
+}
+
+.arbol2{
+    background-image: url(assets/arbol2.png);
+    width: 434.21px;
+    height: 672.52px;
+    position: absolute;
+    left: 70%;
+    top: 18%;
+    z-index: 2;
+}
+
+.arbol3{
+    background-image: url(assets/arbol3.png);
+    width: 278px;
+    height: 430.85px;
+    position: absolute;
+    left: 85%;
+    top: 36%;
+    z-index: 1;
+}
+
+.roca1{
+    background-image: url(assets/roca1.png);
+    width: 145.41px;
+    height: 78.09px;
+    position:absolute;
+    left: 10%;
+    top: 82%;
+    z-index: 1;
+}
+
+.arbusto1{
+    background-image: url(assets/arbusto1.png);
+    width: 249.76px;
+    height: 114.44px;
+    position: absolute;
+    left: 13%;
+    top: 75%;
+    z-index: 0;
+}
+.arbusto2{
+    background-image: url(assets/arbusto2.png);
+    width: 155.51px;
+    height: 102.33px;
+    position: absolute;
+    left: 15%;
+    top: 85.3%;
+    z-index: 2;
+}
+
+.roca2{
+    background-image: url(assets/roca2.png);
+    width: 113.77px;
+    height: 75.05px;
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+    z-index: 3;
+}
+.roca3{
+    background-image: url(assets/roca3.png);
+    width: 66.65px;
+    height: 55.56px;
+    position: absolute;
+    right: 12%;
+    bottom: 12%;
+    z-index: 2;
+}
+
+.roca4{
+    background-image: url(assets/roca4.png);
+    width: 59.24px;
+    height: 35.01px;
+    position: absolute;
+    right: 12%;
+    bottom: 10%;
+    z-index: 3;
+}
+.arbusto3 {
+    background-image: url(assets/arbusto3.png);
+    width: 244.37px; 
+    height: 107.71px;
+    position: absolute;
+    left:85%; 
+    bottom: 13%; 
+    z-index: 1; 
+}
+
+.arbusto4{
+    background-image: url(assets/arbusto4.png);
+    width: 191.19px; 
+    height: 63.28px;
+    position: absolute;
+    left:81%; 
+    bottom: 20%; 
+    z-index: 0; 
+}
+
