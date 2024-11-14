@@ -414,7 +414,7 @@ body {
 /* page 5 */
 
 .page5{
-    height: 125%;
+    height: 100%;
 }
 
 .section5Title{
@@ -548,4 +548,41 @@ body {
 .txtBody{
     display: flex;
     flex-direction: column;
+}
+
+/* Pagina 6 */
+
+.page6{
+    height: 1443px;
+    background-image: url(assets/fondoAmarillo.png);
+}
+
+.txtWatchVideo{
+    width: 802px;
+    height: 171px;
+    font-size: 60px;
+    color:white;
+    position: absolute;
+    top: 22%;
+    font-family: 'Lato',sans-serif;
+    font-weight: 500;
+    left: 10%;
+}
+
+.videoNumbers{
+    width: 804px;
+    height: 452px;
+    background-image: url(assets/imgVideo.png);
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
+.pjVideo{
+    width: 638px;
+    height: 989px;
+    background-image: url(assets/number3Video.png);
+    position: absolute;
+    left: 60%;
+    top: 30%;
 }
