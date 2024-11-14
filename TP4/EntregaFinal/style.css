@@ -411,3 +411,141 @@ body {
     top: 34%;
 }
 
+/* page 5 */
+
+.page5{
+    height: 125%;
+}
+
+.section5Title{
+    font-family: 'Lato',sans-serif;
+    font-size: 60px;
+    position: absolute;
+    left: 8%;
+    top: 1%;
+    font-weight:550;
+}
+
+.characters{
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    width: 100%;
+    position: absolute;
+    top: 2%;
+    left: 20%;
+    justify-content: center;
+}
+
+.imgPj0{
+    width: 291px;
+    height: 496px;
+    background-image: url(assets/pj0.png);
+}
+.imgPj1{
+    width: 360px;
+    height: 509px;
+    background-image: url(assets/pj1.png);
+    position: relative;
+    right: 4%;
+}
+
+
+.imgPj2{
+    width: 266px;
+    height: 479px;
+    background-image: url(assets/pj2.png);
+    position: relative;
+    left: 1%;
+}
+
+
+.imgPj3{
+    width: 187px;
+    height: 497px;
+    background-image: url(assets/pj3.png);
+    position: relative;
+    left: 4%;
+    
+}
+
+
+.imgPj4{
+    width: 475px;
+    height: 488px;
+    background-image: url(assets/pj4.png);
+    position: relative;
+    right: 9%;
+}
+
+.imgPj5{
+    width: 231px;
+    height: 509px;
+    background-image: url(assets/pj5.png);
+    position: relative;
+    left: 4%;
+}
+
+.imgPj6{
+    width: 338px;
+    height: 514px;
+    background-image: url(assets/pj6.png);
+    position: relative;
+    right: 2%;
+}
+
+.imgPj7{
+    width: 130px;
+    height: 490px;
+    background-image: url(assets/pj7.png);
+    position: relative;
+    left: 8%;
+}
+
+.imgPj8{
+    width: 437px;
+    height: 499px;
+    background-image: url(assets/pj8.png);
+    position: relative;
+    right: 4%;
+}
+
+.imgPj9{
+    width: 485px;
+    height: 509px;
+    background-image: url(assets/pj9.png);
+    position: relative;
+    right: 6%;
+}
+.imgPj10{
+    width: 359px;
+    height: 488px;
+    background-image: url(assets/pj10.png);
+    position: relative;
+    right: 2%;
+}
+
+.txtInfo{
+    display: flex;
+    flex-direction: column;
+    top:4%;
+    left: 55%;
+    width: 100%;
+    height: 114px;
+    font-family: 'Lato',sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    gap: 470px;
+    position: absolute;
+}
+
+.resaltadoBig{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.txtBody{
+    display: flex;
+    flex-direction: column;
+}
