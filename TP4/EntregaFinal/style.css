@@ -29,7 +29,7 @@ body {
     overflow: hidden;
     background-size:cover;
     position: relative;
-    height: 1100px;
+    height: 1000px;
 }
 
 .page1{
@@ -663,6 +663,7 @@ body {
 .elements{
     background-image: url(assets/455_cleanup.png);
     display: grid;
+    top: 90%;
     grid-template-areas:
         "item1 item2 item3 item4 item5"
         "item6 item7 item8 item9 item10";
@@ -731,13 +732,87 @@ body {
     background-image: url(assets/fondo.png);
 }
 
+.page9{
+    height: 1500px;
+}
+
 .boxTittle9{
-    height: 300px;
-    width: 600px;
+    height: 220px;
+    width: 800px;
+    top: 0%;
+    margin-left: 10%;
 }
 
 .tittlePage9{
     font-family: 'Lato', sans-serif;
     font-size: 60px;
     line-height: 58px;
+    margin-top: 0px;
+}
+
+.form{
+    background-image: url(assets/form.png);
+    height: 105px;
+    width: 786px;
+    margin-left: 10%;
+}
+
+.textPage9{
+    width: 580px;
+    font-family: 'Lato', sans-serif;
+    font-size: 20.5px;
+    line-height: 19px;
+    margin-left: 10%;
+    margin-top: 48px;
+    height: 100px;
+}
+
+.politica{
+    background-image: url(assets/T.png);
+    height: 145px;
+    width: 235px;
+    margin-left: 10%;
+    margin-top: 10px;
+}
+
+.fondo{
+    width: 100%;
+    height: 390;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.page9_elem2{
+    background-image: url(assets/elem3Page9.png);
+    width: 490px;
+    height: 490px;
+    top: 90%;
+    z-index: 2;
+}
+
+.page9_elem3{
+    background-image: url(assets/elem2Page9.png);
+    width: 490px;
+    height: 490px;
+    top: 90%;
+    z-index: 2;
+}
+
+.page9_elem1{
+    background-image: url(assets/elem1Page9.png);
+    width: 490px;
+    height: 490px;
+    top: 90%;
+    z-index: 2;
+}
+
+.pjs{
+    width: 100%;
+    height: 500px;
+}
+
+.social{
+    background-image: url(assets/socialWebs.png)
 }
