@@ -152,7 +152,7 @@ body {
     height: 78.09px;
     position:absolute;
     left: 10%;
-    top: 82%;
+    top: 76%;
     z-index: 1;
 }
 
@@ -162,7 +162,7 @@ body {
     height: 114.44px;
     position: absolute;
     left: 13%;
-    top: 74%;
+    top: 70%;
     z-index: 0;
 }
 .arbusto2{
@@ -171,7 +171,7 @@ body {
     height: 102.33px;
     position: absolute;
     left: 15%;
-    top: 85%;
+    top: 80%;
     z-index: 2;
 }
 
@@ -181,7 +181,7 @@ body {
     height: 75.05px;
     position: absolute;
     right: 5%;
-    bottom: 18%;
+    bottom: 20%;
     z-index: 3;
 }
 .roca3{
@@ -190,7 +190,7 @@ body {
     height: 55.56px;
     position: absolute;
     right: 12%;
-    bottom: 20%;
+    bottom: 22%;
     z-index: 2;
 }
 
@@ -200,7 +200,7 @@ body {
     height: 35.01px;
     position: absolute;
     right: 12%;
-    bottom:18%;
+    bottom:20%;
     z-index: 3;
 }
 .arbusto3 {
@@ -209,7 +209,7 @@ body {
     height: 107.71px;
     position: absolute;
     left:85%; 
-    bottom: 20%; 
+    bottom: 22%; 
     z-index: 1; 
 }
 
@@ -219,7 +219,7 @@ body {
     height: 63.28px;
     position: absolute;
     left:81%; 
-    bottom: 27%; 
+    bottom: 30%; 
     z-index: 0; 
 }
 
