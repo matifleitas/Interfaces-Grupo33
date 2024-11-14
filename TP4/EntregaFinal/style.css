@@ -294,12 +294,12 @@ body {
     color:#1B428F; 
 }
 
-.box1{
+.box1-text{
     height: 132px;
     width: 508px;
 }
 
-.box2{
+.box2-text{
     height: 154px;
     width: 701px;
 }
@@ -585,4 +585,159 @@ body {
     position: absolute;
     left: 60%;
     top: 30%;
+}
+
+.textPage7{
+    height: 312px;
+    width: 750px;
+    font-size: 44px;
+    margin-left: 110px;
+    margin-top: 18%;
+    font-weight: 600px;
+}
+
+.parrafoPage7{
+    height: 150px;
+    width: 550px;
+    margin-left: 110px;
+    line-height: 23px;
+}
+
+.pText7{
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    color: black;
+}
+
+.resaltadoRojo{
+    font-family: 'Lato', sans-serif;
+    line-height: 56.7px;
+    color: #9D2121;
+}
+
+.elem1Big{    
+    position: absolute;
+    background-image: url(assets/1Big.png);
+    width: 667px;
+    height: 973px;
+    left: 670px;
+    top: 3%;
+    z-index: 2;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 10px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.recuadro{
+    position: absolute;
+    background-image: url(assets/1Big.png);
+    width: 100%;
+    height: 780px;
+    top: 0%;
+}
+
+.elements{
+    background-image: url(assets/455_cleanup.png);
+    display: grid;
+    grid-template-areas:
+        "item1 item2 item3 item4 item5"
+        "item6 item7 item8 item9 item10";
+        background-size: 1280px 680px; 
+        background-position: center; 
+        background-repeat: no-repeat;
+}
+
+.elemBox{
+    height: 340px;
+    width: 190px;
+    margin-left: 46px;
+    margin-top: 10px;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.box1{
+    background-image: url(assets/box/boxElem1.png);
+}
+
+.box2{
+    background-image: url(assets/box/boxElem2.png);
+    margin-left: 20px;
+}
+
+.box3{
+    background-image: url(assets/box/boxElem3.png);
+    margin-left: 55px;
+}
+
+.box4{
+    background-image: url(assets/box/boxElem4.png);
+    margin-left: 70px;
+}
+
+.box5{
+    background-image: url(assets/box/boxElem5.png);
+}
+
+.box6{
+    background-image: url(assets/box/boxElem6.png);
+    height: 330px;
+}
+
+.box7{
+    background-image: url(assets/box/boxElem7.png);
+    height: 330px;
+}
+
+.box8{
+    background-image: url(assets/box/boxElem8.png);
+    height: 330px;
+}
+
+.box9{
+    background-image: url(assets/box/boxElem9.png);
+}
+
+.box10{
+    background-image: url(assets/box/boxElem10.png);
+    height: 330px;
+}
+
+.page9{
+    background-image: url(assets/fondo.png);
+}
+
+.boxTittle9{
+    height: 300px;
+    width: 600px;
+}
+
+.tittlePage9{
+    font-family: 'Lato', sans-serif;
+    font-size: 60px;
+    line-height: 58px;
 }

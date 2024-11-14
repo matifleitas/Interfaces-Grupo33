@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -50,10 +51,10 @@
     <div class="backgroundScrolling page2">
         <section class="section2">
             <div class="texts">
-                <div class="box1">
+                <div class="box1-text">
                     <h1 class="tittle">La app más divertida y educativa y para niños de 3 años</h1>
                 </div>
-                <div class="box2">
+                <div class="box2-text">
                     <p class="description">Numberblocks World es una divertida aplicación de video a la carta y juegos
                         por suscripción dirigida a niños a partir de 3 años, con un grupo de edad principal de 4 a 6
                         años, creada por el equipo de Alphablocks Ltd. y Blue Zoo Animations Studio, ganador de un
@@ -217,6 +218,42 @@
             <div class="videoNumbers"></div>
             <div class="pjVideo"></div>
         </section>
+    </div>
+    <div class="backgroundScrolling page7">
+        <section>
+            <div class="textPage7">
+                <h1 class="resaltadoRojo">¡Experimenta Efectos 3D Asombrosos en NumberBlocks: Una Aventura Matemática Inmersiva!</h1>
+            </div>
+            <div class="parrafoPage7">
+                <p class="pText7">En NumberBlocks, la aventura no solo está en el aprendizaje, ¡sino también en la experiencia visual! Disfruta de efectos 3D asombrosos que dan vida a cada número y desafío, haciendo que las matemáticas cobren una nueva dimensión. A medida que los niños interactúan con los personajes y los bloques, verán cómo sus acciones tienen un impacto real en el entorno, creando un aprendizaje dinámico y emocionante. ¡Cada sesión de juego se convierte en una experiencia inolvidable llena de color y diversión!</p>
+            </div>
+            <div class="elem1Big">
+                <model-viewer id="reveal" loading="eager" camera-controls touch-action="pan-y" 
+                auto-rotate poster="../../assets/poster-shishkebab.webp" 
+                tone-mapping="aces" src="../../shared-assets/models/shivshkebab.glb" 
+                shadow-intensity="1" alt="A 3D model of a shishkebab">
+                </model-viewer>
+            </div>
+        </section>
+    </div>
+    <div class="backgroundScrolling page8">
+        <div class="elements">
+            <div class="elemBox box1"></div>
+            <div class="elemBox box2"></div>
+            <div class="elemBox box3"></div>
+            <div class="elemBox box4"></div>
+            <div class="elemBox box5"></div>
+            <div class="elemBox box6"></div>
+            <div class="elemBox box7"></div>
+            <div class="elemBox box8"></div>
+            <div class="elemBox box9"></div>
+            <div class="elemBox box10"></div>
+        </div>
+    </div>
+    <div class="backgroundScrolling page9">
+        <div class="boxTittle9">
+            <h1 class="tittlePage9">¿Quieres ser el primero en enterarse de todas las novedades?</h1>
+        </div>
     </div>
 </body>
 
