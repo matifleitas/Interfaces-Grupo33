@@ -1,5 +1,6 @@
 :root{
     --colorBtnBuy:#83C252;
+    --footerColor:#5E5E5D;
 }
 
 html{
@@ -34,6 +35,7 @@ body {
 
 .page1{
     background-image: url(assets/backgroundBody.png);
+    height: 11%;
 }
 
 
@@ -150,7 +152,7 @@ body {
     height: 78.09px;
     position:absolute;
     left: 10%;
-    top: 81%;
+    top: 82%;
     z-index: 1;
 }
 
@@ -169,7 +171,7 @@ body {
     height: 102.33px;
     position: absolute;
     left: 15%;
-    top: 84%;
+    top: 85%;
     z-index: 2;
 }
 
@@ -412,10 +414,10 @@ body {
 }
 
 /* page 5 */
-
+ 
 .page5{
-    height: 100%;
-}
+    height: 67%;
+} 
 
 .section5Title{
     font-family: 'Lato',sans-serif;
@@ -730,11 +732,9 @@ body {
 
 .page9{
     background-image: url(assets/fondo.png);
+    height: 1400px;
 }
 
-.page9{
-    height: 1500px;
-}
 
 .boxTittle9{
     height: 220px;
@@ -775,36 +775,38 @@ body {
     margin-top: 10px;
 }
 
-.fondo{
-    width: 100%;
-    height: 390;
+.p9Mountain{
     position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
+    top: 65%;
 }
 
-.page9_elem2{
+.page9Elem2{
     background-image: url(assets/elem3Page9.png);
-    width: 490px;
-    height: 490px;
-    top: 90%;
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    top: 60%;
+    left: 6%;
     z-index: 2;
 }
 
-.page9_elem3{
+.page9Elem3{
     background-image: url(assets/elem2Page9.png);
+    position: absolute;
     width: 490px;
-    height: 490px;
-    top: 90%;
+    height: 500px;
+    top: 58%;
+    left: 32%;
     z-index: 2;
 }
 
-.page9_elem1{
+.page9Elem1{
     background-image: url(assets/elem1Page9.png);
-    width: 490px;
-    height: 490px;
-    top: 90%;
+    position: absolute;
+    width: 561px;
+    height: 997px;
+    top: 28%;
+    left: 55%;
     z-index: 2;
 }
 
@@ -815,4 +817,53 @@ body {
 
 .social{
     background-image: url(assets/socialWebs.png)
+}
+
+/* Footer */
+
+.consolas{
+    background-image:url(assets/footerConsolas.png);
+    width: 1280px;
+    height: 80px;
+}
+
+.consolas div{
+    background-image: url(assets/consolas.png);
+    height: 75px;
+    width: 1080px;
+    position: absolute;
+    left: 23.5%;
+}
+
+.footerInfo{
+    width: 1280px;
+    height: 600px;
+    background-color: var(--footerColor);
+}
+
+.footerTxt{
+    font-family: 'Lato',sans-serif;
+    color: white;
+    width: 820px;
+    height: 361px;
+    padding-top: 35px;
+    position: absolute;
+    left: 23%;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.resaltadoFooter{
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+
+.footerSocialIcons{
+    background-image: url(assets/socialNetworks.png);
+    width: 212px;
+    height: 41px;
+    position: relative;
+    top:90%;
+    left: 7%;
 }
