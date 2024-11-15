@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.min.js"></script>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -215,7 +217,8 @@
             <div>
                 <span class="txtWatchVideo">Mira el video y descubre el sorprendente mundo de los NumberBlocks!</span>
             </div>
-            <div class="videoNumbers"></div>
+            <div class="videoNumbers" style="cursor: pointer;" 
+            onclick="window.location.href='https://www.youtube.com/watch?app=desktop&v=0YKa9DQYdRg';">></div>
             <div class="pjVideo"></div>
         </section>
     </div>
@@ -233,10 +236,17 @@
                     aprendizaje dinámico y emocionante. ¡Cada sesión de juego se convierte en una experiencia
                     inolvidable llena de color y diversión!</p>
             </div>
-            <div class="elem1Big">
-                <model-viewer id="reveal" loading="eager" camera-controls touch-action="pan-y" auto-rotate
-                    poster="../../assets/poster-shishkebab.webp" tone-mapping="aces"
-                    src="../../shared-assets/models/shivshkebab.glb" shadow-intensity="1"
+            <div >
+                <model-viewer class="elem1Big
+                    id="reveal" 
+                    loading="eager" 
+                    camera-controls 
+                    touch-action="pan-y" 
+                    auto-rotate 
+                    poster="assets/1Big.png" 
+                    tone-mapping="aces" 
+                    src="assets/1Big.png" 
+                    shadow-intensity="1" 
                     alt="A 3D model of a shishkebab">
                 </model-viewer>
             </div>
@@ -266,13 +276,13 @@
             Política de privacidad y las Condiciones del servicio.</div>
         <div class="politica"></div>
         <div class="p9Mountain">
-            <img src="assets/fondoPage9.png" alt="p9WallPaper" width="1280" height="500">
+            <img src="assets/fondoPage9.png" alt="p9WallPaper" width="1280" height="500" style="position: relative;z-index: 0;">
         </div>
-        <div class="page9Elem2"></div>
-        <div class="page9Elem3"></div>
-        <div class="page9Elem1"></div>
-
-
+        <div class="page9Elements">
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXhjcGs2dTd6MG84Nm15eG94bWN6Nnppdnp6aG9uMzFqdTAxMjF1cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/5ddqGqO8x5rrJ7v5tf/giphy.gif" alt="GIF" width="480" height="480" style="margin-left:0%; margin-top: 15%; position: relative; z-index: 1;">
+            <img src="https://media.giphy.com/media/HuocoB7MEUeLMifGFN/giphy.gif" alt="GIF" width="480" height="480" style="margin-left:0%; margin-top: 15%; position: relative; z-index: 1;">
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjc4OGpvaXYzb3lkaTB6MWJ1a2IwbTNiY3Q1NjB5cm9pNzI3dG91cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fuTByMqFxstXjmDSYm/giphy.webp" alt="GIF" width="480" height="729" style=" position: relative; z-index: 1;">
+        </div>
     </div>
 </body>
 <footer>

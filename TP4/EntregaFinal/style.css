@@ -780,34 +780,13 @@ body {
     top: 65%;
 }
 
-.page9Elem2{
-    background-image: url(assets/elem3Page9.png);
-    position: absolute;
-    width: 480px;
-    height: 480px;
-    top: 60%;
-    left: 6%;
-    z-index: 2;
-}
-
-.page9Elem3{
-    background-image: url(assets/elem2Page9.png);
-    position: absolute;
-    width: 490px;
-    height: 500px;
-    top: 58%;
-    left: 32%;
-    z-index: 2;
-}
-
-.page9Elem1{
-    background-image: url(assets/elem1Page9.png);
-    position: absolute;
-    width: 561px;
-    height: 997px;
-    top: 28%;
-    left: 55%;
-    z-index: 2;
+.page9Elements{
+        /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
 
 .pjs{
