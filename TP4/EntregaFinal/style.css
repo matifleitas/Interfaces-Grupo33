@@ -406,11 +406,22 @@ body {
 }
 
 .sectionImgPjs{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: 50% 50%;
     position: absolute;
+    /* position: relative; */
     width: 1280px;
     height: 767px;
     background-image: url(assets/variosPjs.png);
     top: 34%;
+}
+
+#parallaxPjs{
+    position: relative;
+  width: 100%;
+  height: 190vh;
+
 }
 
 /* page 5 */
@@ -851,4 +862,9 @@ body {
     opacity: 0; 
     transform: translateX(-100%);
     transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.header{
+    position: sticky;
+    top: 0;
 }

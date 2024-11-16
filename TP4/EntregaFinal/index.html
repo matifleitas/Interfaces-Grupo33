@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.min.js"></script>
+
 
     <link
         href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
@@ -19,7 +19,7 @@
 <body>
 
     <div class="backgroundScrolling page1">
-        <header>
+        <header class="header">
             <nav class="navBar">
                 <div class="nav_hamburger">
                     <button>
@@ -27,7 +27,8 @@
                     </button>
                 </div>
                 <div class="logo">
-                <div class="numberBlockPoster" id="logoPage"></div>
+                <div class="numberBlockPoster" id="logoPage">
+                </div>
                 </div>
                 <div>
                     <button class="btnBuy">COMPRAR</button>
@@ -116,7 +117,7 @@
                 </button>
             </div>
 
-            <div class="sectionImgPjs"></div>
+            <div class="sectionImgPjs" id="parallaxPjs"></div>
         </section>
     </div>
 
@@ -221,7 +222,7 @@
                 <span class="txtWatchVideo">Mira el video y descubre el sorprendente mundo de los NumberBlocks!</span>
             </div>
             <div class="videoNumbers" style="cursor: pointer;" 
-            onclick="window.location.href='https://www.youtube.com/watch?app=desktop&v=0YKa9DQYdRg';">></div>
+            onclick="window.location.href='https://www.youtube.com/watch?app=desktop&v=0YKa9DQYdRg';"></div>
             <div class="pjVideo"></div>
         </section>
     </div>
@@ -249,9 +250,7 @@
                     poster="assets/1Big.png" 
                     tone-mapping="aces" 
                     src="assets/1Big.png" 
-                    shadow-intensity="1" 
-                    alt="A 3D model of a shishkebab">
-                </model-viewer>
+                    shadow-intensity="1" ></model-viewer>
             </div>
         </section>
     </div>
