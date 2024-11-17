@@ -27,8 +27,8 @@
                     </button>
                 </div>
                 <div class="logo">
-                <div class="numberBlockPoster" id="logoPage">
-                </div>
+                    <div class="numberBlockPoster" id="logoPage">
+                    </div>
                 </div>
                 <div>
                     <button class="btnBuy">COMPRAR</button>
@@ -145,7 +145,7 @@
                     <div class="imgPj10" id="parallax10"></div>
                 </div>
             </div>
-                <div class="txtInfo">
+            <div class="txtInfo">
                 <div class="txtBody">
                     <span class="resaltadoBig">Sumas Mágicas</span>
                     <span class="txtAds">Ayuda a UNO y sus amigos a juntar bloques y ver cómo sus números crecen al
@@ -225,8 +225,10 @@
             <div>
                 <span class="txtWatchVideo">Mira el video y descubre el sorprendente mundo de los NumberBlocks!</span>
             </div>
-            <div class="videoNumbers" style="cursor: pointer;" 
-            onclick="window.location.href='https://www.youtube.com/watch?app=desktop&v=0YKa9DQYdRg';"></div>
+            <!-- frame del video para mostrar desde yt, directamente en la pagina nuestra, preguntar en practica -->
+            <!-- <iframe width="804" height="452" src="https://www.youtube.com/embed/0YKa9DQYdRg" title="Numberblocks World #5 - Meet Numberblocks 55-100 and Learn How to Trace Their Numerals | BlueZoo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+            <div class="videoNumbers" style="cursor: pointer;"
+                onclick="window.location.href='https://www.youtube.com/watch?app=desktop&v=0YKa9DQYdRg';"></div>
             <div class="pjVideo"></div>
         </section>
     </div>
@@ -244,17 +246,11 @@
                     aprendizaje dinámico y emocionante. ¡Cada sesión de juego se convierte en una experiencia
                     inolvidable llena de color y diversión!</p>
             </div>
-            <div >
+            <div>
                 <model-viewer class="elem1Big
-                    id="reveal" 
-                    loading="eager" 
-                    camera-controls 
-                    touch-action="pan-y" 
-                    auto-rotate 
-                    poster="assets/1Big.png" 
-                    tone-mapping="aces" 
-                    src="assets/1Big.png" 
-                    shadow-intensity="1" ></model-viewer>
+                    id=" reveal" loading="eager" camera-controls touch-action="pan-y" auto-rotate
+                    poster="assets/1Big.png" tone-mapping="aces" src="assets/1Big.png"
+                    shadow-intensity="1"></model-viewer>
             </div>
         </section>
     </div>
@@ -282,12 +278,17 @@
             Política de privacidad y las Condiciones del servicio.</div>
         <div class="politica"></div>
         <div class="p9Mountain">
-            <img src="assets/fondoPage9.png" alt="p9WallPaper" width="1280" height="500" style="position: relative;z-index: 0;">
+            <img src="assets/fondoPage9.png" alt="p9WallPaper" width="1280" height="500"
+                style="position: relative;z-index: 0;">
         </div>
         <div class="page9Elements">
-            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXhjcGs2dTd6MG84Nm15eG94bWN6Nnppdnp6aG9uMzFqdTAxMjF1cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/5ddqGqO8x5rrJ7v5tf/giphy.gif" alt="GIF" width="480" height="480" style="margin-left:0%; margin-top: 15%; position: relative; z-index: 1;">
-            <img src="https://media.giphy.com/media/HuocoB7MEUeLMifGFN/giphy.gif" alt="GIF" width="480" height="480" style="margin-left:0%; margin-top: 15%; position: relative; z-index: 1;">
-            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjc4OGpvaXYzb3lkaTB6MWJ1a2IwbTNiY3Q1NjB5cm9pNzI3dG91cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fuTByMqFxstXjmDSYm/giphy.webp" alt="GIF" width="480" height="729" style=" position: relative; z-index: 1;">
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXhjcGs2dTd6MG84Nm15eG94bWN6Nnppdnp6aG9uMzFqdTAxMjF1cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/5ddqGqO8x5rrJ7v5tf/giphy.gif"
+                alt="GIF" width="480" height="480"
+                style="margin-left:0%; margin-top: 15%; position: relative; z-index: 1;">
+            <img src="https://media.giphy.com/media/HuocoB7MEUeLMifGFN/giphy.gif" alt="GIF" width="480" height="480"
+                style="margin-left:0%; margin-top: 15%; position: relative; z-index: 1;">
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjc4OGpvaXYzb3lkaTB6MWJ1a2IwbTNiY3Q1NjB5cm9pNzI3dG91cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fuTByMqFxstXjmDSYm/giphy.webp"
+                alt="GIF" width="480" height="729" style=" position: relative; z-index: 1;">
         </div>
     </div>
 </body>
@@ -316,4 +317,5 @@
     </div>
 </footer>
 <script src="js/main.js"></script>
+
 </html>

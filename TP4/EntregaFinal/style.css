@@ -608,7 +608,7 @@ body {
 .videoNumbers{
     width: 804px;
     height: 452px;
-    background-image: url(assets/imgVideo.png);
+    background-image: url(assets/imgVideo.png);  /* quitar bg en caso de poner el video insertado de yt, consultar en practica*/
     position: absolute;
     top: 40%;
     left: 10%;
