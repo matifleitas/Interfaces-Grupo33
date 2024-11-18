@@ -1039,33 +1039,31 @@ body {
   border: 1px solid white;
   position: absolute;
   left: 23%;
-  background: url(assets/spriteSheet1-removebg-preview.png);
-  background-size: cover;  
-  background-position: center;
-  animation: kick 0.5s steps(9) infinite;
-  /* 180 de ancho cada estrlla */
+  background: url(assets/spriteSheet1-removebg-preview.png) repeat-x;
+  background-size: 675px 123px;
+  animation: star 1s steps(9) infinite;
+  /* 180 de ancho cada estrlla  alto 223*/
 } 
 
-@keyframes kick{
-  0%{
-    background-position: 0 0;
-  }
-  100%{
-    background-position: 0 208;
-  }
-}
+ @keyframes star{
+  0% { background-position:0 }
+  100% { background-position:-872px }
+} 
 
 .spriteSheet2{
-  width: 100px;
-  height: 90px;
+  width: 115px;
+  height: 120px;
   border: 1px solid white;
   position: absolute;
-  left: 66%;
+  left: 50%;
+  background: url(assets/spriteSheet2.png) repeat-x;
+  background-size:  785px 110px;
+  animation: star 1s steps(5) infinite; 
 } 
 .spriteSheet3{
   width: 100px;
   height: 90px;
   border: 1px solid white;
   position: absolute;
-  left: 44%;
+  left: 84%;
 } 
