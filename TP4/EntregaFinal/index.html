@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
@@ -16,25 +17,44 @@
     <title>Number Blocks</title>
 </head>
 
-<body>
 
+<body>
+    <header class="header">
+        <nav class="navBar">
+            <div class="nav_hamburger" id="navToggle">
+                 <button> 
+                    <span></span><span></span><span></span>
+                 </button>
+             </div>
+            <div class="logoSmall hidden" id="logoSmall"> 
+                <img src="assets/numberBlocks.png" alt="NumberBlocks Logo"width=""> 
+            </div>
+            <div class="menu hidden" id="menu">
+                <ul>
+                    <li><span class="material-symbols-outlined">
+                        home
+                        </span> Inicio</li>
+                    <li>
+                        <span class="material-symbols-outlined">
+                            groups
+                            </span>
+                            Sobre Nosotros
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined">
+                        download
+                        </span>
+                            Descargar Juego
+                    </li>
+                </ul>
+            </div>
+            <div> 
+                <button class="btnBuy">COMPRAR</button> 
+            </div>
+        </nav>
+        <div class="numberBlockPoster" id="logoPage"></div>
+    </header>
     <div class="backgroundScrolling page1">
-        <header class="header">
-            <nav class="navBar">
-                <div class="nav_hamburger">
-                    <button>
-                        <span></span><span></span><span></span>
-                    </button>
-                </div>
-                <div class="logo">
-                    <div class="numberBlockPoster" id="logoPage">
-                    </div>
-                </div>
-                <div>
-                    <button class="btnBuy">COMPRAR</button>
-                </div>
-            </nav>
-        </header>
         <section class="section1">
             <div class="layerBackground arbol1"></div>
             <div class="elem1"></div>
