@@ -8,9 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
     <link
         href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -25,22 +24,22 @@
                  <button> 
                     <span></span><span></span><span></span>
                  </button>
-             </div>
-            <div class="logoSmall hidden" id="logoSmall"> 
-                <img src="assets/numberBlocks.png" alt="NumberBlocks Logo"width=""> 
-            </div>
-            <div class="menu hidden" id="menu">
-                <ul>
-                    <li><span class="material-symbols-outlined">
-                        home
+                </div>
+                <div class="logoSmall hidden" id="logoSmall"> 
+                    <img src="assets/numberBlocks.png" alt="NumberBlocks Logo"width=""> 
+                </div>
+                <div class="menu hidden" id="menu">
+                    <ul>
+                        <li style="margin-left: 18px;"><span class="material-symbols-outlined">
+                            home
                         </span> Inicio</li>
-                    <li>
-                        <span class="material-symbols-outlined">
-                            groups
+                        <li style="margin-left: 18px;">
+                            <span class="material-symbols-outlined">
+                                groups
                             </span>
                             Sobre Nosotros
                     </li>
-                    <li>
+                    <li style="margin-left: 18px;">
                         <span class="material-symbols-outlined">
                         download
                         </span>
@@ -49,7 +48,9 @@
                 </ul>
             </div>
             <div> 
-                <button class="btnBuy">COMPRAR</button> 
+                <button class="btnBuy">
+                    <p style="margin-right: 13px;">COMPRAR</p>
+                </button> 
             </div>
         </nav>
         <div class="numberBlockPoster" id="logoPage"></div>
@@ -83,14 +84,14 @@
                         por suscripción dirigida a niños a partir de 3 años, con un grupo de edad principal de 4 a 6
                         años, creada por el equipo de Alphablocks Ltd. y Blue Zoo Animations Studio, ganador de un
                         premio BAFTA.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="elem5"></div>
-            <div class="frame">
-                <div class="tv" id="tvCambioFondo">
-                    <img src="" alt="">
+                <div class="elem5"></div>
+                <div class="frame">
+                    <div class="tv" id="tvCambioFondo">
+                        <img src="" alt="">
+                    </div>
                 </div>
-            </div>
             <div class="elem4"></div>
         </section>
     </div>
@@ -134,13 +135,13 @@
                 <span>Descubre el juego que convierte las <span class="resaltado">Matemáticas</span> en diversión
                 </span>
             </div>
-
+            
             <div class="sectionBtn">
                 <button class="btnDownload">
                     ¡Descarga NumberBlocks hoy!
                 </button>
             </div>
-
+            
             <div class="sectionImgPjs" id="parallaxPjs"></div>
         </section>
     </div>
@@ -172,11 +173,11 @@
                         sumar. Cada vez que
                         sumas correctamente, los NumberBlocks ganan fuerza y desbloquean sorpresas mágicas. ¡Descubre
                         cómo los números se combinan para formar resultados increíbles!</span>
-                </div>
-                <div class="txtBody">
-                    <span class="resaltadoBig">Rompecabezas de Restas</span>
-                    <span>Acompaña a UNO en un recorrido lleno de obstáculos donde solo podrás avanzar restando bloques
-                        correctamente. Observa cómo los personajes se transforman cuando restan, ¡y resuelve cada
+                    </div>
+                    <div class="txtBody">
+                        <span class="resaltadoBig">Rompecabezas de Restas</span>
+                        <span>Acompaña a UNO en un recorrido lleno de obstáculos donde solo podrás avanzar restando bloques
+                            correctamente. Observa cómo los personajes se transforman cuando restan, ¡y resuelve cada
                         rompecabezas para llegar a la meta!</span>
                 </div>
                 <div class="txtBody">
@@ -186,12 +187,12 @@
                         al final. ¡Cada número correcto te da una ventaja extra! Con cada carrera, aprenderás a contar y
                         a
                         pensar rápido.</span>
-                </div>
-                <div class="txtBody">
-                    <span class="resaltadoBig">Encuentra el Número Oculto</span>
-                    <span>Busca entre los escenarios y ayuda a UNO a encontrar el número perdido para completar la
-                        secuencia. ¡Cada número oculto revela una sorpresa especial! Observa bien y explora cada rincón
-                        para descubrir dónde se esconde.</span>
+                    </div>
+                    <div class="txtBody">
+                        <span class="resaltadoBig">Encuentra el Número Oculto</span>
+                        <span>Busca entre los escenarios y ayuda a UNO a encontrar el número perdido para completar la
+                            secuencia. ¡Cada número oculto revela una sorpresa especial! Observa bien y explora cada rincón
+                            para descubrir dónde se esconde.</span>
                 </div>
                 <div class="txtBody">
                     <span class="resaltadoBig">Desafío de Comparación</span>
@@ -217,7 +218,7 @@
                     <span>Lleva a UNO a saltar de bloque en bloque sumando números a medida que avanzas. La meta es
                         llegar al otro lado, ¡y solo podrás hacerlo si sumas correctamente! Cada salto exitoso te acerca
                         a un nuevo nivel.</span>
-                </div>
+                    </div>
                 <div class="txtBody">
                     <span class="resaltadoBig">Rompecabezas de secuencias</span>
                     <span>Lleva a UNO a saltar de bloque en bloque sumando números a medida que avanzas. La meta es
@@ -239,7 +240,7 @@
             </div>
         </section>
     </div>
-
+    
     <div class="backgroundScrolling page6">
         <section class="section6">
             <div>
@@ -248,7 +249,7 @@
             <!-- frame del video para mostrar desde yt, directamente en la pagina nuestra, preguntar en practica -->
             <!-- <iframe width="804" height="452" src="https://www.youtube.com/embed/0YKa9DQYdRg" title="Numberblocks World #5 - Meet Numberblocks 55-100 and Learn How to Trace Their Numerals | BlueZoo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
             <div class="videoNumbers" style="cursor: pointer;"
-                onclick="window.location.href='https://www.youtube.com/watch?app=desktop&v=0YKa9DQYdRg';"></div>
+            onclick="window.location.href='https://www.youtube.com/watch?app=desktop&v=0YKa9DQYdRg';"></div>
             <div class="pjVideo"></div>
         </section>
     </div>
@@ -257,20 +258,22 @@
             <div class="textPage7">
                 <h1 class="resaltadoRojo">¡Experimenta Efectos 3D Asombrosos en NumberBlocks: Una Aventura Matemática
                     Inmersiva!</h1>
-            </div>
-            <div class="parrafoPage7">
-                <p class="pText7">En NumberBlocks, la aventura no solo está en el aprendizaje, ¡sino también en la
-                    experiencia visual! Disfruta de efectos 3D asombrosos que dan vida a cada número y desafío, haciendo
-                    que las matemáticas cobren una nueva dimensión. A medida que los niños interactúan con los
-                    personajes y los bloques, verán cómo sus acciones tienen un impacto real en el entorno, creando un
-                    aprendizaje dinámico y emocionante. ¡Cada sesión de juego se convierte en una experiencia
-                    inolvidable llena de color y diversión!</p>
+                </div>
+                <div class="parrafoPage7">
+                    <p class="pText7">En NumberBlocks, la aventura no solo está en el aprendizaje, ¡sino también en la
+                        experiencia visual! Disfruta de efectos 3D asombrosos que dan vida a cada número y desafío, haciendo
+                        que las matemáticas cobren una nueva dimensión. A medida que los niños interactúan con los
+                        personajes y los bloques, verán cómo sus acciones tienen un impacto real en el entorno, creando un
+                        aprendizaje dinámico y emocionante. ¡Cada sesión de juego se convierte en una experiencia
+                        inolvidable llena de color y diversión!</p>
             </div>
             <div>
                 <model-viewer class="elem1Big
-                    id=" reveal" loading="eager" camera-controls touch-action="pan-y" auto-rotate
-                    poster="assets/1Big.png" tone-mapping="aces" src="assets/1Big.png"
-                    shadow-intensity="1"></model-viewer>
+                            id="
+                reveal" loading="eager" camera-controls touch-action="pan-y" auto-rotate
+                poster="assets/1Big.png" tone-mapping="aces" src="assets/1Big.png"
+                shadow-intensity="1" ar>
+                </model-viewer>
             </div>
         </section>
     </div>
@@ -296,29 +299,32 @@
         <div class="textPage9">Al inscribirse en nuestra lista de correo, nos autoriza a ponernos en contacto con usted
             para enviarle ofertas y actualizaciones de marketing por correo electrónico, y también acepta nuestra
             Política de privacidad y las Condiciones del servicio.</div>
-        <div class="politica"></div>
-        <div class="p9Mountain">
-            <img src="assets/fondoPage9.png" alt="p9WallPaper" width="1280" height="500"
+            <div class="politica"></div>
+            <div class="p9Mountain">
+                <img src="assets/fondoPage9.png" alt="p9WallPaper" width="1280" height="500"
                 style="position: relative;z-index: 0;">
-        </div>
-        <div class="page9Elements">
-            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXhjcGs2dTd6MG84Nm15eG94bWN6Nnppdnp6aG9uMzFqdTAxMjF1cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/5ddqGqO8x5rrJ7v5tf/giphy.gif"
+            </div>
+            <div class="page9Elements">
+                <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXhjcGs2dTd6MG84Nm15eG94bWN6Nnppdnp6aG9uMzFqdTAxMjF1cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/5ddqGqO8x5rrJ7v5tf/giphy.gif"
                 alt="GIF" width="480" height="480"
                 style="margin-left:0%; margin-top: 15%; position: relative; z-index: 1;">
-            <img src="https://media.giphy.com/media/HuocoB7MEUeLMifGFN/giphy.gif" alt="GIF" width="480" height="480"
+                <img src="https://media.giphy.com/media/HuocoB7MEUeLMifGFN/giphy.gif" alt="GIF" width="480" height="480"
                 style="margin-left:0%; margin-top: 15%; position: relative; z-index: 1;">
-            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjc4OGpvaXYzb3lkaTB6MWJ1a2IwbTNiY3Q1NjB5cm9pNzI3dG91cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fuTByMqFxstXjmDSYm/giphy.webp"
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjc4OGpvaXYzb3lkaTB6MWJ1a2IwbTNiY3Q1NjB5cm9pNzI3dG91cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fuTByMqFxstXjmDSYm/giphy.webp"
                 alt="GIF" width="480" height="729" style=" position: relative; z-index: 1;">
+            </div>
         </div>
-    </div>
-</body>
-<footer>
-    <div class="consolas">
-        <div></div>
-    </div>
-    <div class="footerInfo">
-        <div class="footerTxt">
-            ©SEGA. All rights reserved. SEGA is registered in the U.S. Patent and Trademark Office. SEGA, the SEGA logo
+    </body>
+    <footer>
+        <div class="consolas">
+            <div></div>
+        </div>
+        <div class="footerInfo">
+            <div class="spriteSheet1"></div>
+            <div class="spriteSheet2"></div>
+            <div class="spriteSheet3"></div>
+            <div class="footerTxt">
+                ©SEGA. All rights reserved. SEGA is registered in the U.S. Patent and Trademark Office. SEGA, the SEGA logo
             and SONIC SUPERSTARS are either registered trademarks or trademarks of SEGA CORPORATION or its affiliates.
             All other trademarks, logos and copyrights are property of their respective owners.©2023 The LEGO Group.
             LEGO, the LEGO logo, the Minifigure, and the Brick and Knob configurations are trademarks and/or copyrights
@@ -337,5 +343,6 @@
     </div>
 </footer>
 <script src="js/main.js"></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 </html>

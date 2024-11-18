@@ -1,6 +1,8 @@
 :root {
   --colorBtnBuy: #83c252;
   --footerColor: #5e5e5d;
+  --hoverColorBtnBuy: #4e9b39;
+
 }
 
 html {
@@ -52,7 +54,7 @@ body {
 
 .btnBuy {
   width: 200px;
-  height: 50px;
+  height: 57px;
   background-color: var(--colorBtnBuy);
   border-radius: 111px;
   border: 8px solid white;
@@ -63,10 +65,55 @@ body {
   letter-spacing: 1px;
   box-shadow: 5px 5px 0px #0e3a8c;
   text-align: center;
-  padding: 24px 51px 23px 51px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.btnBuy:hover {
+  background-color: var(--hoverColorBtnBuy);
+  transform: scale(1.05);
+  box-shadow: 7px 7px 0px #092763;
+}
+
+.btnBuy-icon {
+  position: absolute;
+  right: 20px;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btnBuy::after {
+  content: "\f07a"; 
+  font-family: "Font Awesome 5 Free";
+  font-size: 20px;
+  position: absolute;
+  right: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btnBuy:hover::after {
+  opacity: 1;
+}
+
+@keyframes buyEffect {
+  0% {
+    transform: scale(1);
+    box-shadow: 5px 5px 0px #092763;
+  }
+  50% {
+    transform: scale(0.9);
+    box-shadow: 3px 3px 0px #092763;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 5px 5px 0px #092763;
+  }
 }
 
 .navBar {
@@ -548,7 +595,7 @@ body {
 #parallaxPjs {
   position: relative;
   width: 100%;
-  height: 190vh;
+  height: 170vh;
 }
 
 /* page 5 */
@@ -949,7 +996,7 @@ body {
 
 .footerInfo {
   width: 1280px;
-  height: 600px;
+  height: 900px;
   background-color: var(--footerColor);
 }
 
@@ -958,7 +1005,7 @@ body {
   color: white;
   width: 820px;
   height: 361px;
-  padding-top: 35px;
+  padding-top: 12%;
   position: absolute;
   left: 23%;
   font-size: 20px;
@@ -985,3 +1032,40 @@ body {
   transform: translateX(-100%);
   transition: transform 1s ease-out, opacity 1s ease-out;
 }
+
+.spriteSheet1{
+  width: 90px;
+  height: 90px;
+  border: 1px solid white;
+  position: absolute;
+  left: 23%;
+  background: url(assets/spriteSheet1-removebg-preview.png);
+  background-size: cover;  
+  background-position: center;
+  animation: kick 0.5s steps(9) infinite;
+  /* 180 de ancho cada estrlla */
+} 
+
+@keyframes kick{
+  0%{
+    background-position: 0 0;
+  }
+  100%{
+    background-position: 0 208;
+  }
+}
+
+.spriteSheet2{
+  width: 100px;
+  height: 90px;
+  border: 1px solid white;
+  position: absolute;
+  left: 66%;
+} 
+.spriteSheet3{
+  width: 100px;
+  height: 90px;
+  border: 1px solid white;
+  position: absolute;
+  left: 44%;
+} 
