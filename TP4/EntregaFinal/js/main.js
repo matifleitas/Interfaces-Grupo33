@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollEffect();
   initParallaxEffect();
   changeTvBackground();
+  moveBig1Mouse();
   const navToggle = document.getElementById("navToggle");
   const menu = document.getElementById("menu");
 
@@ -102,6 +103,23 @@ function changeTvBackground() {
     pos = (pos + 1) % fondos.length; // vuelvo al inicio cuando termine el array
   }, 3000);
 }
+
+/* function moveBig1Mouse(){
+  const modelViewer = document.getElementById('viewer');
+
+  // Escuchar el movimiento del mouse
+  document.addEventListener('mousemove', (event) => {
+    const { clientX, clientY } = event;
+
+    // Normalizar las posiciones del mouse
+    const xRotation = ((clientX / window.innerWidth) - 0.5) * 360; // Gira en el eje Y
+    const yRotation = ((clientY / window.innerHeight) - 0.5) * -90; // Gira en el eje X (invertido)
+
+    // Aplicar la rotación al modelo
+    modelViewer.cameraOrbit = `${xRotation}deg ${yRotation}deg 2.5m`;
+  });
+} */
+
 
 // function changeIconNav() {
 //   const navbar = document.getElementById("navbar");
