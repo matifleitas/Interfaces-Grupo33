@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
   initParallaxEffect();
   changeTvBackground();
   moveBig1Mouse();
-  parallaxSection2();
+  parallaxPage1();
+  parallaxPage2();
+  parallaxPage6();
   const navToggle = document.getElementById("navToggle");
   const menu = document.getElementById("menu");
 
@@ -75,20 +77,21 @@ function initParallaxEffect() {
     const _mouseX = e.clientX;
     const _mouseY = e.clientY;
 
-    const _depth1 = `${75.6 - (_mouseX - _w) * 0.002}% ${
-      75.6 - (_mouseY - _h) * 0.002
-    }%`; // movimiento en dirección contraria al mouse
-    const _depth2 = `${75.6 - (_mouseX - _w) * 0.004}% ${
-      75.6 - (_mouseY - _h) * 0.004
-    }%`;
-    const _depth3 = `${75.6 - (_mouseX - _w) * 0.008}% ${
-      75.6 - (_mouseY - _h) * 0.008
-    }%`;
+    const _depth1X = 102 - (_mouseX - _w) * 0.004;
+    const _depth1Y = 102 - (_mouseY - _h) * 0.004;
 
-    const x = `${_depth3}, ${_depth2}, ${_depth1}`;
-    elem.style.backgroundPosition = x; // lo mueve
+    const _depth2X = 102 - (_mouseX - _w) * 0.005;
+    const _depth2Y = 102 - (_mouseY - _h) * 0.005;
+
+    const _depth3X = 102 - (_mouseX - _w) * 0.009;
+    const _depth3Y = 102 - (_mouseY - _h) * 0.009;
+
+    const backgroundPosition = `${_depth3X}% ${_depth3Y}%, ${_depth2X}% ${_depth2Y}%, ${_depth1X}% ${_depth1Y}%`;
+
+    elem.style.backgroundPosition = backgroundPosition;
   }
 }
+
 
 function changeTvBackground() {
   let pos = 0;
@@ -108,13 +111,14 @@ function changeTvBackground() {
 function moveBig1Mouse(){
   const modelViewer = document.getElementById('viewer');
 
+  
   document.addEventListener('mousemove', (event) => {
     const { clientX, clientY } = event;
 
-    const xRotation = ((clientX / window.innerWidth) - 0.5) * 180; 
-    const yRotation = ((clientY / window.innerHeight) - 0.5) * -30;
+    const xRotacion = ((clientX / window.innerWidth) - 0.5) * 360; 
+    const yRotacion = ((clientY / window.innerHeight) + 0.5) * 95;
 
-    modelViewer.cameraOrbit = `${xRotation}deg ${yRotation}`;
+    modelViewer.cameraOrbit = `${xRotacion}deg ${yRotacion}deg`;
   });
 }
 
@@ -144,3 +148,38 @@ function parallaxSection2(){
 //     }
 //   });
 // }
+
+function parallaxPage1() {
+  const parallaxElements = document.querySelectorAll('.arbol1, .arbol2, .arbol3, .roca1, .arbusto1, .arbusto2, #arbolGrande, .roca2, .roca3, .roca4, .arbusto3, .arbusto4, .elem2,.elem1, .elem3');
+
+  window.addEventListener('scroll', () => {
+    let scrollTop = window.scrollY;
+
+    parallaxElements.forEach((elem, index) => {
+      let speed = 0.3 + (index * 0.01); 
+      elem.style.transform = `translateY(${scrollTop * -speed}px)`; 
+      });
+  });
+}
+
+function parallaxPage2(){
+  const parallaxElementos = document.querySelectorAll(".elem5, .elem4, .description, .tittle");
+  
+  window.addEventListener('scroll', () => {
+    let scrollTop = window.scrollY;
+    parallaxElementos.forEach((elem, index) => {
+      let speed = 0.2 + (index * 0.02);
+      elem.style.transform = `translateY(${scrollTop * -speed}px)`;
+    });
+  });
+}
+
+function parallaxPage6() {
+  const parallaxElement = document.querySelector(".pjVideo"); 
+
+  window.addEventListener('scroll', () => {
+    let scrollTop = window.scrollY;
+    let speed = 0.001; 
+    parallaxElement.style.transform = `translateX(${scrollTop * speed}px)`;
+  });
+}

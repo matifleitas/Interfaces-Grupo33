@@ -57,10 +57,13 @@
     </header>
     <div class="backgroundScrolling page1">
         <section class="section1">
-            <div class="layerBackground arbol1"></div>
+            <div class="layerBackground arbol1" id="arbolGrande"></div>
             <div class="elem1"></div>
+            <div class="sombra1"></div>
             <div class="elem2"></div>
+            <div class="sombra2"></div>
             <div class="elem3"></div>
+            <div class="sombra3"></div>
             <div class="arbol2"></div>
             <div class="arbol3"></div>
             <div class="roca1"></div>
@@ -93,6 +96,7 @@
                     </div>
                 </div>
             <div class="elem4" id="verde4"></div>
+            <div class="sombra4"></div><div class="sombra5"></div>
         </section>
     </div>
     <div class="backgroundScrolling page3">
@@ -246,10 +250,9 @@
             <div>
                 <span class="txtWatchVideo">Mira el video y descubre el sorprendente mundo de los NumberBlocks!</span>
             </div>
-            <!-- frame del video para mostrar desde yt, directamente en la pagina nuestra, preguntar en practica -->
-            <!-- <iframe width="804" height="452" src="https://www.youtube.com/embed/0YKa9DQYdRg" title="Numberblocks World #5 - Meet Numberblocks 55-100 and Learn How to Trace Their Numerals | BlueZoo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-            <div class="videoNumbers" style="cursor: pointer;"
-            onclick="window.location.href='https://www.youtube.com/watch?app=desktop&v=0YKa9DQYdRg';"></div>
+            
+            <iframe class="videoNumbers" id="tvCambioFondo" src="https://www.youtube.com/embed/0YKa9DQYdRg"></iframe>
+
             <div class="pjVideo"></div>
         </section>
     </div>
@@ -272,9 +275,7 @@
                     class="elem1Big"
                     reveal="auto"
                     loading="eager"
-                    camera-controls
                     disable-zoom
-                    auto-rotate
                     touch-action="pan-y"
                     poster="assets/1Big.png"
                     tone-mapping="aces"
