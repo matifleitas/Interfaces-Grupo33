@@ -127,7 +127,12 @@ body {
   padding: 20px 100px;
   justify-content: space-between;
   align-items: center;
-  background-color: #00D1D5;
+background: linear-gradient(
+      180deg,
+      rgba(0, 209, 213, 1) 0%,
+      rgba(0, 209, 213, 0) 88%,
+      rgba(1, 209, 213, 0) 100%
+    );
 }
 
 .scrolled {
@@ -165,7 +170,7 @@ body {
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     visibility: hidden;
-    transition: width 1.5s ease, visibility 1s ease;
+    transition: width 1s ease, visibility 1s ease;
     overflow: hidden;
     z-index: 100;
   }
@@ -255,16 +260,17 @@ body {
   }
 
 .header{
-   position: sticky;
+   position: fixed;
+   width: 1280px;
    top: 0;
     z-index: 1000;
 }
 
 .logoSmall {
   position: absolute;
-  left: 42.5%;
+  left: 27%;
+  transform: translateY(300px) scale(1);
   transition: opacity 0.3s ease, transform 0.3s ease;
-
 }
 
 /* ELEMENTOS PRIMER PAG */
@@ -921,12 +927,12 @@ body {
 .box1 {
   background-image: url(assets/box/boxElem1.png);
   background-size: 100% 100%;
-  transition: background-size 0.3s ease, box-shadow 0.3s ease; 
+  transition: background-size 0.3s ease, filter 0.3s ease; 
 }
 
 .box1:hover {
   background-size: 110% 110%;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+  filter: brightness(120%);
 
 }
 
@@ -934,113 +940,120 @@ body {
   background-image: url(assets/box/boxElem2.png);
   margin-left: 32px;
   background-size: 100% 100%;
-  transition: background-size 0.3s ease, box-shadow 0.3s ease; 
+  transition: background-size 0.3s ease,  0.3s ease; 
 
 }
 
 .box2:hover{
   background-size: 110% 110%; 
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+  filter: brightness(120%);
+
 }
 
 .box3 {
   background-image: url(assets/box/boxElem3.png);
   background-size: 100% 100%;
-  transition: background-size 0.3s ease, box-shadow 0.3s ease; 
+  transition: background-size 0.3s ease, filter 0.3s ease; 
 
 }
 
 .box3:hover{
   background-size: 110% 110%; 
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+  filter: brightness(120%);
+
 }
 
 .box4 {
   background-image: url(assets/box/boxElem4.png);
   background-size: 100% 100%;
-  transition: background-size 0.3s ease, box-shadow 0.3s ease; 
+  transition: background-size 0.3s ease,filter 0.3s ease; 
 
 }
 
 .box4:hover{
   background-size: 110% 110%; 
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+  filter: brightness(120%);
+
 }
 
 .box5 {
   background-image: url(assets/box/boxElem5.png);
   background-size: 100% 100%;
-  transition: background-size 0.3s ease, box-shadow 0.3s ease; 
+  transition: background-size 0.3s ease, filter 0.3s ease; 
 
 }
 
 .box5:hover{
   background-size: 110% 110%; 
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+  filter: brightness(120%);
+
 }
 
 .box6 {
+  position: relative;
+  right: 10%;
   background-image: url(assets/box/boxElem6.png);
   background-size: 100% 100%;
   height: 330px;
-  transition: background-size 0.3s ease, box-shadow 0.3s ease; 
+  transition: background-size 0.3s ease, filter 0.3s ease; 
 
 }
 
 .box6:hover{
   background-size: 110% 110%; 
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+  filter: brightness(130%);
 }
 
 .box7 {
   background-image: url(assets/box/boxElem7.png);
   background-size: 100% 100%;
   height: 330px;
-  transition: background-size 0.3s ease, box-shadow 0.3s ease; 
+  transition: background-size 0.3s ease, filter 0.3s ease; 
 
 }
 
 .box7:hover{
   background-size: 110% 110%; 
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+  filter: brightness(120%);
 }
 
 .box8 {
   background-image: url(assets/box/boxElem8.png);
   background-size: 100% 100%;
   height: 330px;
-  transition: background-size 0.3s ease, box-shadow 0.3s ease; 
+  transition: background-size 0.3s ease, filter 0.3s ease; 
 
 }
 
 .box8:hover{
   background-size: 110% 110%; 
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+  filter: brightness(120%);
 }
 
 .box9 {
+  position: relative;
+  bottom: 3%;
   background-image: url(assets/box/boxElem9.png);
   background-size: 100% 100%;
   margin-bottom: 2px;
-  transition: background-size 0.3s ease, box-shadow 0.3s ease; 
-
+  transition: background-size 0.3s ease, filter 0.3s ease; 
 }
 
 .box9:hover{
   background-size: 105% 105%; 
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+  filter: brightness(120%);
 }
 
 .box10 {
   background-image: url(assets/box/boxElem10.png);
   height: 330px;
-  transition: background-size 0.3s ease, box-shadow 0.3s ease; 
+  transition: background-size 0.5s ease, filter 0.3s ease; 
 
 }
 
 .box10:hover{
   background-size: 110% 110%; 
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6); 
+  filter: brightness(120%);
 
 }
 

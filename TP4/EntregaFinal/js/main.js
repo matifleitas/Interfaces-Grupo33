@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   initCharacterAnimation();
-  initScrollEffect();
+  initScrollEffectPage1();
   initParallaxEffect();
   changeTvBackground();
   moveBig1Mouse();
@@ -55,21 +55,20 @@ function initCharacterAnimation() {
   });
 }
 
-function initScrollEffect() {
+function initScrollEffectPage1() {
   const navbar = document.querySelector(".navBar");
-  const logoLarge = document.getElementById("logoPage");
-  const logoSmall = document.querySelector(".logoSmall");
+  const logo = document.querySelector(".logoSmall");
+  var scroll = window.scrollY;  // Obtiene la cantidad de desplazamiento vertical
 
   window.addEventListener("scroll", () => {
-    const logoPosition = logoLarge.getBoundingClientRect().top;
+    var scale = 1 - scroll / 1000;  // Aquí puedes ajustar la fórmula según lo que necesites
 
-    if (logoPosition <= navbar.offsetHeight) {
-      navbar.classList.add("scrolled");
-      logoLarge.style.transform = "scale(0.3)";
-      logoLarge.style.opacity = "0";
-      logoLarge.style.transition = "transform 0.6s ease, opacity 0.6s ease";
-      logoSmall.classList.remove("hidden");
+    // Si el factor de escala es mayor que 0, se aplica; de lo contrario, se mantiene en tamaño original
+    if (scale > 0.1) {  // Limita la escala para que no desaparezca completamente
+      logo.style.transform = 'scale(' + scale + ')';
+      logo.style.transform='scale(0.3)';
     }
+    
   });
 }
 
@@ -125,6 +124,7 @@ function changeTvBackground() {
     pos = (pos + 1) % fondos.length; // vuelvo al inicio cuando termine el array
   }, 3000);
 }
+
 
 function moveBig1Mouse(){
   const modelViewer = document.getElementById('viewer');
