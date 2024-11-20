@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initParallaxEffect();
   changeTvBackground();
   moveBig1Mouse();
+  parallaxSection2();
   const navToggle = document.getElementById("navToggle");
   const menu = document.getElementById("menu");
 
@@ -22,9 +23,9 @@ function initCharacterAnimation() {
 
     characters.forEach((character, index) => {
       const posPj = character.getBoundingClientRect().top / 2; // posición del elemento
-      const triggerPoint = windowHeight / 1.9;
+      const punto = windowHeight / 1.9;
 
-      if (posPj < triggerPoint) {
+      if (posPj < punto) {
         setTimeout(() => {
           character.style.transform = "translateX(0)";
           character.style.opacity = "1";
@@ -104,22 +105,22 @@ function changeTvBackground() {
   }, 3000);
 }
 
-/* function moveBig1Mouse(){
+function moveBig1Mouse(){
   const modelViewer = document.getElementById('viewer');
 
-  // Escuchar el movimiento del mouse
   document.addEventListener('mousemove', (event) => {
     const { clientX, clientY } = event;
 
-    // Normalizar las posiciones del mouse
-    const xRotation = ((clientX / window.innerWidth) - 0.5) * 360; // Gira en el eje Y
-    const yRotation = ((clientY / window.innerHeight) - 0.5) * -90; // Gira en el eje X (invertido)
+    const xRotation = ((clientX / window.innerWidth) - 0.5) * 180; 
+    const yRotation = ((clientY / window.innerHeight) - 0.5) * -30;
 
-    // Aplicar la rotación al modelo
-    modelViewer.cameraOrbit = `${xRotation}deg ${yRotation}deg 2.5m`;
+    modelViewer.cameraOrbit = `${xRotation}deg ${yRotation}`;
   });
-} */
+}
 
+function parallaxSection2(){
+  //
+}
 
 // function changeIconNav() {
 //   const navbar = document.getElementById("navbar");
