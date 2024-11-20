@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   moveBig1Mouse();
   parallaxPage1();
   parallaxPage2();
+  parallaxPage6();
   const navToggle = document.getElementById("navToggle");
   const menu = document.getElementById("menu");
 
@@ -170,3 +171,12 @@ function parallaxPage2(){
   });
 }
 
+function parallaxPage6() {
+  const parallaxElement = document.querySelector(".pjVideo"); 
+
+  window.addEventListener('scroll', () => {
+    let scrollTop = window.scrollY;
+    let speed = 0.001; 
+    parallaxElement.style.transform = `translateX(${scrollTop * speed}px)`;
+  });
+}
