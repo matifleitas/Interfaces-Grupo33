@@ -2,6 +2,7 @@
   --colorBtnBuy: #83c252;
   --footerColor: #5e5e5d;
   --hoverColorBtnBuy: #4e9b39;
+  --colorInputs:#ECECEC;
 
 }
 
@@ -33,6 +34,10 @@ body {
   height: 1000px;
 }
 
+.subrayado{
+  text-decoration: underline;
+}
+
 .page1 {
   background-image: url(assets/backgroundBody.png);
   height: 11%;
@@ -52,7 +57,7 @@ body {
   transform: scale(0);
 }
 
-.btnBuy {
+.buttonsPag {
   width: 200px;
   height: 57px;
   background-color: var(--colorBtnBuy);
@@ -546,6 +551,17 @@ body {
   left: 10%;
 }
 
+.section3 div {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section3 div.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .txtMuestra {
   font-family: "Lato", sans-serif;
   font-size: 20px;
@@ -909,7 +925,9 @@ body {
 }
 
 .box1:hover {
-  background-size: 110% 110%; 
+  background-size: 110% 110%;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+
 }
 
 .box2 {
@@ -922,7 +940,7 @@ body {
 
 .box2:hover{
   background-size: 110% 110%; 
-   
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
 }
 
 .box3 {
@@ -934,7 +952,7 @@ body {
 
 .box3:hover{
   background-size: 110% 110%; 
- 
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
 }
 
 .box4 {
@@ -946,6 +964,7 @@ body {
 
 .box4:hover{
   background-size: 110% 110%; 
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
 }
 
 .box5 {
@@ -957,7 +976,7 @@ body {
 
 .box5:hover{
   background-size: 110% 110%; 
-
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
 }
 
 .box6 {
@@ -970,7 +989,7 @@ body {
 
 .box6:hover{
   background-size: 110% 110%; 
-
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
 }
 
 .box7 {
@@ -983,7 +1002,7 @@ body {
 
 .box7:hover{
   background-size: 110% 110%; 
-
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
 }
 
 .box8 {
@@ -996,7 +1015,7 @@ body {
 
 .box8:hover{
   background-size: 110% 110%; 
- 
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
 }
 
 .box9 {
@@ -1009,6 +1028,7 @@ body {
 
 .box9:hover{
   background-size: 105% 105%; 
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
 }
 
 .box10 {
@@ -1020,7 +1040,8 @@ body {
 
 .box10:hover{
   background-size: 110% 110%; 
-  transition: background-size 0.3s ease, box-shadow 0.3s ease; 
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6); 
+
 }
 
 .page9 {
@@ -1042,12 +1063,72 @@ body {
   margin-top: 0px;
 }
 
-.form {
-  background-image: url(assets/form.png);
-  height: 105px;
-  width: 786px;
-  margin-left: 10%;
+ .form {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: 10%;
+} 
+
+.inputFormSuscribe{
+  font-family: 'Lato',sans-serif;
+  width: 554px;
+  height: 82px;
+  border-radius: 50px 0px 0px 50px;
+  font-size: 20px;
+  background-color: var(--colorInputs);
+  border: 8px solid white;
+  padding-left: 52px;
 }
+
+.inputFormSuscribe:focus{
+  outline: none;
+}
+
+.btnSuscribe{
+  width: 210px;
+  height: 100px;
+  border-radius: 0px 50px 50px 0px;
+  box-shadow: none;
+  letter-spacing: 1px;
+  transition:transform 0.3s ease,background-color 0.3s ease, box-shadow 0.3 ease;
+}
+
+.btnSuscribe:hover{
+  background-color: var(--hoverColorBtnBuy);
+  transform: scale(1);
+
+}
+
+#suscribeAlert{
+  font-family: 'Lato', sans-serif;
+  background-color: #001c94;
+  width: 200px;
+  border-radius: 30px;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.show {
+  display: inline-block;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 
 .textPage9 {
   width: 580px;
@@ -1108,7 +1189,7 @@ body {
 
 .footerInfo {
   width: 1280px;
-  height: 900px;
+  height: 600px;
   background-color: var(--footerColor);
 }
 
@@ -1116,13 +1197,14 @@ body {
   font-family: "Lato", sans-serif;
   color: white;
   width: 820px;
-  height: 361px;
-  padding-top: 12%;
+  height: 420px;
   position: absolute;
   left: 23%;
   font-size: 20px;
   font-weight: 400;
   letter-spacing: 2px;
+  padding: 2%;
+
 }
 
 .resaltadoFooter {

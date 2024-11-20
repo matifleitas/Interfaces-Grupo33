@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
   parallaxPage1();
   parallaxPage2();
   parallaxPage6();
+  initScrollRevealEffect();
+  suscribeAlert();
+
+  //menu hamburguesa
   const navToggle = document.getElementById("navToggle");
   const menu = document.getElementById("menu");
 
@@ -16,6 +20,20 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.toggle("open");
   });
 });
+
+function suscribeAlert(){
+  const alert=document.getElementById('suscribeAlert');
+
+  document.getElementById('btnSuscribe').addEventListener("click", () =>{
+    alert.classList.remove('hidden');
+    alert.classList.add('show');
+
+    setTimeout(() => {
+      alert.classList.remove('show');
+      alert.classList.add('hidden');
+    }, 5000);
+  });
+}
 
 function initCharacterAnimation() {
   const characters = document.querySelectorAll(".characters div");
@@ -183,3 +201,29 @@ function parallaxPage6() {
     parallaxElement.style.transform = `translateX(${scrollTop * speed}px)`;
   });
 }
+
+function initScrollRevealEffect() {
+  // Seleccionamos todos los divs dentro de la sección .section3
+  const elements = document.querySelectorAll('.section3 div');
+
+  // Creamos el observer con un callback que añade la clase 'visible'
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Retrasamos la aparición según el índice del elemento
+        setTimeout(() => {
+          entry.target.classList.add('visible'); // Añadimos la clase visible
+          observer.unobserve(entry.target); // Dejamos de observar este elemento
+        }, index * 300); // Retraso de 300ms entre cada elemento
+      }
+    });
+  }, {
+    threshold: 0.5 // El elemento debe estar al menos al 50% visible
+  });
+
+  // Observamos cada elemento seleccionado
+  elements.forEach(element => {
+    observer.observe(element);
+  });
+}
+
