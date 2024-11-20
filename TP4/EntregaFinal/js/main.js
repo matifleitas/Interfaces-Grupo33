@@ -115,7 +115,7 @@ function moveBig1Mouse(){
     const { clientX, clientY } = event;
 
     const xRotacion = ((clientX / window.innerWidth) - 0.5) * 360; 
-    const yRotacion = ((clientY / window.innerHeight) + 0.4) * 95;
+    const yRotacion = ((clientY / window.innerHeight) + 0.5) * 95;
 
     modelViewer.cameraOrbit = `${xRotacion}deg ${yRotacion}deg`;
   });

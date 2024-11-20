@@ -789,12 +789,14 @@ body {
 }
 
 .videoNumbers {
-  width: 804px;
-  height: 452px;
+  width: 736px;
+  height: 414px;
   background-image: url(assets/imgVideo.png); /* quitar bg en caso de poner el video insertado de yt, consultar en practica*/
   position: absolute;
   top: 40%;
   left: 10%;
+  border-radius: 50px;
+  border: 50px solid white;
 }
 
 .pjVideo {
