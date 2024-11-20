@@ -280,7 +280,7 @@ body {
   width: 240.4px;
   height: 314.48px;
   left: 30%;
-  top: 58%;
+  top: 50%;
   z-index: 2;
 }
 
@@ -403,14 +403,61 @@ body {
 .arbusto4 {
   background-image: url(assets/arbusto4.png);
   width: 191.19px;
-  height: 63.28px;
+  height: 83.28px;
   position: absolute;
   left: 81%;
   bottom: 30%;
   z-index: 0;
 }
 
+.sombra1{
+  background-image: url(assets/sombra.png);
+  width: 191.19px;
+  height: 90px;
+  position: absolute;
+  left: 50%;
+  bottom: 28%;
+}
+
+.sombra2{
+  background-image: url(assets/sombra.png);
+  width: 191.19px;
+  height: 90px;
+  position: absolute;
+  left: 35%;
+  bottom: 26%;
+}
+
+.sombra3{
+  background-image: url(assets/sombra.png);
+  width: 191.19px;
+  height: 90px;
+  position: absolute;
+  left: 43%;
+  bottom: 32%;
+}
+
 /*Elementos segunda pagina*/
+
+.sombra4{
+  background-image: url(assets/sombra.png);
+  width: 190.19px;
+  height: 90px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 18%;
+  bottom: 14%;
+}
+
+.sombra5{
+  background-image: url(assets/sombra.png);
+  width: 180.19px;
+  height: 90px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 70%;
+  bottom: 14%;
+}
 
 .page2 {
   background-image: url(assets/Rectangle\ 8.png);
@@ -459,18 +506,6 @@ body {
   width: 701px;
 }
 
-/*
-.tv{
-    background-image: url(assets/tv.png);
-    width: 576.38px;
-    height: 324.35px;
-    position: absolute;
-    right: 36%;
-    bottom: 31%;
-    z-index: 2;
-}
-*/
-
 .frame {
   width: 530px;
   height: 300px;
@@ -482,6 +517,7 @@ body {
   justify-content: center;
   padding: 12px;
   margin-left: 250px;
+  margin-top: -270px;
 }
 
 .tv {
