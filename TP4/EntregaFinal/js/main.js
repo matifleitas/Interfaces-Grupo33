@@ -243,3 +243,14 @@ function initScrollRevealEffect() {
     observer.observe(element);
   });
 }
+
+window.addEventListener("load", function() {
+  document.body.style.overflow = 'hidden';
+  document.querySelector('.loader-container').classList.add('active');
+  setTimeout(function() {
+    document.querySelector('.loader-container').classList.remove('active');
+    document.querySelector('.loader-container').style.display = 'none';
+    document.body.style.overflow = 'auto';
+    document.querySelector('.header').style.opacity = 1; // Muestra el header
+  }, 2500);
+});

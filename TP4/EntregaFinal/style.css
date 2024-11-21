@@ -261,6 +261,7 @@ background: linear-gradient(
   }
 
 .header{
+  opacity: 0; 
    position: fixed;
    width: 1280px;
    top: 0;
@@ -498,6 +499,10 @@ background: linear-gradient(
   font-family: "Lato", sans-serif;
   line-height: 44.41px;
   color: #1b428f;
+}
+
+.cargando{
+  font-family: "Lato", sans-serif;
 }
 
 .description {
@@ -1275,3 +1280,90 @@ background: linear-gradient(
   position: absolute;
   left: 84%;
 } 
+
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('assets/backgroundBody.png'); 
+  background-size: cover; 
+  background-position: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2000;
+}
+
+.loader {
+  text-align: center;
+}
+
+.number-blocks-logo {
+  margin-bottom: 20px;
+}
+
+.number-blocks-logo img {
+  width: 100px;
+  height: auto;
+}
+
+.loading-animation {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.block-1,
+.block-2,
+.block-3,
+.block-4 {
+  width: 40px;
+  height: 40px;
+  background-color: #4ba04e;
+  border-radius: 10px;
+  border: 2px solid white;
+  animation: loading 1s infinite;
+}
+
+.block-1 {
+  animation-delay: 0s;
+}
+
+.block-2 {
+  animation-delay: 0.2s;
+}
+
+.block-3 {
+  animation-delay: 0.4s;
+}
+
+.block-4 {
+  animation-delay: 0.6s;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.loader p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.number-blocks-logo img {
+  transform: scale(4); 
+  margin-bottom: 100px;
+}
