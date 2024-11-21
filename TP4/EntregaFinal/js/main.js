@@ -126,10 +126,19 @@ function changeTvBackground() {
     "assets/fondoTv4.png",
   ];
 
+  tv.style.transition = "opacity 1s"; 
+  tv.style.opacity = 1;
+
   setInterval(() => {
-    tv.style.backgroundImage = `url(${fondos[pos]})`;
-    pos = (pos + 1) % fondos.length; // vuelvo al inicio cuando termine el array
-  }, 3000);
+    tv.style.opacity = 0;
+    setTimeout(() => {
+      tv.style.backgroundImage = `url(${fondos[pos]})`;
+      pos = (pos + 1) % fondos.length; 
+
+     
+      tv.style.opacity = 1;
+    }, 400);
+  }, 3000); 
 }
 
 
