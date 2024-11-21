@@ -184,6 +184,7 @@ background: linear-gradient(
     list-style: none;
     padding: 0;
     margin: 0;
+    border: 4px solid #f59a44;
   }
   
   .menu span {

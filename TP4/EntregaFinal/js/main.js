@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.onload = () => {
+      window.scrollTo(0, 0);
+  };
+  
   initCharacterAnimation();
   initScrollEffectPage1();
   initParallaxEffect();
@@ -133,7 +140,7 @@ function moveBig1Mouse(){
   document.addEventListener('mousemove', (event) => {
     const { clientX, clientY } = event;
 
-    const xRotacion = ((clientX / window.innerWidth) - 0.5) * 360; 
+    const xRotacion = ((clientX / window.innerWidth) + 1) * 360; 
     const yRotacion = ((clientY / window.innerHeight) + 0.5) * 95;
 
     modelViewer.cameraOrbit = `${xRotacion}deg ${yRotacion}deg`;
@@ -226,4 +233,3 @@ function initScrollRevealEffect() {
     observer.observe(element);
   });
 }
-
