@@ -131,6 +131,7 @@ function changeTvBackground() {
 
   setInterval(() => {
     tv.style.opacity = 0;
+ 
     setTimeout(() => {
       tv.style.backgroundImage = `url(${fondos[pos]})`;
       pos = (pos + 1) % fondos.length; 

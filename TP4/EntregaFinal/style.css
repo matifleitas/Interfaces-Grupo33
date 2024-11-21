@@ -351,7 +351,7 @@ background: linear-gradient(
   height: 78.09px;
   position: absolute;
   left: 10%;
-  top: 78%;
+  top: 84%;
   z-index: 1;
 }
 
@@ -380,7 +380,7 @@ background: linear-gradient(
   height: 75.05px;
   position: absolute;
   right: 5%;
-  bottom: 20%;
+  bottom: 17%;
   z-index: 3;
 }
 .roca3 {
@@ -389,7 +389,7 @@ background: linear-gradient(
   height: 55.56px;
   position: absolute;
   right: 12%;
-  bottom: 22%;
+  bottom: 17%;
   z-index: 2;
 }
 
@@ -398,8 +398,8 @@ background: linear-gradient(
   width: 59.24px;
   height: 35.01px;
   position: absolute;
-  right: 12%;
-  bottom: 20%;
+  right: 11%;
+  bottom: 16%;
   z-index: 3;
 }
 .arbusto3 {
@@ -428,7 +428,7 @@ background: linear-gradient(
   height: 90px;
   position: absolute;
   left: 50%;
-  bottom: 28%;
+  bottom: 22%;
 }
 
 .sombra2{
@@ -437,7 +437,7 @@ background: linear-gradient(
   height: 90px;
   position: absolute;
   left: 35%;
-  bottom: 26%;
+  bottom: 20%;
 }
 
 .sombra3{
@@ -446,7 +446,7 @@ background: linear-gradient(
   height: 90px;
   position: absolute;
   left: 43%;
-  bottom: 32%;
+  bottom: 26%;
 }
 
 /*Elementos segunda pagina*/
@@ -458,7 +458,7 @@ background: linear-gradient(
   background-repeat: no-repeat;
   position: absolute;
   left: 18%;
-  bottom: 14%;
+  bottom: 10%;
 }
 
 .sombra5{
@@ -468,7 +468,7 @@ background: linear-gradient(
   background-repeat: no-repeat;
   position: absolute;
   left: 70%;
-  bottom: 14%;
+  bottom: 11%;
 }
 
 .page2 {
