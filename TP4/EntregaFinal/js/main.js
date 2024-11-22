@@ -16,28 +16,35 @@ document.addEventListener("DOMContentLoaded", function () {
   parallaxPage6();
   initScrollRevealEffect();
   suscribeAlert();
-
+  parallaxPage5();
+;
   //menu hamburguesa
   const navToggle = document.getElementById("navToggle");
   const menu = document.getElementById("menu");
 
   navToggle.addEventListener("click", () => {
     navToggle.classList.toggle("open");
-    menu.classList.remove('hidden')
+    menu.classList.remove("hidden");
     menu.classList.toggle("open");
+  });
+
+  window.addEventListener("beforeunload", function () {
+    window.scrollTo(0, 0);
   });
 });
 
-function suscribeAlert(){
-  const alert=document.getElementById('suscribeAlert');
+function suscribeAlert() {
+  const alert = document.getElementById("suscribeAlert");
+  const input = document.getElementById("inputEmail");
 
-  document.getElementById('btnSuscribe').addEventListener("click", () =>{
-    alert.classList.remove('hidden');
-    alert.classList.add('show');
+  document.getElementById("btnSuscribe").addEventListener("click", () => {
+    alert.classList.remove("hidden");
+    alert.classList.add("show");
+    input.value = "";
 
     setTimeout(() => {
-      alert.classList.remove('show');
-      alert.classList.add('hidden');
+      alert.classList.remove("show");
+      alert.classList.add("hidden");
     }, 5000);
   });
 }
@@ -65,30 +72,19 @@ function initCharacterAnimation() {
 function initScrollEffectPage1() {
   const navbar = document.querySelector(".navBar");
   const logo = document.querySelector(".logoSmall");
-  var scroll = window.scrollY;  // Obtiene la cantidad de desplazamiento vertical
+  var scroll = window.scrollY; // Obtiene la cantidad de desplazamiento vertical
 
   window.addEventListener("scroll", () => {
-    var scale = 1 - scroll / 1000;  // Aquí puedes ajustar la fórmula según lo que necesites
+    var scale = 1 - scroll / 1000; // Aquí puedes ajustar la fórmula según lo que necesites
 
     // Si el factor de escala es mayor que 0, se aplica; de lo contrario, se mantiene en tamaño original
-    if (scale > 0.1) {  // Limita la escala para que no desaparezca completamente
-      logo.style.transform = 'scale(' + scale + ')';
-      logo.style.transform='scale(0.3)';
+    if (scale > 0.1) {
+      // Limita la escala para que no desaparezca completamente
+      logo.style.transform = "scale(" + scale + ")";
+      logo.style.transform = "scale(0.3)";
     }
-    
   });
 }
-
-// function initLogoScrollEffect() {
-//   const logoBig = document.getElementById("logoPage");
-//   const navbar = document.getElementById("navbar");
-//   const logoSmall = document.getElementById("logoSmall");
-
-//   window.addEventListener("scroll", () => {
-//     logoBig.style.transform = "scale(0.3)";
-//     logoBig.style.transition = "transform 0.6s ease";
-//   });
-// }
 
 function initParallaxEffect() {
   document.addEventListener("mousemove", parallax);
@@ -116,7 +112,6 @@ function initParallaxEffect() {
   }
 }
 
-
 function changeTvBackground() {
   let pos = 0;
   const tv = document.querySelector(".tv");
@@ -142,12 +137,10 @@ function changeTvBackground() {
   }, 3000); 
 }
 
+function moveBig1Mouse() {
+  const modelViewer = document.getElementById("viewer");
 
-function moveBig1Mouse(){
-  const modelViewer = document.getElementById('viewer');
-
-  
-  document.addEventListener('mousemove', (event) => {
+  document.addEventListener("mousemove", (event) => {
     const { clientX, clientY } = event;
 
     const xRotacion = ((clientX / window.innerWidth) + 1) * 360; 
@@ -157,89 +150,116 @@ function moveBig1Mouse(){
   });
 }
 
-function parallaxSection2(){
-  //
-}
-
-// function changeIconNav() {
-//   const navbar = document.getElementById("navbar");
-//   const logoSmall = document.getElementById("logoSmall");
-//   const logoLarge = document.getElementById("logoPage");
-
-//   window.addEventListener("scroll", () => {
-//     const logoPosition = logoLarge.getBoundingClientRect().top;
-
-//     if (logoPosition <= 0) {
-//       console.log("en funcion");
-//       logoSmall.classList.remove("hidden");
-//       logoLarge.style.opacity = "0";
-//       logoLarge.style.transform = "scale(0.8)";
-//       navbar.classList.add("scrolled");
-//     } else {
-//       // Volver al estado original
-//       logoSmall.classList.add("hidden");
-//       logoLarge.style.opacity = "1";
-//       logoLarge.style.transform = "scale(1)";
-//     }
-//   });
-// }
-
 function parallaxPage1() {
-  const parallaxElements = document.querySelectorAll('.arbol1, .arbol2, .arbol3, .roca1, .arbusto1, .arbusto2, #arbolGrande, .roca2, .roca3, .roca4, .arbusto3, .arbusto4, .elem2,.elem1, .elem3');
+  const parallaxElements = document.querySelectorAll(
+    ".arbol1, .arbol2, .arbol3, .roca1, .arbusto1, .arbusto2, #arbolGrande, .roca2, .roca3, .roca4, .arbusto3, .arbusto4, .elem2,.elem1, .elem3"
+  );
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     let scrollTop = window.scrollY;
 
     parallaxElements.forEach((elem, index) => {
-      let speed = 0.3 + (index * 0.01); 
-      elem.style.transform = `translateY(${scrollTop * -speed}px)`; 
-      });
-  });
-}
-
-function parallaxPage2(){
-  const parallaxElementos = document.querySelectorAll(".elem5, .elem4, .description, .tittle");
-  
-  window.addEventListener('scroll', () => {
-    let scrollTop = window.scrollY;
-    parallaxElementos.forEach((elem, index) => {
-      let speed = 0.2 + (index * 0.02);
+      let speed = 0.3 + index * 0.01;
       elem.style.transform = `translateY(${scrollTop * -speed}px)`;
     });
   });
 }
 
-function parallaxPage6() {
-  const parallaxElement = document.querySelector(".pjVideo"); 
+function parallaxPage2() {
+  const parallaxElementos = document.querySelectorAll(
+    ".elem5, .elem4, .description, .tittle"
+  );
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     let scrollTop = window.scrollY;
-    let speed = 0.001; 
+    parallaxElementos.forEach((elem, index) => {
+      let speed = 0.2 + index * 0.02;
+      elem.style.transform = `translateY(${scrollTop * -speed}px)`;
+    });
+  });
+}
+
+
+
+function parallaxPage5() {
+  const section = document.querySelector(".page5");
+  const characters = document.querySelectorAll(".characters div");
+  const textBlocks = document.querySelectorAll(".txtInfo .txtBody");
+
+  characters.forEach((character) => {
+    character.classList.add("hidden");
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Sección visible");
+        } else {
+          characters.forEach((character) => {
+            character.classList.add("hidden");
+          });
+        }
+      });
+    },
+    { threshold: 0.8 } // detecta cuando la sección está al menos un 80% visible
+  );
+
+  observer.observe(section);
+
+  // lógica para sincronizar las imágenes con el texto durante el scroll
+  section.addEventListener("scroll", () => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const sectionHeight = section.offsetHeight;
+    const sectionBottom = sectionTop + sectionHeight;
+
+    textBlocks.forEach((block, index) => {
+      const blockTop = block.getBoundingClientRect().top;
+      const blockBottom = block.getBoundingClientRect().bottom;
+
+      // verifico si el bloque de texto está dentro de la sección visible
+      if (blockTop >= sectionTop && blockBottom <= sectionBottom) {
+        // ocultamos todos los personajes antes de mostrar el correspondiente
+        characters.forEach((character) => {
+          character.classList.add("hidden");
+        });
+
+        // mostramos solo el personaje correspondiente al índice del bloque visible
+        characters[index]?.classList.remove("hidden");
+      }
+    });
+  });
+}
+
+function parallaxPage6() {
+  const parallaxElement = document.querySelector(".pjVideo");
+
+  window.addEventListener("scroll", () => {
+    let scrollTop = window.scrollY;
+    let speed = 0.001;
     parallaxElement.style.transform = `translateX(${scrollTop * speed}px)`;
   });
 }
 
 function initScrollRevealEffect() {
-  // Seleccionamos todos los divs dentro de la sección .section3
-  const elements = document.querySelectorAll('.section3 div');
+  const elements = document.querySelectorAll(".section3 div");
 
-  // Creamos el observer con un callback que añade la clase 'visible'
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        // Retrasamos la aparición según el índice del elemento
-        setTimeout(() => {
-          entry.target.classList.add('visible'); // Añadimos la clase visible
-          observer.unobserve(entry.target); // Dejamos de observar este elemento
-        }, index * 300); // Retraso de 300ms entre cada elemento
-      }
-    });
-  }, {
-    threshold: 0.5 // El elemento debe estar al menos al 50% visible
-  });
-
-  // Observamos cada elemento seleccionado
-  elements.forEach(element => {
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }, index * 300);
+        }
+      });
+    },
+    {
+      threshold: 0.8,
+    }
+  );
+  elements.forEach((element) => {
     observer.observe(element);
   });
 }
