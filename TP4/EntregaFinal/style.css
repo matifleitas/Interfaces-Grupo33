@@ -657,7 +657,6 @@ background: linear-gradient(
   /* page 5 */
 
   .page5 {
-
     height: 100vh;
     position: relative;
     overflow-y: scroll;
@@ -683,22 +682,71 @@ background: linear-gradient(
     top: 20%; 
     left: 20%;
     z-index: 5;
+    height: auto;
+    transform: scale(0.9) translateY(20px); /* inicia con escala reducida y desplazada hacia abajo */
   }
 
   .characters div {
     display: block;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    position: absolute;
-    top: 12%;
-
-  }
-
-  .characters div.active {
     opacity: 1;
+    transform: scale(1) translateY(0); /* Estado visible */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    position: absolute;
+    top: 0;
   }
 
-   .imgPj0 {
+  .characters div.hidden {
+    opacity: 0; /* Oculta el elemento */
+    transform: scale(0.9) translateY(20px); /* Reduce tamaño y desplaza hacia abajo */
+    pointer-events: none; /* Evita interacción mientras está oculto */
+  }
+
+  .page5 .characters {
+    position: fixed;
+    z-index: 0;
+  }
+  
+  .hidden {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px); /* Reduce y desplaza */
+    visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+  }
+
+  .txtInfo {
+    display: flex;
+    flex-direction: column;
+    top: 4%;
+    left: 55%;
+    width: 467px;
+    height: 114px;
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    gap: 350px;
+    position: relative;
+    top:50vh;
+    transition: transform 0.3s ease-out;
+    z-index:1;
+  }
+
+  .resaltadoBig {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .txtBody {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.5s ease-out,transform 0.5s ease-in-out;;
+  }
+
+ 
+
+
+  .imgPj0 {
     width: 291px;
     height: 496px;
     background-image: url(assets/pj0.png);
@@ -769,48 +817,8 @@ background: linear-gradient(
     background-image: url(assets/pj10.png);
   
   } 
-  .page5 .characters {
-    position: fixed;
-    z-index: 0;
-  }
+
   
-
-
-  .hidden {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .txtInfo {
-    display: flex;
-    flex-direction: column;
-    top: 4%;
-    left: 55%;
-    width: 467px;
-    height: 114px;
-    font-family: "Lato", sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    gap: 350px;
-    position: relative;
-    top:50vh;
-    transition: transform 0.3s ease-out;
-    z-index:1;
-  }
-
-  .resaltadoBig {
-    font-size: 40px;
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
-
-  .txtBody {
-    display: flex;
-    flex-direction: column;
-    opacity: 1;
-    transition: opacity 0.5s ease-out;
-  }
-
 /* Pagina 6 */
 
 .page6 {

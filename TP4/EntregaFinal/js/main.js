@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollRevealEffect();
   suscribeAlert();
   parallaxPage5();
-
+;
   //menu hamburguesa
   const navToggle = document.getElementById("navToggle");
   const menu = document.getElementById("menu");
@@ -162,128 +162,57 @@ function parallaxPage2() {
   });
 }
 
+
+
 function parallaxPage5() {
   const section = document.querySelector(".page5");
   const characters = document.querySelectorAll(".characters div");
   const textBlocks = document.querySelectorAll(".txtInfo .txtBody");
-  const visibilityOffset = 200; // Offset para ajustar cuándo mostrar los personajes
 
-  // 1. Función para verificar si la sección está visible en el viewport
-  const checkIfSectionVisible = () => {
-    const sectionRect = section.getBoundingClientRect();
+  characters.forEach((character) => {
+    character.classList.add("hidden");
+  });
 
-    if (
-      sectionRect.top < window.innerHeight - visibilityOffset && // La sección está suficientemente abajo
-      sectionRect.bottom > visibilityOffset // La sección no está totalmente fuera por abajo
-    ) {
-      // Mostrar el primer personaje si no hay ninguno visible
-      if (!characters[0].classList.contains("hidden")) return;
-      characters[0].classList.remove("hidden");
-    }
-  };
-
-  // 2. Función para manejar el scroll dentro de la sección
-  const handleSectionScroll = () => {
-    const sectionRect = section.getBoundingClientRect();
-
-    if (
-      sectionRect.bottom > 0 && // Asegurarse de que la sección esté visible
-      sectionRect.top < window.innerHeight
-    ) {
-      textBlocks.forEach((block, index) => {
-        const blockRect = block.getBoundingClientRect();
-
-        // Comprobar si el bloque está visible dentro de la sección
-        if (
-          blockRect.top >= sectionRect.top &&
-          blockRect.bottom <= sectionRect.bottom
-        ) {
-          // Mostrar solo el personaje correspondiente
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Sección visible");
+        } else {
           characters.forEach((character) => {
             character.classList.add("hidden");
           });
-          characters[index]?.classList.remove("hidden");
         }
       });
-    }
-  };
+    },
+    { threshold: 0.8 } // detecta cuando la sección está al menos un 80% visible
+  );
 
-  // 3. Función para ocultar los personajes si la sección no está visible
-  const handleGlobalScroll = () => {
-    const sectionRect = section.getBoundingClientRect();
+  observer.observe(section);
 
-    if (
-      sectionRect.bottom < 0 || // Sección fuera por arriba
-      sectionRect.top > window.innerHeight // Sección fuera por abajo
-    ) {
-      // Ocultar todos los personajes
-      characters.forEach((character) => {
-        character.classList.add("hidden");
-      });
-    }
-  };
+  // lógica para sincronizar las imágenes con el texto durante el scroll
+  section.addEventListener("scroll", () => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const sectionHeight = section.offsetHeight;
+    const sectionBottom = sectionTop + sectionHeight;
 
-  // Agregar los listeners de scroll
-  window.addEventListener("scroll", checkIfSectionVisible);
-  section.addEventListener("scroll", handleSectionScroll);
-  window.addEventListener("scroll", handleGlobalScroll);
+    textBlocks.forEach((block, index) => {
+      const blockTop = block.getBoundingClientRect().top;
+      const blockBottom = block.getBoundingClientRect().bottom;
 
-  // Inicialización para verificar visibilidad al cargar la página
-  checkIfSectionVisible();
+      // verifico si el bloque de texto está dentro de la sección visible
+      if (blockTop >= sectionTop && blockBottom <= sectionBottom) {
+        // ocultamos todos los personajes antes de mostrar el correspondiente
+        characters.forEach((character) => {
+          character.classList.add("hidden");
+        });
+
+        // mostramos solo el personaje correspondiente al índice del bloque visible
+        characters[index]?.classList.remove("hidden");
+      }
+    });
+  });
 }
-
-
-
-// function parallaxPage5() {
-//   const section = document.querySelector(".page5");
-//   const characters = document.querySelectorAll(".characters div");
-//   const textBlocks = document.querySelectorAll(".txtInfo .txtBody");
-
-//   // Establecer visibilidad de los personajes al entrar a la sección
-//   const observer = new IntersectionObserver(
-//     (entries) => {
-//       entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//           // Cuando la sección .page5 esté visible, se muestran los personajes
-//           characters.forEach((character) => {
-//             character.classList.remove("hidden");
-//           });
-//         } else {
-//           // Cuando la sección .page5 no esté visible, se ocultan los personajes
-//           characters.forEach((character) => {
-//             character.classList.add("hidden");
-//           });
-//         }
-//       });
-//     },
-//     { threshold: 0.1 } // Detectar cuando la sección .page5 tenga al menos un 10% visible
-//   );
-
-//   observer.observe(section);  // Observar la sección .page5
-
-//   // Función para cambiar los personajes con el scroll dentro de la sección
-//   section.addEventListener("scroll", () => {
-//     const sectionTop = section.getBoundingClientRect().top; // Posición de la sección
-//     const sectionHeight = section.offsetHeight; // Altura de la sección
-//     const sectionBottom = sectionTop + sectionHeight; // Final de la sección
-
-//     textBlocks.forEach((block, index) => {
-//       const blockTop = block.getBoundingClientRect().top; // Posición del bloque
-//       const blockBottom = block.getBoundingClientRect().bottom; // Posición inferior del bloque
-
-//       // Verificamos si el bloque de texto está dentro de la sección visible
-//       if (blockTop >= sectionTop && blockBottom <= sectionBottom) {
-//         // Si el bloque está visible, ocultamos todos los personajes
-//         characters.forEach((character) => {
-//           character.classList.add("hidden");
-//         });
-
-//         // Mostramos el personaje correspondiente al índice del bloque visible
-//         characters[index]?.classList.remove("hidden");
-//       }
-//     });
-//   });
-// }
 
 function parallaxPage6() {
   const parallaxElement = document.querySelector(".pjVideo");
@@ -310,7 +239,7 @@ function initScrollRevealEffect() {
       });
     },
     {
-      threshold: 0.5,
+      threshold: 0.8,
     }
   );
   elements.forEach((element) => {
