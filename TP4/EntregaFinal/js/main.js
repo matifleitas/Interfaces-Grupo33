@@ -274,3 +274,4 @@ window.addEventListener("load", function() {
     document.querySelector('.header').style.opacity = 1; // Muestra el header
   }, 2500);
 });
+
